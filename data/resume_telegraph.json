@@ -1,0 +1,118 @@
+{
+  "personal": {
+    "name": "Joe Tao",
+    "title": "Product Designer",
+    "location": "London, UK",
+    "contact": {
+      "email": "joe.tianchen.tao@gmail.com",
+      "phone": "+44 7404 641 570",
+      "linkedin": "www.linkedin.com/in/joetao",
+      "github": "github.com/GLJ-JT",
+      "acm": "dl.acm.org/profile/99661638444"
+    },
+    "summary": "Senior Product Designer with 5 years driving end-to-end UX architecture and conversion growth across the UK and China. Proven track record of leveraging AI-accelerated frameworks to ship zero-to-one platforms, multiplying CVR by 2x, and slashing operational costs by 70%. Academic methodologies presented at <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" class=\"playful-link\">ACM CHIWORK '25</a> and pitched to <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-activity-7078363639639875584-g6hx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" class=\"playful-link\">Google</a>."
+  },
+  "experience": [
+    {
+      "role": "Product and Growth Designer",
+      "company": "TUTU VIEW",
+      "logos": [
+        "assets/employer_logos/TUTU.png",
+        "assets/employer_logos/WOR.png",
+        "assets/employer_logos/NIHAOSERICA.png"
+      ],
+      "period": "Jul 2025 - Present",
+      "description": "Sino-British business consultancy with two live consumer ventures across UK and China.",
+      "bullets": [
+        "Owned end-to-end design and launch of 3 cross-border digital platforms, delivering 3 live brand systems and websites without external agency support across travel and education verticals.",
+        "Built a shared multi-brand design system in Figma, Framer, and Webflow with 30+ reusable components and design tokens, cutting per-feature production time by 40% across 3 brands simultaneously.",
+        "Built AI-assisted content and production workflows (Cursor, v0, Midjourney), reducing recurring design and brochure labour by 70% through documented operational systems.",
+        "Designed the social-to-conversion funnel for Nihao Serica; contributed to 1,500 followers and 220,000 likes in the first month through UX-aligned creative and landing page strategy.",
+        "Ran A/B tests across 14 Meta and TikTok ad and landing page variants; improved blended ROAS by approximately 22% and reduced cost per acquisition by 18% over 3 months.",
+        "Conducted customer research and behavioural analysis to define IA and product structures used across both venture platforms, presenting findings directly to founders to shape roadmap.",
+        "Directed digital touchpoints and live technical production for high-profile UK-China private receptions, delivering event UX and brand presence without incident."
+      ]
+    },
+    {
+      "role": "Product Designer / Growth",
+      "company": "Depology",
+      "logos": [
+        "assets/employer_logos/DEP.png"
+      ],
+      "period": "Dec 2024 - Jun 2025",
+      "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and growth.",
+      "bullets": [
+        "Doubled checkout CVR (+100%) across two product rollouts through a full funnel redesign, using heatmaps, session recordings, and cohort data to remove the highest-impact drop-off points.",
+        "Created a Research-UI-Ads testing framework that cut A/B testing cycles from 2 weeks to 4 days, contributing to a 50% reduction in cart abandonment and faster iteration across the team.",
+        "Built a modular Figma design system with tokens, component documentation, and handoff SOPs; reduced design and build time by 30% and scaled across a 5-person cross-functional team.",
+        "Led UX prioritisation aligning design, media buying, and technical implementation around conversion goals; aligned landing-page UX with ad promise and user behaviour data throughout."
+      ]
+    },
+    {
+      "role": "User Experience Designer",
+      "company": "Travel to Qin",
+      "logos": [
+        "assets/employer_logos/TRAVELTOQIN.png"
+      ],
+      "period": "Aug 2024 - Dec 2024",
+      "description": "CITS-backed travel-tech startup; CITS is China's largest state-owned travel enterprise.",
+      "bullets": [
+        "Led research via interviews, focus groups, and field studies; produced 50-page IA wireframe informing global expansion strategy; owned full web UI across Shopify and WordPress from zero.",
+        "Built a reusable product-uploading system reducing launch cycle by 50% and content labour by 50%; grew the social account from 0 to 20,000+ followers in 3 months as on-camera representative."
+      ]
+    },
+    {
+      "role": "Digital Product Designer (Part-time)",
+      "company": "DAUH UK / manila.design",
+      "logos": [
+        "assets/employer_logos/DAUH.png"
+      ],
+      "period": "Oct 2022 - Sep 2023",
+      "description": "Independent industrial and brand design studio; co-venture of manila.design (UK) and Cover (China).",
+      "bullets": [
+        "Led UX research for a B2C e-commerce platform using interviews and Google Analytics; built a design system that standardised UI across the product and reduced developer build time.",
+        "Analysed behaviour with Google Analytics and SEMrush to identify conversion blockers, redesigned key flows, and delivered pixel-perfect handoff ensuring design intent translated without quality loss."
+      ]
+    },
+    {
+      "role": "UI Design Intern",
+      "company": "Quadtalent Technology",
+      "logos": [
+        "assets/employer_logos/QT.png"
+      ],
+      "period": "Apr 2021 - Sep 2021",
+      "description": "Sequoia China backed Shenzhen data-tech firm; ex-Alibaba and Huawei founded. Bytedance partner.",
+      "bullets": [
+        "Stepped into the sole UI role mid-project; learned Figma, CSS, HTML, and JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision.",
+        "Applied Python data visualisation to company analytics for executive presentations; built direct trust with C-suite leadership (former Alibaba Cloud and Huawei execs) through reliable delivery."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc Human-Computer Interaction (Distinction, 76/100)",
+      "school": "University College London (UCL)",
+      "period": "2022 - 2023",
+      "bullets": [
+        "Modules: Interaction Design (83), Perception and Interfaces (82.9), User-Centred Data Visualisation, Interaction Science.",
+        "Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\">ACM CHIWORK '25 paper</a> presented in Amsterdam; pitched findings to Google via UCL Interaction Centre <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-activity-7078363639639875584-g6hx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\">(Watch Presentation)</a>."
+      ]
+    },
+    {
+      "degree": "BSc (Hons) Product Design (First Class, 71/100)",
+      "school": "University of Leeds",
+      "period": "2019 - 2022",
+      "bullets": [
+        "Modules: Advanced Electronics (92), Understanding Data in Social Sciences (80), Interface Design, Service Design, Human Factors.",
+        "Thesis: StairAid, ergonomic crutch with novel stair-climbing mechanism, full manufacturing and IP analysis (72/100)."
+      ]
+    }
+  ],
+  "skills": {
+    "Design and UX": "End-to-End Product Design / Interaction Design / Mobile UX (iOS / Android) / Design Systems and Tokens / High-Fidelity Prototyping / Accessibility / Design QA",
+    "Research and Growth": "User Research (Interviews, Focus Groups, Field Studies) / Journey Mapping / A/B Testing / CRO / Heatmapping (Hotjar) / GA4 / Amplitude / Meta Ads Manager",
+    "Tools and Build": "Figma / Framer / Webflow / Shopify / AI Design (Cursor, v0, Midjourney, Runway) / HTML / CSS / JavaScript / Python / SEMrush / Miro / Adobe Creative Suite / Pagefly / Elementor",
+    "Collaboration": "China-UK Cross-market Operations / Cross-functional Team Leadership / Stakeholder Alignment / Design Mentorship / SOP Authoring / Sprint Facilitation / English and Mandarin (Fluent)"
+  },
+  "summary": "Digital Product Designer with 5 years building story-led platforms and high-conversion campaign experiences across the UK and China. Proven track record of leveraging Framer to ship interactive interfaces end-to-end, multiplying engagement and scaling commercial workflows without agency support. Academic methodologies presented at <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" class=\"playful-link\">ACM CHIWORK '25</a>."
+}
