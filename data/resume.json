@@ -14,7 +14,7 @@
   },
   "experience": [
     {
-      "role": "Product Designer",
+      "role": "Product Designer, Cross-Border Platforms",
       "company": "TUTU VIEW",
       "logos": [
         "assets/employer_logos/TUTU.png",
@@ -34,13 +34,13 @@
       ]
     },
     {
-      "role": "Product Designer / Growth",
+      "role": "Product Designer, Conversion & Research",
       "company": "Depology",
       "logos": [
         "assets/employer_logos/DEP.png"
       ],
       "period": "Dec 2024 - Jun 2025",
-      "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and growth.",
+      "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and conversion.",
       "bullets": [
         "Built a modular Figma design system with tokens, component documentation, and handoff SOPs; reduced design and build time by 30% and scaled across a 5-person cross-functional team.",
         "Created a Research-UI-Ads usability testing and A/B framework that cut testing cycles from 2 weeks to 4 days, contributing to a 50% reduction in cart abandonment and faster iteration across the team.",
@@ -83,7 +83,7 @@
       "period": "Apr 2021 - Sep 2021",
       "description": "Sequoia-backed Shenzhen big-data firm (200\u2013500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
       "bullets": [
-        "Stepped into the sole UI role mid-project; learned JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
+        "Stepped into the sole UI role mid-project; learned Figma, CSS/HTML, JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
         "Applied Python data visualisation to company analytics for executive presentations; built direct trust with C-suite leadership (former Alibaba Cloud and Huawei execs) through reliable delivery."
       ]
     }

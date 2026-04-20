@@ -3,18 +3,20 @@ import json
 resume = {
   "personal": {
     "name": "Joe Tao",
-    "role": "Product Designer",
     "location": "London, UK",
-    "email": "joe.tianchen.tao@gmail.com",
-    "phone": "+44 7404 641 570",
-    "linkedin": "www.linkedin.com/in/joetao",
-    "github": "github.com/GLJ-JT",
-    "acm": "dl.acm.org/profile/99661638444",
-    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at ACM CHIWORK '25; fluent in AI-accelerated design practice. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults."
+    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at ACM CHIWORK '25; fluent in AI-accelerated design practice. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults.",
+    "title": "Product Designer",
+    "contact": {
+      "email": "joe.tianchen.tao@gmail.com",
+      "phone": "+44 7404 641 570",
+      "linkedin": "www.linkedin.com/in/joetao",
+      "github": "github.com/GLJ-JT",
+      "acm": "dl.acm.org/profile/99661638444"
+    }
   },
   "experience": [
     {
-      "role": "Product Designer",
+      "role": "Product Designer, Cross-Border Platforms",
       "company": "TUTU VIEW",
       "logos": ["assets/employer_logos/TUTU.png", "assets/employer_logos/WOR.png", "assets/employer_logos/NIHAOSERICA.png"],
       "period": "Jul 2025 - Present",
@@ -30,11 +32,11 @@ resume = {
       ]
     },
     {
-      "role": "Product Designer / Growth",
+      "role": "Product Designer, Conversion & Research",
       "company": "Depology",
       "logos": ["assets/employer_logos/DEP.png"],
       "period": "Dec 2024 - Jun 2025",
-      "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and growth.",
+      "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and conversion.",
       "bullets": [
         "Built a modular Figma design system with tokens, component documentation, and handoff SOPs; reduced design and build time by 30% and scaled across a 5-person cross-functional team.",
         "Created a Research-UI-Ads usability testing and A/B framework that cut testing cycles from 2 weeks to 4 days, contributing to a 50% reduction in cart abandonment and faster iteration across the team.",
@@ -71,7 +73,7 @@ resume = {
       "period": "Apr 2021 - Sep 2021",
       "description": "Sequoia-backed Shenzhen big-data firm (200–500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
       "bullets": [
-        "Stepped into the sole UI role mid-project; learned JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
+        "Stepped into the sole UI role mid-project; learned Figma, CSS/HTML, JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
         "Applied Python data visualisation to company analytics for executive presentations; built direct trust with C-suite leadership (former Alibaba Cloud and Huawei execs) through reliable delivery."
       ]
     }
