@@ -1,14 +1,16 @@
 {
   "personal": {
     "name": "Joe Tao",
-    "role": "Product Designer",
     "location": "London, UK",
-    "email": "joe.tianchen.tao@gmail.com",
-    "phone": "+44 7404 641 570",
-    "linkedin": "www.linkedin.com/in/joetao",
-    "github": "github.com/GLJ-JT",
-    "acm": "dl.acm.org/profile/99661638444",
-    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at ACM CHIWORK '25; fluent in AI-accelerated design practice. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults."
+    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at ACM CHIWORK '25; fluent in AI-accelerated design practice. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults.",
+    "title": "Product Designer",
+    "contact": {
+      "email": "joe.tianchen.tao@gmail.com",
+      "phone": "+44 7404 641 570",
+      "linkedin": "www.linkedin.com/in/joetao",
+      "github": "github.com/GLJ-JT",
+      "acm": "dl.acm.org/profile/99661638444"
+    }
   },
   "experience": [
     {
