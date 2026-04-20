@@ -1,4 +1,6 @@
-{
+import json
+
+resume = {
   "personal": {
     "name": "Joe Tao",
     "role": "Product Designer",
@@ -14,11 +16,7 @@
     {
       "role": "Product Designer",
       "company": "TUTU VIEW",
-      "logos": [
-        "assets/employer_logos/TUTU.png",
-        "assets/employer_logos/WOR.png",
-        "assets/employer_logos/NIHAOSERICA.png"
-      ],
+      "logos": ["assets/employer_logos/TUTU.png", "assets/employer_logos/WOR.png", "assets/employer_logos/NIHAOSERICA.png"],
       "period": "Jul 2025 - Present",
       "description": "Sino-British business consultancy with two live consumer ventures across UK and China.",
       "bullets": [
@@ -34,9 +32,7 @@
     {
       "role": "Product Designer / Growth",
       "company": "Depology",
-      "logos": [
-        "assets/employer_logos/DEP.png"
-      ],
+      "logos": ["assets/employer_logos/DEP.png"],
       "period": "Dec 2024 - Jun 2025",
       "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and growth.",
       "bullets": [
@@ -49,9 +45,7 @@
     {
       "role": "User Experience Designer",
       "company": "Travel to Qin",
-      "logos": [
-        "assets/employer_logos/TRAVELTOQIN.png"
-      ],
+      "logos": ["assets/employer_logos/TRAVELTOQIN.png"],
       "period": "Aug 2024 - Dec 2024",
       "description": "CITS-backed travel-tech startup; CITS is China's largest state-owned travel enterprise.",
       "bullets": [
@@ -62,9 +56,7 @@
     {
       "role": "Digital Product Designer (Part-time)",
       "company": "DAUH UK / manila.design",
-      "logos": [
-        "assets/employer_logos/DAUH.png"
-      ],
+      "logos": ["assets/employer_logos/DAUH.png"],
       "period": "Oct 2022 - Sep 2023",
       "description": "Independent industrial and brand design studio; co-venture of manila.design (UK) and Cover (China).",
       "bullets": [
@@ -75,11 +67,9 @@
     {
       "role": "UI Design Intern",
       "company": "Quadtalent Technology",
-      "logos": [
-        "assets/employer_logos/QT.png"
-      ],
+      "logos": ["assets/employer_logos/QT.png"],
       "period": "Apr 2021 - Sep 2021",
-      "description": "Sequoia-backed Shenzhen big-data firm (200\u2013500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
+      "description": "Sequoia-backed Shenzhen big-data firm (200–500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
       "bullets": [
         "Stepped into the sole UI role mid-project; learned JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
         "Applied Python data visualisation to company analytics for executive presentations; built direct trust with C-suite leadership (former Alibaba Cloud and Huawei execs) through reliable delivery."
@@ -113,3 +103,8 @@
     "Collaboration": "China-UK Cross-market Operations / Cross-functional Team Leadership / Stakeholder Alignment / Design Mentorship / SOP Authoring / Sprint Facilitation / English and Mandarin (Fluent)"
   }
 }
+
+with open('data/resume.json', 'w') as f:
+    json.dump(resume, f, indent=2)
+
+print("done")
