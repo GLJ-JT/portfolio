@@ -13,204 +13,462 @@
 <body>
     
     <nav class="sidebar">
-        <div class="brand">WORLDOVER.IO</div>
-        
-        <a href="#" class="nav-item active">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-            Dashboard
-        </a>
-        <a href="#" class="nav-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-            Analytics
-        </a>
-        <a href="#" class="nav-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            E-Commerce
-        </a>
-        <a href="#" class="nav-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            Settings
-        </a>
-        
-        <div class="sidebar-footer">
-            v1.2.4
+        <div class="brand">
+            <div class="brand-left">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Worldover
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-sidebar)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         </div>
+        
+        <div class="brand-select">
+            <span>Symmrise AG</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+
+        <div class="nav-label">MAIN MENU</div>
+        
+        <a href="#" class="nav-item active" data-target="view-overview">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Overview (dashboard)
+        </a>
+        <a href="#" class="nav-item" data-target="view-production-tracking">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Production Tracking
+        </a>
+        <a href="#" class="nav-item" data-target="view-threshold-gauging">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            Threshold Gauging
+        </a>
+        <a href="#" class="nav-item" data-target="view-reporting">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Reporting
+        </a>
+        <a href="#" class="nav-item" data-target="view-compliance-history">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Compliance History
+        </a>
     </nav>
 
     <main class="main-content">
-        <header class="header">
-            <h1>Packaging Compliance (KPIs)</h1>
+        <header class="top-header">
+            <h1 id="page-title">WELCOME BACK! SYMRISE AG.</h1>
             <div class="header-actions">
-                <button class="btn btn-secondary">Run Data Report</button>
-                <button class="btn btn-secondary">Create New Alert</button>
-                <button class="btn btn-primary">Automate Compliance</button>
+                <button class="btn-refresh">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    refresh data
+                </button>
+                <button class="icon-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </button>
+                <div class="avatar">J</div>
             </div>
         </header>
 
-        <div class="dashboard-grid">
+        <div class="view-container">
             
-            <!-- KPI Strip -->
-            <div class="kpi-row">
-                <div class="card">
-                    <h3 class="card-title">Total Tax (YTD)</h3>
-                    <div class="kpi-value">£1.2M</div>
-                    <div class="kpi-trend trend-down">↓ 3.2% vs last year</div>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Total Mass (kg)</h3>
-                    <div class="kpi-value">45,200</div>
-                    <div class="kpi-trend trend-down">↓ 8.4% vs last year</div>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">PTP Tax (£)</h3>
-                    <div class="kpi-value">2.7k</div>
-                    <div class="kpi-trend trend-up">↑ 1.2% vs last year</div>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">% Market Share</h3>
-                    <div class="kpi-value">21.4%</div>
-                    <div class="kpi-trend trend-up">↑ 4.5% vs last year</div>
-                </div>
-                <div class="card" style="border-color: rgba(16, 185, 129, 0.3);">
-                    <h3 class="card-title">Avg Compliance</h3>
-                    <div class="kpi-value" style="color: var(--status-green);">78%</div>
-                    <div class="kpi-trend trend-up">↑ 12% target met</div>
-                </div>
-            </div>
-
-            <!-- Charts -->
-            <div class="card chart-card">
-                <h3 class="card-title">Plastic Packaging Tax</h3>
-                <canvas id="taxChart"></canvas>
-            </div>
-            
-            <div class="card doughnut-card">
-                <div style="width: 100%; height: 100%; display: flex; flex-direction: column;">
-                    <h3 class="card-title">Status Breakdown</h3>
-                    <div style="flex:1; position: relative;">
-                        <canvas id="statusChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Tables -->
-            <div class="card table-card">
-                <h3 class="card-title">PTP Categories by Region</h3>
-                
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 4px;">North America</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Target Vols: 60%</div>
-                    </div>
-                    <span class="status-badge status-compliant">COMPLIANT</span>
-                </div>
-                
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 4px;">Europe</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Target Vols: 45%</div>
-                    </div>
-                    <span class="status-badge status-buffer">BUFFER</span>
-                </div>
-                
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 4px;">Asia</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Target Vols: 80%</div>
-                    </div>
-                    <span class="status-badge status-exceeded">EXCEEDED</span>
-                </div>
-            </div>
-
-            <!-- Critical Issues -->
-            <div class="card table-card">
-                <h3 class="card-title" style="color: #ef4444;">Critical Issues</h3>
-                
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 4px;">PTP Audit Failed</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); display:flex; gap:8px;">
-                            <span class="issue-tag">JAN</span>
-                            <span class="issue-tag">CQM</span>
+            <!-- OVERVIEW VIEW -->
+            <section id="view-overview" class="view active">
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="card-title">ACTIVITY CENTRE</h3>
+                        <div class="activity-item dark">
+                            <div class="activity-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Suggestion: Review Limonene Production</h4>
+                                <p>74.3% of threshold used for Limonene</p>
+                            </div>
+                        </div>
+                        <div class="activity-item dark">
+                            <div class="activity-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="4" x2="12" y2="8"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Suggestion: Request Data Update from Factory B</h4>
+                                <p>Factory B data is outdated</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon" style="color: var(--status-green);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Factory A Data Updated</h4>
+                                <p>Factory A data updated today at 13:05</p>
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align: right;">
-                        <div style="font-weight: 600; color: #ef4444;">2 Days</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">Overdue</div>
-                    </div>
-                </div>
 
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 4px;">Material Data Missing</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); display:flex; gap:8px;">
-                            <span class="issue-tag">12 APR</span>
-                            <span class="issue-tag">CTQ</span>
+                    <div class="card">
+                        <h3 class="card-title">COMPLIANCE SCORE</h3>
+                        <div class="score-gauge-wrapper">
+                            <div class="half-doughnut">
+                                <canvas id="scoreGaugeChart"></canvas>
+                                <div class="gauge-value">77.2</div>
+                            </div>
+                            <div class="score-stats">
+                                <div class="stat-bar">
+                                    <div class="stat-bar-header">
+                                        <span>Compliance Health</span>
+                                        <span>69/100</span>
+                                    </div>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 69%;"></div></div>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-header">
+                                        <span>Data freshness</span>
+                                        <span>91/100</span>
+                                    </div>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 91%;"></div></div>
+                                </div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">
+                                    Last update:<br>2025-10-24 15:08
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align: right;">
-                        <div style="font-weight: 600; color: #f59e0b;">3 Days</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">Warning</div>
-                    </div>
                 </div>
-            </div>
 
-            <!-- Reports Table -->
-            <div class="card" style="grid-column: span 12;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                    <h3 class="card-title" style="margin: 0;">Compliance Report: Production Summary</h3>
-                    <div style="display: flex; gap: 12px;">
-                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">Export Data</button>
+                <div class="card">
+                    <div class="prod-overview-filters">
+                        <h3 class="card-title" style="margin: 0;">PRODUCTION OVERVIEW</h3>
+                        <select><option>All</option></select>
+                    </div>
+                    <div class="circular-progress-list">
+                        <!-- Items rendered by JS -->
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-linalool"></canvas><div class="circular-value"><span class="c-val-pct">24%</span><span class="c-val-sub">235.2/1000</span></div></div>
+                            <div class="c-label">Linalool</div>
+                        </div>
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-citral"></canvas><div class="circular-value"><span class="c-val-pct">35%</span><span class="c-val-sub">351.2/1000</span></div></div>
+                            <div class="c-label">Citral</div>
+                        </div>
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-ethyl"></canvas><div class="circular-value"><span class="c-val-pct">55%</span><span class="c-val-sub">554.5/1000</span></div></div>
+                            <div class="c-label">Ethyl Vanillin</div>
+                        </div>
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-iso"></canvas><div class="circular-value"><span class="c-val-pct">74%</span><span class="c-val-sub">74.3/100</span></div></div>
+                            <div class="c-label">Iso E super</div>
+                        </div>
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-limonene"></canvas><div class="circular-value"><span class="c-val-pct">82%</span><span class="c-val-sub">820.1/1000</span></div></div>
+                            <div class="c-label">Limonene</div>
+                        </div>
+                        <div class="circular-progress-item">
+                            <div class="circular-chart"><canvas id="cp-hedione"></canvas><div class="circular-value"><span class="c-val-pct">89%</span><span class="c-val-sub">891.2/1000</span></div></div>
+                            <div class="c-label">Hedione</div>
+                        </div>
                     </div>
                 </div>
-                
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-                    <thead>
-                        <tr style="color: var(--text-muted); border-bottom: 1px solid var(--border-light);">
-                            <th style="padding: 12px 8px; font-weight: 500;">ID (Factory)</th>
-                            <th style="padding: 12px 8px; font-weight: 500;">Status</th>
-                            <th style="padding: 12px 8px; font-weight: 500;">Last Modified</th>
-                            <th style="padding: 12px 8px; font-weight: 500;">Compliance %</th>
-                            <th style="padding: 12px 8px; font-weight: 500; text-align: right;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
-                            <td style="padding: 16px 8px;">P-201</td>
-                            <td style="padding: 16px 8px;"><span class="status-badge status-compliant">82% COMP</span></td>
-                            <td style="padding: 16px 8px; color: var(--text-muted);">2024-10-24 12:15</td>
-                            <td style="padding: 16px 8px;">
-                                <div style="width: 100%; background: var(--bg-card-hover); height: 6px; border-radius: 3px;">
-                                    <div style="width: 82%; background: var(--status-green); height: 100%; border-radius: 3px;"></div>
+
+                <div class="card">
+                    <div class="prod-overview-filters">
+                        <h3 class="card-title" style="margin: 0;">PRODUCTION SUMMARY</h3>
+                        <select><option>All</option></select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>UID</th>
+                                <th>ECHA ID</th>
+                                <th>Output/Threshold</th>
+                                <th>Percentage</th>
+                                <th>Status</th>
+                                <th>Manager</th>
+                                <th>Time updated</th>
+                                <th>Data Freshness</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Citral</td><td>S421</td><td>R-SYM-0081</td><td>351.2/1000</td><td>35%</td>
+                                <td>
+                                    <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+                                </td>
+                                <td><div class="avatar" style="width:24px;height:24px;font-size:0.75rem;">J</div></td>
+                                <td>2024-10-24</td><td class="status-good">Good</td>
+                            </tr>
+                            <tr>
+                                <td>Ethyl Vanillin</td><td>S855</td><td>R-SYM-0077</td><td>554.5/1000</td><td>55%</td>
+                                <td>
+                                    <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                                </td>
+                                <td><div class="avatar" style="width:24px;height:24px;font-size:0.75rem;">J</div></td>
+                                <td>2024-10-21</td><td class="status-bad">Bad</td>
+                            </tr>
+                            <tr>
+                                <td>Hedione</td><td>S611</td><td>R-SYM-0073</td><td>891.2/1000</td><td>89%</td>
+                                <td>
+                                    <div style="display:flex;align-items:center;gap:8px;">
+                                        <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                                        <span style="font-size:0.75rem;color:var(--text-muted)">pending...</span>
+                                    </div>
+                                </td>
+                                <td><div class="avatar" style="width:24px;height:24px;font-size:0.75rem;">J</div></td>
+                                <td>2024-10-24</td><td class="status-good">Good</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PRODUCTION TRACKING VIEW -->
+            <section id="view-production-tracking" class="view">
+                <div class="tracking-layout">
+                    <div class="tracking-sidebar">
+                        <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 16px;">
+                            <div style="width: 48px; height: 48px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
+                            </div>
+                            <div>
+                                <h4 style="margin:0 0 4px 0;font-size:1rem;">Linalool</h4>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">UID: S421</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">ECHA ID: R-SYM-0081</div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <h3 class="card-title">QUOTA USED</h3>
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:24px;">
+                                <div style="width: 24px; height: 100px; background: #e5e7eb; border-radius: 12px; position: relative;">
+                                    <div style="position:absolute; bottom:0; width:100%; height:24%; background:var(--accent-blue); border-radius:12px;"></div>
                                 </div>
-                            </td>
-                            <td style="padding: 16px 8px; text-align: right;"><a href="#" style="color: var(--accent-blu); text-decoration: none;">View</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
-                            <td style="padding: 16px 8px;">P-004</td>
-                            <td style="padding: 16px 8px;"><span class="status-badge status-exceeded">N/A</span></td>
-                            <td style="padding: 16px 8px; color: var(--text-muted);">2024-10-21 12:15</td>
-                            <td style="padding: 16px 8px;">
-                                <div style="width: 100%; background: var(--bg-card-hover); height: 6px; border-radius: 3px;">
-                                    <div style="width: 10%; background: var(--status-red); height: 100%; border-radius: 3px;"></div>
+                                <div style="background:#e0e7ff; padding:16px; border-radius:8px; width: 180px;">
+                                    <div style="font-size:0.75rem; margin-bottom:4px;">Output: 245.2 t</div>
+                                    <div style="font-size:0.75rem; margin-bottom:12px; color:var(--text-muted);">Threshold: 1000 t</div>
+                                    <div style="font-size:0.9rem; font-weight:600;">Quota Used: <span style="font-size:1.25rem;">24%</span></div>
                                 </div>
-                            </td>
-                            <td style="padding: 16px 8px; text-align: right;"><a href="#" style="color: var(--accent-blu); text-decoration: none;">View</a></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 16px 8px;">P-312</td>
-                            <td style="padding: 16px 8px;"><span class="status-badge status-buffer">45% COMP</span></td>
-                            <td style="padding: 16px 8px; color: var(--text-muted);">2024-10-24 12:15</td>
-                            <td style="padding: 16px 8px;">
-                                <div style="width: 100%; background: var(--bg-card-hover); height: 6px; border-radius: 3px;">
-                                    <div style="width: 45%; background: var(--status-yellow); height: 100%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+
+                        <div class="chem-list">
+                            <div class="chem-item active">Linalool</div>
+                            <div class="chem-item">Citral</div>
+                            <div class="chem-item">Ethyl Vanillin</div>
+                            <div class="chem-item">Iso E super</div>
+                            <div class="chem-item">Limonene</div>
+                            <div class="chem-item">Hedione <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--status-red)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
+                        </div>
+                    </div>
+
+                    <div class="tracking-main">
+                        <div class="status-grid">
+                            <div class="status-card">
+                                <h4>STATUS - A - ON</h4>
+                                <p>Linalool Production Status in Factory A</p>
+                                <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                            <div class="status-card">
+                                <h4>STATUS - B - OFF</h4>
+                                <p>Linalool Production Status in Factory B</p>
+                                <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+                            </div>
+                            <div class="status-card">
+                                <h4>STATUS - C - ON</h4>
+                                <p>Linalool Production Status in Factory C</p>
+                                <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="chart-filters">
+                            <div class="date-picker">
+                                From <select><option>Jan 15</option></select>
+                                to <select><option>Oct 15</option></select>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <span style="color:var(--text-muted);">Bar chart</span>
+                                <label class="toggle"><input type="checkbox" checked id="chartTypeToggle"><span class="slider"></span></label>
+                                <span>line chart</span>
+                            </div>
+                        </div>
+
+                        <div class="factory-charts">
+                            <div class="factory-chart-wrapper">
+                                <h4>FACTORY A</h4>
+                                <div class="unit-label">unit: ton</div>
+                                <canvas id="chartFactoryA"></canvas>
+                            </div>
+                            <div class="factory-chart-wrapper">
+                                <h4>FACTORY B</h4>
+                                <div class="unit-label">unit: ton</div>
+                                <canvas id="chartFactoryB"></canvas>
+                            </div>
+                            <div class="factory-chart-wrapper">
+                                <h4>FACTORY C</h4>
+                                <div class="unit-label">unit: ton</div>
+                                <canvas id="chartFactoryC"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THRESHOLD GAUGING VIEW -->
+            <section id="view-threshold-gauging" class="view">
+                <div class="tabs">
+                    <div class="tab">Enterprise-level</div>
+                    <div class="tab active">Factory-level</div>
+                </div>
+
+                <div class="threshold-layout">
+                    <div class="gauges-area">
+                        <div class="card">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
+                                <h3 class="card-title" style="margin:0;">FACTORY A</h3>
+                                <span style="font-size:0.75rem; color:var(--text-muted);">unit: ton</span>
+                            </div>
+                            <div class="thermometer-group">
+                                <div class="thermometer-item">
+                                    <div class="thermometer">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div class="thermo-bg" style="height: 45%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Ethyl Vanillin</div>
                                 </div>
-                            </td>
-                            <td style="padding: 16px 8px; text-align: right;"><a href="#" style="color: var(--accent-blu); text-decoration: none;">View</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                                <div class="thermometer-item">
+                                    <div class="thermometer">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div class="thermo-bg" style="height: 60%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Iso E Super</div>
+                                </div>
+                                <div class="thermometer-item">
+                                    <div class="thermometer">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div class="thermo-bg" style="height: 25%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Linalool</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
+                                <h3 class="card-title" style="margin:0;">FACTORY B</h3>
+                                <span style="font-size:0.75rem; color:var(--text-muted);">unit: ton</span>
+                            </div>
+                            <div class="thermometer-group">
+                                <div class="thermometer-item">
+                                    <div class="thermometer">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div class="thermo-bg" style="height: 30%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Citral</div>
+                                </div>
+                                <div class="thermometer-item">
+                                    <div class="thermometer">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div class="thermo-bg" style="height: 50%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Hedione</div>
+                                </div>
+                                <div class="thermometer-item">
+                                    <div class="thermometer" style="border: 2px solid var(--status-red);">
+                                        <div class="thermo-scale"><span>1000</span><span>-</span><span>-</span><span>-</span><span>-</span></div>
+                                        <div style="position:absolute; right: -10px; top:15%; color:red; font-size:10px;">◀</div>
+                                        <div class="thermo-bg" style="height: 85%; background: var(--accent-blue);"></div>
+                                    </div>
+                                    <div class="thermo-label">Limonene</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insights-area">
+                        <div class="card">
+                            <h3 class="card-title">AI INSIGHTS</h3>
+                            <div style="background:#f3f6fc; padding:16px; border-radius:8px; margin-bottom:12px;">
+                                <h4 style="margin:0 0 4px 0; font-size:0.85rem;">Projected Threshold Breach: Hedione</h4>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">Estimated: 2024-12-15</div>
+                            </div>
+                            <div style="background:#f3f6fc; padding:16px; border-radius:8px; margin-bottom:12px;">
+                                <h4 style="margin:0 0 4px 0; font-size:0.85rem;">Compliance Health Assessment</h4>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">Health Score: 7/10</div>
+                            </div>
+                            <div style="background:#f3f6fc; padding:16px; border-radius:8px;">
+                                <h4 style="margin:0 0 4px 0; font-size:0.85rem;">Production Rate Analysis</h4>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">Current production rate is 15% above historical average</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">ALERT CONFIGURATION</h3>
+                            <div style="margin-bottom: 24px;">
+                                <div style="font-size:0.85rem; margin-bottom:12px;">Notification Settings</div>
+                                <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; margin-bottom:8px;"><input type="checkbox" checked> Text Message</label>
+                                <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; margin-bottom:8px;"><input type="checkbox"> Email</label>
+                                <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; margin-bottom:8px;"><input type="checkbox" checked> System Notifications</label>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-size:0.85rem; margin-bottom:8px;">Select Factory</div>
+                                <select style="width:100%; padding:8px; border:1px solid var(--border-light); border-radius:4px;"><option>Factory C</option></select>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-size:0.85rem; margin-bottom:8px;">Select Chemical</div>
+                                <select style="width:100%; padding:8px; border:1px solid var(--border-light); border-radius:4px;"><option>Citral</option></select>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-size:0.85rem; margin-bottom:8px;">Alert Threshold</div>
+                                <div style="display:flex; gap:8px;">
+                                    <input type="text" value="30%" style="flex:1; padding:8px; border:1px solid var(--border-light); border-radius:4px;">
+                                    <button class="btn-dark" style="padding:8px 16px;">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REPORTING VIEW -->
+            <section id="view-reporting" class="view">
+                <div class="card">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
+                        <h3 class="card-title" style="margin:0;">CHEMICAL REGISTRY</h3>
+                        <input type="text" placeholder="Search Chemicals ..." style="padding:8px 12px; border:1px solid var(--border-light); border-radius:6px; width: 250px;">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th><th>UID</th><th>ECHA ID</th><th>ID (Factory A)</th><th>ID (Factory B)</th><th>ID (Factory C)</th><th>Last Modified</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Citral</td><td>S421</td><td>R-SYM-0081</td><td>N/A</td><td>P-214</td><td>P-201</td><td>2024-10-24 12:15</td></tr>
+                            <tr><td>Ethyl Vanillin</td><td>S855</td><td>R-SYM-0077</td><td>P-332</td><td>N/A</td><td>N/A</td><td>2024-10-21 12:15</td></tr>
+                            <tr><td>Hedione</td><td>S611</td><td>R-SYM-0073</td><td>N/A</td><td>P-101</td><td>P-004</td><td>2024-10-24 12:15</td></tr>
+                            <tr><td>Iso E Super</td><td>S633</td><td>R-SYM-0065</td><td>P-521</td><td>N/A</td><td>P-312</td><td>2024-10-23 12:15</td></tr>
+                            <tr><td>Limonene</td><td>S744</td><td>R-SYM-0088</td><td>N/A</td><td>P-444</td><td>N/A</td><td>2024-10-24 12:15</td></tr>
+                            <tr><td>Linalool</td><td>S552</td><td>R-SYM-0092</td><td>P-052</td><td>N/A</td><td>P-551</td><td>2024-10-24 12:15</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+                    <div class="download-cards">
+                        <div class="download-card">
+                            <h3>REACH ANNUAL REPORT</h3>
+                            <p>Generate standardized REACH compliance report</p>
+                            <button class="btn-dark">DOWNLOAD</button>
+                        </div>
+                        <div class="download-card">
+                            <h3>PRODUCTION SUMMARY</h3>
+                            <p>Export detailed production data Generate</p>
+                            <button class="btn-dark">DOWNLOAD</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4 style="margin: 0 0 16px 0;">Export Options</h4>
+                        <label style="display:flex; align-items:center; gap:8px; margin-bottom:12px; font-size:0.9rem;"><input type="checkbox" checked> Include Production Data</label>
+                        <label style="display:flex; align-items:center; gap:8px; margin-bottom:12px; font-size:0.9rem;"><input type="checkbox"> Include Threshold Data</label>
+                        <label style="display:flex; align-items:center; gap:8px; margin-bottom:24px; font-size:0.9rem;"><input type="checkbox" checked> Include Factory Data</label>
+                        <button class="btn-dark">SAVE</button>
+                    </div>
+                </div>
+            </section>
 
         </div>
     </main>
