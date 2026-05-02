@@ -2,7 +2,7 @@
   "personal": {
     "name": "Joe Tao",
     "location": "London, UK",
-    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at ACM CHIWORK '25; fluent in AI-accelerated design practice. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults.",
+    "summary": "Product designer trained at UCL (MSc HCI, Distinction), with 3 years shipping research-led, mobile-first product across UK and China. Full lifecycle from discovery to delivery, 2x checkout CVR, design systems adopted across cross-functional teams. Research presented at <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">ACM CHIWORK '25</a>; findings <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">pitched to Google</a>. WCAG-grounded inclusive design, usability testing, and stakeholder presentation as defaults.",
     "title": "Product Designer",
     "contact": {
       "email": "joe.tianchen.tao@gmail.com",
@@ -81,7 +81,7 @@
         "assets/employer_logos/QT.png"
       ],
       "period": "Apr 2021 - Sep 2021",
-      "description": "Sequoia-backed Shenzhen big-data firm (200\u2013500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
+      "description": "Sequoia-backed Shenzhen big-data firm (200–500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
       "bullets": [
         "Stepped into the sole UI role mid-project; learned Figma, CSS/HTML, JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
         "Applied Python data visualisation to company analytics for executive presentations; built direct trust with C-suite leadership (former Alibaba Cloud and Huawei execs) through reliable delivery."
@@ -95,7 +95,7 @@
       "period": "2022 - 2023",
       "bullets": [
         "Modules: Interaction Design (83), Perception and Interfaces (82.9), User-Centred Data Visualisation, Interaction Science.",
-        "Research contributed to ACM CHIWORK '25 paper presented in Amsterdam; pitched findings to Google via UCL Interaction Centre."
+        "Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\">ACM CHIWORK '25</a> paper presented in Amsterdam; <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\">pitched findings to Google</a> via UCL Interaction Centre."
       ]
     },
     {
