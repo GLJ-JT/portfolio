@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Depology Design System Case Study | Joe Tao</title>
+  <style>
+    :root {
+      --page: #f8f6ef;
+      --paper: #ffffff;
+      --ink: #2f3437;
+      --soft-ink: #4f555a;
+      --muted: #787774;
+      --line: rgba(55, 53, 47, 0.12);
+      --line-strong: rgba(55, 53, 47, 0.22);
+      --cream-bg: #fbf3db;
+      --cream-text: #7a5a13;
+      --blue-bg: #e1f3fe;
+      --blue-text: #1f6c9f;
+      --yellow-bg: #fbf3db;
+      --yellow-text: #956400;
+      --red-bg: #fdebec;
+      --red-text: #9f2f2d;
+      --mono: "SF Mono", "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+      --sans: "SF Pro Display", "Geist Sans", "Helvetica Neue", system-ui, sans-serif;
+      --serif: "Newsreader", "Iowan Old Style", "Georgia", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #0a1566;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.68;
+    }
+
+    body::before {
+      display: none;
+    }
+
+    .case-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100svh;
+      z-index: 0;
+      min-height: 100svh;
+      overflow: hidden;
+      background: #0a1566;
+      color: #ffffff;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(28px, 5vw, 64px);
+      isolation: isolate;
+      transform-origin: center center;
+      will-change: opacity, transform, filter;
+    }
+
+    .reflection-hero {
+      position: relative;
+      z-index: 3;
+      min-height: 100svh;
+      overflow: hidden;
+      background: #0a1566;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding: clamp(28px, 5vw, 64px);
+      isolation: isolate;
+    }
+
+    .reflection-close {
+      position: absolute;
+      top: clamp(18px, 3vw, 34px);
+      right: clamp(18px, 3vw, 34px);
+      z-index: 4;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .reflection-close:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.42);
+      transform: scale(1.04);
+    }
+
+    .reflection-close span {
+      font-size: 24px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .case-hero::after,
+    .reflection-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(10, 21, 102, 0) 42%, rgba(10, 21, 102, 0.46) 100%),
+        radial-gradient(circle at 50% 110%, rgba(255, 255, 255, 0.16), transparent 38%);
+    }
+
+    .hero-wordmark {
+      position: absolute;
+      z-index: 0;
+      width: min(1600px, 118vw);
+      max-width: none;
+      height: auto;
+      border: 0;
+      background: transparent;
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-wordmark.top {
+      top: -3vw;
+      left: -11vw;
+      transform: rotate(0.001deg);
+    }
+
+    .hero-wordmark.bottom {
+      right: -18vw;
+      bottom: -8vw;
+      transform: rotate(0.001deg);
+      opacity: 0.28;
+    }
+
+    .reflection-hero .hero-wordmark.top {
+      top: -8vw;
+      left: -16vw;
+      opacity: 0.24;
+    }
+
+    .reflection-hero .hero-wordmark.bottom {
+      right: -20vw;
+      bottom: -10vw;
+      opacity: 0.18;
+    }
+
+    .hero-content,
+    .reflection-content {
+      position: relative;
+      z-index: 2;
+      width: min(1020px, 100%);
+      transform-origin: center bottom;
+      will-change: opacity, transform, filter;
+    }
+
+    .hero-content {
+      padding-bottom: clamp(18px, 4vh, 48px);
+    }
+
+    .hero-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: clamp(20px, 4vh, 48px);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .hero-pill {
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .case-hero .eyebrow,
+    .reflection-hero .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .case-hero h1,
+    .reflection-hero h2 {
+      max-width: 980px;
+      color: #ffffff;
+      font-family: var(--serif);
+      font-size: clamp(48px, 8.8vw, 116px);
+      font-weight: 500;
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .reflection-hero h2 {
+      margin: 0 0 24px;
+      animation: none;
+    }
+
+    .case-hero .lede,
+    .reflection-hero p {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+    }
+
+    .reflection-hero p {
+      margin-bottom: 18px;
+    }
+
+    .reflection-hero .reflection-subtitle {
+      max-width: 900px;
+      margin-bottom: 28px;
+      color: #ffffff;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4.5vw, 58px);
+      line-height: 1.02;
+    }
+
+    .case-hero .metrics {
+      max-width: 760px;
+      border-color: rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .case-hero .metrics li {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .case-hero .metrics strong {
+      color: #ffffff;
+    }
+
+    .article-shell {
+      position: relative;
+      z-index: 2;
+      margin-top: 100svh;
+      padding: 68px 28px 88px;
+      background:
+        radial-gradient(circle at 88% 0%, rgba(149, 100, 0, 0.045), transparent 30%),
+        radial-gradient(circle at 8% 35%, rgba(120, 119, 116, 0.035), transparent 26%),
+        var(--page);
+      min-height: 100dvh;
+      box-shadow: 0 -32px 80px rgba(10, 21, 102, 0.18);
+    }
+
+    article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-shell section,
+    figure,
+    blockquote,
+    .signals,
+    .impact {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 760ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 760ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--cream-bg);
+      color: var(--cream-text);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      color: #111111;
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: 0;
+      animation: revealText 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 680px;
+      color: var(--soft-ink);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    h2 {
+      margin: 56px 0 14px;
+      color: #111111;
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      animation: revealText 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+
+    h3 {
+      margin: 32px 0 8px;
+      color: #111111;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+
+    strong {
+      color: #111111;
+      font-weight: 650;
+    }
+
+    a {
+      color: var(--blue-text);
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 44px 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.25em;
+      margin: 14px 0 22px;
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--ink);
+    }
+
+    blockquote {
+      margin: 24px 0;
+      padding: 2px 0 2px 18px;
+      border-left: 3px solid var(--line-strong);
+      color: var(--soft-ink);
+    }
+
+    blockquote p {
+      color: var(--soft-ink);
+      margin-bottom: 10px;
+    }
+
+    .metrics {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0 6px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 28px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+
+    .metrics li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .metrics strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #111111;
+      font-family: var(--mono);
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0;
+      animation: revealText 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .count-flicker {
+      display: inline-block;
+      min-width: 2.2ch;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .signals {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 20px;
+    }
+
+    .signals li {
+      margin: 10px 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--line);
+    }
+
+    .diagnosis-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 34px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .diagnosis-list li {
+      margin: 0;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      gap: 24px;
+    }
+
+    .diagnosis-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .diagnosis-list strong {
+      color: #111111;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .diagnosis-list span {
+      color: var(--soft-ink);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: var(--yellow-bg);
+      color: var(--yellow-text);
+      font-size: 15px;
+    }
+
+    .note strong {
+      color: var(--yellow-text);
+    }
+
+    .impact {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0;
+    }
+
+    .impact li {
+      margin: 18px 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .impact strong {
+      display: block;
+      color: #111111;
+      font-family: var(--serif);
+      font-size: clamp(42px, 8vw, 76px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: 0;
+      animation: revealText 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+
+    figure {
+      margin: 30px 0 38px;
+    }
+
+    .placeholder {
+      display: block;
+      min-height: 0;
+      aspect-ratio: 4 / 3;
+      padding: 26px;
+      border: 1px solid #8f8f8b;
+      border-radius: 0;
+      background: #a7a7a1;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @keyframes revealText {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      h1,
+      h2,
+      .metrics strong,
+      .impact strong,
+      .article-shell section,
+      figure,
+      blockquote,
+      .signals,
+      .impact {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    .placeholder strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .placeholder span {
+      display: block;
+      max-width: 520px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .state-matrix {
+      list-style: none;
+      margin: 30px 0 10px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .state-matrix li {
+      margin: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #f7f7f5;
+      min-height: 154px;
+    }
+
+    .state-matrix small {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .state-matrix button {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid #111111;
+      border-radius: 0;
+      background: #111111;
+      color: #ffffff;
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .state-matrix p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .state-matrix .secondary button {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .state-matrix .hover button {
+      position: relative;
+      overflow: hidden;
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .state-matrix .hover button::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      transform: translateX(0);
+      animation: hoverSlide 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+    }
+
+    .state-matrix .hover button::after {
+      content: "Buy Now · $80";
+      position: relative;
+      z-index: 1;
+      color: #111111;
+      mix-blend-mode: difference;
+    }
+
+    .state-matrix .selected {
+      background: #eceefd;
+      border-color: #c5c9ef;
+    }
+
+    .state-matrix .selected button {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .state-matrix .disabled button {
+      border-color: #d2d2cf;
+      background: #e4e4e0;
+      color: #92928d;
+      cursor: not-allowed;
+    }
+
+    .state-matrix .loading button {
+      color: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .state-matrix .loading button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 1.5s infinite;
+    }
+
+    .state-matrix .error {
+      background: var(--red-bg);
+      border-color: rgba(159, 47, 45, 0.24);
+    }
+
+    .state-matrix .error button {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .state-matrix .error p {
+      color: var(--red-text);
+    }
+
+    .state-matrix .sticky {
+      background: #ffffff;
+    }
+
+    .state-matrix .sticky button {
+      min-height: 40px;
+      font-size: 12px;
+    }
+
+    @keyframes shimmer {
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes hoverSlide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      border: 1px solid var(--line);
+      background: #f4f4f2;
+    }
+
+    figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    code,
+    kbd {
+      font-family: var(--mono);
+      font-size: 0.88em;
+      background: #f1f1ef;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0.08em 0.35em;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 16px;
+      }
+
+      .case-hero {
+        padding: 22px 18px;
+        min-height: 100svh;
+      }
+
+      .hero-wordmark {
+        width: 220vw;
+      }
+
+      .hero-wordmark.top {
+        top: 0;
+        left: -64vw;
+      }
+
+      .hero-wordmark.bottom {
+        right: -92vw;
+        bottom: 8vh;
+      }
+
+      .reflection-hero {
+        padding: 52px 18px;
+      }
+
+      .case-hero .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .article-shell {
+        margin-top: 100svh;
+        padding: 38px 18px 64px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .state-matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .diagnosis-list li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <section class="case-hero" aria-label="Depology design system case study hero">
+    <img class="hero-wordmark top" src="assets/case_study_images_depology_system/image-8.png" alt="" aria-hidden="true">
+    <img class="hero-wordmark bottom" src="assets/case_study_images_depology_system/image-8.png" alt="" aria-hidden="true">
+    <div class="hero-content">
+      <nav class="hero-nav" aria-label="Case study labels">
+        <span class="hero-pill">Depology</span>
+        <span class="hero-pill">Design system case study</span>
+      </nav>
+
+      <h1>Turning mobile commerce friction into a reusable design system.</h1>
+      <p class="lede">Depology had traffic, product momentum, and a mobile-first audience. The problem was not cosmetic. Customers were losing confidence across navigation, buybox, cart, and checkout. My work turned those repeated moments of hesitation into reusable product patterns.</p>
+      <ul class="metrics" aria-label="Case study outcomes">
+        <li><strong><span class="count-flicker" data-value="2" data-suffix="x">0x</span></strong>Checkout conversion after two rollout cycles</li>
+        <li><strong><span class="count-flicker" data-value="50" data-prefix="-" data-suffix="%">0%</span></strong>Cart abandonment after funnel improvements</li>
+        <li><strong><span class="count-flicker" data-value="30" data-prefix="-" data-suffix="%">0%</span></strong>Design-to-build time through systemised handoff</li>
+        <li><strong><span class="count-flicker" data-value="4" data-suffix=" days">0 days</span></strong>Testing cycle reduced from two weeks</li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="article-shell">
+    <article>
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp1.png" alt="Depology desktop mega menu and category surfaces">
+        <figcaption>Desktop mega-menu patterns for category, concern, ingredient, and product discovery routes. This first image establishes the core system problem: users needed clearer routing logic before they reached the buybox, cart, or checkout.</figcaption>
+      </figure>
+
+      <h2>What Depology is</h2>
+      <p>Depology is a Korean skincare DTC brand selling science-led beauty products to international customers. Growth depends on converting high-intent social and paid traffic into confident product decisions: users need to understand the product, compare offers, trust the claims, select the right option, and complete checkout with minimal friction.</p>
+      <p>My work focused on the product experience layer behind that growth: mobile navigation, product-page buybox behaviour, cart and checkout patterns, and the reusable UI logic needed to support faster campaign and product rollout.</p>
+
+      <ul class="signals">
+        <li><strong>Mobile-led demand.</strong> Around 80% of users arrived on mobile, making the small-screen product journey commercially critical.</li>
+        <li><strong>Product-line complexity.</strong> Multiple skincare products, launch tests, offers, bundles, and incentives required reusable commerce patterns rather than one-off page fixes.</li>
+        <li><strong>ROAS pressure.</strong> Paid media could bring traffic, but ad promise and landing-page experience had to align to protect acquisition efficiency.</li>
+      </ul>
+
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp6.png" alt="Depology product lines and commerce surfaces">
+        <figcaption>Depology's product and campaign surfaces show the commercial complexity behind the system: multiple products, routines, proof points, content modules, and mobile-first purchase paths.</figcaption>
+      </figure>
+
+      <h2>The problem was a confidence leak</h2>
+      <p>Mobile users formed the majority of traffic, yet too many visitors were dropping before purchase. The issue was not simply that one page underperformed. The friction appeared across a connected commerce journey: users entered from paid social, landed on mobile product pages, opened navigation, evaluated offers, interacted with the buybox, added to cart, and moved into checkout.</p>
+      <p>The early signal was commercial. Media buying could bring traffic, but the product experience was not converting strongly enough to justify scaling spend with confidence. To create a more reliable testing loop, I first produced high-converting creative for the media buyer and helped allocate a controlled minimum test budget so the results would be meaningful rather than anecdotal.</p>
+      <p>Once traffic quality was stable enough, I used heatmaps, session recordings, cohort behaviour, and funnel data to diagnose where users hesitated, repeated actions, or abandoned the journey. The evidence pointed to three damaging patterns: navigation created cognitive load, the mobile buybox did not make the offer hierarchy clear enough, and cart/checkout patterns did not give users enough confidence to complete purchase.</p>
+
+      <blockquote>
+        <p><strong>Reading guide:</strong> mobile was the main stage; navigation, buybox, and checkout were the friction points; repeated hesitation became repeated revenue loss.</p>
+      </blockquote>
+
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp3.png" alt="Heatmap diagnosis showing buybox and navigation friction">
+        <figcaption>Heatmap diagnosis made the problem observable: the buybox was buried below decision-heavy content, while navigation attracted attention but did not give users a clear next step.</figcaption>
+      </figure>
+
+      <h2>Diagnosis: from screens to patterns</h2>
+      <p>The diagnosis moved from “which screen is underperforming?” to “which repeated decisions are users struggling to make?” I looked at how users arrived, where they paused, what they tapped, and which parts of the journey created uncertainty.</p>
+      <p>Secondary research and competitor analysis showed what skincare shoppers expected from a mobile hamburger menu: product categories, bestsellers, skin concerns, bundles, offers, and trust-building information. Depology’s menu needed to become less of an inventory list and more of a decision aid.</p>
+      <p>The buybox had a similar problem. It was carrying too much commercial weight without enough system logic. Users were not simply choosing a product. They were comparing variants, bundles, incentives, claims, delivery confidence, and perceived risk. That meant the interface needed clearer hierarchy, more deliberate states, and stronger purchase language.</p>
+      <p>This was the important shift: the solution was not a better-looking product page. The solution was a reusable commerce pattern system for the moments where customers decide whether to continue.</p>
+
+      <ul class="diagnosis-list" aria-label="Text-based diagnosis synthesis">
+        <li>
+          <strong>Observed behaviour</strong>
+          <span>Users tapped navigation early, but the menu behaved like a flat list. It exposed options without helping users decide between product, concern, ingredient, or offer routes.</span>
+        </li>
+        <li>
+          <strong>User expectation</strong>
+          <span>Skincare shoppers usually arrive with one of four intents: find a product type, solve a skin concern, compare active ingredients, or identify bestsellers and offers quickly.</span>
+        </li>
+        <li>
+          <strong>System decision</strong>
+          <span>Navigation became a progressive-disclosure pattern: first-level route, expanded category, product preview, and clear return path instead of a single overloaded menu.</span>
+        </li>
+        <li>
+          <strong>Buybox insight</strong>
+          <span>The buybox had to carry offer logic, incentive hierarchy, subscription choice, price clarity, and CTA confidence together. Splitting those decisions across the page increased hesitation.</span>
+        </li>
+        <li>
+          <strong>Reusable rule</strong>
+          <span>High-intent commerce actions should keep product choice, incentive, selected state, price, and next action visible in the same decision zone, especially on mobile.</span>
+        </li>
+      </ul>
+
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp4.png" alt="Strategic fix for Depology buybox and navigation">
+        <figcaption>The strategic fix connected the two main friction points: elevate the buybox conversion path above the fold and simplify navigation into clearer category decisions.</figcaption>
+      </figure>
+
+      <h2>System redesign</h2>
+      <p>The redesign was developed with product and engineering, not handed over as a static UI refresh. My role was to translate the research into patterns that could be built, tested, reused, and extended.</p>
+
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp-system.png" alt="Depology commerce pattern inventory showing navigation, buybox, sticky CTA, filter, and product-grid states">
+        <figcaption>Commerce pattern inventory showing the reusable navigation, buybox, sticky CTA, filter, and product-grid states created from the research diagnosis. The board turns CRO findings into system-level components and rules that could be reused across future product launches.</figcaption>
+      </figure>
+
+      <h3>Mobile navigation</h3>
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp5.png" alt="Depology mobile hamburger menu and buybox system states">
+        <figcaption>Mobile navigation states showing how first-level menu, expanded categories, concerns, ingredients, product previews, and the buybox worked together as one mobile commerce pattern.</figcaption>
+      </figure>
+      <p>The mobile menu was redesigned around intent. Instead of exposing too many routes at once, it prioritised the paths users were most likely to need: product discovery, skin concerns, bestsellers, bundles, offers, and trust information.</p>
+
+      <h3>Buybox variants</h3>
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp2.png" alt="Depology buybox variants and offer hierarchy">
+        <figcaption>The redesigned buybox made tiered offers, subscription incentives, free-gift logic, delivery cadence, and add-to-cart action visible in one decision module.</figcaption>
+      </figure>
+      <p>The buybox became the core decision component. I redesigned offer hierarchy, variant selection, bundle presentation, incentive visibility, CTA priority, and selected/disabled states so users could understand the recommended path without losing control.</p>
+
+      <h3>Button and state language</h3>
+      <figure>
+        <ul class="state-matrix" aria-label="Purchase button and state matrix">
+          <li>
+            <small>Default / add to cart</small>
+            <button type="button">Add To Cart · $80</button>
+            <p>Primary purchase state used when the offer is valid and the user can move forward.</p>
+          </li>
+          <li class="secondary">
+            <small>One-time purchase</small>
+            <button type="button">Buy Now · $89</button>
+            <p>Secondary route for users who avoid subscription but still need a clear conversion path.</p>
+          </li>
+          <li class="selected">
+            <small>Offer + subscription selected</small>
+            <button type="button">Add To Cart · $80</button>
+            <p>Selected subscription state keeps the discount, incentive, price, and CTA aligned.</p>
+          </li>
+          <li class="disabled">
+            <small>Disabled / incomplete selection</small>
+            <button type="button" disabled>Select An Option</button>
+            <p>Prevents unclear purchase attempts until required product or offer choices are complete.</p>
+          </li>
+          <li class="loading">
+            <small>Loading / processing</small>
+            <button type="button">Adding</button>
+            <p>Confirms that the action is in progress and prevents repeated taps on mobile.</p>
+          </li>
+          <li class="error">
+            <small>Error / recovery</small>
+            <button type="button">Try Again</button>
+            <p>Inline recovery state keeps the user in context instead of forcing them to restart.</p>
+          </li>
+          <li class="sticky">
+            <small>Sticky CTA / with subscription</small>
+            <button type="button">Buy Now · $80</button>
+            <p>Mobile sticky state inherits the selected offer so users do not lose context while scrolling.</p>
+          </li>
+          <li class="hover">
+            <small>Hover / background slide</small>
+            <button type="button" aria-label="Buy Now hover state"></button>
+            <p>Hover state inverts the button through a white background slide, signalling interactivity without changing the purchase language.</p>
+          </li>
+        </ul>
+        <figcaption>Native HTML state matrix for the purchase button language: default, hover, secondary, selected, disabled, loading, error, and sticky states. This makes the system behaviour explicit without requiring another Figma board.</figcaption>
+      </figure>
+      <p>Purchase buttons were treated as system language. Default, selected, disabled, loading, error, add-to-cart, checkout, and upsell states were clarified so the interface could respond with confidence at each decision point.</p>
+
+      <h3>Cart, checkout, and upsell</h3>
+      <figure>
+        <img src="assets/case_study_images_depology_system/dp8.png" alt="Depology cart drawer and checkout form system">
+        <figcaption>Cart drawer and checkout flow showing how the system carried confidence cues beyond product selection: item summary, quantity control, upsell entry, discount field, delivery form, and order total.</figcaption>
+      </figure>
+      <p>Cart and checkout patterns focused on reassurance: summary clarity, incentive reminders, error recovery, next-step visibility, and low-friction upsell. The aim was not to push harder, but to remove avoidable doubt.</p>
+
+      <h3>Handoff and implementation</h3>
+      <figure>
+        <img src="assets/case_study_images_depology_system/breakpoint.png" alt="Depology responsive breakpoint specification for desktop and mobile product page">
+        <figcaption>Responsive breakpoint specification comparing 1440px desktop and 375px mobile product-page behaviour. The handoff focus was not just layout resizing, but preserving purchase hierarchy, buybox visibility, content order, and review/filter usability across surfaces.</figcaption>
+      </figure>
+      <p>I documented responsive behaviour, content order, state rules, implementation priorities, and QA notes for developers. The system needed to survive production, not just look coherent in Figma: the same product story had to work at 1440px and 375px without losing the buybox, offer hierarchy, or checkout confidence cues.</p>
+
+      <h2>What would mature at enterprise scale</h2>
+      <p>For a fast-moving DTC team, this system was effective: it improved conversion, reduced rework, and created reusable decision patterns. At enterprise scale, I would formalise the system further.</p>
+      <p>That would mean a clearer token taxonomy across colour, spacing, type, elevation, and motion; a full component state matrix across hover, focus, active, disabled, loading, error, and success states; accessibility annotations for keyboard navigation, focus order, contrast, screen-reader behaviour, and form error recovery; versioning and contribution workflows; design-code parity through Storybook or equivalent; and usage guidance showing when to use, adapt, or avoid each pattern.</p>
+      <p>This is the step from a strong product pattern system to governed platform infrastructure.</p>
+
+      <h2>How this transfers to WPP scale</h2>
+      <p>Depology was smaller than WPP, but the architecture problem is the same: repeated user needs have to become shared product language. At WPP scale, that means turning research signals, product requirements, accessibility rules, AI interactions, and brand expression into patterns that many teams can reuse without fragmenting the experience.</p>
+      <p>My TUTU VIEW work extends this system logic across multiple live brands with distinct identities, shared components, design tokens, and handoff SOPs. That is the useful transfer: multi-brand governance, consistency, and operational efficiency before the organisation becomes too large to correct pattern drift manually.</p>
+      <p>I have not yet shipped design systems for interactive TV or VoD surfaces. The relevant foundation I bring is surface-agnostic system architecture: tokens, component variants, state logic, documentation, AI-assisted prototyping, and research validation. The same method can be adapted across web, app, chat-like interfaces, and other platform surfaces once the interaction model and constraints are understood.</p>
+
+      <h2>Impact</h2>
+      <ul class="impact" aria-label="Impact metrics">
+        <li><strong><span class="count-flicker" data-value="2" data-suffix="x">0x</span> checkout conversion</strong> after the research-led funnel redesign and rollout.</li>
+        <li><strong><span class="count-flicker" data-value="50" data-suffix="%">0%</span> reduction</strong> in cart abandonment through clearer purchase and checkout patterns.</li>
+        <li><strong><span class="count-flicker" data-value="30" data-suffix="%">0%</span> faster</strong> design-to-build workflow through reusable components and handoff SOPs.</li>
+        <li><strong><span class="count-flicker" data-value="4" data-suffix="-day">0-day</span> tests</strong> after reducing the testing cycle from two weeks.</li>
+      </ul>
+
+      <p>The impact was both commercial and operational. The redesign improved conversion, but it also helped the team move faster because navigation, buybox, cart, and checkout decisions no longer had to be solved from scratch for every launch.</p>
+
+    </article>
+  </main>
+
+  <section class="reflection-hero" aria-label="Reflection">
+    <a class="reflection-close" href="index.html#projects" aria-label="Close case study and return to projects">
+      <span aria-hidden="true">×</span>
+    </a>
+    <img class="hero-wordmark top" src="assets/case_study_images_depology_system/image-8.png" alt="" aria-hidden="true">
+    <img class="hero-wordmark bottom" src="assets/case_study_images_depology_system/image-8.png" alt="" aria-hidden="true">
+    <div class="reflection-content">
+      <h2>Reflection</h2>
+      <p class="reflection-subtitle">Design systems start where users repeatedly pause, doubt, or abandon.</p>
+      <p>Heatmaps, recordings, cohort data, and A/B tests showed that users were losing confidence across a chain of small decisions: where to navigate, which offer to trust, what the CTA meant, whether the cart was correct, and whether checkout felt safe.</p>
+      <p>By turning those repeated moments into reusable patterns, the system improved both user confidence and delivery speed. Product, design, and development could move from debating individual screens to using shared decisions.</p>
+      <p>That is the lesson I would bring into a larger platform environment such as WPP Open: a design system is not only visual consistency. It is shared product language, validated behaviour, accessible states, and operational efficiency at scale.</p>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".article-shell",
+          start: "top bottom",
+          end: "top 18%",
+          scrub: true
+        }
+      })
+        .to(".hero-content", {
+          opacity: 0,
+          scale: 0.88,
+          y: -120,
+          filter: "blur(4px)",
+          ease: "none"
+        }, 0)
+        .to(".hero-wordmark.top", {
+          opacity: 0.08,
+          scale: 0.84,
+          y: -120,
+          filter: "blur(6px)",
+          ease: "none"
+        }, 0)
+        .to(".hero-wordmark.bottom", {
+          opacity: 0.06,
+          scale: 0.84,
+          y: 120,
+          filter: "blur(6px)",
+          ease: "none"
+        }, 0);
+
+      gsap.from(".reflection-content", {
+        opacity: 0,
+        y: 72,
+        scale: 0.96,
+        filter: "blur(8px)",
+        ease: "power3.out",
+        duration: 1.1,
+        scrollTrigger: {
+          trigger: ".reflection-hero",
+          start: "top 62%",
+          once: true
+        }
+      });
+    }
+
+    const revealItems = document.querySelectorAll(".article-shell section, .article-shell figure, .article-shell blockquote, .article-shell .signals, .article-shell .impact");
+    const countItems = document.querySelectorAll(".count-flicker");
+
+    const formatCount = (item, value) => {
+      const prefix = item.dataset.prefix || "";
+      const suffix = item.dataset.suffix || "";
+      item.textContent = `${prefix}${value}${suffix}`;
+    };
+
+    const animateCount = (item) => {
+      if (item.dataset.counted === "true") {
+        return;
+      }
+
+      item.dataset.counted = "true";
+
+      const target = Number(item.dataset.value || 0);
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (prefersReducedMotion) {
+        formatCount(item, target);
+        return;
+      }
+
+      const start = performance.now();
+      const duration = 920;
+      const settlePoint = 0.72;
+
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const jitter = progress < settlePoint ? Math.random() * target * 0.26 : 0;
+        const value = Math.min(target, Math.round((target * eased) + jitter));
+
+        formatCount(item, value);
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          formatCount(item, target);
+        }
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    revealItems.forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min((index % 5) * 80, 320)}ms`);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.08
+    });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.38
+    });
+
+    countItems.forEach((item) => countObserver.observe(item));
+  </script>
+</body>
+</html>

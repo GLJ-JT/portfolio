@@ -297,6 +297,114 @@ h1, h2, h3, h4 {
     gap: 2rem;
 }
 
+.featured-project-card {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    background: var(--surface-color);
+    border: 1px solid rgba(55, 53, 47, 0.14);
+    border-radius: var(--radius-md);
+    box-shadow: 0 18px 42px -28px rgba(55, 53, 47, 0.22);
+}
+
+.featured-project-media {
+    display: block;
+    min-height: 320px;
+    overflow: hidden;
+    background: #0A1566;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.featured-project-image {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    background-size: cover;
+    background-position: center 28%;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-project-card:hover .featured-project-image {
+    transform: scale(1.035);
+}
+
+.featured-project-content {
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.featured-kicker {
+    margin: 1rem 0 0.5rem;
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.featured-project-title {
+    max-width: 720px;
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    line-height: 1;
+}
+
+.featured-project-subtitle {
+    max-width: 700px;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.featured-proof-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.75rem 0 1.4rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.featured-proof-row span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.featured-proof-row strong {
+    display: block;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.featured-project-link {
+    margin-top: 0;
+    opacity: 1;
+}
+
+@media (min-width: 860px) {
+    .featured-project-card {
+        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+    }
+
+    .featured-project-media {
+        min-height: 520px;
+        border-right: 1px solid var(--border-color);
+        border-bottom: 0;
+    }
+
+    .featured-project-image {
+        min-height: 520px;
+    }
+
+    .featured-proof-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 .project-card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);

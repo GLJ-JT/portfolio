@@ -97,8 +97,47 @@ function renderExperience(experience) {
 function renderProjectsList(projects) {
     const grid = document.getElementById('projects-grid');
     let html = '';
-    
-    projects.forEach(project => {
+
+    const featuredProject = projects.find(project => project.id === 'depology');
+    const remainingProjects = featuredProject
+        ? projects.filter(project => project.id !== 'depology')
+        : projects;
+
+    if (featuredProject) {
+        const featuredTags = ['Design Systems', 'Commerce UX', 'Research-led CRO', 'Figma']
+            .map(tag => `<span class="badge">${tag}</span>`)
+            .join('');
+
+        html += `
+            <article class="featured-project-card fade-in">
+                <a href="${featuredProject.links.case_study}" class="featured-project-media" aria-label="Read ${featuredProject.title} case study">
+                    <div class="featured-project-image" style="background-image: url('assets/case_study_images_depology_system/dp-system.png');"></div>
+                </a>
+                <div class="featured-project-content">
+                    <div class="project-meta">
+                        ${featuredTags}
+                    </div>
+                    <p class="featured-kicker">Featured design system case study</p>
+                    <h3 class="featured-project-title">${featuredProject.title}</h3>
+                    <p class="featured-project-subtitle">${featuredProject.subtitle}</p>
+                    <div class="featured-proof-row" aria-label="Depology impact metrics">
+                        <span><strong>2x</strong> checkout CVR</span>
+                        <span><strong>-50%</strong> cart abandonment</span>
+                        <span><strong>-30%</strong> design-build time</span>
+                    </div>
+                    <a href="${featuredProject.links.case_study}" class="project-link featured-project-link">
+                        Read design system case study
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        `;
+    }
+
+    remainingProjects.forEach(project => {
         // Build tags from properties
         const tags = [project.year, project.category].map(attr => `<span class="badge">${attr}</span>`).join('');
         
