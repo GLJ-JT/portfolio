@@ -2,7 +2,7 @@
   "personal": {
     "name": "Joe Tao",
     "location": "London, UK",
-    "summary": "Product Designer trained at UCL (MSc Human-Computer Interaction, Distinction), with 3+ years shipping research-led product experiences and scalable design systems across UK and China. Experienced in Figma component libraries, design tokens, reusable interaction patterns, documentation, usability testing, WCAG-aware design, and AI-assisted prototyping. Full lifecycle from discovery to delivery, with design systems adopted across cross-functional teams, 2x checkout conversion, 40% faster feature design cycles, and 30% reduced design-to-build time. Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">ACM CHIWORK '25</a>; findings <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">pitched to Google</a>.",
+    "summary": "Product Designer trained at UCL (MSc Human-Computer Interaction, Distinction), with 3+ years shipping research-led product experiences and design systems across UK and China. Experienced in Figma libraries, design tokens, reusable patterns, documentation, usability testing, WCAG-aware design, and AI-assisted prototyping. Full lifecycle from discovery to delivery, with design systems adopted across cross-functional teams, 2x checkout conversion, 40% faster feature design cycles, and 30% reduced design-to-build time. Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">ACM CHIWORK '25</a>; findings <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">pitched to Google</a>.",
     "title": "Product Designer | Design Systems | AI Prototyping | WCAG",
     "contact": {
       "email": "joe.tianchen.tao@gmail.com",
@@ -24,13 +24,13 @@
       "period": "Jul 2025 - Present",
       "description": "Sino-British business consultancy with two live consumer ventures across UK and China.",
       "bullets": [
-        "Built a shared multi-brand design system in Figma, Framer, and Webflow with 30+ reusable components, variants, and design tokens, cutting per-feature production time by 40% across 3 brands simultaneously.",
-        "Built AI-assisted content and production workflows (Cursor, v0, Midjourney), reducing recurring design and brochure labour by 70% through documented design operations and reusable production standards.",
-        "Designed the social-to-conversion funnel for Nihao Serica; contributed to 1,500 followers and 220,000 likes in the first month through UX-aligned creative, landing-page patterns, and content strategy.",
-        "Owned end-to-end design and launch of 3 cross-border digital platforms, delivering 3 live product systems and websites without external agency support across travel and education verticals.",
-        "Ran A/B tests across 14 Meta and TikTok ad and landing-page variants; improved blended ROAS by approximately 22% and reduced cost per acquisition by 18% over 3 months.",
-        "Conducted customer research and behavioural analysis to define IA, reusable UX patterns, and product structures used across both venture platforms, presenting findings directly to founders to shape roadmap.",
-        "Directed digital touchpoints and live technical production for high-profile UK-China private receptions, delivering event UX, brand presence, and production-ready design assets without incident."
+        "Owned end-to-end design and launch of 3 cross-border digital platforms; led design system and brand guideline ownership across travel and education verticals, including a live mobile visa-checker app in production.",
+        "Built a shared multi-brand design system in Figma, Framer, Webflow, and Vercel with 30+ reusable components, variants, and design tokens across 3 brands; cut per-feature production time by 40%.",
+        "Translated user needs into UX flows, prototypes, components, and team-wide SOPs using Claude Code, Codex, and Figma MCP; reduced design labour by 70% with collaboration-ready files.",
+        "Conducted customer behavioural analysis with product and engineering stakeholders to define IA, reusable UX patterns, and product structures; secured founder buy-in to inform system decisions.",
+        "Implemented WCAG standards across UX-optimised landing page patterns; aligned North Star UX across media funnels, contributing to 1,500 followers and 220,000 likes in month one.",
+        "Pioneered a UX simulation framework using 400+ AI-generated user personas; evaluated outputs against usability heuristics to surface friction at scale across product and system decisions.",
+        "Directed digital touchpoints and live technical production for high-profile Sino-British private receptions; delivered event UX, brand presence, and production-ready visual assets with full integrity."
       ]
     },
     {
@@ -58,10 +58,8 @@
       "period": "Aug 2024 - Dec 2024",
       "description": "CITS-backed travel-tech startup; CITS is China's largest state-owned travel enterprise.",
       "bullets": [
-        "Led research through interviews, focus groups, and field studies, created a 50-page IA wireframe informing global expansion strategy.",
-        "Owned full web UI, reusable layouts, and Shopify/WordPress handoff from zero.",
-        "Built a reusable product-uploading system reducing launch cycle by 50% and content labour by 50%.",
-        "Grew the social account from 0 to 20,000+ followers in 3 months as on-camera representative."
+        "Conducted mixed-methods research via interviews, focus groups, and field studies; synthesised findings into a 50-page IA wireframe defining navigation UX, information hierarchy, and reusable patterns.",
+        "Architected reusable UI layouts and component-ready handoff across Shopify and WordPress from zero; built a product-uploading system that reduced launch cycle by 50%."
       ]
     },
     {
@@ -73,10 +71,8 @@
       "period": "Oct 2022 - Sep 2023",
       "description": "Independent industrial and brand design studio; co-venture of manila.design (UK) and Cover (China).",
       "bullets": [
-        "Led UX research for a B2C e-commerce platform using interviews and Google Analytics.",
-        "Built a design system that standardised UI patterns across the product and reduced developer build time.",
-        "Analysed behaviour with Google Analytics and SEMrush to identify conversion blockers, then redesigned key flows.",
-        "Delivered pixel-perfect handoff ensuring reusable design intent translated without quality loss."
+        "Built a design system standardising UI patterns across 15 product surfaces; reduced developer build time by 30% through component documentation, spacing tokens, and structured handoff files.",
+        "Diagnosed 7 conversion blockers via Google Analytics and SEMrush behavioural analysis; redesigned checkout and product detail flows with pixel-perfect, developer-ready handoff."
       ]
     },
     {
@@ -88,9 +84,8 @@
       "period": "Apr 2021 - Sep 2021",
       "description": "Sequoia-backed Shenzhen big-data firm (200–500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
       "bullets": [
-        "Stepped into the sole UI role mid-project; learned JavaScript in 3 days and shipped the full enterprise website from concept to live with minimal engineering revision, operating inside multi-layer approval cycles across government and enterprise clients.",
-        "Applied Python data visualisation to company analytics for executive presentations.",
-        "Built direct trust with C-suite leadership (former Alibaba and Huawei execs) through reliable delivery across multi-layer approval cycles."
+        "Assumed sole UI ownership mid-project; self-taught Figma, CSS, HTML, and JavaScript in 3 days under live project pressure; shipped a 15-page enterprise website with minimal engineering revision.",
+        "Designed and delivered 12 Python-generated data visualisation components for C-suite presentations, applying consistent visual language and data hierarchy for executive decisions."
       ]
     }
   ],
@@ -116,8 +111,8 @@
   ],
   "skills": {
     "Design Systems": "Figma Libraries / Variables and Tokens / Component Variants / Pattern Libraries / Usage Documentation / Handoff SOPs / Design QA",
-    "Accessibility and UX": "WCAG 2.2 / Inclusive Design / Interaction Design / Information Architecture / SaaS UX / Mobile UX / Service Design",
-    "Research and Validation": "User Interviews / Usability Testing Tools / Heuristic Evaluation / Journey Mapping / Heatmapping / A/B Testing / GA4",
-    "Tools and AI Build": "AI-Assisted Prototyping (Claude Code, Codex, Antigravity) / UX Simulation / Figma / Webflow / HTML / CSS / JavaScript / Dev Handoff / EN-ZH Bilingual / Git / CI/CD basics"
+    "Accessibility and UX": "WCAG 2.2 / Inclusive Design / Interaction Design / Information Architecture / SaaS UX / Mobile UX / Heuristics / Journey Mapping / Service Design",
+    "Research and Validation": "User Interviews / Usability Testing Tools / Heuristic Evaluation / Journey Mapping / Heatmapping / A/B Testing / GA4 / Hotjar / Clarity",
+    "Tools and AI Build": "AI-Assisted Prototyping (Claude Code, Codex, Figma MCP) / UX Simulation / Webflow / HTML / CSS / JavaScript / Dev Handoff / EN-ZH Bilingual / Git / CI/CD basics / Miro"
   }
 }
