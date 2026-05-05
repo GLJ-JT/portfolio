@@ -332,18 +332,21 @@ h1, h2, h3, h4 {
 .featured-iframe-preview {
     position: relative;
     min-height: 520px;
-    background: #F7F6F2;
+    background:
+        radial-gradient(circle at 20% 8%, rgba(128, 70, 241, 0.28), transparent 32%),
+        radial-gradient(circle at 88% 82%, rgba(8, 125, 115, 0.18), transparent 34%),
+        linear-gradient(135deg, #f8f5ff 0%, #efe8ff 45%, #eef6f7 100%);
 }
 
 .featured-iframe-preview iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 430px;
-    height: 790px;
+    width: 1180px;
+    height: 940px;
     border: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.78);
+    transform: translate(-66%, -50%) scale(0.57);
     transform-origin: center;
 }
 

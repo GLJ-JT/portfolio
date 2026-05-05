@@ -117,7 +117,7 @@ function renderProjectsList(projects) {
             <article class="featured-project-card fade-in">
                 <a href="${featuredHref}" ${featuredExternalAttr} class="featured-project-media ${isPropTechFeature ? 'featured-iframe-preview' : ''}" aria-label="Read ${featuredProject.title} case study">
                     ${isPropTechFeature
-                        ? `<iframe src="${featuredProject.preview_iframe}" title="${featuredProject.title} live iPhone demo preview" loading="lazy" tabindex="-1"></iframe><span class="iframe-preview-label">Live iPhone demo</span>`
+                        ? `<iframe src="${featuredProject.preview_iframe}" title="${featuredProject.title} live iPhone demo preview" loading="lazy" tabindex="-1"></iframe>`
                         : `<div class="featured-project-image" style="background-image: url('assets/case_study_images_depology_system/dp-system.png');"></div>`
                     }
                 </a>
