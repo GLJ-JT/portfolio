@@ -98,35 +98,48 @@ function renderProjectsList(projects) {
     const grid = document.getElementById('projects-grid');
     let html = '';
 
-    const featuredProject = projects.find(project => project.id === 'depology');
+    const featuredProject = projects.find(project => project.id === 'property-nlp') || projects.find(project => project.id === 'depology');
     const remainingProjects = featuredProject
-        ? projects.filter(project => project.id !== 'depology')
+        ? projects.filter(project => project.id !== featuredProject.id)
         : projects;
 
     if (featuredProject) {
-        const featuredTags = ['Design Systems', 'Commerce UX', 'Research-led CRO', 'Figma']
+        const isPropTechFeature = featuredProject.id === 'property-nlp';
+        const featuredTags = (isPropTechFeature
+            ? ['PropTech UX', 'Python API', 'JSON Data', 'NLP Parser']
+            : ['Design Systems', 'Commerce UX', 'Research-led CRO', 'Figma'])
             .map(tag => `<span class="badge">${tag}</span>`)
             .join('');
+        const featuredHref = featuredProject.links.case_study || featuredProject.links.live;
+        const featuredExternalAttr = featuredHref.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : '';
 
         html += `
             <article class="featured-project-card fade-in">
-                <a href="${featuredProject.links.case_study}" class="featured-project-media" aria-label="Read ${featuredProject.title} case study">
-                    <div class="featured-project-image" style="background-image: url('assets/case_study_images_depology_system/dp-system.png');"></div>
+                <a href="${featuredHref}" ${featuredExternalAttr} class="featured-project-media ${isPropTechFeature ? 'featured-iframe-preview' : ''}" aria-label="Read ${featuredProject.title} case study">
+                    ${isPropTechFeature
+                        ? `<iframe src="${featuredProject.preview_iframe}" title="${featuredProject.title} live iPhone demo preview" loading="lazy" tabindex="-1"></iframe><span class="iframe-preview-label">Live iPhone demo</span>`
+                        : `<div class="featured-project-image" style="background-image: url('assets/case_study_images_depology_system/dp-system.png');"></div>`
+                    }
                 </a>
                 <div class="featured-project-content">
                     <div class="project-meta">
                         ${featuredTags}
                     </div>
-                    <p class="featured-kicker">Featured design system case study</p>
+                    <p class="featured-kicker">${isPropTechFeature ? 'Featured UX engineering case study' : 'Featured design system case study'}</p>
                     <h3 class="featured-project-title">${featuredProject.title}</h3>
                     <p class="featured-project-subtitle">${featuredProject.subtitle}</p>
-                    <div class="featured-proof-row" aria-label="Depology impact metrics">
-                        <span><strong>2x</strong> checkout CVR</span>
-                        <span><strong>-50%</strong> cart abandonment</span>
-                        <span><strong>-30%</strong> design-build time</span>
+                    <div class="featured-proof-row" aria-label="${featuredProject.title} impact metrics">
+                        ${isPropTechFeature
+                            ? `<span><strong>41%</strong> faster task completion</span>
+                               <span><strong>10</strong> moderated users</span>
+                               <span><strong>API</strong> Python + JSON backend</span>`
+                            : `<span><strong>2x</strong> checkout CVR</span>
+                               <span><strong>-50%</strong> cart abandonment</span>
+                               <span><strong>-30%</strong> design-build time</span>`
+                        }
                     </div>
-                    <a href="${featuredProject.links.case_study}" class="project-link featured-project-link">
-                        Read design system case study
+                    <a href="${featuredHref}" ${featuredExternalAttr} class="project-link featured-project-link">
+                        ${isPropTechFeature ? 'Open property NLP case study' : 'Read design system case study'}
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
