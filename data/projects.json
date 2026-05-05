@@ -120,7 +120,7 @@
       "live": "https://glj-jt.github.io/property-nlp-search-demo/"
     },
     "hero_image": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
-    "preview_iframe": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
+    "preview_iframe": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html?preview=portfolio",
     "problem": "Property seekers often describe intent in natural language, but standard filters split that intent across separate controls and leave users unsure whether the system understood their requirements.",
     "solution": "A mobile-first NLP search flow that turns renter language into editable chips, runs against a Python-backed ranking layer and structured JSON property data, then explains matches in the interface.",
     "content": []
