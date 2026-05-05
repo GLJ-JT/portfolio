@@ -106,7 +106,7 @@ function renderProjectsList(projects) {
     if (featuredProject) {
         const isPropTechFeature = featuredProject.id === 'property-nlp';
         const featuredTags = (isPropTechFeature
-            ? ['PropTech UX', 'Python API', 'JSON Data', 'NLP Parser']
+            ? ['Technical UX', 'Search systems', 'Python backend', 'Structured data']
             : ['Design Systems', 'Commerce UX', 'Research-led CRO', 'Figma'])
             .map(tag => `<span class="badge">${tag}</span>`)
             .join('');
@@ -125,21 +125,21 @@ function renderProjectsList(projects) {
                     <div class="project-meta">
                         ${featuredTags}
                     </div>
-                    <p class="featured-kicker">${isPropTechFeature ? 'Featured UX engineering case study' : 'Featured design system case study'}</p>
-                    <h3 class="featured-project-title">${featuredProject.title}</h3>
-                    <p class="featured-project-subtitle">${featuredProject.subtitle}</p>
+                    <p class="featured-kicker">${isPropTechFeature ? 'Technical UX case study' : 'Featured design system case study'}</p>
+                    <h3 class="featured-project-title">${isPropTechFeature ? 'Explainable Property Search' : featuredProject.title}</h3>
+                    <p class="featured-project-subtitle">${isPropTechFeature ? 'A senior UX engineering study translating ambiguous renter language into editable intent, ranked recommendations, and inspectable Python + JSON search logic.' : featuredProject.subtitle}</p>
                     <div class="featured-proof-row" aria-label="${featuredProject.title} impact metrics">
                         ${isPropTechFeature
                             ? `<span><strong>41%</strong> faster task completion</span>
-                               <span><strong>10</strong> moderated users</span>
-                               <span><strong>API</strong> Python + JSON backend</span>`
+                               <span><strong>10</strong> moderated usability sessions</span>
+                               <span><strong>Live</strong> API-backed prototype</span>`
                             : `<span><strong>2x</strong> checkout CVR</span>
                                <span><strong>-50%</strong> cart abandonment</span>
                                <span><strong>-30%</strong> design-build time</span>`
                         }
                     </div>
                     <a href="${featuredHref}" ${featuredExternalAttr} class="project-link featured-project-link">
-                        ${isPropTechFeature ? 'Open property NLP case study' : 'Read design system case study'}
+                        ${isPropTechFeature ? 'Read technical UX case study' : 'Read design system case study'}
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>

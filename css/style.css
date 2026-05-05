@@ -331,9 +331,8 @@ h1, h2, h3, h4 {
 
 .featured-iframe-preview {
     position: relative;
-    background:
-        radial-gradient(circle at 50% 12%, rgba(217, 115, 13, 0.18), transparent 30%),
-        #151316;
+    min-height: 520px;
+    background: #F7F6F2;
 }
 
 .featured-iframe-preview iframe {
@@ -344,7 +343,7 @@ h1, h2, h3, h4 {
     height: 790px;
     border: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.64);
+    transform: translate(-50%, -50%) scale(0.78);
     transform-origin: center;
 }
 

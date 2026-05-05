@@ -103,18 +103,18 @@
   },
   {
     "id": "property-nlp",
-    "title": "Property NLP Search Demo",
-    "subtitle": "Natural-language property search prototype with editable intent chips, ranked listings, Python API logic, and JSON-backed demo data.",
+    "title": "Explainable Property Search",
+    "subtitle": "A technical UX case study translating ambiguous renter language into editable intent, ranked recommendations, and inspectable Python + JSON search logic.",
     "year": "2026",
     "timeframe": "2 weeks",
     "tools": [
-      "UX Research",
-      "HTML/CSS/JS",
-      "Python API",
-      "JSON Data",
-      "NLP Parser"
+      "Technical UX",
+      "Search Systems",
+      "Python Backend",
+      "Structured JSON",
+      "Moderated Testing"
     ],
-    "category": "PropTech UX Engineering",
+    "category": "Technical UX / Search Systems",
     "links": {
       "case_study": "https://glj-jt.github.io/property-nlp-search-demo/",
       "live": "https://glj-jt.github.io/property-nlp-search-demo/"
