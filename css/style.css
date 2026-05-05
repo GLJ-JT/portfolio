@@ -439,6 +439,7 @@ h1, h2, h3, h4 {
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
+    display: block;
 }
 
 .project-image-bg {
@@ -457,6 +458,42 @@ h1, h2, h3, h4 {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     will-change: transform;
+}
+
+.project-iframe-preview {
+    height: 300px;
+    background:
+        radial-gradient(circle at 50% 10%, rgba(217, 115, 13, 0.14), transparent 28%),
+        #151316;
+    cursor: pointer;
+}
+
+.project-iframe-preview iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 390px;
+    height: 720px;
+    border: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.43);
+    transform-origin: center;
+    filter: saturate(1.02);
+}
+
+.iframe-preview-label {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    z-index: 2;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
 .project-content {

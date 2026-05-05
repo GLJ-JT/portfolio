@@ -140,6 +140,9 @@ function renderProjectsList(projects) {
     remainingProjects.forEach(project => {
         // Build tags from properties
         const tags = [project.year, project.category].map(attr => `<span class="badge">${attr}</span>`).join('');
+        const projectHref = project.links && (project.links.case_study || project.links.live) ? project.links.case_study || project.links.live : '#';
+        const externalLinkAttr = projectHref.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : '';
+        const hasIframePreview = Boolean(project.preview_iframe);
         
         let liveLinkHtml = '';
         if (project.links && project.links.live) {
@@ -150,7 +153,7 @@ function renderProjectsList(projects) {
         let linkActionHtml = '';
         if (project.links && project.links.case_study) {
             linkActionHtml = `
-                <a href="${project.links.case_study}" class="project-link">
+                <a href="${project.links.case_study}" ${project.links.case_study.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="project-link">
                     View Case Study
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -171,10 +174,13 @@ function renderProjectsList(projects) {
         const inactiveClass = isInactive ? 'inactive-card' : '';
 
         html += `
-            <div class="project-card fade-in ${inactiveClass}">
-                <div class="project-image-placeholder">
-                    <div class="project-image-bg" style="background-image: url('${project.hero_image}'); background-size: cover; background-position: center; color: transparent;"></div>
-                </div>
+            <div class="project-card fade-in ${inactiveClass}" ${hasIframePreview ? `onclick="if (!event.target.closest('a')) window.open('${projectHref}', '_blank', 'noopener,noreferrer');" role="link" tabindex="0" onkeydown="if (event.key === 'Enter') window.open('${projectHref}', '_blank', 'noopener,noreferrer');"` : ''}>
+                <a class="project-image-placeholder ${hasIframePreview ? 'project-iframe-preview' : ''}" href="${projectHref}" ${externalLinkAttr} aria-label="View ${project.title}">
+                    ${hasIframePreview
+                        ? `<iframe src="${project.preview_iframe}" title="${project.title} live iPhone demo preview" loading="lazy" tabindex="-1"></iframe><span class="iframe-preview-label">Live iPhone demo</span>`
+                        : `<div class="project-image-bg" style="background-image: url('${project.hero_image}'); background-size: cover; background-position: center; color: transparent;"></div>`
+                    }
+                </a>
                 <div class="project-content" style="display: flex; flex-direction: column; flex: 1;">
                     <div class="project-meta">
                         ${tags}

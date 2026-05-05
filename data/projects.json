@@ -102,6 +102,30 @@
     ]
   },
   {
+    "id": "property-nlp",
+    "title": "Property NLP Search Demo",
+    "subtitle": "Natural-language property search prototype with editable intent chips, ranked listings, Python API logic, and JSON-backed demo data.",
+    "year": "2026",
+    "timeframe": "2 weeks",
+    "tools": [
+      "UX Research",
+      "HTML/CSS/JS",
+      "Python API",
+      "JSON Data",
+      "NLP Parser"
+    ],
+    "category": "PropTech UX Engineering",
+    "links": {
+      "case_study": "https://glj-jt.github.io/property-nlp-search-demo/",
+      "live": "https://glj-jt.github.io/property-nlp-search-demo/"
+    },
+    "hero_image": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
+    "preview_iframe": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
+    "problem": "Property seekers often describe intent in natural language, but standard filters split that intent across separate controls and leave users unsure whether the system understood their requirements.",
+    "solution": "A mobile-first NLP search flow that turns renter language into editable chips, runs against a Python-backed ranking layer and structured JSON property data, then explains matches in the interface.",
+    "content": []
+  },
+  {
     "id": "xstar",
     "title": "X Star Production",
     "subtitle": "A story-led theatrical platform built natively in Framer. Delivered from concept to live production in just two weeks.",
