@@ -162,14 +162,14 @@
       "live": "https://worldschooling.co.uk"
     },
     "hero_image": "assets/case_study_images_worldschooling/hero_header_redesign.png",
-    "problem": "I did not see Worldschooling as a 'make the website nicer' problem. I saw a release-scope problem. The team wanted a full education-travel platform with campus pages, subject pages, programme pages, search, blog, booking, and payment, but that level of build would have slowed down the launch at the exact moment the company needed something usable for fundraising, sales conversations, and early customer enquiries. I treated the first release as a decision problem rather than a page-count problem: before a parent pays a deposit, they need to compare programme types, understand whether the trip is suitable, check the level of commitment, and know what information the team needs from them.",
-    "solution": "I simplified the first-release journey around the decisions that had to happen before commitment: programme discovery, tier comparison, programme detail, eligibility form, and a universal deposit link. I accepted that this was less automated than a custom booking portal, because it kept the important customer steps visible and removed months of engineering scope. I used the homepage category selector to make mid-tier programmes easier to discover before users were deep in the site, and recommendation cards on entry-level pages to show the next tier where comparison already made sense.",
+    "problem": "Worldschooling was not a 'make the website nicer' problem. It was a release-scope problem. The team wanted a full education-travel platform with campus pages, subject pages, programme pages, search, blog, booking, and payment, but that build would have slowed the launch at the exact moment the company needed something usable for fundraising, sales conversations, and early customer enquiries. The first release had to work as a decision path: before a parent pays a deposit, they need to compare programme types, understand whether the trip is suitable, check the commitment level, and know what information the team needs from them.",
+    "solution": "The first-release journey was simplified around the decisions that had to happen before commitment: programme discovery, tier comparison, programme detail, eligibility form, and a universal deposit link. That was less automated than a custom booking portal, but it kept the important customer steps visible and removed months of engineering scope. The homepage category selector made mid-tier programmes easier to discover, while recommendation cards on entry-level pages showed the next tier where comparison already made sense.",
     "body": [
-      "I started by separating the website brief from the real product constraint. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders.",
-      "I looked at the journey from the parent side first. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That changed the structure of the first release. The booking portal became less important than comparison, eligibility, and deposit clarity.",
-      "I chose to replace the first-release booking engine with a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers.",
-      "I used the homepage to expose programme categories rather than burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense.",
-      "I would claim launch readiness, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. If I continued the work, I would inspect the live funnel: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards actually lead to deposit clicks or just extra browsing."
+      "The website brief needed to be separated from the real product constraint. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders.",
+      "Looking at the journey from the parent side changed the brief. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That made the booking portal less important than comparison, eligibility, and deposit clarity.",
+      "The first-release booking engine became a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers.",
+      "The homepage exposed programme categories instead of burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense.",
+      "Launch readiness is the safest claim here, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. If the work continued, the live funnel would be the next thing to inspect: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards lead to deposit clicks or just extra browsing."
     ],
     "images": [
       {
@@ -200,7 +200,7 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "I started by separating the website brief from the real product constraint. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders."
+        "value": "The website brief needed to be separated from the real product constraint. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders."
       },
       {
         "type": "image",
@@ -209,11 +209,11 @@
       },
       {
         "type": "paragraph",
-        "value": "I looked at the journey from the parent side first. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That changed the structure of the first release. The booking portal became less important than comparison, eligibility, and deposit clarity."
+        "value": "Looking at the journey from the parent side changed the brief. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That made the booking portal less important than comparison, eligibility, and deposit clarity."
       },
       {
         "type": "paragraph",
-        "value": "I chose to replace the first-release booking engine with a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers."
+        "value": "The first-release booking engine became a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers."
       },
       {
         "type": "image",
@@ -222,7 +222,7 @@
       },
       {
         "type": "paragraph",
-        "value": "I used the homepage to expose programme categories rather than burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense."
+        "value": "The homepage exposed programme categories instead of burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense."
       },
       {
         "type": "image",
@@ -231,7 +231,7 @@
       },
       {
         "type": "paragraph",
-        "value": "I would claim launch readiness, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. If I continued the work, I would inspect the live funnel: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards actually lead to deposit clicks or just extra browsing."
+        "value": "Launch readiness is the safest claim here, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. If the work continued, the live funnel would be the next thing to inspect: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards lead to deposit clicks or just extra browsing."
       },
       {
         "type": "image",
@@ -352,15 +352,15 @@
       "live": "https://traveltoqin.com"
     },
     "hero_image": "assets/case_study_images_traveltoqin/hero_section_responsive.png",
-    "problem": "I did not treat Travel to Qin as simply a more beautiful travel-site brief. The old Shopify page could take a transaction, but it did not answer the questions a foreign visitor needs answered before trusting a China itinerary: who runs the trip, what the experience actually includes, how support works, why the agency is credible, and what happens after enquiry. The September 2024 visa policy change made the opportunity clearer, but it also raised the standard for trust.",
-    "solution": "I rebuilt the experience around proof before purchase. I used a video-led opening for immediate context, then moved into destination sections, itinerary details, service explanations, and an enquiry path. I chose a CMS because the team needed to update trips, stories, and campaign content without redesigning the site each time. I used Chinese calligraphy and landscape references in the visual direction, but I did not want decoration to lead the work; the brand system had to carry cultural atmosphere and service clarity at the same time.",
+    "problem": "Travel to Qin was not simply a more beautiful travel-site brief. The old Shopify page could take a transaction, but it did not answer the questions a foreign visitor needs before trusting a China itinerary: who runs the trip, what the experience includes, how support works, why the agency is credible, and what happens after enquiry. The September 2024 visa policy change made the opportunity clearer, but it also raised the standard for trust.",
+    "solution": "The experience was rebuilt around proof before purchase. A video-led opening created immediate context, then the page moved into destination sections, itinerary details, service explanations, and an enquiry path. A CMS was the right choice because the team needed to update trips, stories, and campaign content without redesigning the site each time. Chinese calligraphy and landscape references shaped the visual direction, but decoration was not the lead. The brand system had to carry cultural atmosphere and service clarity at the same time.",
     "body": [
-      "I saw the original site problem as trust order, not visual polish. The page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible.",
-      "I looked at the site as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry.",
-      "I put proof before purchase. I used a video-led opening to establish place and scale, then built sections for itinerary structure, destination context, service explanation, and next-step clarity. This gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions.",
-      "I carried the same logic into the brand work. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. I wanted the site to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it.",
-      "I moved the site from Shopify to a CMS because travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign.",
-      "I would claim a stronger trust and sales surface, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. If I continued the work, I would inspect where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
+      "The original site problem was trust order, not visual polish. The page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible.",
+      "The site was treated as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry.",
+      "Proof came before purchase. A video-led opening established place and scale, then the page moved into itinerary structure, destination context, service explanation, and next-step clarity. That gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions.",
+      "The same logic carried into the brand work. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. The site needed to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it.",
+      "The move from Shopify to a CMS was practical, not just technical. Travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign.",
+      "A stronger trust and sales surface is the right claim, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. If the work continued, the next thing to inspect would be where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
     ],
     "images": [
       {
@@ -391,11 +391,11 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "I saw the original site problem as trust order, not visual polish. The page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible."
+        "value": "The original site problem was trust order, not visual polish. The page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible."
       },
       {
         "type": "paragraph",
-        "value": "I looked at the site as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry."
+        "value": "The site was treated as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry."
       },
       {
         "type": "image",
@@ -404,7 +404,7 @@
       },
       {
         "type": "paragraph",
-        "value": "I put proof before purchase. I used a video-led opening to establish place and scale, then built sections for itinerary structure, destination context, service explanation, and next-step clarity. This gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions."
+        "value": "Proof came before purchase. A video-led opening established place and scale, then the page moved into itinerary structure, destination context, service explanation, and next-step clarity. That gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions."
       },
       {
         "type": "image",
@@ -413,11 +413,11 @@
       },
       {
         "type": "paragraph",
-        "value": "I carried the same logic into the brand work. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. I wanted the site to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it."
+        "value": "The same logic carried into the brand work. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. The site needed to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it."
       },
       {
         "type": "paragraph",
-        "value": "I moved the site from Shopify to a CMS because travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign."
+        "value": "The move from Shopify to a CMS was practical, not just technical. Travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign."
       },
       {
         "type": "image",
@@ -426,7 +426,7 @@
       },
       {
         "type": "paragraph",
-        "value": "I would claim a stronger trust and sales surface, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. If I continued the work, I would inspect where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
+        "value": "A stronger trust and sales surface is the right claim, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. If the work continued, the next thing to inspect would be where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
       },
       {
         "type": "image",
