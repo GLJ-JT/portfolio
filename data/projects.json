@@ -138,12 +138,36 @@
     ],
     "category": "Story-Led Framer Experience",
     "links": {
-      "live": "https://www.xstarproduction.com/"
+      "live": "https://www.xstarproduction.com/",
+      "case_study": "case-study.html?id=xstar"
     },
     "hero_image": "assets/case_study_images_xstar/cover_image.png",
-    "problem": "",
-    "solution": "",
-    "content": []
+    "problem": "X Star Production needed a web presence quickly, but the real problem was not speed alone. The company was selling a theatrical world before most visitors had seen the work in person. A plain production site would have explained the offer, but it would not have carried the mood, credibility, and sense of occasion needed for casting, partners, and early audiences.",
+    "solution": "I treated the site as a compact story environment rather than a brochure. The Framer build kept the delivery fast, while the page structure moved from atmosphere to production identity, then into practical routes for contact and discovery. The aim was to make the company feel stage-ready without overbuilding a platform the team did not yet need.",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "The first constraint was time. A two-week build leaves little room for decorative complexity, so the work had to decide what the site was really responsible for. It needed to make X Star Production feel credible, distinct, and easy to understand before the company had a large public archive to lean on."
+      },
+      {
+        "type": "paragraph",
+        "value": "The design direction started from the theatrical nature of the project. Visitors needed to sense a production world quickly, but still find the practical details without hunting. That meant using atmosphere as the opening move, then letting the structure become simple: who the company is, what kind of work it makes, and how to get in touch."
+      },
+      {
+        "type": "paragraph",
+        "value": "Framer was the right tool because the project needed speed with enough motion and visual control to feel intentional. I kept the build close to the story instead of turning it into a general marketing template. The result was a live site that could support early conversations while the production identity was still forming."
+      },
+      {
+        "type": "paragraph",
+        "value": "The honest outcome is not a measured conversion story. It is a launch story. The site gave the team a public surface they could share with confidence in a short window. If the work continued, I would inspect which sections people reach from social and partner links, and whether visitors use the site as a credibility check or a contact route."
+      }
+    ],
+    "body": [
+      "The first constraint was time. A two-week build leaves little room for decorative complexity, so the work had to decide what the site was really responsible for. It needed to make X Star Production feel credible, distinct, and easy to understand before the company had a large public archive to lean on.",
+      "The design direction started from the theatrical nature of the project. Visitors needed to sense a production world quickly, but still find the practical details without hunting. That meant using atmosphere as the opening move, then letting the structure become simple: who the company is, what kind of work it makes, and how to get in touch.",
+      "Framer was the right tool because the project needed speed with enough motion and visual control to feel intentional. I kept the build close to the story instead of turning it into a general marketing template. The result was a live site that could support early conversations while the production identity was still forming.",
+      "The honest outcome is not a measured conversion story. It is a launch story. The site gave the team a public surface they could share with confidence in a short window. If the work continued, I would inspect which sections people reach from social and partner links, and whether visitors use the site as a credibility check or a contact route."
+    ]
   },
   {
     "id": "worldschooling",
@@ -269,11 +293,11 @@
     },
     "hero_image": "assets/case_study_images_worldover/cover_image.png",
     "problem": "Compliance teams need to move between different kinds of thinking: risk triage, production review, alert setup, report readiness, and evidence audit. The earlier dashboard direction made the system feel data-rich, but it blurred those mindspaces and made it harder to see what action would actually clear a threshold breach.",
-    "solution": "I redesigned the experience around a multi-tab command flow. Each tab preserves a separate mental mode, while the Risk Command tab simplifies the core decision into detect, decide, and assign. The prototype is backed by dummy structured data so entity and chemical changes alter severity, metrics, production facts, alerts, reporting blockers, evidence, and close checks.",
+    "solution": "I redesigned the experience around a multi-tab command flow. Each tab keeps a separate mental mode, while the Risk Command tab narrows the core decision into detect, decide, and assign. The prototype is backed by dummy structured data so entity and chemical changes alter severity, metrics, production facts, alerts, reporting blockers, evidence, and close checks.",
     "content": [
       {
         "type": "paragraph",
-        "value": "Worldover operates in a high-consequence compliance space where users need confidence before acting. A single annual threshold breach can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The product challenge was not simply showing more information. It was helping a user know which kind of work they were doing at any moment."
+        "value": "Worldover sits in a high-consequence compliance space where users need confidence before acting. A single annual threshold breach can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The product challenge was not simply showing more information. It was helping a user know which kind of work they were doing at any moment."
       },
       {
         "type": "note",
@@ -317,7 +341,7 @@
       },
       {
         "type": "paragraph",
-        "value": "The main UX decision was to keep multiple tabs rather than collapse everything into one mega-dashboard. Risk Command is for deciding what to do. Production is for factory contribution and threshold consumption. Alerts are for rules and escalation. Reporting is for blockers and draft gates. Evidence is for imports and audit trail. That separation makes the interface calmer because each tab has one job."
+        "value": "The main UX decision was to keep multiple tabs rather than collapse everything into one mega-dashboard. Risk Command is for deciding what to do. Production is for factory contribution and threshold consumption. Alerts are for rules and escalation. Reporting is for blockers and draft gates. Evidence is for imports and audit trail. I kept that separation because each tab protects a different kind of attention."
       },
       {
         "type": "paragraph",
@@ -458,12 +482,36 @@
     ],
     "category": "0-to-1 Product Framework & GTM Execution",
     "links": {
-      "live": "https://nihaoserica.com"
+      "live": "https://nihaoserica.com",
+      "case_study": "case-study.html?id=nihaoserica"
     },
     "hero_image": "assets/case_study_iamge_nihaoserica/cover_image.png",
-    "problem": "",
-    "solution": "",
-    "content": []
+    "problem": "Nihao Serica needed more than a polished launch surface. The brand was trying to explain a cross-cultural travel and content proposition while also building the pieces needed for growth: landing pages, social funnels, product structure, and a repeatable way to turn attention into enquiries. Without a clear framework, every campaign risked becoming a one-off design exercise.",
+    "solution": "I built the work around an end-to-end product and GTM framework. The site, visual identity, campaign structure, and reusable content patterns were shaped together so the team could explain the offer, launch faster, and keep social traffic connected to a clearer journey. The goal was not just to make the brand look ready, but to make the operating system behind the brand easier to use.",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "The real problem sat between product clarity and growth execution. Nihao Serica needed to feel culturally specific and commercially useful at the same time. A beautiful site alone would not solve that if the offer, funnel, and content system still had to be remade for every campaign."
+      },
+      {
+        "type": "paragraph",
+        "value": "The work started by asking what users and the team needed to understand first. Visitors needed to know what the brand does, why it is credible, and what action to take next. Internally, the team needed reusable patterns for pages, campaign assets, and content launches so momentum did not depend on rebuilding from scratch."
+      },
+      {
+        "type": "paragraph",
+        "value": "That led to a combined design and GTM structure: a clearer website architecture, a visual identity that could carry travel and culture content, and reusable campaign logic for social-to-site journeys. I treated the brand system as a working toolkit, not a finished poster set."
+      },
+      {
+        "type": "paragraph",
+        "value": "The result was a more coherent launch framework across site, content, and growth touchpoints. The strongest claim is operational clarity: the team had a more repeatable way to package offers and direct attention. If the work continued, I would inspect which content themes send qualified traffic, where visitors drop before enquiry, and which page patterns reduce the most repeated production work."
+      }
+    ],
+    "body": [
+      "The real problem sat between product clarity and growth execution. Nihao Serica needed to feel culturally specific and commercially useful at the same time. A beautiful site alone would not solve that if the offer, funnel, and content system still had to be remade for every campaign.",
+      "The work started by asking what users and the team needed to understand first. Visitors needed to know what the brand does, why it is credible, and what action to take next. Internally, the team needed reusable patterns for pages, campaign assets, and content launches so momentum did not depend on rebuilding from scratch.",
+      "That led to a combined design and GTM structure: a clearer website architecture, a visual identity that could carry travel and culture content, and reusable campaign logic for social-to-site journeys. I treated the brand system as a working toolkit, not a finished poster set.",
+      "The result was a more coherent launch framework across site, content, and growth touchpoints. The strongest claim is operational clarity: the team had a more repeatable way to package offers and direct attention. If the work continued, I would inspect which content themes send qualified traffic, where visitors drop before enquiry, and which page patterns reduce the most repeated production work."
+    ]
   },
   {
     "id": "tutufuture",
@@ -482,13 +530,13 @@
       "case_study": "case-study.html?id=tutufuture"
     },
     "hero_image": "assets/case_study_images_tutufuture/logo_design_grid.png",
-    "problem": "TUTU FUTURE, a study tour operator specializing in short-term European programs for Chinese students, had outgrown its original brand identity. The existing logo and visual system were built around a student hiking theme with green color palette—appropriate for their early adventure-focused tours but increasingly misaligned as they expanded into academic courses, art programs, STEM workshops, and language immersion experiences. The hiking-centric brand failed to communicate the breadth and sophistication of their evolving offerings, limiting their appeal to prospective students seeking diverse educational experiences in Europe.",
-    "solution": "A comprehensive brand refresh that repositioned TUTU FUTURE from an outdoor adventure operator to a multifaceted educational travel platform. The new visual identity system included a modernized logo that balanced academic credibility with youthful energy, an expanded color palette that could flex across different program types (art, STEM, language, culture), and a complete suite of marketing materials optimized for social media campaigns. A custom mascot design added approachability and personality, while the new tone of voice guidelines ensured consistent communication across all touchpoints. The scalable system empowered the team to create cohesive materials for any program type without redesigning from scratch.",
+    "problem": "TUTU FUTURE had outgrown a brand built around outdoor study travel. The original hiking-led identity worked for early adventure programmes, but it struggled to represent academic courses, art workshops, STEM activities, language immersion, and city-based cultural trips. The problem was not that the old brand looked wrong; it had become too narrow for the range of decisions students and parents were being asked to make.",
+    "solution": "I reframed the identity around exploration as a broader idea: physical, cultural, academic, and personal. The new system kept the brand warm and student-facing, but gave it more range through a cleaner logo, bilingual lockup, flexible colour palette, programme-specific visual treatments, and a mascot that could carry softer social and brochure moments without making the brand feel childish.",
     "body": [
-      "TUTU FUTURE's challenge was one of evolution. They had built a loyal following among Chinese students seeking European adventure, but their ambitions had grown beyond hiking trails. As they added academic programs, art workshops, STEM courses, and language immersion experiences to their portfolio, their green-and-outdoorsy brand identity began to feel like a limitation rather than an asset. Prospective students interested in studying Renaissance art in Florence or learning German in Berlin couldn't see themselves in a brand that screamed 'backpacking trip.'",
-      "The rebrand began with strategic positioning. Rather than abandoning their adventurous roots entirely, the goal was to elevate the concept of exploration—from physical journeys to intellectual and cultural discovery. The new logo retained a sense of movement and energy but shed the literal hiking references. Clean, modern typography conveyed academic credibility, while dynamic shapes suggested possibility and growth. The bilingual lockup (TUTU FUTURE 徒途学旅) honored their Chinese student audience while signaling their international scope.",
-      "Color became a critical tool for differentiation. The old single-green palette was replaced with a flexible system: vibrant blues for language programs, warm terracottas for art and culture, energetic purples for STEM, and yes, a refined green for outdoor experiences. Each program type could have its own visual personality while remaining unmistakably TUTU FUTURE. The mascot—a friendly, curious character—added warmth and approachability, giving the brand a face that could appear across social media, brochures, and promotional materials without feeling corporate or distant.",
-      "The impact was immediate. The new brand system gave TUTU FUTURE the visual language to market their full range of programs with confidence. Social media campaigns could now speak to art students, language learners, and STEM enthusiasts with equal authenticity. Printed brochures and digital materials maintained a cohesive look while celebrating the diversity of experiences on offer. The brand had grown up without losing its spirit, ready to guide the next generation of Chinese students on journeys that would shape their futures."
+      "TUTU FUTURE's problem was brand fit, not taste. The company had started with an outdoors-heavy study travel identity, but the offer had widened into academic courses, art programmes, STEM workshops, language learning, and city-based cultural experiences. The old green hiking world still had warmth, but it was beginning to tell only one part of the story.",
+      "I approached the rebrand as a positioning problem first. The useful idea was not to abandon exploration, but to widen it. Exploration could mean a mountain trail, a museum, a lab session, a language classroom, or a first independent trip abroad. That gave the identity a reason to move away from literal hiking symbols without losing the sense of curiosity that made the original brand approachable.",
+      "The logo, bilingual lockup, colour system, and mascot were designed to make different programme types feel related without making them look identical. Language, art, STEM, culture, and outdoor offers each needed enough visual distinction for social campaigns and brochures, but the system still had to feel like one company when parents and students compared options.",
+      "The most useful outcome was a brand system the team could keep using. It gave TUTU FUTURE a clearer way to package a broader study-travel portfolio, rather than forcing every new programme back into the same outdoors image. If the work continued, I would inspect which programme visuals help students recognise fit fastest, and whether parents understand the widened offer without needing a sales explanation."
     ],
     "images": [
       {
@@ -515,34 +563,34 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "TUTU FUTURE's challenge was one of evolution. They had built a loyal following among Chinese students seeking European adventure, but their ambitions had grown beyond hiking trails. As they added academic programs, art workshops, STEM courses, and language immersion experiences to their portfolio, their green-and-outdoorsy brand identity began to feel like a limitation rather than an asset. Prospective students interested in studying Renaissance art in Florence or learning German in Berlin couldn't see themselves in a brand that screamed 'backpacking trip.'"
+        "value": "TUTU FUTURE's problem was brand fit, not taste. The company had started with an outdoors-heavy study travel identity, but the offer had widened into academic courses, art programmes, STEM workshops, language learning, and city-based cultural experiences. The old green hiking world still had warmth, but it was beginning to tell only one part of the story."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/color_palette_system.png",
-        "caption": "The logo evolution from a hiking-focused identity to a versatile educational brand that balances academic credibility with youthful energy, ready to represent diverse program types."
+        "caption": "The colour system gives different programme types their own visual cues while keeping the identity recognisably TUTU FUTURE."
       },
       {
         "type": "paragraph",
-        "value": "The rebrand began with strategic positioning. Rather than abandoning their adventurous roots entirely, the goal was to elevate the concept of exploration—from physical journeys to intellectual and cultural discovery. The new logo retained a sense of movement and energy but shed the literal hiking references. Clean, modern typography conveyed academic credibility, while dynamic shapes suggested possibility and growth. The bilingual lockup (TUTU FUTURE 徒途学旅) honored their Chinese student audience while signaling their international scope."
+        "value": "I approached the rebrand as a positioning problem first. The useful idea was not to abandon exploration, but to widen it. Exploration could mean a mountain trail, a museum, a lab session, a language classroom, or a first independent trip abroad. That gave the identity a reason to move away from literal hiking symbols without losing the sense of curiosity that made the original brand approachable."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/before_after_logo_comparison.png",
-        "caption": "A flexible color system that allows each program type—language, art, STEM, outdoor—to have its own visual personality while maintaining brand cohesion across all touchpoints."
+        "caption": "The logo direction moves away from a hiking-only identity toward a broader education-travel brand."
       },
       {
         "type": "paragraph",
-        "value": "Color became a critical tool for differentiation. The old single-green palette was replaced with a flexible system: vibrant blues for language programs, warm terracottas for art and culture, energetic purples for STEM, and yes, a refined green for outdoor experiences. Each program type could have its own visual personality while remaining unmistakably TUTU FUTURE. The mascot—a friendly, curious character—added warmth and approachability, giving the brand a face that could appear across social media, brochures, and promotional materials without feeling corporate or distant."
+        "value": "The logo, bilingual lockup, colour system, and mascot were designed to make different programme types feel related without making them look identical. Language, art, STEM, culture, and outdoor offers each needed enough visual distinction for social campaigns and brochures, but the system still had to feel like one company when parents and students compared options."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/marketing_posters_templates.png",
-        "caption": "The brand identity system deployed across print and digital touchpoints, demonstrating scalability and versatility for social media campaigns, promotional materials, and student-facing communications."
+        "caption": "Campaign templates were built so art, language, STEM, culture, and outdoor programmes could be promoted without redesigning the system each time."
       },
       {
         "type": "paragraph",
-        "value": "The impact was immediate. The new brand system gave TUTU FUTURE the visual language to market their full range of programs with confidence. Social media campaigns could now speak to art students, language learners, and STEM enthusiasts with equal authenticity. Printed brochures and digital materials maintained a cohesive look while celebrating the diversity of experiences on offer. The brand had grown up without losing its spirit, ready to guide the next generation of Chinese students on journeys that would shape their futures."
+        "value": "The most useful outcome was a brand system the team could keep using. It gave TUTU FUTURE a clearer way to package a broader study-travel portfolio, rather than forcing every new programme back into the same outdoors image. If the work continued, I would inspect which programme visuals help students recognise fit fastest, and whether parents understand the widened offer without needing a sales explanation."
       },
       {
         "type": "image",
@@ -573,13 +621,14 @@
       "case_study": "case-study.html?id=stairaid"
     },
     "hero_image": "assets/case_study_images_stairaid/product_showcase_desk.png",
-    "problem": "People recovering from lower-limb injuries face a critical mobility challenge: standard crutches force them to navigate stairs slowly and awkwardly, creating safety risks and limiting independence. Traditional crutches require users to adjust length manually—a process that takes 30+ seconds per adjustment and demands both hands. For someone with an injured foot trying to climb stairs, this means choosing between using crutches at the wrong length (unsafe) or stopping to adjust them mid-staircase (impractical). The result is slow, unstable stair navigation that turns a simple task into a frustrating ordeal.",
-    "solution": "StairAid is a reimagined crutch system designed specifically for stair navigation. The core innovation is a one-handed, trigger-activated length adjustment mechanism that allows users to extend or shorten each crutch in just 3 seconds—8 seconds for a pair. By positioning crutches at uneven lengths (front-back stance), users gain the stability needed to ascend and descend stairs quickly and safely. The curved tip provides a secure stepping point during adjustment and improves balance through increased contact area. A forearm brace replaces the traditional armpit support, reducing fatigue and improving agility on stairs.",
+    "problem": "People recovering from lower-limb injuries often face the hardest moment of mobility on stairs. Standard crutches are designed around flat-ground movement, but stairs require different support positions. Manual length adjustment is slow, awkward, and usually needs both hands, so users are pushed toward unsafe compromise: use the wrong length, pause mid-stair, or move with less stability than they need.",
+    "solution": "I focused the concept on one decision: make stair adjustment fast enough to become part of the movement. StairAid uses a one-handed trigger mechanism to extend or shorten each crutch in seconds, allowing a front-back stance on stairs and a matched stance on level ground. The curved tip, forearm brace, and internal locking system support that same goal: safer transitions without turning every staircase into a setup task.",
     "body": [
-      "The challenge began with a simple observation: people on crutches navigate stairs in a fundamentally different way than they walk on flat ground. On level surfaces, crutches are positioned symmetrically at the same length. But on stairs, the optimal stance is diagonal—one crutch higher, one lower—to create a stable tripod with the uninjured leg. Traditional crutches can't adapt to this need without a time-consuming manual adjustment, forcing users to compromise safety for convenience.",
-      "The design process started with experimentation. Using standard crutches, real-world stair tests revealed that uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and improved stability dramatically. The insight was clear: if users could adjust crutch length instantly, they could optimize for both stair navigation and ground walking without friction. This became the core design objective—develop a length adjustment mechanism that works in seconds, not minutes.",
-      "The technical solution evolved through multiple iterations. Early prototypes used an external locking system mounted around the crutch tube, but user feedback revealed aesthetic concerns and mechanical complexity. The second iteration moved the mechanism inside the tube, making it invisible from the outside while reducing part count and improving durability. The locking system uses a lever for linear motion input, a bike cable for motion transfer, and a wedge mechanism to convert vertical hand motion into horizontal locking force. An extension spring keeps the length locked by default, requiring only a trigger pull to release.",
-      "Beyond the adjustment mechanism, every detail was optimized for stair use. The curved tip serves dual purposes: it provides a concave surface for applying force during length adjustment and creates a stable stepping point when users need to tilt the crutch on stairs. The forearm brace improves agility compared to traditional armpit supports, allowing users to shift weight dynamically. Material choices—Nylon-66 30-GF for structural components—ensure the design could withstand real-world loads while remaining lightweight. The result is a mobility aid that doesn't just accommodate stair navigation—it's designed for it."
+      "The first observation was simple: stairs change the job of a crutch. On flat ground, matching lengths make sense. On stairs, the user needs a diagonal stance, with one support higher and one lower, so the body can move through a safer tripod-like position. Standard crutches ask users to choose between moving awkwardly or stopping to adjust length by hand.",
+      "The early tests made the design problem narrower. Uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds in the observed trial, but the manual adjustment process was still too slow for real use. I treated the mechanism as the core experience: if the crutch could not change length quickly and confidently, the stair gait insight would not matter.",
+      "The mechanism moved through several iterations. An external locking system made the idea visible but added complexity and made the product feel less resolved. Moving the mechanism inside the tube protected the form and reduced the number of exposed parts. The final principle used a lever, bike cable, wedge, and spring so a trigger pull could release length while the default state stayed locked.",
+      "The surrounding details followed the same stair-use logic. The curved tip gives a more useful contact point during angled movement and adjustment. The forearm brace supports more active weight shifts than an armpit crutch. Material choices were considered around load, weight, and manufacturability rather than appearance alone.",
+      "The strongest outcome is a validated product direction, not a finished medical device. The work shows that faster length adjustment can make stair movement feel more plausible and less disruptive. If the project continued, I would inspect longer-term comfort, repeated locking reliability, wet-step behaviour, and whether users understand the stair mode without coaching."
     ],
     "images": [
       {
@@ -630,39 +679,43 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "The challenge began with a simple observation: people on crutches navigate stairs in a fundamentally different way than they walk on flat ground. On level surfaces, crutches are positioned symmetrically at the same length. But on stairs, the optimal stance is diagonal—one crutch higher, one lower—to create a stable tripod with the uninjured leg. Traditional crutches can't adapt to this need without a time-consuming manual adjustment, forcing users to compromise safety for convenience."
+        "value": "The first observation was simple: stairs change the job of a crutch. On flat ground, matching lengths make sense. On stairs, the user needs a diagonal stance, with one support higher and one lower, so the body can move through a safer tripod-like position. Standard crutches ask users to choose between moving awkwardly or stopping to adjust length by hand."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/problem_cause_objective.png",
-        "caption": "Research indicated that the primary cause of chronic ankle instability was the failure of standard crutches to handle stairs safely, leading to the objective of designing a fast, safe, and comfortable stair-navigating mobility aid."
+        "caption": "The problem framing narrowed the project from general crutch comfort to the specific failure point of stair movement."
       },
       {
         "type": "paragraph",
-        "value": "The design process started with experimentation. Using standard crutches, real-world stair tests revealed that uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and improved stability dramatically. The insight was clear: if users could adjust crutch length instantly, they could optimize for both stair navigation and ground walking without friction. This became the core design objective—develop a length adjustment mechanism that works in seconds, not minutes."
+        "value": "The early tests made the design problem narrower. Uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds in the observed trial, but the manual adjustment process was still too slow for real use. I treated the mechanism as the core experience: if the crutch could not change length quickly and confidently, the stair gait insight would not matter."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/gait_specification_stairs.png",
-        "caption": "The core innovation relies on uneven crutch lengths, enabling users to adopt a stable front-back stance on stairs. This specific gait ensures 3/4 of the body weight is supported, preventing recurrent injury."
+        "caption": "The stair gait relies on uneven crutch lengths so the user can hold a more stable front-back support position."
       },
       {
         "type": "paragraph",
-        "value": "The technical solution evolved through multiple iterations. Early prototypes used an external locking system mounted around the crutch tube, but user feedback revealed aesthetic concerns and mechanical complexity. The second iteration moved the mechanism inside the tube, making it invisible from the outside while reducing part count and improving durability. The locking system uses a lever for linear motion input, a bike cable for motion transfer, and a wedge mechanism to convert vertical hand motion into horizontal locking force. An extension spring keeps the length locked by default, requiring only a trigger pull to release."
+        "value": "The mechanism moved through several iterations. An external locking system made the idea visible but added complexity and made the product feel less resolved. Moving the mechanism inside the tube protected the form and reduced the number of exposed parts. The final principle used a lever, bike cable, wedge, and spring so a trigger pull could release length while the default state stayed locked."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/length_adjustment_operation.png",
-        "caption": "The Stairaid design allows users to seamlessly transition between level ground and stair modes by adjusting and locking the crutch length in just 3 seconds per piece using a quick-release trigger."
+        "caption": "The trigger adjustment was designed to make stair mode quick enough to use during a normal transition."
       },
       {
         "type": "paragraph",
-        "value": "Beyond the adjustment mechanism, every detail was optimized for stair use. The curved tip serves dual purposes: it provides a concave surface for applying force during length adjustment and creates a stable stepping point when users need to tilt the crutch on stairs. The forearm brace improves agility compared to traditional armpit supports, allowing users to shift weight dynamically. Material choices—Nylon-66 30-GF for structural components—ensure the design could withstand real-world loads while remaining lightweight. The result is a mobility aid that doesn't just accommodate stair navigation—it's designed for it."
+        "value": "The surrounding details followed the same stair-use logic. The curved tip gives a more useful contact point during angled movement and adjustment. The forearm brace supports more active weight shifts than an armpit crutch. Material choices were considered around load, weight, and manufacturability rather than appearance alone."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/technical_solution_locking_system.png",
-        "caption": "The internal locking mechanism utilizes a lever, bike cable, and wedge system to translate vertical hand motion into a horizontal locking pin action, providing secure and rapid length adjustment."
+        "caption": "The internal locking mechanism translates trigger movement into a secure length adjustment while keeping the outer form clean."
+      },
+      {
+        "type": "paragraph",
+        "value": "The strongest outcome is a validated product direction, not a finished medical device. The work shows that faster length adjustment can make stair movement feel more plausible and less disruptive. If the project continued, I would inspect longer-term comfort, repeated locking reliability, wet-step behaviour, and whether users understand the stair mode without coaching."
       },
       {
         "type": "image",
