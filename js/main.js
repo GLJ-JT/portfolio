@@ -296,6 +296,26 @@ function renderCaseStudyPage(projects) {
                     ${item.caption ? `<figcaption class="cs-image-caption">${item.caption}</figcaption>` : ''}
                 </figure>
                 `;
+            } else if (item.type === 'prototype') {
+                html += `
+                <section class="cs-prototype-section fade-in">
+                    <div class="cs-prototype-copy">
+                        <span class="cs-prototype-kicker">${item.kicker || 'Interactive prototype'}</span>
+                        <h3>${item.title}</h3>
+                        ${item.description ? `<p>${item.description}</p>` : ''}
+                        <a href="${item.src}" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Open full prototype
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="cs-prototype-frame-wrap">
+                        <iframe src="${item.src}" title="${item.title}" loading="lazy"></iframe>
+                    </div>
+                </section>
+                `;
             }
         });
     } else {

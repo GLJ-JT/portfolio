@@ -248,21 +248,53 @@
   {
     "id": "worldover",
     "title": "Worldover.io",
-    "subtitle": "Advanced architectural UI assignments mapping compliance metrics into scalable, scannable data visualization dashboards.",
-    "year": "2024",
+    "subtitle": "A compliance command-centre case study turning threshold risk, entity scope, production evidence, alerts, and report blockers into one scannable decision workflow.",
+    "year": "2026",
     "timeframe": "1 week",
     "tools": [
-      "Figma",
-      "Design Systems"
+      "Product UX",
+      "Frontend Prototyping",
+      "Design Systems",
+      "Structured Data"
     ],
     "category": "Compliance SaaS Architecture & UI Systems",
     "links": {
-      "live": "worldover-dashboard.html"
+      "case_study": "case-study.html?id=worldover",
+      "live": "worldover-risk-command-wireframe.html"
     },
     "hero_image": "assets/case_study_images_worldover/cover_image.png",
-    "problem": "",
-    "solution": "",
-    "content": []
+    "problem": "Compliance teams need to move between different kinds of thinking: risk triage, production review, alert setup, report readiness, and evidence audit. The earlier dashboard direction made the system feel data-rich, but it blurred those mindspaces and made it harder to see what action would actually clear a threshold breach.",
+    "solution": "I redesigned the experience around a multi-tab command flow. Each tab preserves a separate mental mode, while the Risk Command tab simplifies the core decision into detect, decide, and assign. The prototype is backed by dummy structured data so entity and chemical changes alter severity, metrics, production facts, alerts, reporting blockers, evidence, and close checks.",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "Worldover operates in a high-consequence compliance space where users need confidence before acting. A single annual threshold breach can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The product challenge was not simply showing more information. It was helping a user know which kind of work they were doing at any moment."
+      },
+      {
+        "type": "prototype",
+        "kicker": "Interactive case study prototype",
+        "title": "Risk Command Centre",
+        "description": "Change the entity selector to see the backend display conditions switch across the whole interface: case status, production facts, alerts, reporting blockers, evidence, and readiness all update from the dummy data model.",
+        "src": "worldover-risk-command-wireframe.html"
+      },
+      {
+        "type": "paragraph",
+        "value": "The main UX decision was to keep multiple tabs rather than collapse everything into one mega-dashboard. Risk Command is for deciding what to do. Production is for factory contribution and threshold consumption. Alerts are for rules and escalation. Reporting is for blockers and draft gates. Evidence is for imports and audit trail. That separation makes the interface calmer because each tab has one job."
+      },
+      {
+        "type": "paragraph",
+        "value": "Inside Risk Command, the flow is intentionally narrow: detect the signal, decide the mitigation, then assign the work. This reduces the cognitive load for a compliance operator who may be under deadline pressure. The UI still exposes supporting data, but it does not ask the user to interpret every table before taking the next step."
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/cover_image.png",
+        "caption": "The case study reframes Worldover from a static compliance dashboard into an operational command centre with clearer mode separation."
+      },
+      {
+        "type": "paragraph",
+        "value": "To make the prototype realistic, I mapped a dummy backend payload that covers the display states the interface needs: severity classes, readiness rules, chemical records, entity views, production charts, alert rules, reporting sections, evidence records, drawer actions, and empty states. Entity selection is no longer a label-only filter; it changes the full display context."
+      }
+    ]
   },
   {
     "id": "traveltoqin",
