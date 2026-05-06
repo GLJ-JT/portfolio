@@ -2,8 +2,8 @@
   "personal": {
     "name": "Joe Tao",
     "location": "London, UK",
-    "summary": "Product Designer trained at UCL (MSc Human-Computer Interaction, Distinction), with 3+ years shipping research-led product experiences and design systems across UK and China. Experienced in Figma libraries, design tokens, reusable patterns, documentation, usability testing, WCAG-aware design, and AI-assisted prototyping. Full lifecycle from discovery to delivery, with design systems adopted across cross-functional teams, 2x checkout conversion, 40% faster feature design cycles, and 30% reduced design-to-build time. Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">ACM CHIWORK '25</a>; findings <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">pitched to Google</a>.",
-    "title": "Product Designer | Design Systems | AI Prototyping | WCAG",
+    "summary": "Product Designer with 3+ years shipping conversion-critical products across the UK and China. UCL MSc Human-Computer Interaction, Distinction. Doubled checkout CVR and cut cart abandonment by 50% at Depology through a full-funnel mobile commerce system. Currently owning IA, component systems, and AI-assisted workflows across three platforms at TUTU VIEW, reducing production labour by 70%. Research contributed to <a href=\"https://dl.acm.org/doi/10.1145/3729176.3729187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">ACM CHIWORK '25</a>, presented in Amsterdam and <a href=\"https://www.linkedin.com/posts/joetao_ucl-google-ux-share-7078341960196841472-Uxt5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3a6GwBTCX46eFYB9FZpsobBCNbKSxzjj4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"playful-link\">pitched to Google</a> via UCL Interaction Centre. Latest case study: property-tech search engine UX.",
+    "title": "Product Designer | Growth & GTM | Design Systems | AI-Assisted Workflows",
     "contact": {
       "email": "joe.tianchen.tao@gmail.com",
       "phone": "+44 7404 641 570",
@@ -14,7 +14,7 @@
   },
   "experience": [
     {
-      "role": "Product Designer, Design Systems",
+      "role": "Product Designer - Systems Lead",
       "company": "TUTU VIEW",
       "logos": [
         "assets/employer_logos/TUTU.png",
@@ -22,19 +22,18 @@
         "assets/employer_logos/NIHAOSERICA.png"
       ],
       "period": "Jul 2025 - Present",
-      "description": "Sino-British business consultancy with two live consumer ventures across UK and China.",
+      "description": "Sino-British business consultancy with live consumer ventures across travel, education, and digital services.",
       "bullets": [
-        "Owned end-to-end design and launch of 3 cross-border digital platforms; led design system and brand guideline ownership across travel and education verticals, including a live mobile visa-checker app in production.",
-        "Built a shared multi-brand design system in Figma, Framer, Webflow, and Vercel with 30+ reusable components, variants, and design tokens across 3 brands; cut per-feature production time by 40%.",
-        "Translated user needs into UX flows, prototypes, components, and team-wide SOPs using Claude Code, Codex, and Figma MCP; reduced design labour by 70% with collaboration-ready files.",
-        "Conducted customer behavioural analysis with product and engineering stakeholders to define IA, reusable UX patterns, and product structures; secured founder buy-in to inform system decisions.",
-        "Implemented WCAG standards across UX-optimised landing page patterns; aligned North Star UX across media funnels, contributing to 1,500 followers and 220,000 likes in month one.",
         "Pioneered a UX simulation framework using 400+ AI-generated user personas; evaluated outputs against usability heuristics to surface friction at scale across product and system decisions.",
-        "Directed digital touchpoints and live technical production for high-profile Sino-British private receptions; delivered event UX, brand presence, and production-ready visual assets with full integrity."
+        "Owned end-to-end product design across 3 international digital platforms, shaping experiences from discovery and IA through to launch, optimisation, and developer handoff, including a live mobile visa-checker app in production.",
+        "Built a shared component library and token system across 3 brands, improving consistency and cutting production time by 40%.",
+        "Established AI-assisted prototyping and delivery workflows using Claude Code and Figma MCP, reduced recurring design and production labour by 70%.",
+        "Conducted customer behavioural analysis in collaboration with product and engineering stakeholders, applying human-centred design principles to define IA and product structures; secured founder buy-in to inform system decisions and roadmap.",
+        "Designed the social-to-conversion funnel for Nihao Serica, contributing to 1,500 followers and 220,000 likes in the first month through UX-aligned creative, landing-page architecture, and content strategy."
       ]
     },
     {
-      "role": "Product Designer, Design Systems & Conversion",
+      "role": "Product Designer - Conversion",
       "company": "Depology",
       "logos": [
         "assets/employer_logos/DEP.png"
@@ -42,24 +41,26 @@
       "period": "Dec 2024 - Jun 2025",
       "description": "Seoul-founded Korean skincare DTC brand; Shenzhen branch driving digital product and growth.",
       "bullets": [
-        "Built a modular Figma design system with tokens, component documentation, and handoff SOPs; reduced design and build time by 30% and scaled across a 5-person cross-functional team.",
-        "Doubled checkout CVR (+100%) across two product rollouts through a full funnel redesign, using heatmaps, session recordings, and cohort data to remove the highest-impact drop-off points.",
+        "Doubled checkout CVR (+100%) across two product rollouts through full-funnel redesign, using heatmaps, session recordings, cohort data, and usability findings to remove high-impact drop-off points.",
+        "Built a component library, documentation, and handoff SOPs, improving checkout consistency and cutting design-to-build time by 30%.",
         "Created a Research-UI-Ads usability testing and A/B framework that cut testing cycles from 2 weeks to 4 days.",
         "Improved cart abandonment by 50% through research-led redesign of product, cart, and checkout interactions.",
-        "Led UX prioritisation aligning design, media buying, and technical implementation around conversion goals; aligned landing-page UX, component usage, ad promise, and user behaviour data throughout."
+        "Led prioritisation across design, media buying, technical implementation to keep page UX, ad promise, and user perception aligned."
       ]
     },
     {
-      "role": "User Experience Designer",
+      "role": "Junior Product Designer - Travel UX",
       "company": "Travel to Qin",
       "logos": [
         "assets/employer_logos/TRAVELTOQIN.png"
       ],
       "period": "Aug 2024 - Dec 2024",
-      "description": "CITS-backed travel-tech startup; CITS is China's largest state-owned travel enterprise.",
+      "description": "CITS-backed inbound travel startup promoting China travel experiences to international audiences.",
       "bullets": [
-        "Conducted mixed-methods research via interviews, focus groups, and field studies; synthesised findings into a 50-page IA wireframe defining navigation UX, information hierarchy, and reusable patterns.",
-        "Architected reusable UI layouts and component-ready handoff across Shopify and WordPress from zero; built a product-uploading system that reduced launch cycle by 50%."
+        "Led research through interviews, focus groups, and field studies, then produced a 50-page IA and wireframe specification defining navigation UX, information hierarchy, and scalable patterns across a mobile travel app.",
+        "Designed scalable web layouts, high-fidelity Figma prototypes, and Shopify/WordPress handoff from zero.",
+        "Built an internal product-uploading workflow that reduced launch cycle by 50% and content labour by 50%.",
+        "Created user journeys and service-flow logic across travel planning, content operations, and supplier-side product publishing."
       ]
     },
     {
@@ -71,8 +72,10 @@
       "period": "Oct 2022 - Sep 2023",
       "description": "Independent industrial and brand design studio; co-venture of manila.design (UK) and Cover (China).",
       "bullets": [
-        "Built a design system standardising UI patterns across 15 product surfaces; reduced developer build time by 30% through component documentation, spacing tokens, and structured handoff files.",
-        "Diagnosed 7 conversion blockers via Google Analytics and SEMrush behavioural analysis; redesigned checkout and product detail flows with pixel-perfect, developer-ready handoff."
+        "Led UX research for a B2C e-commerce platform using interviews and Google Analytics.",
+        "Built reusable UI patterns across product, content, and checkout journeys, improving consistency from discovery to purchase.",
+        "Analysed behaviour with Google Analytics and SEMrush to identify 7 conversion blockers, improved key flows to cut drop-off by 10%.",
+        "Collaborated with developers on responsive implementation and production-ready handoff."
       ]
     },
     {
@@ -82,10 +85,22 @@
         "assets/employer_logos/QT.png"
       ],
       "period": "Apr 2021 - Sep 2021",
-      "description": "Sequoia-backed Shenzhen big-data firm (200–500 staff); enterprise clients included Malaysian government agencies, Chinese manufacturing plants, and insurance enterprises. Founded by ex-Alibaba and Huawei leadership; Bytedance partner.",
+      "description": "Gaorong-backed Shenzhen big-data firm; Malaysian and Chinese enterprise stakeholders. Founded by ex-Alibaba and Huawei leadership.",
       "bullets": [
         "Assumed sole UI ownership mid-project; self-taught Figma, CSS, HTML, and JavaScript in 3 days under live project pressure; shipped a 15-page enterprise website with minimal engineering revision.",
-        "Designed and delivered 12 Python-generated data visualisation components for C-suite presentations, applying consistent visual language and data hierarchy for executive decisions."
+        "Designed enterprise web UI and dashboard surfaces across multi-layer approval cycles.",
+        "Built 12 Python-based data visualisation components for C-suite presentations, applying consistent visual language and data hierarchy for executive decisions; conducted competitive analysis and heuristic evaluations to support user-centred design guidelines."
+      ]
+    },
+    {
+      "role": "Additional B2B Exposure",
+      "company": "Italy and Germany",
+      "logos": [],
+      "period": "Apr 2022 - Sep 2023",
+      "description": "Industrial exhibition exposure across oil and gas, manufacturing, and technical buyer environments.",
+      "bullets": [
+        "Staffed JK Mechanical Seal stand at OMC Med Energy Conference for 3 days, supporting visitor engagement and product promotion.",
+        "Supported Chinese sales team across 3 days of private meetings, bridging EN/ZH communication and European buyer expectations."
       ]
     }
   ],
