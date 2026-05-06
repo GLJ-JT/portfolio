@@ -148,7 +148,7 @@
   {
     "id": "worldschooling",
     "title": "Worldschooling",
-    "subtitle": "a streamlined digital platform for an educational travel package suppliers to showcase programs and drive package upgrades.",
+    "subtitle": "A launch-ready education-travel platform that narrowed a large booking vision into programme comparison, eligibility checks, and deposit confidence.",
     "year": "2025",
     "timeframe": "10 weeks",
     "tools": [
@@ -162,86 +162,91 @@
       "live": "https://worldschooling.co.uk"
     },
     "hero_image": "assets/case_study_images_worldschooling/hero_header_redesign.png",
-    "problem": "Worldschooling, an educational travel startup competing in the space pioneered by companies like EF Education First, faced a critical challenge. They needed a sophisticated website to showcase their three-tier product range and guide customers toward premium packages, but traditional educational travel websites are notoriously complex and slow to build. Their planned architecture included campus pages, subject pages, program pages, a booking portal, blogs, and a product search system—a scope that would delay their market entry and fundraising timeline at a moment when speed was essential.",
-    "solution": "The solution was to strategically simplify the user journey without sacrificing conversion potential. The booking portal was replaced with a streamlined flow: home page to product filter for selection, product detail pages for exploration, an enrollment form to gather information and check eligibility, and finally a universal deposit payment link. This architectural decision shortened the development cycle dramatically while maintaining a premium feel. Strategic UX interventions drove upsells: an interactive category selector on the homepage encouraged exploration of mid-tier products, while playful animations on entry-level program pages nudged users toward premium offerings.",
+    "problem": "Worldschooling did not just need a nicer website. The real problem was release scope. The team wanted a full education-travel platform with campus pages, subject pages, programme pages, search, blog, booking, and payment, but that level of build would have slowed down the launch at the exact moment the company needed something usable for fundraising, sales conversations, and early customer enquiries. I treated the first release as a decision problem rather than a page-count problem: before a parent pays a deposit, they need to compare programme types, understand whether the trip is suitable, check the level of commitment, and know what information the team needs from them.",
+    "solution": "I simplified the first-release journey around the decisions that had to happen before commitment: programme discovery, tier comparison, programme detail, eligibility form, and a universal deposit link. This was less automated than a custom booking portal, but it kept the important customer steps visible and removed months of engineering scope. The homepage category selector made mid-tier programmes easier to discover before users were deep in the site, while recommendation cards on entry-level pages made the next tier visible where comparison already made sense.",
     "body": [
-      "Worldschooling's founders understood that in the educational travel industry, timing is everything. They had a compelling vision—empowering students through unique, transformative experiences around the world—but they needed a digital platform that could match the sophistication of established players while launching in a fraction of the time. The challenge wasn't just building a website; it was building the right website, one that could grow with the company and drive the business metrics that matter most: engagement, conversion, and package upgrades.",
-      "The design process began with a critical decision: what could be simplified without compromising the user experience? Traditional educational travel sites are built around complex booking systems that take months to develop and integrate. Instead, the team designed a user flow that felt seamless but was technically straightforward. Students and parents would discover programs through an intuitive filter system, dive deep into program details on dedicated pages, complete an enrollment form that doubled as an eligibility check, and then move to a simple payment link for their deposit. This approach eliminated the need for a custom booking portal while actually improving clarity and reducing friction.",
-      "The real innovation came in the upsell strategy. On the homepage, showcasing mid-tier programs through an interactive category selector transformed passive browsing into active exploration. Users weren't just scrolling past options—they were clicking, engaging, and discovering programs tailored to their interests. For students viewing entry-level programs, subtle but delightful animations drew attention to premium program recommendation cards, creating moments of curiosity that encouraged users to explore higher-value offerings. Every interaction was designed to feel natural, never pushy, but always guiding users toward the experiences that would serve them best.",
-      "The results validated every decision. The founder was thrilled with the platform's polish and performance. Early user testing revealed high engagement rates and strong Net Promoter Scores, signaling that the experience resonated with both students and parents. Most importantly, the accelerated timeline meant Worldschooling could launch with confidence and enter their fundraising phase with a digital presence that demonstrated both their vision and their execution capabilities. The platform wasn't just a website—it was proof that the company could deliver on its promise."
+      "The project started with a scope problem hiding inside a website brief. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders.",
+      "I looked at the journey from the parent side first. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That changed the structure of the first release. The booking portal became less important than comparison, eligibility, and deposit clarity.",
+      "The design choice was to replace the first-release booking engine with a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers.",
+      "I used the homepage to expose programme categories rather than burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense.",
+      "The outcome I would claim is launch readiness, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. The next thing I would inspect is the live funnel: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards actually lead to deposit clicks or just extra browsing."
     ],
     "images": [
       {
         "src": "assets/case_study_images_worldschooling/landing_page_laptop_mockup.png",
-        "caption": "The simplified user journey that replaced a complex booking portal with a streamlined five-step flow, dramatically reducing development time while maintaining a premium user experience."
+        "caption": "The first-release journey replaced a full booking portal with five visible steps: discover programmes, compare options, read details, submit eligibility information, and pay a deposit."
       },
       {
         "src": "assets/case_study_images_worldschooling/programme_filtering_interface.png",
-        "caption": "The homepage category selector transforms passive browsing into active exploration, boosting engagement and naturally guiding users toward mid-tier program offerings that match their interests."
+        "caption": "The homepage category selector gives mid-tier programmes a clear entry point before users are deep in the site, making comparison part of the first screen logic."
       },
       {
         "src": "assets/case_study_images_worldschooling/themed_adventures_carousel.png",
-        "caption": "Strategic upsell animations on entry-level program pages use playful motion design to draw attention to premium offerings, encouraging students to explore higher-value experiences that better serve their educational goals."
+        "caption": "Recommendation cards on entry-level programme pages show the next tier when users are already comparing dates, themes, and value."
       },
       {
         "src": "assets/case_study_images_worldschooling/tour_package_cards_ui.png",
-        "caption": ""
+        "caption": "Programme cards were written and structured around parent/student comparison: what the trip is, who it suits, and what commitment comes next."
       },
       {
         "src": "assets/case_study_images_worldschooling/lanyard_and_id_design.png",
-        "caption": ""
+        "caption": "Physical brand materials helped the digital platform feel connected to the real student travel experience, not just the sales page."
       },
       {
         "src": "assets/case_study_images_worldschooling/brand_guidelines_typography_colors.png",
-        "caption": ""
+        "caption": "The visual system gave the team reusable rules for programme pages, campaign assets, and student-facing materials."
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "value": "Worldschooling's founders understood that in the educational travel industry, timing is everything. They had a compelling vision—empowering students through unique, transformative experiences around the world—but they needed a digital platform that could match the sophistication of established players while launching in a fraction of the time. The challenge wasn't just building a website; it was building the right website, one that could grow with the company and drive the business metrics that matter most: engagement, conversion, and package upgrades."
+        "value": "The project started with a scope problem hiding inside a website brief. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/landing_page_laptop_mockup.png",
-        "caption": "The simplified user journey that replaced a complex booking portal with a streamlined five-step flow, dramatically reducing development time while maintaining a premium user experience."
+        "caption": "The first-release journey replaced a full booking portal with five visible steps: discover programmes, compare options, read details, submit eligibility information, and pay a deposit."
       },
       {
         "type": "paragraph",
-        "value": "The design process began with a critical decision: what could be simplified without compromising the user experience? Traditional educational travel sites are built around complex booking systems that take months to develop and integrate. Instead, the team designed a user flow that felt seamless but was technically straightforward. Students and parents would discover programs through an intuitive filter system, dive deep into program details on dedicated pages, complete an enrollment form that doubled as an eligibility check, and then move to a simple payment link for their deposit. This approach eliminated the need for a custom booking portal while actually improving clarity and reducing friction."
+        "value": "I looked at the journey from the parent side first. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That changed the structure of the first release. The booking portal became less important than comparison, eligibility, and deposit clarity."
+      },
+      {
+        "type": "paragraph",
+        "value": "The design choice was to replace the first-release booking engine with a simpler path: homepage, programme filtering, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was clear. The flow was less automated for the business, but it made the product launchable and kept the important decision points visible to customers."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/programme_filtering_interface.png",
-        "caption": "The homepage category selector transforms passive browsing into active exploration, boosting engagement and naturally guiding users toward mid-tier program offerings that match their interests."
+        "caption": "The homepage category selector gives mid-tier programmes a clear entry point before users are deep in the site, making comparison part of the first screen logic."
       },
       {
         "type": "paragraph",
-        "value": "The real innovation came in the upsell strategy. On the homepage, showcasing mid-tier programs through an interactive category selector transformed passive browsing into active exploration. Users weren't just scrolling past options—they were clicking, engaging, and discovering programs tailored to their interests. For students viewing entry-level programs, subtle but delightful animations drew attention to premium program recommendation cards, creating moments of curiosity that encouraged users to explore higher-value offerings. Every interaction was designed to feel natural, never pushy, but always guiding users toward the experiences that would serve them best."
+        "value": "I used the homepage to expose programme categories rather than burying the range behind static cards. The selector gave users a way to move between themes and levels, while the detail pages carried the specific confidence cues: what the programme includes, who it is for, and what the next step requires. Recommendation cards on entry-level pages introduced higher-value options where comparison already made sense."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/themed_adventures_carousel.png",
-        "caption": "Strategic upsell animations on entry-level program pages use playful motion design to draw attention to premium offerings, encouraging students to explore higher-value experiences that better serve their educational goals."
+        "caption": "Recommendation cards on entry-level programme pages show the next tier when users are already comparing dates, themes, and value."
       },
       {
         "type": "paragraph",
-        "value": "The results validated every decision. The founder was thrilled with the platform's polish and performance. Early user testing revealed high engagement rates and strong Net Promoter Scores, signaling that the experience resonated with both students and parents. Most importantly, the accelerated timeline meant Worldschooling could launch with confidence and enter their fundraising phase with a digital presence that demonstrated both their vision and their execution capabilities. The platform wasn't just a website—it was proof that the company could deliver on its promise."
+        "value": "The outcome I would claim is launch readiness, not proven conversion. The new structure gave the team a usable sales and fundraising surface without waiting for a full booking platform. The next thing I would inspect is the live funnel: which programme categories people open, where parents leave the eligibility form, and whether recommendation cards actually lead to deposit clicks or just extra browsing."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/tour_package_cards_ui.png",
-        "caption": ""
+        "caption": "Programme cards were written and structured around parent/student comparison: what the trip is, who it suits, and what commitment comes next."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/lanyard_and_id_design.png",
-        "caption": ""
+        "caption": "Physical brand materials helped the digital platform feel connected to the real student travel experience, not just the sales page."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/brand_guidelines_typography_colors.png",
-        "caption": ""
+        "caption": "The visual system gave the team reusable rules for programme pages, campaign assets, and student-facing materials."
       }
     ]
   },
@@ -332,7 +337,7 @@
   {
     "id": "traveltoqin",
     "title": "Travel to Qin",
-    "subtitle": "an immersive digital platform for a Chinese inbound travel agency to inspire and convert foreign visitors.",
+    "subtitle": "A trust-building travel site for international visitors who needed itinerary clarity before enquiring about China trips.",
     "year": "2024",
     "timeframe": "12 weeks",
     "tools": [
@@ -347,86 +352,96 @@
       "live": "https://traveltoqin.com"
     },
     "hero_image": "assets/case_study_images_traveltoqin/hero_section_responsive.png",
-    "problem": "Foreign travelers seeking to visit China faced a significant barrier when exploring Travel to Qin's services. Despite being backed by the prestigious China International Travel Service and positioned to capitalize on the September 2024 visa policy ease, their digital presence was a basic Shopify checkout page. The site lacked any compelling narrative to showcase the rich cultural experiences of traveling through China, failed to inspire potential visitors, and wasn't optimized for social media platforms like Instagram and TikTok where modern travelers discover and share their journeys.",
-    "solution": "Travel to Qin received a complete digital transformation, from brand identity to technical infrastructure. The new platform features an immersive, video-first landing experience that immediately captures the magic and scale of China. A narrative-driven information architecture guides visitors through curated stories and stunning visuals, while a headless CMS empowers the team to manage content independently. The scalable design system proved so successful it was extended to their mobile app, creating a cohesive brand experience that converts browsers into travelers.",
+    "problem": "Travel to Qin did not simply need a more beautiful travel site. The old Shopify page could take a transaction, but it did not answer the questions a foreign visitor needs answered before trusting a China itinerary: who runs the trip, what the experience actually includes, how support works, why the agency is credible, and what happens after enquiry. The September 2024 visa policy change made the opportunity clearer, but it also raised the standard for trust.",
+    "solution": "I rebuilt the experience around proof before purchase. The new structure used a video-led opening for immediate context, then moved into destination sections, itinerary details, service explanations, and an enquiry path. The CMS decision mattered because the team needed to update trips, stories, and campaign content without redesigning the site each time. The visual direction used Chinese calligraphy and landscape references, but the goal was not decoration; the brand system had to carry cultural atmosphere and service clarity at the same time.",
     "body": [
-      "Travel to Qin's transformation began at a pivotal moment. When China relaxed its visa policies in September 2024, opening doors to millions of potential visitors, the agency found itself with a golden opportunity but a digital storefront that couldn't tell their story. The founders recognized that in an era where travelers seek authentic, immersive experiences, their generic e-commerce site was actively working against them. They needed a digital presence that could compete with the polished, narrative-driven platforms travelers had come to expect.",
-      "The project started with a fundamental reimagining of the brand. Drawing inspiration from traditional Chinese calligraphy and landscape painting, a new visual identity emerged that felt both timeless and contemporary. The color palette blended deep teals and warm golds with soft neutrals, creating a sophisticated aesthetic that would appeal to an international audience while honoring Chinese heritage. This brand foundation became the springboard for everything that followed.",
-      "The website itself was engineered as a journey, not a catalog. The landing page opens with a full-screen video showcasing breathtaking scenes from across China—misty mountains, ancient temples, vibrant street markets, and modern cityscapes. As visitors scroll, they're guided through carefully curated stories that answer the questions every traveler asks: What will I experience? Who will guide me? Why should I trust you with my journey? Each section flows seamlessly into the next, building anticipation and desire. The migration from Shopify to a headless CMS gave the Travel to Qin team unprecedented flexibility to update content, share customer stories, and adapt their messaging in real-time.",
-      "The impact was immediate and profound. Shareholders praised the transformation, recognizing how the new platform elevated their entire brand positioning. The design system's success led to its adoption for the company's mobile app, ensuring travelers experience the same immersive storytelling across every touchpoint. Travel to Qin had evolved from a transactional booking site into a digital gateway that makes the dream of visiting China feel not just possible, but irresistible."
+      "The original site problem was not that it lacked visual polish. It was that the page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible.",
+      "I looked at the site as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry.",
+      "The design direction was to put proof before purchase. I used a video-led opening to establish place and scale, then built sections for itinerary structure, destination context, service explanation, and next-step clarity. This gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions.",
+      "The brand work followed the same logic. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. I wanted the site to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it.",
+      "Moving from Shopify to a CMS was a practical choice, not just a technical upgrade. Travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign.",
+      "The outcome I would claim is a stronger trust and sales surface, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. The next thing I would inspect is where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
     ],
     "images": [
       {
         "src": "assets/case_study_images_traveltoqin/homepage_redesign_comparison.png",
-        "caption": "The transformation from a generic Shopify template to an immersive, narrative-driven platform that tells the story of traveling through China."
+        "caption": "The redesign moved the site from transaction-first checkout to a trust-building travel surface with destination context, itinerary detail, and enquiry clarity."
       },
       {
         "src": "assets/case_study_images_traveltoqin/full_page_redesign_comparison.png",
-        "caption": "Tour pages were redesigned to prioritize storytelling over transactions, with immersive photography, traveler testimonials, and curated itineraries that build excitement and trust."
+        "caption": "The page structure answers pre-enquiry questions in order: what the trip feels like, what is included, why the agency is credible, and what to do next."
       },
       {
         "src": "assets/case_study_images_traveltoqin/trip_itinerary_digital_brochure.png",
-        "caption": "The design system's success led to its adoption for Travel to Qin's mobile app, creating a seamless brand experience that guides travelers from initial inspiration through their entire journey in China."
+        "caption": "Itinerary content was treated as proof, not decoration. The brochure format helps visitors understand the trip before speaking to the team."
       },
       {
         "src": "assets/case_study_images_traveltoqin/brand_identity_system.png",
-        "caption": ""
+        "caption": "The identity uses Chinese visual references while keeping the system practical enough for service information, campaigns, and future product surfaces."
       },
       {
         "src": "assets/case_study_images_traveltoqin/destination_cards_ui.png",
-        "caption": ""
+        "caption": "Destination cards break the travel offer into scannable choices so visitors can compare places before enquiring."
       },
       {
         "src": "assets/case_study_images_traveltoqin/brochure_print_design.png",
-        "caption": ""
+        "caption": "The print system extends the same trust sequence into offline sales material: context first, itinerary proof second, enquiry path last."
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "value": "Travel to Qin's transformation began at a pivotal moment. When China relaxed its visa policies in September 2024, opening doors to millions of potential visitors, the agency found itself with a golden opportunity but a digital storefront that couldn't tell their story. The founders recognized that in an era where travelers seek authentic, immersive experiences, their generic e-commerce site was actively working against them. They needed a digital presence that could compete with the polished, narrative-driven platforms travelers had come to expect."
+        "value": "The original site problem was not that it lacked visual polish. It was that the page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible."
+      },
+      {
+        "type": "paragraph",
+        "value": "I looked at the site as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/homepage_redesign_comparison.png",
-        "caption": "The transformation from a generic Shopify template to an immersive, narrative-driven platform that tells the story of traveling through China."
+        "caption": "The redesign moved the site from transaction-first checkout to a trust-building travel surface with destination context, itinerary detail, and enquiry clarity."
       },
       {
         "type": "paragraph",
-        "value": "The project started with a fundamental reimagining of the brand. Drawing inspiration from traditional Chinese calligraphy and landscape painting, a new visual identity emerged that felt both timeless and contemporary. The color palette blended deep teals and warm golds with soft neutrals, creating a sophisticated aesthetic that would appeal to an international audience while honoring Chinese heritage. This brand foundation became the springboard for everything that followed."
+        "value": "The design direction was to put proof before purchase. I used a video-led opening to establish place and scale, then built sections for itinerary structure, destination context, service explanation, and next-step clarity. This gave the visitor a reason to keep reading instead of landing directly on a transaction page with too many unanswered questions."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/full_page_redesign_comparison.png",
-        "caption": "Tour pages were redesigned to prioritize storytelling over transactions, with immersive photography, traveler testimonials, and curated itineraries that build excitement and trust."
+        "caption": "The page structure answers pre-enquiry questions in order: what the trip feels like, what is included, why the agency is credible, and what to do next."
       },
       {
         "type": "paragraph",
-        "value": "The website itself was engineered as a journey, not a catalog. The landing page opens with a full-screen video showcasing breathtaking scenes from across China—misty mountains, ancient temples, vibrant street markets, and modern cityscapes. As visitors scroll, they're guided through carefully curated stories that answer the questions every traveler asks: What will I experience? Who will guide me? Why should I trust you with my journey? Each section flows seamlessly into the next, building anticipation and desire. The migration from Shopify to a headless CMS gave the Travel to Qin team unprecedented flexibility to update content, share customer stories, and adapt their messaging in real-time."
+        "value": "The brand work followed the same logic. Chinese calligraphy and landscape references gave the identity cultural grounding, while the colour palette, typography, cards, and layout system made the information easier to scan. I wanted the site to feel connected to China without turning into a poster. The brand had to support the service, not sit on top of it."
+      },
+      {
+        "type": "paragraph",
+        "value": "Moving from Shopify to a CMS was a practical choice, not just a technical upgrade. Travel content changes: itineraries, seasonal campaigns, stories, and destination highlights all need editing. A CMS gave the team a way to keep the site current without rebuilding the page for every campaign."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/trip_itinerary_digital_brochure.png",
-        "caption": "The design system's success led to its adoption for Travel to Qin's mobile app, creating a seamless brand experience that guides travelers from initial inspiration through their entire journey in China."
+        "caption": "Itinerary content was treated as proof, not decoration. The brochure format helps visitors understand the trip before speaking to the team."
       },
       {
         "type": "paragraph",
-        "value": "The impact was immediate and profound. Shareholders praised the transformation, recognizing how the new platform elevated their entire brand positioning. The design system's success led to its adoption for the company's mobile app, ensuring travelers experience the same immersive storytelling across every touchpoint. Travel to Qin had evolved from a transactional booking site into a digital gateway that makes the dream of visiting China feel not just possible, but irresistible."
+        "value": "The outcome I would claim is a stronger trust and sales surface, not automatic conversion uplift. The work gave stakeholders a site that could support social traffic, brochures, and future app surfaces with one visual language. The next thing I would inspect is where visitors pause, which itinerary sections they read, which social channels send qualified enquiries, and what questions still appear before someone contacts the team."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/brand_identity_system.png",
-        "caption": ""
+        "caption": "The identity uses Chinese visual references while keeping the system practical enough for service information, campaigns, and future product surfaces."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/destination_cards_ui.png",
-        "caption": ""
+        "caption": "Destination cards break the travel offer into scannable choices so visitors can compare places before enquiring."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/brochure_print_design.png",
-        "caption": ""
+        "caption": "The print system extends the same trust sequence into offline sales material: context first, itinerary proof second, enquiry path last."
       }
     ]
   },
