@@ -916,21 +916,32 @@ h1, h2, h3, h4 {
 }
 
 .cs-header {
-    margin-bottom: 3rem;
+    max-width: 860px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
 }
 
 .cs-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    margin-bottom: 0;
+    letter-spacing: 0;
+    line-height: 1.08;
+    font-weight: 500;
+}
+
+.cs-subtitle-wrap {
+    display: flex;
+    justify-content: center;
+    margin: clamp(1.4rem, 3vw, 2.25rem) 0 2.5rem;
 }
 
 .cs-subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1.05rem, 2vw, 1.22rem);
     color: var(--text-secondary);
     font-weight: 400;
-    max-width: 600px;
-    line-height: 1.5;
+    max-width: 720px;
+    line-height: 1.55;
+    text-align: center;
 }
 
 .cs-properties-grid {

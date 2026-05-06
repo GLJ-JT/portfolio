@@ -241,8 +241,8 @@ function renderCaseStudyPage(projects) {
     let html = `
         <header class="cs-header fade-in">
             <h1 class="cs-title section-title">${project.title}</h1>
-            <div style="display: flex; justify-content: center; margin: 5rem 0 3rem 0;">
-                <h2 class="cs-subtitle" style="text-align: center; max-width: 700px; font-size: 1.5rem; line-height: 1.4;">${project.subtitle}</h2>
+            <div class="cs-subtitle-wrap">
+                <h2 class="cs-subtitle">${project.subtitle}</h2>
             </div>
         </header>
 
