@@ -1180,6 +1180,7 @@ h1, h2, h3, h4 {
     }
     .image-ticker-track {
         gap: 0.8rem;
+        padding-inline: 9vw;
     }
     .hero-title {
         font-size: 3rem;
