@@ -246,8 +246,11 @@ function renderCaseStudyPage(projects) {
             </div>
         </header>
 
-        <div class="cs-hero-wrapper fade-in">
-            <img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">
+        <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} fade-in">
+            ${project.hero_iframe
+                ? `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
+                : `<img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">`
+            }
         </div>
 
         <section class="cs-properties-grid fade-in">
@@ -289,6 +292,61 @@ function renderCaseStudyPage(projects) {
         project.content.forEach(item => {
             if (item.type === 'paragraph') {
                 html += `<p class="cs-body-paragraph fade-in">${item.value}</p>`;
+            } else if (item.type === 'case_intro') {
+                html += `
+                <section class="cs-case-intro fade-in">
+                    <span>${item.kicker || 'Case sequence'}</span>
+                    <h3>${item.title}</h3>
+                    <p>${item.value}</p>
+                </section>
+                `;
+            } else if (item.type === 'wide_iframe') {
+                html += `
+                <section class="cs-wide-iframe-section ${item.variant === 'mobile' ? 'cs-wide-iframe-mobile' : ''} fade-in">
+                    <div class="cs-wide-iframe-copy">
+                        <span>${item.kicker || 'Artifact'}</span>
+                        <h3>${item.title}</h3>
+                        ${item.description ? `<p>${item.description}</p>` : ''}
+                        <a href="${item.src}" target="_blank" rel="noopener noreferrer" class="project-link">
+                            ${item.cta || 'Open artifact'}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="cs-wide-iframe-wrap">
+                        <iframe src="${item.src}" title="${item.title}" loading="lazy"></iframe>
+                    </div>
+                </section>
+                `;
+            } else if (item.type === 'estimate_panel') {
+                html += `
+                <section class="cs-estimate-panel fade-in">
+                    <div class="cs-estimate-head">
+                        <span>${item.kicker || 'Estimate'}</span>
+                        <h3>${item.title}</h3>
+                        ${item.value ? `<p>${item.value}</p>` : ''}
+                    </div>
+                    <div class="cs-estimate-grid">
+                        ${(item.items || []).map(estimate => `
+                            <article class="cs-estimate-item">
+                                <span>${estimate.label}</span>
+                                <strong>${estimate.value}</strong>
+                                <p>${estimate.note}</p>
+                            </article>
+                        `).join('')}
+                    </div>
+                </section>
+                `;
+            } else if (item.type === 'article_section') {
+                html += `
+                <section class="cs-article-section fade-in">
+                    <span>${item.kicker || 'Section'}</span>
+                    <h3>${item.title}</h3>
+                    ${(item.paragraphs || []).map(paragraph => `<p>${paragraph}</p>`).join('')}
+                </section>
+                `;
             } else if (item.type === 'note') {
                 html += `
                 <aside class="cs-update-note fade-in">

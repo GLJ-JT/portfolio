@@ -645,9 +645,35 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 760px) {
+    .cs-hero-wrapper-iframe {
+        height: 720px;
+        min-height: 720px;
+    }
+
     .cs-prototype-frame-wrap {
         height: 720px;
         min-height: 720px;
+    }
+
+    .cs-wide-iframe-section,
+    .cs-estimate-panel {
+        width: 100%;
+        margin-inline: 0;
+        transform: none;
+    }
+
+    .cs-wide-iframe-wrap,
+    .cs-wide-iframe-mobile .cs-wide-iframe-wrap {
+        height: 720px;
+        min-height: 720px;
+    }
+
+    .cs-estimate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-estimate-item {
+        min-height: 140px;
     }
 
     .cs-improvement-item {
@@ -977,6 +1003,20 @@ h1, h2, h3, h4 {
     will-change: transform;
 }
 
+.cs-hero-wrapper-iframe {
+    height: min(78vh, 820px);
+    min-height: 620px;
+    background: var(--surface-color);
+}
+
+.cs-hero-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: var(--surface-color);
+}
+
 .cs-callout {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -1022,6 +1062,151 @@ h1, h2, h3, h4 {
     text-align: center;
     max-width: 80%;
     margin-inline: auto;
+}
+
+.cs-case-intro,
+.cs-wide-iframe-section,
+.cs-estimate-panel,
+.cs-article-section {
+    margin: 4rem 0;
+}
+
+.cs-case-intro {
+    padding: clamp(1.4rem, 3vw, 2rem) 0;
+    border-top: 1px solid var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cs-case-intro span,
+.cs-wide-iframe-copy span,
+.cs-estimate-head span,
+.cs-article-section > span {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--accent-color);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cs-case-intro h3,
+.cs-wide-iframe-copy h3,
+.cs-estimate-head h3,
+.cs-article-section h3 {
+    max-width: 760px;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.75rem, 4vw, 2.7rem);
+    line-height: 1.08;
+}
+
+.cs-case-intro p,
+.cs-wide-iframe-copy p,
+.cs-estimate-head p,
+.cs-article-section p {
+    max-width: 760px;
+    color: var(--text-secondary);
+    line-height: 1.68;
+}
+
+.cs-wide-iframe-section {
+    width: min(1120px, calc(100vw - 2rem));
+    margin-inline: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface-color);
+    box-shadow: 0 24px 56px -36px rgba(55, 53, 47, 0.28);
+}
+
+.cs-wide-iframe-copy {
+    padding: clamp(1.35rem, 3vw, 2rem);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cs-wide-iframe-copy p {
+    margin-bottom: 1rem;
+}
+
+.cs-wide-iframe-wrap {
+    height: min(82vh, 840px);
+    min-height: 620px;
+    background: var(--bg-highlight-secondary);
+}
+
+.cs-wide-iframe-mobile .cs-wide-iframe-wrap {
+    height: min(92vh, 920px);
+    min-height: 760px;
+}
+
+.cs-wide-iframe-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: var(--surface-color);
+}
+
+.cs-estimate-panel {
+    width: min(1120px, calc(100vw - 2rem));
+    margin-inline: 50%;
+    transform: translateX(-50%);
+    padding: clamp(1.35rem, 3vw, 2.2rem);
+    border: 1px solid var(--text-primary);
+    border-radius: var(--radius-md);
+    background: var(--surface-color);
+}
+
+.cs-estimate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 1.6rem;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+}
+
+.cs-estimate-item {
+    min-height: 170px;
+    padding: 1.15rem;
+    background: var(--surface-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cs-estimate-item span {
+    color: var(--text-tertiary);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cs-estimate-item strong {
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 0.98;
+}
+
+.cs-estimate-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.cs-article-section {
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.cs-article-section p + p {
+    margin-top: 1rem;
 }
 
 /* Playful Link inside Hero Copy */
