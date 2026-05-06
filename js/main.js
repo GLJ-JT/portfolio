@@ -434,7 +434,17 @@ function renderCaseStudyPage(projects) {
     html += `</section>`;
     
     // Task 1: Add a View More section
-    const otherProjects = projects.filter(p => p.id !== projectId).sort(() => 0.5 - Math.random()).slice(0, 2);
+    const hasCaseStudyContent = (p) => {
+        const caseStudyHref = p.links?.case_study || '';
+        const hasLocalCasePage = caseStudyHref.startsWith('case-study.html') || caseStudyHref.endsWith('.html');
+        const hasStructuredContent = Array.isArray(p.content) && p.content.length > 0;
+        const hasLegacyContent = Array.isArray(p.body) && p.body.length > 0;
+        return hasLocalCasePage && (hasStructuredContent || hasLegacyContent);
+    };
+    const otherProjects = projects
+        .filter(p => p.id !== projectId && hasCaseStudyContent(p))
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 2);
     if (otherProjects.length > 0) {
         html += `
         <section class="cs-more-projects" style="margin-top: 6rem; padding-top: 4rem; border-top: 1px solid var(--border-color);">
