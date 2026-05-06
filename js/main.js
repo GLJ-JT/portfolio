@@ -289,6 +289,34 @@ function renderCaseStudyPage(projects) {
         project.content.forEach(item => {
             if (item.type === 'paragraph') {
                 html += `<p class="cs-body-paragraph fade-in">${item.value}</p>`;
+            } else if (item.type === 'note') {
+                html += `
+                <aside class="cs-update-note fade-in">
+                    <span>${item.kicker || 'Project note'}</span>
+                    <h3>${item.title}</h3>
+                    <p>${item.value}</p>
+                </aside>
+                `;
+            } else if (item.type === 'improvements') {
+                html += `
+                <section class="cs-improvements fade-in">
+                    <div class="cs-improvements-header">
+                        <span>${item.kicker || 'Key improvements'}</span>
+                        <h3>${item.title}</h3>
+                    </div>
+                    <div class="cs-improvements-list">
+                        ${(item.items || []).map((improvement, index) => `
+                            <article class="cs-improvement-item">
+                                <strong>${String(index + 1).padStart(2, '0')}</strong>
+                                <div>
+                                    <h4>${improvement.title}</h4>
+                                    <p>${improvement.value}</p>
+                                </div>
+                            </article>
+                        `).join('')}
+                    </div>
+                </section>
+                `;
             } else if (item.type === 'image') {
                 html += `
                 <figure class="cs-image-figure fade-in">

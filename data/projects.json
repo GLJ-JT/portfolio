@@ -271,11 +271,44 @@
         "value": "Worldover operates in a high-consequence compliance space where users need confidence before acting. A single annual threshold breach can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The product challenge was not simply showing more information. It was helping a user know which kind of work they were doing at any moment."
       },
       {
+        "type": "note",
+        "kicker": "April 2026 update",
+        "title": "Why the live demo looks different from the original delivery",
+        "value": "The embedded Risk Command Centre is a recent April 2026 update of the earlier Worldover delivery. The original work established the compliance dashboard direction and visual system; this newer demo revisits the same product problem with a more operational lens. I kept the domain, compliance logic, and Worldover brand cues, but rebuilt the experience to show how the product could move from monitoring data to resolving threshold risk. That is why the live demo intentionally looks and behaves differently from the older dashboard screens."
+      },
+      {
         "type": "prototype",
         "kicker": "Interactive case study prototype",
         "title": "Risk Command Centre",
         "description": "Change the entity selector to see the backend display conditions switch across the whole interface: case status, production facts, alerts, reporting blockers, evidence, and readiness all update from the dummy data model.",
         "src": "worldover-risk-command-wireframe.html"
+      },
+      {
+        "type": "improvements",
+        "kicker": "What improved from the old delivery",
+        "title": "Five design upgrades in the April 2026 demo",
+        "items": [
+          {
+            "title": "From passive dashboard to action command centre",
+            "value": "The older delivery focused on surfacing compliance data. The updated demo turns the same risk context into a guided workflow: detect the signal, decide the mitigation, assign the next owner, and watch readiness change."
+          },
+          {
+            "title": "Clearer mindspace separation",
+            "value": "Risk Command, Production, Alerts, Reporting, and Evidence now live in separate tabs. This preserves context for different user tasks instead of mixing tables, charts, rules, and audit records into one overloaded screen."
+          },
+          {
+            "title": "Entity-aware data behavior",
+            "value": "The prototype is backed by structured dummy data with entity-specific display conditions. Switching from group view to Germany, France, or UK changes severity, metrics, readiness, production facts, alerts, reporting blockers, evidence, and the resolution drawer."
+          },
+          {
+            "title": "Sharper compliance storytelling",
+            "value": "The case now communicates not just what is above threshold, but why it matters, what is blocking closure, who owns the next action, and what evidence is still missing before reporting can proceed."
+          },
+          {
+            "title": "More polished production-facing interaction design",
+            "value": "The April 2026 demo applies a tighter Worldover-inspired visual language, better text hierarchy, resolved z-index/layout issues, accessible real threshold labels, and browser-tested responsive behavior."
+          }
+        ]
       },
       {
         "type": "paragraph",
