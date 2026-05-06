@@ -18,8 +18,8 @@
       "live": "https://depology.com"
     },
     "hero_image": "assets/case_study_images_depology_system/dp1.png",
-    "problem": "Depology, a rapidly growing Korean skincare brand with a strong Instagram presence in the US market, was preparing to launch multiple new products for shadow testing through paid advertising. They needed optimized product landing pages to maximize conversion rates in their ad-to-web customer journey. However, initial analysis revealed critical friction points: heatmap data showed users struggling with the mobile product buybox, while analytics indicated high drop-off rates and shortened session lengths tied to confusing header navigation on mobile devices. These UX issues were directly hindering conversion potential at a crucial growth moment.",
-    "solution": "A data-driven redesign focused on the two highest-impact friction points: the mobile buybox and header navigation. After conducting thorough analysis of heatmaps, conversion funnels, and session behavior, new designs were proposed and validated through A/B testing. The redesigned mobile buybox streamlined the purchase flow with clearer CTAs and improved information hierarchy, while the simplified header navigation reduced cognitive load and improved discoverability. Following successful test runs and stakeholder presentations that secured buy-in from both product and marketing leadership, the changes were implemented across new product landing pages and ultimately adopted site-wide.",
+    "problem": "Depology was preparing new skincare launches for paid social testing, but mobile conversion was leaking at two repeat decision points: the buybox and header navigation. Heatmaps and analytics showed shoppers hesitating where they should have been comparing, choosing, and checking out.",
+    "solution": "The redesign focused on those two friction points. I simplified the mobile buybox, clarified CTA hierarchy, and reduced navigation noise, then validated the changes through A/B testing before the patterns were adopted across new product pages.",
     "body": [
       "Depology was at an inflection point. The Korean skincare brand had built a devoted following on Instagram and was ready to scale through aggressive product launches and paid advertising. But there was a problem: their existing product pages weren't converting at the rates needed to justify increased ad spend. With multiple new products queued for shadow testing—a strategy where products are launched quietly to gauge market response before full rollout—the team needed landing pages that could turn Instagram traffic into customers efficiently.",
       "The first step was diagnosis. Heatmap analysis revealed that mobile users were tapping repeatedly on elements within the product buybox, suggesting confusion about how to add items to cart or select variants. Conversion funnel data confirmed the suspicion: a significant percentage of users were abandoning their sessions at the product page stage. Session length metrics told another story—users who did engage were spending less time on site than expected, often bouncing after encountering the cluttered header navigation. These weren't assumptions; they were patterns backed by behavioral data.",
@@ -138,36 +138,12 @@
     ],
     "category": "Story-Led Framer Experience",
     "links": {
-      "live": "https://www.xstarproduction.com/",
-      "case_study": "case-study.html?id=xstar"
+      "live": "https://www.xstarproduction.com/"
     },
     "hero_image": "assets/case_study_images_xstar/cover_image.png",
-    "problem": "X Star Production needed a web presence quickly, but the real problem was not speed alone. The company was selling a theatrical world before most visitors had seen the work in person. A plain production site would have explained the offer, but it would not have carried the mood, credibility, and sense of occasion needed for casting, partners, and early audiences.",
-    "solution": "I treated the site as a compact story environment rather than a brochure. The Framer build kept the delivery fast, while the page structure moved from atmosphere to production identity, then into practical routes for contact and discovery. The aim was to make the company feel stage-ready without overbuilding a platform the team did not yet need.",
-    "content": [
-      {
-        "type": "paragraph",
-        "value": "The first constraint was time. A two-week build leaves little room for decorative complexity, so the work had to decide what the site was really responsible for. It needed to make X Star Production feel credible, distinct, and easy to understand before the company had a large public archive to lean on."
-      },
-      {
-        "type": "paragraph",
-        "value": "The design direction started from the theatrical nature of the project. Visitors needed to sense a production world quickly, but still find the practical details without hunting. That meant using atmosphere as the opening move, then letting the structure become simple: who the company is, what kind of work it makes, and how to get in touch."
-      },
-      {
-        "type": "paragraph",
-        "value": "Framer was the right tool because the project needed speed with enough motion and visual control to feel intentional. I kept the build close to the story instead of turning it into a general marketing template. The result was a live site that could support early conversations while the production identity was still forming."
-      },
-      {
-        "type": "paragraph",
-        "value": "The honest outcome is not a measured conversion story. It is a launch story. The site gave the team a public surface they could share with confidence in a short window. If the work continued, I would inspect which sections people reach from social and partner links, and whether visitors use the site as a credibility check or a contact route."
-      }
-    ],
-    "body": [
-      "The first constraint was time. A two-week build leaves little room for decorative complexity, so the work had to decide what the site was really responsible for. It needed to make X Star Production feel credible, distinct, and easy to understand before the company had a large public archive to lean on.",
-      "The design direction started from the theatrical nature of the project. Visitors needed to sense a production world quickly, but still find the practical details without hunting. That meant using atmosphere as the opening move, then letting the structure become simple: who the company is, what kind of work it makes, and how to get in touch.",
-      "Framer was the right tool because the project needed speed with enough motion and visual control to feel intentional. I kept the build close to the story instead of turning it into a general marketing template. The result was a live site that could support early conversations while the production identity was still forming.",
-      "The honest outcome is not a measured conversion story. It is a launch story. The site gave the team a public surface they could share with confidence in a short window. If the work continued, I would inspect which sections people reach from social and partner links, and whether visitors use the site as a credibility check or a contact route."
-    ]
+    "problem": "",
+    "solution": "",
+    "content": []
   },
   {
     "id": "worldschooling",
@@ -186,8 +162,8 @@
       "live": "https://worldschooling.co.uk"
     },
     "hero_image": "assets/case_study_images_worldschooling/hero_header_redesign.png",
-    "problem": "I did not read Worldschooling as a 'make the website nicer' problem. It was a release-scope problem. The team wanted a full education-travel platform with campus pages, subject pages, programme pages, search, blog, booking, and payment, but that build would have slowed the launch at the exact moment the company needed something usable for fundraising, sales conversations, and early customer enquiries. The first release had to work as a decision path: before a parent pays a deposit, they need to compare programme types, understand whether the trip is suitable, check the commitment level, and know what information the team needs from them.",
-    "solution": "The first-release journey was simplified around the decisions that had to happen before commitment: programme discovery, tier comparison, programme detail, eligibility form, and a universal deposit link. That was less automated than a custom booking portal, but it kept the important customer steps visible and removed months of engineering scope. The homepage category selector made mid-tier programmes easier to discover, while recommendation cards on entry-level pages showed the next tier where comparison already made sense.",
+    "problem": "I read Worldschooling as a release-scope problem, not a cosmetic website brief. The team wanted a full education-travel platform, but the first launch needed to help parents compare programmes, judge fit, and understand the deposit step without waiting for a custom booking system.",
+    "solution": "The first release became a decision path: programme discovery, tier comparison, detail pages, eligibility form, and a universal deposit link. It kept the important customer choices visible while removing months of platform scope.",
     "body": [
       "The website brief needed to be separated from the real product constraint. The planned platform had enough pieces to become a long product build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. For an early-stage education-travel business, that would have delayed the thing the team needed most: a credible surface that could explain programmes and support conversations with parents, students, and stakeholders.",
       "Looking at the journey from the parent side changed the brief. A parent does not start by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, what the commitment is, and what happens after they submit details. That made the booking portal less important than comparison, eligibility, and deposit clarity.",
@@ -292,8 +268,8 @@
       "live": "worldover-risk-command-wireframe.html"
     },
     "hero_image": "assets/case_study_images_worldover/cover_image.png",
-    "problem": "Compliance teams need to move between different kinds of thinking: risk triage, production review, alert setup, report readiness, and evidence audit. The earlier dashboard direction made the system feel data-rich, but it blurred those mindspaces and made it harder to see what action would actually clear a threshold breach.",
-    "solution": "I redesigned the experience around a multi-tab command flow. Each tab keeps a separate mental mode, while the Risk Command tab narrows the core decision into detect, decide, and assign. The prototype is backed by dummy structured data so entity and chemical changes alter severity, metrics, production facts, alerts, reporting blockers, evidence, and close checks.",
+    "problem": "Compliance teams move between different mindspaces: risk triage, production review, alert setup, report readiness, and evidence audit. The earlier dashboard showed plenty of data, but blurred the action needed to clear a threshold breach.",
+    "solution": "I redesigned the experience around a multi-tab command flow. Each tab protects a separate mental mode, while Risk Command narrows the main task to detect, decide, and assign using entity-specific dummy data.",
     "content": [
       {
         "type": "paragraph",
@@ -376,8 +352,8 @@
       "live": "https://traveltoqin.com"
     },
     "hero_image": "assets/case_study_images_traveltoqin/hero_section_responsive.png",
-    "problem": "Travel to Qin was not simply a more beautiful travel-site brief. The old Shopify page could take a transaction, but it did not answer the questions a foreign visitor needs before trusting a China itinerary: who runs the trip, what the experience includes, how support works, why the agency is credible, and what happens after enquiry. The September 2024 visa policy change made the opportunity clearer, but it also raised the standard for trust.",
-    "solution": "I rebuilt the experience around proof before purchase. A video-led opening created immediate context, then the page moved into destination sections, itinerary details, service explanations, and an enquiry path. A CMS was the right choice because the team needed to update trips, stories, and campaign content without redesigning the site each time. Chinese calligraphy and landscape references shaped the visual direction, but decoration was not the lead. The brand system had to carry cultural atmosphere and service clarity at the same time.",
+    "problem": "Travel to Qin was a trust problem, not just a travel-site refresh. The old Shopify page could take payment, but it did not answer what foreign visitors needed before enquiring: who runs the trip, what is included, how support works, and why the agency is credible.",
+    "solution": "I rebuilt the page around proof before purchase: a video-led opening, destination context, itinerary detail, service explanation, and a clearer enquiry path. A CMS made the content easier to update as trips and campaigns changed.",
     "body": [
       "The original site problem was trust order, not visual polish. The page behaved like a checkout before the visitor had enough reasons to trust the trip. A foreign traveller considering China needs context before commitment: what they will see, who will guide them, how the itinerary is organised, what support exists, and why this agency is credible.",
       "The site was treated as a trust sequence. The first screen needed to make the destination feel real, but the rest of the page needed to answer practical questions. Beautiful imagery could create interest, but it could not carry the whole job. The content order had to move visitors from inspiration to understanding to enquiry.",
@@ -482,36 +458,12 @@
     ],
     "category": "0-to-1 Product Framework & GTM Execution",
     "links": {
-      "live": "https://nihaoserica.com",
-      "case_study": "case-study.html?id=nihaoserica"
+      "live": "https://nihaoserica.com"
     },
     "hero_image": "assets/case_study_iamge_nihaoserica/cover_image.png",
-    "problem": "Nihao Serica needed more than a polished launch surface. The brand was trying to explain a cross-cultural travel and content proposition while also building the pieces needed for growth: landing pages, social funnels, product structure, and a repeatable way to turn attention into enquiries. Without a clear framework, every campaign risked becoming a one-off design exercise.",
-    "solution": "I built the work around an end-to-end product and GTM framework. The site, visual identity, campaign structure, and reusable content patterns were shaped together so the team could explain the offer, launch faster, and keep social traffic connected to a clearer journey. The goal was not just to make the brand look ready, but to make the operating system behind the brand easier to use.",
-    "content": [
-      {
-        "type": "paragraph",
-        "value": "The real problem sat between product clarity and growth execution. Nihao Serica needed to feel culturally specific and commercially useful at the same time. A beautiful site alone would not solve that if the offer, funnel, and content system still had to be remade for every campaign."
-      },
-      {
-        "type": "paragraph",
-        "value": "The work started by asking what users and the team needed to understand first. Visitors needed to know what the brand does, why it is credible, and what action to take next. Internally, the team needed reusable patterns for pages, campaign assets, and content launches so momentum did not depend on rebuilding from scratch."
-      },
-      {
-        "type": "paragraph",
-        "value": "That led to a combined design and GTM structure: a clearer website architecture, a visual identity that could carry travel and culture content, and reusable campaign logic for social-to-site journeys. I treated the brand system as a working toolkit, not a finished poster set."
-      },
-      {
-        "type": "paragraph",
-        "value": "The result was a more coherent launch framework across site, content, and growth touchpoints. The strongest claim is operational clarity: the team had a more repeatable way to package offers and direct attention. If the work continued, I would inspect which content themes send qualified traffic, where visitors drop before enquiry, and which page patterns reduce the most repeated production work."
-      }
-    ],
-    "body": [
-      "The real problem sat between product clarity and growth execution. Nihao Serica needed to feel culturally specific and commercially useful at the same time. A beautiful site alone would not solve that if the offer, funnel, and content system still had to be remade for every campaign.",
-      "The work started by asking what users and the team needed to understand first. Visitors needed to know what the brand does, why it is credible, and what action to take next. Internally, the team needed reusable patterns for pages, campaign assets, and content launches so momentum did not depend on rebuilding from scratch.",
-      "That led to a combined design and GTM structure: a clearer website architecture, a visual identity that could carry travel and culture content, and reusable campaign logic for social-to-site journeys. I treated the brand system as a working toolkit, not a finished poster set.",
-      "The result was a more coherent launch framework across site, content, and growth touchpoints. The strongest claim is operational clarity: the team had a more repeatable way to package offers and direct attention. If the work continued, I would inspect which content themes send qualified traffic, where visitors drop before enquiry, and which page patterns reduce the most repeated production work."
-    ]
+    "problem": "",
+    "solution": "",
+    "content": []
   },
   {
     "id": "tutufuture",
@@ -530,8 +482,8 @@
       "case_study": "case-study.html?id=tutufuture"
     },
     "hero_image": "assets/case_study_images_tutufuture/logo_design_grid.png",
-    "problem": "TUTU FUTURE had outgrown a brand built around outdoor study travel. The original hiking-led identity worked for early adventure programmes, but it struggled to represent academic courses, art workshops, STEM activities, language immersion, and city-based cultural trips. The problem was not that the old brand looked wrong; it had become too narrow for the range of decisions students and parents were being asked to make.",
-    "solution": "I reframed the identity around exploration as a broader idea: physical, cultural, academic, and personal. The new system kept the brand warm and student-facing, but gave it more range through a cleaner logo, bilingual lockup, flexible colour palette, programme-specific visual treatments, and a mascot that could carry softer social and brochure moments without making the brand feel childish.",
+    "problem": "TUTU FUTURE had outgrown its hiking-led study travel identity. The brand still felt warm, but it was too narrow for academic courses, art workshops, STEM activities, language immersion, and city-based cultural trips.",
+    "solution": "I reframed exploration as physical, cultural, academic, and personal. The updated logo, bilingual lockup, colour system, programme treatments, and mascot gave the team more range without losing the brand's student-facing warmth.",
     "body": [
       "TUTU FUTURE's problem was brand fit, not taste. The company had started with an outdoors-heavy study travel identity, but the offer had widened into academic courses, art programmes, STEM workshops, language learning, and city-based cultural experiences. The old green hiking world still had warmth, but it was beginning to tell only one part of the story.",
       "I approached the rebrand as a positioning problem first. The useful idea was not to abandon exploration, but to widen it. Exploration could mean a mountain trail, a museum, a lab session, a language classroom, or a first independent trip abroad. That gave the identity a reason to move away from literal hiking symbols without losing the sense of curiosity that made the original brand approachable.",
@@ -621,8 +573,8 @@
       "case_study": "case-study.html?id=stairaid"
     },
     "hero_image": "assets/case_study_images_stairaid/product_showcase_desk.png",
-    "problem": "People recovering from lower-limb injuries often face the hardest moment of mobility on stairs. Standard crutches are designed around flat-ground movement, but stairs require different support positions. Manual length adjustment is slow, awkward, and usually needs both hands, so users are pushed toward unsafe compromise: use the wrong length, pause mid-stair, or move with less stability than they need.",
-    "solution": "I focused the concept on one decision: make stair adjustment fast enough to become part of the movement. StairAid uses a one-handed trigger mechanism to extend or shorten each crutch in seconds, allowing a front-back stance on stairs and a matched stance on level ground. The curved tip, forearm brace, and internal locking system support that same goal: safer transitions without turning every staircase into a setup task.",
+    "problem": "Standard crutches work for flat ground, but stairs require different support positions. Manual length adjustment is slow and awkward, leaving injured users to choose between the wrong crutch length, pausing mid-stair, or moving with less stability.",
+    "solution": "I focused StairAid on fast stair adjustment. A one-handed trigger changes crutch length in seconds, supporting a front-back stance on stairs and a matched stance on level ground, with the curved tip and forearm brace serving the same transition goal.",
     "body": [
       "The first observation was simple: stairs change the job of a crutch. On flat ground, matching lengths make sense. On stairs, the user needs a diagonal stance, with one support higher and one lower, so the body can move through a safer tripod-like position. Standard crutches ask users to choose between moving awkwardly or stopping to adjust length by hand.",
       "The early tests made the design problem narrower. Uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds in the observed trial, but the manual adjustment process was still too slow for real use. I treated the mechanism as the core experience: if the crutch could not change length quickly and confidently, the stair gait insight would not matter.",
