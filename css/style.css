@@ -169,6 +169,10 @@ h1, h2, h3, h4 {
     color: var(--text-secondary);
     font-weight: 400;
     margin-bottom: 1.5rem;
+    max-width: min(100%, 760px);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
 }
 
 .hero-location-wrap {

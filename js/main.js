@@ -500,16 +500,15 @@ function initGSAPAnimations() {
     
     splitElements.forEach(el => {
         if (!el) return;
-        const text = el.innerText;
-        const words = text.split(' ');
+        const text = el.innerText.trim();
+        const words = text.split(/\s+/);
         el.innerHTML = '';
         
-        words.forEach(word => {
+        words.forEach((word, index) => {
             const wordSpan = document.createElement('span');
             wordSpan.style.display = 'inline-block';
             wordSpan.style.overflow = 'hidden';
             wordSpan.style.verticalAlign = 'top';
-            wordSpan.style.marginRight = '0.25em';
             
             const innerSpan = document.createElement('span');
             innerSpan.style.display = 'inline-block';
@@ -518,6 +517,9 @@ function initGSAPAnimations() {
             
             wordSpan.appendChild(innerSpan);
             el.appendChild(wordSpan);
+            if (index < words.length - 1) {
+                el.appendChild(document.createTextNode(' '));
+            }
             
             gsap.fromTo(innerSpan, 
                 { yPercent: 120, opacity: 0, rotateZ: 3 },
