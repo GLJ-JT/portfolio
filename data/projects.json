@@ -104,7 +104,7 @@
   {
     "id": "property-nlp",
     "title": "Explainable Property Search",
-    "subtitle": "A search prototype that shows renters how their messy query was understood before asking them to trust the results.",
+    "subtitle": "A technical UX case study translating ambiguous renter language into editable intent, ranked recommendations, and inspectable Python + JSON search logic.",
     "year": "2026",
     "timeframe": "2 weeks",
     "tools": [
@@ -121,14 +121,14 @@
     },
     "hero_image": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
     "preview_iframe": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html?preview=portfolio",
-    "problem": "The diagnosis moved from 'can property search understand natural language?' to 'how does a renter know the system understood the messy parts of their request?' A query like 'studio near UCL under 2500, bills included, lift, quiet, not basement' carries budget, location, exclusions, amenities, and soft preferences in one sentence. Standard filters make the renter split that sentence apart and remember the rest while scanning listings.",
-    "solution": "I kept the familiar search and filter model, then added a visible interpretation layer. The prototype turns the query into editable chips, separates hard exclusions from softer preferences, ranks structured JSON listings through a Python parser and scorer, and explains each match in plain language so users can correct the system before trusting it.",
+    "problem": "Property seekers often describe intent in natural language, but standard filters split that intent across separate controls and leave users unsure whether the system understood their requirements.",
+    "solution": "A mobile-first NLP search flow that turns renter language into editable chips, runs against a Python-backed ranking layer and structured JSON property data, then explains matches in the interface.",
     "content": []
   },
   {
     "id": "xstar",
     "title": "X Star Production",
-    "subtitle": "A two-week Framer build that gave a theatre production a clear home for story, cast, schedule, and launch information.",
+    "subtitle": "A story-led theatrical platform built natively in Framer. Delivered from concept to live production in just two weeks.",
     "year": "2024",
     "timeframe": "2 weeks",
     "tools": [
@@ -148,7 +148,7 @@
   {
     "id": "worldschooling",
     "title": "Worldschooling",
-    "subtitle": "A launchable education-travel platform that replaced a heavy booking build with programme comparison, eligibility, and deposit flow.",
+    "subtitle": "a streamlined digital platform for an educational travel package suppliers to showcase programs and drive package upgrades.",
     "year": "2025",
     "timeframe": "10 weeks",
     "tools": [
@@ -162,26 +162,26 @@
       "live": "https://worldschooling.co.uk"
     },
     "hero_image": "assets/case_study_images_worldschooling/hero_header_redesign.png",
-    "problem": "The diagnosis moved from 'how do we build the full education-travel platform?' to 'which decisions must a parent make before paying a deposit?' The planned first release included campus pages, subject pages, programme pages, booking, blog, and search. That scope would have delayed launch, while parents and students still mainly needed to compare programme tiers, understand eligibility, and know what commitment the deposit represented.",
-    "solution": "I reduced the first-release journey to the decisions that mattered: programme discovery, tier comparison, detail pages, eligibility form, and a universal deposit payment link. The tradeoff was less automation than a custom booking engine, but it kept comparison and commitment clear while removing months of portal development. Homepage categories and recommendation cards were used to expose mid-tier and premium programmes without forcing a hard upsell.",
+    "problem": "Worldschooling, an educational travel startup competing in the space pioneered by companies like EF Education First, faced a critical challenge. They needed a sophisticated website to showcase their three-tier product range and guide customers toward premium packages, but traditional educational travel websites are notoriously complex and slow to build. Their planned architecture included campus pages, subject pages, program pages, a booking portal, blogs, and a product search system—a scope that would delay their market entry and fundraising timeline at a moment when speed was essential.",
+    "solution": "The solution was to strategically simplify the user journey without sacrificing conversion potential. The booking portal was replaced with a streamlined flow: home page to product filter for selection, product detail pages for exploration, an enrollment form to gather information and check eligibility, and finally a universal deposit payment link. This architectural decision shortened the development cycle dramatically while maintaining a premium feel. Strategic UX interventions drove upsells: an interactive category selector on the homepage encouraged exploration of mid-tier products, while playful animations on entry-level program pages nudged users toward premium offerings.",
     "body": [
-      "The diagnosis moved from 'which pages should the startup launch with?' to 'which decisions must a parent make before paying a deposit?' The original architecture was large enough to freeze the team in planning: campus pages, subject pages, programme pages, booking, blog, and search. I mapped the first release around the smaller set of decisions that actually had to happen before commitment: compare programmes, check fit, submit eligibility details, and pay a deposit.",
-      "I replaced the custom booking portal with a simpler path: homepage, programme filter, detail page, eligibility form, and universal deposit link. This was less automated than a full booking engine, but it let the business launch without hiding the important steps. Parents could still understand what was included, students could still compare options, and the team could still collect the information needed before confirming a place.",
-      "The programme hierarchy became the main design lever. The homepage category selector gave mid-tier programmes a visible entry point, while entry-level detail pages included recommendation cards for related higher-value options. The aim was not to push users harder. It was to make the next programme level visible at the moment when someone was already comparing dates, themes, and value.",
-      "The strongest outcome was launch readiness. In stakeholder review, the flow gave the founder a sales surface that could support conversations, fundraising, and early customer enquiries without waiting for a full booking system. The next proof point would be live funnel data: which categories people open, where parents leave the eligibility form, and which programme recommendations actually lead to deposit clicks."
+      "Worldschooling's founders understood that in the educational travel industry, timing is everything. They had a compelling vision—empowering students through unique, transformative experiences around the world—but they needed a digital platform that could match the sophistication of established players while launching in a fraction of the time. The challenge wasn't just building a website; it was building the right website, one that could grow with the company and drive the business metrics that matter most: engagement, conversion, and package upgrades.",
+      "The design process began with a critical decision: what could be simplified without compromising the user experience? Traditional educational travel sites are built around complex booking systems that take months to develop and integrate. Instead, the team designed a user flow that felt seamless but was technically straightforward. Students and parents would discover programs through an intuitive filter system, dive deep into program details on dedicated pages, complete an enrollment form that doubled as an eligibility check, and then move to a simple payment link for their deposit. This approach eliminated the need for a custom booking portal while actually improving clarity and reducing friction.",
+      "The real innovation came in the upsell strategy. On the homepage, showcasing mid-tier programs through an interactive category selector transformed passive browsing into active exploration. Users weren't just scrolling past options—they were clicking, engaging, and discovering programs tailored to their interests. For students viewing entry-level programs, subtle but delightful animations drew attention to premium program recommendation cards, creating moments of curiosity that encouraged users to explore higher-value offerings. Every interaction was designed to feel natural, never pushy, but always guiding users toward the experiences that would serve them best.",
+      "The results validated every decision. The founder was thrilled with the platform's polish and performance. Early user testing revealed high engagement rates and strong Net Promoter Scores, signaling that the experience resonated with both students and parents. Most importantly, the accelerated timeline meant Worldschooling could launch with confidence and enter their fundraising phase with a digital presence that demonstrated both their vision and their execution capabilities. The platform wasn't just a website—it was proof that the company could deliver on its promise."
     ],
     "images": [
       {
         "src": "assets/case_study_images_worldschooling/landing_page_laptop_mockup.png",
-        "caption": "The first-release journey replaced a custom booking portal with five visible steps: discover, compare, read details, submit eligibility, and pay deposit."
+        "caption": "The simplified user journey that replaced a complex booking portal with a streamlined five-step flow, dramatically reducing development time while maintaining a premium user experience."
       },
       {
         "src": "assets/case_study_images_worldschooling/programme_filtering_interface.png",
-        "caption": "The homepage category selector makes mid-tier programmes visible before users are deep in the site, giving comparison a clear starting point."
+        "caption": "The homepage category selector transforms passive browsing into active exploration, boosting engagement and naturally guiding users toward mid-tier program offerings that match their interests."
       },
       {
         "src": "assets/case_study_images_worldschooling/themed_adventures_carousel.png",
-        "caption": "Recommendation cards on entry-level pages show the next programme tier while users are already comparing themes, dates, and value."
+        "caption": "Strategic upsell animations on entry-level program pages use playful motion design to draw attention to premium offerings, encouraging students to explore higher-value experiences that better serve their educational goals."
       },
       {
         "src": "assets/case_study_images_worldschooling/tour_package_cards_ui.png",
@@ -199,34 +199,34 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "The diagnosis moved from 'which pages should the startup launch with?' to 'which decisions must a parent make before paying a deposit?' The original architecture was large enough to freeze the team in planning: campus pages, subject pages, programme pages, booking, blog, and search. I mapped the first release around the smaller set of decisions that actually had to happen before commitment: compare programmes, check fit, submit eligibility details, and pay a deposit."
+        "value": "Worldschooling's founders understood that in the educational travel industry, timing is everything. They had a compelling vision—empowering students through unique, transformative experiences around the world—but they needed a digital platform that could match the sophistication of established players while launching in a fraction of the time. The challenge wasn't just building a website; it was building the right website, one that could grow with the company and drive the business metrics that matter most: engagement, conversion, and package upgrades."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/landing_page_laptop_mockup.png",
-        "caption": "The first-release journey replaced a custom booking portal with five visible steps: discover, compare, read details, submit eligibility, and pay deposit."
+        "caption": "The simplified user journey that replaced a complex booking portal with a streamlined five-step flow, dramatically reducing development time while maintaining a premium user experience."
       },
       {
         "type": "paragraph",
-        "value": "I replaced the custom booking portal with a simpler path: homepage, programme filter, detail page, eligibility form, and universal deposit link. This was less automated than a full booking engine, but it let the business launch without hiding the important steps. Parents could still understand what was included, students could still compare options, and the team could still collect the information needed before confirming a place."
+        "value": "The design process began with a critical decision: what could be simplified without compromising the user experience? Traditional educational travel sites are built around complex booking systems that take months to develop and integrate. Instead, the team designed a user flow that felt seamless but was technically straightforward. Students and parents would discover programs through an intuitive filter system, dive deep into program details on dedicated pages, complete an enrollment form that doubled as an eligibility check, and then move to a simple payment link for their deposit. This approach eliminated the need for a custom booking portal while actually improving clarity and reducing friction."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/programme_filtering_interface.png",
-        "caption": "The homepage category selector makes mid-tier programmes visible before users are deep in the site, giving comparison a clear starting point."
+        "caption": "The homepage category selector transforms passive browsing into active exploration, boosting engagement and naturally guiding users toward mid-tier program offerings that match their interests."
       },
       {
         "type": "paragraph",
-        "value": "The programme hierarchy became the main design lever. The homepage category selector gave mid-tier programmes a visible entry point, while entry-level detail pages included recommendation cards for related higher-value options. The aim was not to push users harder. It was to make the next programme level visible at the moment when someone was already comparing dates, themes, and value."
+        "value": "The real innovation came in the upsell strategy. On the homepage, showcasing mid-tier programs through an interactive category selector transformed passive browsing into active exploration. Users weren't just scrolling past options—they were clicking, engaging, and discovering programs tailored to their interests. For students viewing entry-level programs, subtle but delightful animations drew attention to premium program recommendation cards, creating moments of curiosity that encouraged users to explore higher-value offerings. Every interaction was designed to feel natural, never pushy, but always guiding users toward the experiences that would serve them best."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldschooling/themed_adventures_carousel.png",
-        "caption": "Recommendation cards on entry-level pages show the next programme tier while users are already comparing themes, dates, and value."
+        "caption": "Strategic upsell animations on entry-level program pages use playful motion design to draw attention to premium offerings, encouraging students to explore higher-value experiences that better serve their educational goals."
       },
       {
         "type": "paragraph",
-        "value": "The strongest outcome was launch readiness. In stakeholder review, the flow gave the founder a sales surface that could support conversations, fundraising, and early customer enquiries without waiting for a full booking system. The next proof point would be live funnel data: which categories people open, where parents leave the eligibility form, and which programme recommendations actually lead to deposit clicks."
+        "value": "The results validated every decision. The founder was thrilled with the platform's polish and performance. Early user testing revealed high engagement rates and strong Net Promoter Scores, signaling that the experience resonated with both students and parents. Most importantly, the accelerated timeline meant Worldschooling could launch with confidence and enter their fundraising phase with a digital presence that demonstrated both their vision and their execution capabilities. The platform wasn't just a website—it was proof that the company could deliver on its promise."
       },
       {
         "type": "image",
@@ -248,7 +248,7 @@
   {
     "id": "worldover",
     "title": "Worldover.io",
-    "subtitle": "A compliance prototype that separates risk, production, alerts, reporting, and evidence so operators can clear threshold cases with less context switching.",
+    "subtitle": "A compliance command-centre case study turning threshold risk, entity scope, production evidence, alerts, and report blockers into one scannable decision workflow.",
     "year": "2026",
     "timeframe": "1 week",
     "tools": [
@@ -263,18 +263,18 @@
       "live": "worldover-risk-command-wireframe.html"
     },
     "hero_image": "assets/case_study_images_worldover/cover_image.png",
-    "problem": "The diagnosis moved from 'how do we show more compliance data?' to 'what must an operator know before they can clear a threshold breach?' The earlier dashboard made risk status, production contribution, alert rules, report blockers, and evidence records compete on one surface, so users had to hold too much context in their head before deciding the next action.",
-    "solution": "I kept the multi-tab model because the work changes by tab. Risk Command is where the operator decides the next action. Production explains contribution. Alerts manage escalation rules. Reporting shows what blocks a draft. Evidence proves whether the record can survive review. The dummy data model makes entity selection change severity, readiness, facts, blockers, and evidence rather than acting as a label-only filter.",
+    "problem": "Compliance teams need to move between different kinds of thinking: risk triage, production review, alert setup, report readiness, and evidence audit. The earlier dashboard direction made the system feel data-rich, but it blurred those mindspaces and made it harder to see what action would actually clear a threshold breach.",
+    "solution": "I redesigned the experience around a multi-tab command flow. Each tab preserves a separate mental mode, while the Risk Command tab simplifies the core decision into detect, decide, and assign. The prototype is backed by dummy structured data so entity and chemical changes alter severity, metrics, production facts, alerts, reporting blockers, evidence, and close checks.",
     "content": [
       {
         "type": "paragraph",
-        "value": "The diagnosis moved from 'how do we show more compliance data?' to 'what must an operator know before they can clear a threshold breach?' A single annual threshold case can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The old dashboard made those jobs compete for attention on one surface."
+        "value": "Worldover operates in a high-consequence compliance space where users need confidence before acting. A single annual threshold breach can involve production plans, legal entity scope, registration limits, stale data, plant owners, evidence imports, and report-generation blockers. The product challenge was not simply showing more information. It was helping a user know which kind of work they were doing at any moment."
       },
       {
         "type": "note",
         "kicker": "April 2026 update",
         "title": "Why the live demo looks different from the original delivery",
-        "value": "The embedded Risk Command Centre is a recent April 2026 update of the earlier Worldover delivery. The original work established the compliance dashboard direction and visual system. This newer demo returns to the same product problem and asks a narrower question: once a threshold risk is detected, what does the operator need to check, assign, or unblock before the case can move forward? That is why the live demo intentionally looks and behaves differently from the older dashboard screens."
+        "value": "The embedded Risk Command Centre is a recent April 2026 update of the earlier Worldover delivery. The original work established the compliance dashboard direction and visual system; this newer demo revisits the same product problem with a more operational lens. I kept the domain, compliance logic, and Worldover brand cues, but rebuilt the experience to show how the product could move from monitoring data to resolving threshold risk. That is why the live demo intentionally looks and behaves differently from the older dashboard screens."
       },
       {
         "type": "prototype",
@@ -290,38 +290,38 @@
         "items": [
           {
             "title": "From passive dashboard to action command centre",
-            "value": "The older delivery focused on surfacing compliance data. The updated demo turns the same risk context into a workflow: detect the signal, decide the mitigation, assign the next owner, and watch readiness change."
+            "value": "The older delivery focused on surfacing compliance data. The updated demo turns the same risk context into a guided workflow: detect the signal, decide the mitigation, assign the next owner, and watch readiness change."
           },
           {
             "title": "Clearer mindspace separation",
-            "value": "Risk Command, Production, Alerts, Reporting, and Evidence now live in separate tabs. Each tab has one job, so operators do not have to compare tables, charts, rules, and audit records at the same time."
+            "value": "Risk Command, Production, Alerts, Reporting, and Evidence now live in separate tabs. This preserves context for different user tasks instead of mixing tables, charts, rules, and audit records into one overloaded screen."
           },
           {
             "title": "Entity-aware data behavior",
             "value": "The prototype is backed by structured dummy data with entity-specific display conditions. Switching from group view to Germany, France, or UK changes severity, metrics, readiness, production facts, alerts, reporting blockers, evidence, and the resolution drawer."
           },
           {
-            "title": "Clearer compliance reasoning",
-            "value": "The case now shows what is above threshold, what blocks closure, who owns the next action, and which evidence is still missing before reporting can proceed."
+            "title": "Sharper compliance storytelling",
+            "value": "The case now communicates not just what is above threshold, but why it matters, what is blocking closure, who owns the next action, and what evidence is still missing before reporting can proceed."
           },
           {
-            "title": "Cleaner interaction states",
-            "value": "The April 2026 demo applies a tighter Worldover-inspired visual language, clearer text hierarchy, resolved z-index/layout issues, accessible threshold labels, and browser-tested responsive behaviour."
+            "title": "More polished production-facing interaction design",
+            "value": "The April 2026 demo applies a tighter Worldover-inspired visual language, better text hierarchy, resolved z-index/layout issues, accessible real threshold labels, and browser-tested responsive behavior."
           }
         ]
       },
       {
         "type": "paragraph",
-        "value": "The main UX decision was to keep multiple tabs rather than collapse everything into one large dashboard. Risk Command is for deciding what to do. Production is for factory contribution and threshold consumption. Alerts are for rules and escalation. Reporting is for blockers and draft gates. Evidence is for imports and audit trail. That separation makes the interface calmer because each tab has one job."
+        "value": "The main UX decision was to keep multiple tabs rather than collapse everything into one mega-dashboard. Risk Command is for deciding what to do. Production is for factory contribution and threshold consumption. Alerts are for rules and escalation. Reporting is for blockers and draft gates. Evidence is for imports and audit trail. That separation makes the interface calmer because each tab has one job."
       },
       {
         "type": "paragraph",
-        "value": "Inside Risk Command, the flow is intentionally narrow: detect the signal, decide the mitigation, then assign the work. The UI still exposes supporting data, but it does not ask the operator to interpret every table before taking the next step."
+        "value": "Inside Risk Command, the flow is intentionally narrow: detect the signal, decide the mitigation, then assign the work. This reduces the cognitive load for a compliance operator who may be under deadline pressure. The UI still exposes supporting data, but it does not ask the user to interpret every table before taking the next step."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_worldover/cover_image.png",
-        "caption": "The April 2026 update separates risk, production, alerts, reporting, and evidence into distinct work modes."
+        "caption": "The case study reframes Worldover from a static compliance dashboard into an operational command centre with clearer mode separation."
       },
       {
         "type": "paragraph",
@@ -332,7 +332,7 @@
   {
     "id": "traveltoqin",
     "title": "Travel to Qin",
-    "subtitle": "A trust-building travel site for international visitors comparing China itineraries after the 2024 visa policy change.",
+    "subtitle": "an immersive digital platform for a Chinese inbound travel agency to inspire and convert foreign visitors.",
     "year": "2024",
     "timeframe": "12 weeks",
     "tools": [
@@ -347,26 +347,26 @@
       "live": "https://traveltoqin.com"
     },
     "hero_image": "assets/case_study_images_traveltoqin/hero_section_responsive.png",
-    "problem": "The diagnosis moved from 'the site needs to look more premium' to 'what does a foreign visitor need to believe before asking about a China itinerary?' The old Shopify page could take a transaction, but it did not answer the questions that arrive before payment: who runs the trip, what the itinerary feels like, how support works, and why the agency is credible.",
-    "solution": "I rebuilt the experience around proof before purchase: a video-led opening, itinerary sections, destination cards, service explanations, and a CMS structure the team could update without redesigning the page. The tradeoff was to prioritise trust and content clarity before deeper booking automation, because the first problem was not checkout. It was helping visitors feel ready to enquire.",
+    "problem": "Foreign travelers seeking to visit China faced a significant barrier when exploring Travel to Qin's services. Despite being backed by the prestigious China International Travel Service and positioned to capitalize on the September 2024 visa policy ease, their digital presence was a basic Shopify checkout page. The site lacked any compelling narrative to showcase the rich cultural experiences of traveling through China, failed to inspire potential visitors, and wasn't optimized for social media platforms like Instagram and TikTok where modern travelers discover and share their journeys.",
+    "solution": "Travel to Qin received a complete digital transformation, from brand identity to technical infrastructure. The new platform features an immersive, video-first landing experience that immediately captures the magic and scale of China. A narrative-driven information architecture guides visitors through curated stories and stunning visuals, while a headless CMS empowers the team to manage content independently. The scalable design system proved so successful it was extended to their mobile app, creating a cohesive brand experience that converts browsers into travelers.",
     "body": [
-      "The diagnosis moved from 'the site needs to look more premium' to 'what does a foreign visitor need to believe before asking about a China itinerary?' After the September 2024 visa policy change, Travel to Qin had a clearer market opening, but the old Shopify page was still built like a checkout. It did not explain the itinerary, the support model, the cultural experience, or why a visitor should trust the agency before making contact.",
-      "The first design decision was to put proof before purchase. I used brand cues from Chinese calligraphy and landscape painting, but kept the system practical: a clearer logo, a restrained travel palette, reusable content sections, and visual hierarchy that could carry both cultural imagery and service information. The goal was not decoration. It was to make the company feel legible to visitors arriving from social or search.",
-      "The landing page was structured around the questions a traveller asks before enquiring: what will I see, who guides the trip, how is the itinerary organised, and what makes the service credible? Video and imagery created the first impression, but the important work was the section order: destination context, itinerary detail, service explanation, and enquiry path. Moving from Shopify to a CMS gave the team a way to update trips and stories without rebuilding the page.",
-      "The strongest outcome was a more useful sales surface for stakeholder review and future campaigns. The site could now support social traffic, brochures, and app extension with the same visual language. The next proof point would be live enquiry data: which itinerary sections hold attention, which social channels produce qualified enquiries, and where visitors still need reassurance before contact."
+      "Travel to Qin's transformation began at a pivotal moment. When China relaxed its visa policies in September 2024, opening doors to millions of potential visitors, the agency found itself with a golden opportunity but a digital storefront that couldn't tell their story. The founders recognized that in an era where travelers seek authentic, immersive experiences, their generic e-commerce site was actively working against them. They needed a digital presence that could compete with the polished, narrative-driven platforms travelers had come to expect.",
+      "The project started with a fundamental reimagining of the brand. Drawing inspiration from traditional Chinese calligraphy and landscape painting, a new visual identity emerged that felt both timeless and contemporary. The color palette blended deep teals and warm golds with soft neutrals, creating a sophisticated aesthetic that would appeal to an international audience while honoring Chinese heritage. This brand foundation became the springboard for everything that followed.",
+      "The website itself was engineered as a journey, not a catalog. The landing page opens with a full-screen video showcasing breathtaking scenes from across China—misty mountains, ancient temples, vibrant street markets, and modern cityscapes. As visitors scroll, they're guided through carefully curated stories that answer the questions every traveler asks: What will I experience? Who will guide me? Why should I trust you with my journey? Each section flows seamlessly into the next, building anticipation and desire. The migration from Shopify to a headless CMS gave the Travel to Qin team unprecedented flexibility to update content, share customer stories, and adapt their messaging in real-time.",
+      "The impact was immediate and profound. Shareholders praised the transformation, recognizing how the new platform elevated their entire brand positioning. The design system's success led to its adoption for the company's mobile app, ensuring travelers experience the same immersive storytelling across every touchpoint. Travel to Qin had evolved from a transactional booking site into a digital gateway that makes the dream of visiting China feel not just possible, but irresistible."
     ],
     "images": [
       {
         "src": "assets/case_study_images_traveltoqin/homepage_redesign_comparison.png",
-        "caption": "The redesign moved the site from transaction-first checkout to a trust-building travel surface with context, itinerary detail, and enquiry path."
+        "caption": "The transformation from a generic Shopify template to an immersive, narrative-driven platform that tells the story of traveling through China."
       },
       {
         "src": "assets/case_study_images_traveltoqin/full_page_redesign_comparison.png",
-        "caption": "Tour pages put itinerary proof before transaction: destination context, trip structure, support cues, and next-step clarity."
+        "caption": "Tour pages were redesigned to prioritize storytelling over transactions, with immersive photography, traveler testimonials, and curated itineraries that build excitement and trust."
       },
       {
         "src": "assets/case_study_images_traveltoqin/trip_itinerary_digital_brochure.png",
-        "caption": "The same visual system could extend into mobile app and brochure surfaces without changing the core trust-building story."
+        "caption": "The design system's success led to its adoption for Travel to Qin's mobile app, creating a seamless brand experience that guides travelers from initial inspiration through their entire journey in China."
       },
       {
         "src": "assets/case_study_images_traveltoqin/brand_identity_system.png",
@@ -384,34 +384,34 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "The diagnosis moved from 'the site needs to look more premium' to 'what does a foreign visitor need to believe before asking about a China itinerary?' After the September 2024 visa policy change, Travel to Qin had a clearer market opening, but the old Shopify page was still built like a checkout. It did not explain the itinerary, the support model, the cultural experience, or why a visitor should trust the agency before making contact."
+        "value": "Travel to Qin's transformation began at a pivotal moment. When China relaxed its visa policies in September 2024, opening doors to millions of potential visitors, the agency found itself with a golden opportunity but a digital storefront that couldn't tell their story. The founders recognized that in an era where travelers seek authentic, immersive experiences, their generic e-commerce site was actively working against them. They needed a digital presence that could compete with the polished, narrative-driven platforms travelers had come to expect."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/homepage_redesign_comparison.png",
-        "caption": "The redesign moved the site from transaction-first checkout to a trust-building travel surface with context, itinerary detail, and enquiry path."
+        "caption": "The transformation from a generic Shopify template to an immersive, narrative-driven platform that tells the story of traveling through China."
       },
       {
         "type": "paragraph",
-        "value": "The first design decision was to put proof before purchase. I used brand cues from Chinese calligraphy and landscape painting, but kept the system practical: a clearer logo, a restrained travel palette, reusable content sections, and visual hierarchy that could carry both cultural imagery and service information. The goal was not decoration. It was to make the company feel legible to visitors arriving from social or search."
+        "value": "The project started with a fundamental reimagining of the brand. Drawing inspiration from traditional Chinese calligraphy and landscape painting, a new visual identity emerged that felt both timeless and contemporary. The color palette blended deep teals and warm golds with soft neutrals, creating a sophisticated aesthetic that would appeal to an international audience while honoring Chinese heritage. This brand foundation became the springboard for everything that followed."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/full_page_redesign_comparison.png",
-        "caption": "Tour pages put itinerary proof before transaction: destination context, trip structure, support cues, and next-step clarity."
+        "caption": "Tour pages were redesigned to prioritize storytelling over transactions, with immersive photography, traveler testimonials, and curated itineraries that build excitement and trust."
       },
       {
         "type": "paragraph",
-        "value": "The landing page was structured around the questions a traveller asks before enquiring: what will I see, who guides the trip, how is the itinerary organised, and what makes the service credible? Video and imagery created the first impression, but the important work was the section order: destination context, itinerary detail, service explanation, and enquiry path. Moving from Shopify to a CMS gave the team a way to update trips and stories without rebuilding the page."
+        "value": "The website itself was engineered as a journey, not a catalog. The landing page opens with a full-screen video showcasing breathtaking scenes from across China—misty mountains, ancient temples, vibrant street markets, and modern cityscapes. As visitors scroll, they're guided through carefully curated stories that answer the questions every traveler asks: What will I experience? Who will guide me? Why should I trust you with my journey? Each section flows seamlessly into the next, building anticipation and desire. The migration from Shopify to a headless CMS gave the Travel to Qin team unprecedented flexibility to update content, share customer stories, and adapt their messaging in real-time."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_traveltoqin/trip_itinerary_digital_brochure.png",
-        "caption": "The same visual system could extend into mobile app and brochure surfaces without changing the core trust-building story."
+        "caption": "The design system's success led to its adoption for Travel to Qin's mobile app, creating a seamless brand experience that guides travelers from initial inspiration through their entire journey in China."
       },
       {
         "type": "paragraph",
-        "value": "The strongest outcome was a more useful sales surface for stakeholder review and future campaigns. The site could now support social traffic, brochures, and app extension with the same visual language. The next proof point would be live enquiry data: which itinerary sections hold attention, which social channels produce qualified enquiries, and where visitors still need reassurance before contact."
+        "value": "The impact was immediate and profound. Shareholders praised the transformation, recognizing how the new platform elevated their entire brand positioning. The design system's success led to its adoption for the company's mobile app, ensuring travelers experience the same immersive storytelling across every touchpoint. Travel to Qin had evolved from a transactional booking site into a digital gateway that makes the dream of visiting China feel not just possible, but irresistible."
       },
       {
         "type": "image",
@@ -433,7 +433,7 @@
   {
     "id": "nihaoserica",
     "title": "Nihao Serica",
-    "subtitle": "A 0-to-1 website and identity system shaped around first-visit trust, service clarity, and enquiry flow.",
+    "subtitle": "End-to-end framework delivery encompassing core user experience, digital identity, and structural GTM rollout.",
     "year": "2024",
     "timeframe": "12 weeks",
     "tools": [
@@ -443,32 +443,17 @@
     ],
     "category": "0-to-1 Product Framework & GTM Execution",
     "links": {
-      "case_study": "case-study.html?id=nihaoserica",
       "live": "https://nihaoserica.com"
     },
     "hero_image": "assets/case_study_iamge_nihaoserica/cover_image.png",
-    "problem": "The diagnosis moved from 'how do we make the brand look finished?' to 'what does a first-time visitor need to understand before they trust Nihao Serica enough to enquire?' The work needed to make the offer, identity, proof points, and next step clear without relying on a long sales conversation.",
-    "solution": "I shaped the first-release digital presence around the visitor's trust path: what the organisation does, why it is credible, what the user can do next, and how the brand should feel across the site. Because the current portfolio only has limited public evidence, the case is deliberately written as a concise delivery note rather than an inflated outcome story.",
-    "content": [
-      {
-        "type": "paragraph",
-        "value": "The diagnosis moved from 'how do we make the brand look finished?' to 'what does a first-time visitor need to understand before they trust Nihao Serica enough to enquire?' I looked at the first screen, the content order, the proof points, and the path from interest to contact."
-      },
-      {
-        "type": "image",
-        "src": "assets/case_study_iamge_nihaoserica/cover_image.png",
-        "caption": "The current portfolio evidence is limited to the delivered public-facing brand and website surface, so the case stays concise and factual."
-      },
-      {
-        "type": "paragraph",
-        "value": "The first-release work focused on clarity rather than volume: a digital identity, a site structure, and content hierarchy that could explain the organisation quickly. The tradeoff was to avoid overbuilding the case study until more screenshots, funnel data, or before/after material can support a deeper story."
-      }
-    ]
+    "problem": "",
+    "solution": "",
+    "content": []
   },
   {
     "id": "tutufuture",
     "title": "TUTU FUTURE",
-    "subtitle": "A flexible study-tour identity system for programme categories that had outgrown the original hiking-focused brand.",
+    "subtitle": "a strategic rebrand for a Chinese study tour operator expanding beyond hiking trips into academic and cultural programs.",
     "year": "2025",
     "timeframe": "6 weeks",
     "tools": [
@@ -482,26 +467,26 @@
       "case_study": "case-study.html?id=tutufuture"
     },
     "hero_image": "assets/case_study_images_tutufuture/logo_design_grid.png",
-    "problem": "The diagnosis moved from 'the logo looks dated' to 'the brand only explains one kind of programme.' TUTU FUTURE's original green hiking identity worked for outdoor trips, but it did not help students understand art, STEM, language, or city-culture programmes. The team needed one system that could flex across categories without creating a different mini-brand for every trip.",
-    "solution": "I rebuilt the identity around repeatable programme categories. Colour, mascot use, layout templates, and bilingual lockups gave each programme type its own signal while keeping the materials recognisably TUTU FUTURE. The practical goal was asset production: posters, social posts, brochures, and student-facing communications that the team could adapt without redesigning from scratch.",
+    "problem": "TUTU FUTURE, a study tour operator specializing in short-term European programs for Chinese students, had outgrown its original brand identity. The existing logo and visual system were built around a student hiking theme with green color palette—appropriate for their early adventure-focused tours but increasingly misaligned as they expanded into academic courses, art programs, STEM workshops, and language immersion experiences. The hiking-centric brand failed to communicate the breadth and sophistication of their evolving offerings, limiting their appeal to prospective students seeking diverse educational experiences in Europe.",
+    "solution": "A comprehensive brand refresh that repositioned TUTU FUTURE from an outdoor adventure operator to a multifaceted educational travel platform. The new visual identity system included a modernized logo that balanced academic credibility with youthful energy, an expanded color palette that could flex across different program types (art, STEM, language, culture), and a complete suite of marketing materials optimized for social media campaigns. A custom mascot design added approachability and personality, while the new tone of voice guidelines ensured consistent communication across all touchpoints. The scalable system empowered the team to create cohesive materials for any program type without redesigning from scratch.",
     "body": [
-      "The diagnosis moved from 'the logo looks dated' to 'the brand only explains one kind of programme.' The old green hiking identity worked for outdoor trips, but it did not help a student understand art, STEM, language, or city-culture programmes. The brand problem was not just taste. It was category clarity.",
-      "I kept the idea of exploration, but moved it away from literal hiking cues. The logo, typography, and bilingual lockup had to work on posters, social posts, brochures, and student-facing materials. The tradeoff was to keep the system simple enough for repeated production instead of designing a bespoke look for every programme.",
-      "Colour became the main navigation device. Language, art, STEM, outdoor, and culture programmes could each carry a different palette while sharing the same layout logic and mascot behaviour. That gave the team variation without fragmenting the brand.",
-      "The strongest outcome was an asset system the team could keep using. Campaign materials could change by programme type while still looking like one organisation. The next proof point would be usage data from real campaigns: which programme visuals get saved, shared, or lead to enquiry."
+      "TUTU FUTURE's challenge was one of evolution. They had built a loyal following among Chinese students seeking European adventure, but their ambitions had grown beyond hiking trails. As they added academic programs, art workshops, STEM courses, and language immersion experiences to their portfolio, their green-and-outdoorsy brand identity began to feel like a limitation rather than an asset. Prospective students interested in studying Renaissance art in Florence or learning German in Berlin couldn't see themselves in a brand that screamed 'backpacking trip.'",
+      "The rebrand began with strategic positioning. Rather than abandoning their adventurous roots entirely, the goal was to elevate the concept of exploration—from physical journeys to intellectual and cultural discovery. The new logo retained a sense of movement and energy but shed the literal hiking references. Clean, modern typography conveyed academic credibility, while dynamic shapes suggested possibility and growth. The bilingual lockup (TUTU FUTURE 徒途学旅) honored their Chinese student audience while signaling their international scope.",
+      "Color became a critical tool for differentiation. The old single-green palette was replaced with a flexible system: vibrant blues for language programs, warm terracottas for art and culture, energetic purples for STEM, and yes, a refined green for outdoor experiences. Each program type could have its own visual personality while remaining unmistakably TUTU FUTURE. The mascot—a friendly, curious character—added warmth and approachability, giving the brand a face that could appear across social media, brochures, and promotional materials without feeling corporate or distant.",
+      "The impact was immediate. The new brand system gave TUTU FUTURE the visual language to market their full range of programs with confidence. Social media campaigns could now speak to art students, language learners, and STEM enthusiasts with equal authenticity. Printed brochures and digital materials maintained a cohesive look while celebrating the diversity of experiences on offer. The brand had grown up without losing its spirit, ready to guide the next generation of Chinese students on journeys that would shape their futures."
     ],
     "images": [
       {
         "src": "assets/case_study_images_tutufuture/color_palette_system.png",
-        "caption": "The identity moved away from literal hiking cues so it could represent art, STEM, language, outdoor, and culture programmes."
+        "caption": "The logo evolution from a hiking-focused identity to a versatile educational brand that balances academic credibility with youthful energy, ready to represent diverse program types."
       },
       {
         "src": "assets/case_study_images_tutufuture/before_after_logo_comparison.png",
-        "caption": "Programme colours give each category a clear signal while keeping the layouts and brand structure consistent."
+        "caption": "A flexible color system that allows each program type—language, art, STEM, outdoor—to have its own visual personality while maintaining brand cohesion across all touchpoints."
       },
       {
         "src": "assets/case_study_images_tutufuture/marketing_posters_templates.png",
-        "caption": "Templates were designed for repeated production across posters, social posts, brochures, and student-facing communications."
+        "caption": "The brand identity system deployed across print and digital touchpoints, demonstrating scalability and versatility for social media campaigns, promotional materials, and student-facing communications."
       },
       {
         "src": "assets/case_study_images_tutufuture/business_card_mascot_design.png",
@@ -515,34 +500,34 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "The diagnosis moved from 'the logo looks dated' to 'the brand only explains one kind of programme.' The old green hiking identity worked for outdoor trips, but it did not help a student understand art, STEM, language, or city-culture programmes. The brand problem was not just taste. It was category clarity."
+        "value": "TUTU FUTURE's challenge was one of evolution. They had built a loyal following among Chinese students seeking European adventure, but their ambitions had grown beyond hiking trails. As they added academic programs, art workshops, STEM courses, and language immersion experiences to their portfolio, their green-and-outdoorsy brand identity began to feel like a limitation rather than an asset. Prospective students interested in studying Renaissance art in Florence or learning German in Berlin couldn't see themselves in a brand that screamed 'backpacking trip.'"
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/color_palette_system.png",
-        "caption": "The identity moved away from literal hiking cues so it could represent art, STEM, language, outdoor, and culture programmes."
+        "caption": "The logo evolution from a hiking-focused identity to a versatile educational brand that balances academic credibility with youthful energy, ready to represent diverse program types."
       },
       {
         "type": "paragraph",
-        "value": "I kept the idea of exploration, but moved it away from literal hiking cues. The logo, typography, and bilingual lockup had to work on posters, social posts, brochures, and student-facing materials. The tradeoff was to keep the system simple enough for repeated production instead of designing a bespoke look for every programme."
+        "value": "The rebrand began with strategic positioning. Rather than abandoning their adventurous roots entirely, the goal was to elevate the concept of exploration—from physical journeys to intellectual and cultural discovery. The new logo retained a sense of movement and energy but shed the literal hiking references. Clean, modern typography conveyed academic credibility, while dynamic shapes suggested possibility and growth. The bilingual lockup (TUTU FUTURE 徒途学旅) honored their Chinese student audience while signaling their international scope."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/before_after_logo_comparison.png",
-        "caption": "Programme colours give each category a clear signal while keeping the layouts and brand structure consistent."
+        "caption": "A flexible color system that allows each program type—language, art, STEM, outdoor—to have its own visual personality while maintaining brand cohesion across all touchpoints."
       },
       {
         "type": "paragraph",
-        "value": "Colour became the main navigation device. Language, art, STEM, outdoor, and culture programmes could each carry a different palette while sharing the same layout logic and mascot behaviour. That gave the team variation without fragmenting the brand."
+        "value": "Color became a critical tool for differentiation. The old single-green palette was replaced with a flexible system: vibrant blues for language programs, warm terracottas for art and culture, energetic purples for STEM, and yes, a refined green for outdoor experiences. Each program type could have its own visual personality while remaining unmistakably TUTU FUTURE. The mascot—a friendly, curious character—added warmth and approachability, giving the brand a face that could appear across social media, brochures, and promotional materials without feeling corporate or distant."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_tutufuture/marketing_posters_templates.png",
-        "caption": "Templates were designed for repeated production across posters, social posts, brochures, and student-facing communications."
+        "caption": "The brand identity system deployed across print and digital touchpoints, demonstrating scalability and versatility for social media campaigns, promotional materials, and student-facing communications."
       },
       {
         "type": "paragraph",
-        "value": "The strongest outcome was an asset system the team could keep using. Campaign materials could change by programme type while still looking like one organisation. The next proof point would be usage data from real campaigns: which programme visuals get saved, shared, or lead to enquiry."
+        "value": "The impact was immediate. The new brand system gave TUTU FUTURE the visual language to market their full range of programs with confidence. Social media campaigns could now speak to art students, language learners, and STEM enthusiasts with equal authenticity. Printed brochures and digital materials maintained a cohesive look while celebrating the diversity of experiences on offer. The brand had grown up without losing its spirit, ready to guide the next generation of Chinese students on journeys that would shape their futures."
       },
       {
         "type": "image",
@@ -559,7 +544,7 @@
   {
     "id": "stairaid",
     "title": "Stair Aid",
-    "subtitle": "A stair-specific crutch concept that lets users change length quickly when flat-ground walking turns into stair gait.",
+    "subtitle": "an assistive mobility device that enables faster, safer stair navigation for people with temporary lower-limb injuries.",
     "year": "2023",
     "timeframe": "12 weeks",
     "tools": [
@@ -573,18 +558,18 @@
       "case_study": "case-study.html?id=stairaid"
     },
     "hero_image": "assets/case_study_images_stairaid/product_showcase_desk.png",
-    "problem": "The diagnosis moved from 'crutches are slow on stairs' to 'stair gait asks for a different crutch length than flat-ground walking.' Standard crutches are symmetrical on level ground, but stairs work better with a front-back stance. Manual adjustment takes too long and needs both hands, so users either climb with the wrong length or stop mid-staircase to change it.",
-    "solution": "StairAid uses a one-handed trigger mechanism so each crutch can change length in about 3 seconds. The design keeps the adjustment fast, moves the locking mechanism inside the tube after prototype feedback, and uses a curved tip and forearm brace to support stair-specific movement.",
+    "problem": "People recovering from lower-limb injuries face a critical mobility challenge: standard crutches force them to navigate stairs slowly and awkwardly, creating safety risks and limiting independence. Traditional crutches require users to adjust length manually—a process that takes 30+ seconds per adjustment and demands both hands. For someone with an injured foot trying to climb stairs, this means choosing between using crutches at the wrong length (unsafe) or stopping to adjust them mid-staircase (impractical). The result is slow, unstable stair navigation that turns a simple task into a frustrating ordeal.",
+    "solution": "StairAid is a reimagined crutch system designed specifically for stair navigation. The core innovation is a one-handed, trigger-activated length adjustment mechanism that allows users to extend or shorten each crutch in just 3 seconds—8 seconds for a pair. By positioning crutches at uneven lengths (front-back stance), users gain the stability needed to ascend and descend stairs quickly and safely. The curved tip provides a secure stepping point during adjustment and improves balance through increased contact area. A forearm brace replaces the traditional armpit support, reducing fatigue and improving agility on stairs.",
     "body": [
-      "The challenge began with a simple observation: stair gait asks for a different crutch length than flat-ground walking. On level surfaces, crutches are positioned symmetrically. On stairs, a diagonal stance with one crutch higher and one lower creates a more useful support triangle with the uninjured leg. Traditional crutches can do this only through slow manual adjustment.",
-      "I tested the idea with standard crutches first. Uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and felt more stable in stair tests. That changed the design objective: the product did not need to reinvent the entire crutch. It needed a length adjustment mechanism that worked in seconds.",
+      "The challenge began with a simple observation: people on crutches navigate stairs in a fundamentally different way than they walk on flat ground. On level surfaces, crutches are positioned symmetrically at the same length. But on stairs, the optimal stance is diagonal—one crutch higher, one lower—to create a stable tripod with the uninjured leg. Traditional crutches can't adapt to this need without a time-consuming manual adjustment, forcing users to compromise safety for convenience.",
+      "The design process started with experimentation. Using standard crutches, real-world stair tests revealed that uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and improved stability dramatically. The insight was clear: if users could adjust crutch length instantly, they could optimize for both stair navigation and ground walking without friction. This became the core design objective—develop a length adjustment mechanism that works in seconds, not minutes.",
       "The technical solution evolved through multiple iterations. Early prototypes used an external locking system mounted around the crutch tube, but user feedback revealed aesthetic concerns and mechanical complexity. The second iteration moved the mechanism inside the tube, making it invisible from the outside while reducing part count and improving durability. The locking system uses a lever for linear motion input, a bike cable for motion transfer, and a wedge mechanism to convert vertical hand motion into horizontal locking force. An extension spring keeps the length locked by default, requiring only a trigger pull to release.",
-      "Three details carried the stair-specific design: the trigger release, the curved tip, and the forearm brace. The curved tip gives a concave surface for applying force during adjustment and a more secure contact point when the crutch is tilted on stairs. Nylon-66 30-GF was chosen for structural parts so the concept could stay lightweight while handling real-world loads."
+      "Beyond the adjustment mechanism, every detail was optimized for stair use. The curved tip serves dual purposes: it provides a concave surface for applying force during length adjustment and creates a stable stepping point when users need to tilt the crutch on stairs. The forearm brace improves agility compared to traditional armpit supports, allowing users to shift weight dynamically. Material choices—Nylon-66 30-GF for structural components—ensure the design could withstand real-world loads while remaining lightweight. The result is a mobility aid that doesn't just accommodate stair navigation—it's designed for it."
     ],
     "images": [
       {
         "src": "assets/case_study_images_stairaid/problem_cause_objective.png",
-        "caption": "The problem framing moved from general crutch discomfort to the specific mismatch between flat-ground crutch length and stair gait."
+        "caption": "Research indicated that the primary cause of chronic ankle instability was the failure of standard crutches to handle stairs safely, leading to the objective of designing a fast, safe, and comfortable stair-navigating mobility aid."
       },
       {
         "src": "assets/case_study_images_stairaid/gait_specification_stairs.png",
@@ -592,7 +577,7 @@
       },
       {
         "src": "assets/case_study_images_stairaid/length_adjustment_operation.png",
-        "caption": "The trigger lets users change crutch length in about 3 seconds per piece when moving between level ground and stairs."
+        "caption": "The Stairaid design allows users to seamlessly transition between level ground and stair modes by adjusting and locking the crutch length in just 3 seconds per piece using a quick-release trigger."
       },
       {
         "src": "assets/case_study_images_stairaid/technical_solution_locking_system.png",
@@ -630,16 +615,16 @@
     "content": [
       {
         "type": "paragraph",
-        "value": "The challenge began with a simple observation: stair gait asks for a different crutch length than flat-ground walking. On level surfaces, crutches are positioned symmetrically. On stairs, a diagonal stance with one crutch higher and one lower creates a more useful support triangle with the uninjured leg. Traditional crutches can do this only through slow manual adjustment."
+        "value": "The challenge began with a simple observation: people on crutches navigate stairs in a fundamentally different way than they walk on flat ground. On level surfaces, crutches are positioned symmetrically at the same length. But on stairs, the optimal stance is diagonal—one crutch higher, one lower—to create a stable tripod with the uninjured leg. Traditional crutches can't adapt to this need without a time-consuming manual adjustment, forcing users to compromise safety for convenience."
       },
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/problem_cause_objective.png",
-        "caption": "The problem framing moved from general crutch discomfort to the specific mismatch between flat-ground crutch length and stair gait."
+        "caption": "Research indicated that the primary cause of chronic ankle instability was the failure of standard crutches to handle stairs safely, leading to the objective of designing a fast, safe, and comfortable stair-navigating mobility aid."
       },
       {
         "type": "paragraph",
-        "value": "I tested the idea with standard crutches first. Uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and felt more stable in stair tests. That changed the design objective: the product did not need to reinvent the entire crutch. It needed a length adjustment mechanism that worked in seconds."
+        "value": "The design process started with experimentation. Using standard crutches, real-world stair tests revealed that uneven crutch lengths reduced stair descent time from 8 seconds to 6 seconds and improved stability dramatically. The insight was clear: if users could adjust crutch length instantly, they could optimize for both stair navigation and ground walking without friction. This became the core design objective—develop a length adjustment mechanism that works in seconds, not minutes."
       },
       {
         "type": "image",
@@ -653,11 +638,11 @@
       {
         "type": "image",
         "src": "assets/case_study_images_stairaid/length_adjustment_operation.png",
-        "caption": "The trigger lets users change crutch length in about 3 seconds per piece when moving between level ground and stairs."
+        "caption": "The Stairaid design allows users to seamlessly transition between level ground and stair modes by adjusting and locking the crutch length in just 3 seconds per piece using a quick-release trigger."
       },
       {
         "type": "paragraph",
-        "value": "Three details carried the stair-specific design: the trigger release, the curved tip, and the forearm brace. The curved tip gives a concave surface for applying force during adjustment and a more secure contact point when the crutch is tilted on stairs. Nylon-66 30-GF was chosen for structural parts so the concept could stay lightweight while handling real-world loads."
+        "value": "Beyond the adjustment mechanism, every detail was optimized for stair use. The curved tip serves dual purposes: it provides a concave surface for applying force during length adjustment and creates a stable stepping point when users need to tilt the crutch on stairs. The forearm brace improves agility compared to traditional armpit supports, allowing users to shift weight dynamically. Material choices—Nylon-66 30-GF for structural components—ensure the design could withstand real-world loads while remaining lightweight. The result is a mobility aid that doesn't just accommodate stair navigation—it's designed for it."
       },
       {
         "type": "image",

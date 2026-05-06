@@ -2,66 +2,64 @@
 
 ## North Star
 
-Rewrite every case toward the Depology benchmark:
+Rewrite every case with the thinking quality behind the Depology benchmark:
 
 > "The diagnosis moved from “which screen is underperforming?” to “which repeated decisions are users struggling to make?” I looked at how users arrived, where they paused, what they tapped, and which parts of the journey created uncertainty."
 
-The new portfolio voice should sound like a designer who watched the work closely, not a narrator trying to make every project feel huge.
+This does not mean copying the sentence structure. The benchmark matters because it shows a way of thinking: the surface problem is questioned, the real repeated decision is named, the designer explains what they inspected, and the copy makes uncertainty visible.
+
+The new portfolio voice should sound like a designer who watched the work closely, understood the true problem, made specific choices, and can explain what the outcome did and did not prove. It should not sound like a narrator trying to make every project feel huge.
 
 ## Rewrite Rule
 
-Every important paragraph should answer at least two of these:
+Every important paragraph should carry a useful piece of reasoning. Across a case study, the reader should understand:
 
-1. What did the user, client, or operator need to decide?
-2. What made that decision hard?
-3. What evidence showed the problem?
-4. What did Joe change in the interface, system, or flow?
-5. What tradeoff did the team accept?
-6. What changed after the work, and how do we know?
+1. What the true problem was, not just the obvious surface request.
+2. Why Joe chose this direction instead of another plausible direction.
+3. How Joe thought about the user, client, operator, business, or system constraint.
+4. What changed in the interface, content, system, brand, or flow.
+5. What the outcome was, with proof level clearly separated from assumption.
+6. What Joe would inspect next if the work continued.
 
 If a paragraph answers none of these, it is probably filler.
 
-## Case Study Template
+## Paragraph Model
 
-Use this structure for all rewrites:
+Do not force every case into the same sentence pattern. Use the following as a thinking model, not a copy template.
 
-### 1. Opening Diagnosis
+### 1. True Problem
 
-One concrete shift:
+Explain the hidden problem behind the brief.
 
-"The diagnosis moved from [obvious surface problem] to [deeper repeated user/client decision]."
+Weak: "The site needed to look more premium."
 
-### 2. Evidence
+Better: "The old site could take a payment, but it did not answer the questions a foreign traveller needed answered before trusting the trip."
 
-Name what was inspected:
+### 2. Reasoning
 
-- Heatmaps
-- Session length
-- Click/tap behaviour
-- Stakeholder review notes
-- Existing page inventory
-- Test tasks
-- Support or sales questions
-- Prototype stress cases
-- Before/after production assets
+Explain how Joe looked at the problem.
 
-### 3. Design Decision
+Useful evidence can include heatmaps, session length, click/tap behaviour, stakeholder review notes, existing page inventory, test tasks, support/sales questions, prototype stress cases, or before/after production assets. The important thing is not naming evidence for decoration; it is showing how the evidence changed the design judgement.
 
-State the decision in plain language:
+### 3. Design Choice
+
+Explain what Joe changed and why.
 
 "I removed the custom booking portal from the first release and replaced it with an eligibility form plus deposit link."
 
 ### 4. Tradeoff
 
-Every strong case admits a tradeoff:
+Every strong case admits at least one tradeoff:
 
 "This was less automated than a full booking engine, but it let the startup launch without freezing the product for months."
 
-### 5. Result
+### 5. Outcome And Next Inspection
 
-Use proof only where it exists. If the result is qualitative, say so.
+Use proof only where it exists. If the result is qualitative, say so. Then state what should be inspected next.
 
 "In stakeholder review, this gave the founder a launchable sales surface." is more credible than "The results validated every decision."
+
+"The next thing to inspect would be where parents leave the eligibility form and which programme recommendations lead to deposit clicks." is more useful than pretending the case already proves conversion.
 
 ## Priority 1: Nihao Serica
 
@@ -87,9 +85,9 @@ Turn it from abstract delivery language into a founder/customer journey case.
 
 ### Rewrite Direction
 
-Possible opening:
+Thinking anchor:
 
-"The diagnosis moved from 'how do we make the brand look finished?' to 'what does a first-time visitor need to understand before they trust Nihao Serica enough to enquire?' I looked at the first screen, the content order, the proof points, and the path from interest to contact."
+The case should explain what a first-time visitor needed to understand before trusting Nihao Serica enough to enquire. The writing should show how Joe thought through the first screen, content order, proof points, and contact path.
 
 ### Immediate Actions
 
@@ -117,9 +115,9 @@ Make the case about parent/student decision-making and launch constraint.
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'how do we build the full education-travel platform?' to 'which decisions must a parent make before paying a deposit?' The planned product included campus pages, subject pages, programme pages, booking, blog, and search. That was too much for the launch window, so I mapped the journey around comparison, eligibility, and deposit confidence."
+The case should explain why the full education-travel platform was too much for the launch window, then show how Joe narrowed the first release around the parent/student decisions that had to happen before a deposit: comparison, eligibility, trust, and commitment.
 
 Design decision paragraph:
 
@@ -154,9 +152,9 @@ Make the case about trust-building for foreign travellers after the September 20
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'the site needs to look more premium' to 'what does a foreign visitor need to believe before asking about a China itinerary?' The old Shopify page could take a payment, but it did not answer the trust questions that arrive before payment: who runs the trip, what the itinerary feels like, how support works, and why the agency is credible."
+The case should explain that the old Shopify page could take a payment, but could not answer the trust questions that arrive before payment: who runs the trip, what the itinerary feels like, how support works, and why the agency is credible.
 
 Design decision paragraph:
 
@@ -191,9 +189,9 @@ Make the case about compliance operators clearing threshold risk under deadline 
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'how do we show more compliance data?' to 'what must an operator know before they can clear a threshold breach?' I looked at the repeated switches between risk status, production contribution, alert rules, report blockers, and evidence records. The old dashboard made those jobs compete on one surface."
+The case should explain why adding more compliance data was not enough. It should show how an operator moves between risk status, production contribution, alert rules, report blockers, and evidence records, and why those jobs need separate work modes.
 
 Design decision paragraph:
 
@@ -227,9 +225,9 @@ Turn the case into a product judgement story about messy renter intent and visib
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'can property search understand natural language?' to 'how does a renter know the system understood the messy parts of their request?' I tested queries where budget, commute, station proximity, exclusions, and soft preferences were mixed together in one sentence."
+The case should explain why natural-language search only helps if the renter can see what the system understood. Use messy queries where budget, commute, station proximity, exclusions, and soft preferences are mixed together in one sentence.
 
 Design decision paragraph:
 
@@ -260,9 +258,9 @@ Make the case about programme-category clarity and repeatable asset production.
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'the logo looks dated' to 'the brand only explains one kind of programme.' The old green hiking identity worked for outdoor trips, but it did not help a student understand art, STEM, language, or city-culture programmes."
+The case should explain why the old green hiking identity only described one programme type. The rewrite should show how Joe thought about programme categories, repeated asset production, bilingual use, and campaign reuse.
 
 Design decision paragraph:
 
@@ -293,9 +291,9 @@ Keep the maker voice and remove absolute claims.
 
 ### Rewrite Direction
 
-Opening refinement:
+Thinking anchor:
 
-"The diagnosis moved from 'crutches are slow on stairs' to 'stair gait asks for a different crutch length than flat-ground walking.'"
+The case should explain that the true problem was not general crutch discomfort. It was the mismatch between flat-ground crutch length and stair gait.
 
 Replace:
 
@@ -314,9 +312,9 @@ Use the standalone page as the canonical voice and trim the older entry.
 
 ### Rewrite Direction
 
-Opening:
+Thinking anchor:
 
-"The diagnosis moved from 'which product page is underperforming?' to 'where does a skincare shopper lose confidence before adding to cart?' I looked at heatmaps, tap concentration, buybox position, navigation use, and session drop-off."
+The Depology benchmark works because it explains where confidence breaks before add-to-cart, then connects heatmaps, tap concentration, buybox position, navigation use, and session drop-off to design choices.
 
 Keep:
 
@@ -398,4 +396,4 @@ Before publishing, every case should contain:
 
 The voice should feel like this:
 
-"I saw where the decision became unclear. I changed the surface so that decision had a home. I tested or reviewed whether the change helped. I know what I would improve next."
+"I understood what was really making the decision unclear. I can explain why I chose this direction. I can show what changed. I know what the outcome proves, what it does not prove, and what I would inspect next."
