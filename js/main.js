@@ -443,7 +443,6 @@ function renderCaseStudyPage(projects) {
     };
     const otherProjects = projects
         .filter(p => p.id !== projectId && hasCaseStudyContent(p))
-        .sort(() => 0.5 - Math.random())
         .slice(0, 2);
     if (otherProjects.length > 0) {
         html += `
