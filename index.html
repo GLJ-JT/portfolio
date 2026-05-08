@@ -212,14 +212,15 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(149, 100, 0, 0.1);
-      transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), background 200ms var(--ease);
+      background: var(--ink);
+      box-shadow: none;
+      transition: transform 200ms var(--ease), background 200ms var(--ease);
     }
 
     body.theme-night .theme-toggle-dot {
       transform: translateX(12px);
-      box-shadow: 0 0 0 3px rgba(226, 173, 77, 0.14), 0 0 16px rgba(226, 173, 77, 0.36);
+      background: var(--paper);
+      box-shadow: none;
     }
 
     .hero {
@@ -1378,8 +1379,7 @@
     document.body.classList.add("js");
     try {
       const savedTheme = localStorage.getItem("portfolioTheme");
-      const prefersNight = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (savedTheme === "night" || (!savedTheme && prefersNight)) {
+      if (savedTheme === "dark") {
         document.body.classList.add("theme-night");
       }
     } catch (error) {}
@@ -1392,11 +1392,11 @@
         <a href="#routes">Cases</a>
         <a href="interview-projects.html">All projects</a>
         <a href="assets/Joe_Tao_Resume.pdf" download>CV</a>
-        <button class="theme-toggle" type="button" aria-label="Switch to night mode" aria-pressed="false">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-dot"></span>
           </span>
-          <span class="theme-toggle-text">Night</span>
+          <span class="theme-toggle-text">Dark</span>
         </button>
       </div>
     </div>
@@ -1721,8 +1721,8 @@
       const isNight = document.body.classList.contains("theme-night");
       if (!themeToggle || !themeToggleText) return;
       themeToggle.setAttribute("aria-pressed", String(isNight));
-      themeToggle.setAttribute("aria-label", isNight ? "Switch to day mode" : "Switch to night mode");
-      themeToggleText.textContent = isNight ? "Day" : "Night";
+      themeToggle.setAttribute("aria-label", isNight ? "Switch to light mode" : "Switch to dark mode");
+      themeToggleText.textContent = isNight ? "Light" : "Dark";
     };
 
     syncThemeToggle();
@@ -1730,7 +1730,7 @@
     themeToggle?.addEventListener("click", () => {
       const isNight = document.body.classList.toggle("theme-night");
       try {
-        localStorage.setItem("portfolioTheme", isNight ? "night" : "day");
+        localStorage.setItem("portfolioTheme", isNight ? "dark" : "light");
       } catch (error) {}
       syncThemeToggle();
     });
