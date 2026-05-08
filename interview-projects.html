@@ -53,7 +53,7 @@
   </style>
 </head>
 <body>
-  <script>try{const saved=localStorage.getItem('portfolioTheme'); if(saved==='night'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches)) document.body.classList.add('theme-night');}catch(e){}</script>
+  <script>try{const saved=localStorage.getItem('portfolioTheme'); if(saved==='dark'||saved==='night') document.body.classList.add('theme-night');}catch(e){}</script>
   <nav class="nav"><div class="nav-inner"><a class="brand" href="interview-home.html">Joe Tao</a><div class="nav-links"><a href="interview-home.html#routes">Cases</a><a href="assets/Joe_Tao_Resume.pdf" download>CV</a></div></div></nav>
   <header class="hero shell"><p class="kicker">Project archive</p><h1>All projects, sorted for interview reading.</h1><p>Use the filters to scan by the kind of evidence you need: conversion, AI search, dashboards, education journeys, service IA, brand systems, and product design.</p></header>
   <main class="shell"><div class="filters" aria-label="Filter projects"><button type="button" class="active" data-filter="All">All</button><button type="button" class="" data-filter="AI & Product Logic">AI & Product Logic</button><button type="button" class="" data-filter="Commerce & Conversion">Commerce & Conversion</button><button type="button" class="" data-filter="Platforms & Dashboards">Platforms & Dashboards</button><button type="button" class="" data-filter="Travel & Education">Travel & Education</button><button type="button" class="" data-filter="Brand & Product Systems">Brand & Product Systems</button></div><section class="grid" id="project-grid"><article class="project-card" data-category="Commerce & Conversion">
