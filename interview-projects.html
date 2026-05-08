@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Interview Projects - Joe Tao</title>
+  <meta name="description" content="A recruiter-readable project archive for Joe Tao's product design portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f6f3; --paper:#fbfbfa; --paper-deep:#f0efeb; --ink:#2f3430; --muted:#74716b; --line:#e3e0d8; --accent:#956400; --yellow-soft:#fbf3db; --blue-soft:#e1f3fe; --green-soft:#edf3ec; --shadow:0 2px 8px rgba(47,52,48,.04); --sans:"Outfit",ui-sans-serif,system-ui,sans-serif; --serif:"Newsreader",Georgia,serif; --ease:cubic-bezier(.16,1,.3,1); color-scheme:light; }
+    body.theme-night { --bg:#171817; --paper:#20211f; --paper-deep:#292a27; --ink:#edebe3; --muted:#aaa59a; --line:#3a3a34; --accent:#e2ad4d; --yellow-soft:#3a3120; --blue-soft:#1e3140; --green-soft:#233323; --shadow:0 18px 52px rgba(0,0,0,.26); color-scheme:dark; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(circle, rgba(47,52,48,.13) 1px, transparent 1.15px) 18px 18px/24px 24px,var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased; }
+    body.theme-night { background:radial-gradient(circle, rgba(237,235,227,.1) 1px, transparent 1.2px) 18px 18px/24px 24px,var(--bg); }
+    a { color:inherit; }
+    .shell { width:min(1180px, calc(100% - 36px)); margin:0 auto; }
+    .nav { position:sticky; top:14px; z-index:20; width:min(1180px, calc(100% - 36px)); margin:14px auto 0; border:1px solid var(--line); border-radius:12px; background:rgba(251,251,250,.92); box-shadow:var(--shadow); backdrop-filter:blur(10px); }
+    body.theme-night .nav { background:rgba(32,33,31,.9); }
+    .nav-inner { min-height:58px; padding:0 18px 0 20px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { font-family:var(--serif); font-size:19px; font-weight:650; text-decoration:none; }
+    .nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:13px; font-weight:700; }
+    .nav-links a { min-height:34px; display:inline-flex; align-items:center; text-decoration:none; }
+    .nav-links a:hover { color:var(--ink); }
+    .hero { padding:90px 0 52px; }
+    .kicker { margin:0 0 14px; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.11em; text-transform:uppercase; }
+    h1 { max-width:900px; margin:0; font-family:var(--serif); font-size:clamp(42px,7vw,92px); line-height:.94; letter-spacing:0; text-wrap:balance; }
+    .hero p { max-width:700px; margin:24px 0 0; color:var(--muted); font-size:clamp(17px,2vw,22px); line-height:1.55; }
+    .filters { position:sticky; top:92px; z-index:10; display:flex; flex-wrap:wrap; gap:8px; padding:16px 0; margin:0 0 28px; background:linear-gradient(to bottom,var(--bg) 78%,transparent); }
+    .filters button { min-height:34px; padding:7px 10px; border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--muted); font:inherit; font-size:12px; font-weight:850; cursor:pointer; }
+    .filters button.active { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    body.theme-night .filters button.active { color:var(--bg); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; padding-bottom:80px; }
+    .project-card { display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1fr); min-height:360px; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--paper); }
+    .project-media { display:block; min-height:260px; background:var(--paper-deep); overflow:hidden; }
+    .project-media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .project-copy { display:flex; flex-direction:column; padding:28px; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; }
+    .project-tags span { padding:6px 8px; border:1px solid var(--line); border-radius:999px; background:var(--yellow-soft); color:var(--ink); font-size:11px; font-weight:800; }
+    .project-tags span:nth-child(2) { background:var(--blue-soft); }
+    .project-tags span:nth-child(3) { background:var(--green-soft); }
+    .project-card h2 { margin:0 0 12px; font-family:var(--serif); font-size:clamp(28px,3vw,42px); line-height:1; }
+    .project-card p { margin:0; color:var(--muted); font-size:15.5px; line-height:1.6; }
+    .project-link { width:max-content; margin-top:auto; padding-top:22px; color:var(--ink); font-size:14px; font-weight:850; text-decoration:none; border-bottom:1px solid var(--line); }
+    .project-link:hover { border-color:var(--ink); }
+    .footer { display:grid; grid-template-columns:minmax(260px,.78fr) minmax(0,1.2fr); gap:32px; align-items:start; padding:36px 0 52px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    .footer strong { display:block; margin-bottom:4px; color:var(--ink); font-size:16px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:10px 18px; justify-content:flex-end; font-weight:700; }
+    .footer-links a { min-height:34px; display:inline-flex; align-items:center; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line); }
+    @media (max-width:860px) { .shell,.nav{width:min(100% - 24px,1180px);} .nav-links{gap:10px;font-size:12px;} .hero{padding:58px 0 34px;} h1{font-size:clamp(42px,13vw,58px);} .grid{grid-template-columns:1fr;} .project-card{grid-template-columns:1fr; min-height:auto;} .project-media{min-height:230px; max-height:270px;} .project-copy{padding:24px;} .footer{grid-template-columns:1fr;} .footer-links{justify-content:flex-start;} }
+  </style>
+</head>
+<body>
+  <script>try{const saved=localStorage.getItem('portfolioTheme'); if(saved==='night'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches)) document.body.classList.add('theme-night');}catch(e){}</script>
+  <nav class="nav"><div class="nav-inner"><a class="brand" href="interview-home.html">Joe Tao</a><div class="nav-links"><a href="interview-home.html#routes">Cases</a><a href="assets/Joe_Tao_Resume.pdf" download>CV</a></div></div></nav>
+  <header class="hero shell"><p class="kicker">Project archive</p><h1>All projects, sorted for interview reading.</h1><p>Use the filters to scan by the kind of evidence you need: conversion, AI search, dashboards, education journeys, service IA, brand systems, and product design.</p></header>
+  <main class="shell"><div class="filters" aria-label="Filter projects"><button type="button" class="active" data-filter="All">All</button><button type="button" class="" data-filter="E-commerce conversion">E-commerce conversion</button><button type="button" class="" data-filter="AI search / proptech">AI search / proptech</button><button type="button" class="" data-filter="Interactive web">Interactive web</button><button type="button" class="" data-filter="Education platform">Education platform</button><button type="button" class="" data-filter="SaaS dashboards">SaaS dashboards</button><button type="button" class="" data-filter="Travel UX">Travel UX</button><button type="button" class="" data-filter="Service platform">Service platform</button><button type="button" class="" data-filter="Brand system">Brand system</button><button type="button" class="" data-filter="Product design">Product design</button></div><section class="grid" id="project-grid"><article class="project-card" data-category="E-commerce conversion">
+    <a class="project-media" href="depology-design-system-case-study.html"><img src="assets/case_study_images_depology_system/dp1.png" alt="Dēpology Design System preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2025</span><span>E-commerce conversion</span><span>Figma</span><span>Design Systems</span></div>
+      <h2>Dēpology Design System</h2>
+      <p>Turning mobile commerce friction into reusable navigation, buybox, cart, checkout, and responsive product-page patterns.</p>
+      <a class="project-link" href="depology-design-system-case-study.html">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="AI search / proptech">
+    <a class="project-media" href="case-study.html?id=property-nlp"><img src="assets/proptech-iframe-cover.png" alt="Explainable Property Search preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2026</span><span>AI search / proptech</span><span>Technical UX</span><span>Search Systems</span></div>
+      <h2>Explainable Property Search</h2>
+      <p>A fast technical UX case study: wireframe, live demo, backend logic, revenue estimate, then the full narrative in five short sections.</p>
+      <a class="project-link" href="case-study.html?id=property-nlp">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Interactive web">
+    <a class="project-media" href="https://www.xstarproduction.com/" target="_blank" rel="noopener noreferrer"><img src="assets/case_study_images_xstar/cover_image.png" alt="X Star Production preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2024</span><span>Interactive web</span><span>Framer</span><span>Digital Design</span></div>
+      <h2>X Star Production</h2>
+      <p>A story-led theatrical platform built natively in Framer. Delivered from concept to live production in just two weeks.</p>
+      <a class="project-link" href="https://www.xstarproduction.com/" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Education platform">
+    <a class="project-media" href="case-study.html?id=worldschooling"><img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="Worldschooling preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2025</span><span>Education platform</span><span>Framer</span><span>Figma</span></div>
+      <h2>Worldschooling</h2>
+      <p>A launch-ready education-travel platform that narrowed a large booking vision into programme comparison, eligibility checks, and deposit confidence.</p>
+      <a class="project-link" href="case-study.html?id=worldschooling">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="SaaS dashboards">
+    <a class="project-media" href="case-study.html?id=worldover"><img src="assets/case_study_images_worldover/cover_image.png" alt="Worldover.io preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2026</span><span>SaaS dashboards</span><span>Product UX</span><span>Frontend Prototyping</span></div>
+      <h2>Worldover.io</h2>
+      <p>A compliance command-centre case study turning threshold risk, entity scope, production evidence, alerts, and report blockers into one scannable decision workflow.</p>
+      <a class="project-link" href="case-study.html?id=worldover">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Travel UX">
+    <a class="project-media" href="case-study.html?id=traveltoqin"><img src="assets/case_study_images_traveltoqin/hero_section_responsive.png" alt="China Travel Service Redesign preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2024</span><span>Travel UX</span><span>Figma</span><span>Shopify</span></div>
+      <h2>China Travel Service Redesign</h2>
+      <p>A Travel to Qin case study: rebuilding a China travel site so international visitors could understand itineraries, trust the agency, and enquire with confidence.</p>
+      <a class="project-link" href="case-study.html?id=traveltoqin">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Service platform">
+    <a class="project-media" href="https://nihaoserica.com" target="_blank" rel="noopener noreferrer"><img src="assets/case_study_iamge_nihaoserica/cover_image.png" alt="Nihao Serica preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2024</span><span>Service platform</span><span>Framer</span><span>Figma</span></div>
+      <h2>Nihao Serica</h2>
+      <p>End-to-end framework delivery encompassing core user experience, digital identity, and structural GTM rollout.</p>
+      <a class="project-link" href="https://nihaoserica.com" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Brand system">
+    <a class="project-media" href="case-study.html?id=tutufuture"><img src="assets/case_study_images_tutufuture/logo_design_grid.png" alt="TUTU FUTURE preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2025</span><span>Brand system</span><span>Illustrator</span><span>Photoshop</span></div>
+      <h2>TUTU FUTURE</h2>
+      <p>a strategic rebrand for a Chinese study tour operator expanding beyond hiking trips into academic and cultural programs.</p>
+      <a class="project-link" href="case-study.html?id=tutufuture">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article><article class="project-card" data-category="Product design">
+    <a class="project-media" href="case-study.html?id=stairaid"><img src="assets/case_study_images_stairaid/product_showcase_desk.png" alt="Stair Aid preview"></a>
+    <div class="project-copy">
+      <div class="project-tags"><span>2023</span><span>Product design</span><span>SolidWorks</span><span>Keyshot</span></div>
+      <h2>Stair Aid</h2>
+      <p>an assistive mobility device that enables faster, safer stair navigation for people with temporary lower-limb injuries.</p>
+      <a class="project-link" href="case-study.html?id=stairaid">Open project <span aria-hidden="true">↗</span></a>
+    </div>
+  </article></section></main>
+  <footer class="footer shell"><div><a href="interview-home.html" style="text-decoration:none;color:inherit"><strong>Joe Tao</strong></a><span>Product Designer / London / Commercial UX, systems, AI-assisted products</span></div><div class="footer-links"><a href="interview-home.html">Home</a><a href="assets/Joe_Tao_Resume.pdf" download>CV</a><a href="mailto:joe.tianchen.tao@gmail.com?subject=Portfolio%20enquiry">Email me</a><a href="https://wa.me/447404641570" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://www.linkedin.com/in/joetao" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></footer>
+  <script>
+    const buttons = [...document.querySelectorAll('.filters button')];
+    const cards = [...document.querySelectorAll('.project-card')];
+    buttons.forEach(button => button.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.toggle('active', b === button));
+      const filter = button.dataset.filter;
+      cards.forEach(card => { card.style.display = filter === 'All' || card.dataset.category === filter ? 'grid' : 'none'; });
+    }));
+  </script>
+</body>
+</html>
