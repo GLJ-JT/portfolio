@@ -217,6 +217,7 @@ function renderCaseStudyPage(projects) {
     const projectId = urlParams.get('id');
     const project = projects.find(p => p.id === projectId);
     const content = document.getElementById('case-study-content');
+    const isPropertyCase = projectId === 'property-nlp';
 
     if (!project) {
         content.innerHTML = '<div style="text-align: center; padding: 5rem 0;"><h2>Project not found</h2><a href="index.html">Return home</a></div>';
@@ -246,14 +247,16 @@ function renderCaseStudyPage(projects) {
             </div>
         </header>
 
+        ${isPropertyCase ? '' : `
         <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} fade-in">
             ${project.hero_iframe
                 ? `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
                 : `<img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">`
             }
         </div>
+        `}
 
-        <section class="cs-properties-grid fade-in">
+        <section class="cs-properties-grid ${isPropertyCase ? 'cs-properties-grid-compact' : ''} fade-in">
             <div class="cs-property-row">
                 <div class="cs-property-label">Year</div>
                 <div class="cs-property-value">${project.year}</div>
@@ -275,8 +278,8 @@ function renderCaseStudyPage(projects) {
             ${liveRowHtml}
         </section>
 
-        <section class="cs-body">
-            <div class="split-layout" style="margin-bottom: 4rem;">
+        <section class="cs-body ${isPropertyCase ? 'cs-body-simple' : ''}">
+            <div class="split-layout cs-problem-solution">
                 <div class="split-col cs-callout fade-in" style="margin-bottom: 0;">
                     <div class="cs-callout-title">Problem</div>
                     <p>${project.problem}</p>
