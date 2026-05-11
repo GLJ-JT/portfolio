@@ -1069,6 +1069,22 @@ h1, h2, h3, h4 {
     line-height: 1.62;
 }
 
+.cs-body-simple .cs-image-figure {
+    margin: 3rem 0;
+}
+
+.cs-body-simple .cs-image-figure img {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.cs-body-simple .cs-image-caption {
+    max-width: 760px;
+    margin-inline: 0;
+    text-align: left;
+}
+
 .cs-callout-title {
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -1156,7 +1172,7 @@ h1, h2, h3, h4 {
 .cs-wide-iframe-section {
     width: min(1040px, 100%);
     margin-inline: auto;
-    border-top: 1px solid var(--border-color);
+    border-top: 0;
     background: transparent;
 }
 
@@ -1172,10 +1188,10 @@ h1, h2, h3, h4 {
 .cs-wide-iframe-wrap {
     height: min(76vh, 760px);
     min-height: 560px;
-    background: var(--bg-highlight-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
 }
 
 .cs-wide-iframe-mobile .cs-wide-iframe-wrap {
@@ -1188,7 +1204,7 @@ h1, h2, h3, h4 {
     height: 100%;
     border: 0;
     display: block;
-    background: var(--surface-color);
+    background: transparent;
 }
 
 .cs-estimate-panel {
