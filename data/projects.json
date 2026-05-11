@@ -104,7 +104,7 @@
   {
     "id": "property-nlp",
     "title": "Explainable Property Search",
-    "subtitle": "A fast technical UX case study: wireframe, live demo, backend logic, revenue estimate, then the full narrative in five short sections.",
+    "subtitle": "A UX walkthrough for an NLP property search prototype: what broke in the renter journey, how the interface made interpretation visible, and how the backend supported the product logic.",
     "year": "2026",
     "timeframe": "2 weeks",
     "tools": [
@@ -122,28 +122,28 @@
     },
     "hero_image": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
     "preview_iframe": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html?preview=portfolio",
-    "problem": "Renters describe property intent as messy language, while portal filters split that intent into separate controls. The failure point is confidence: users cannot see whether the system understood their constraints.",
-    "solution": "I built an explainable NLP search prototype: natural language becomes editable chips, Python ranking returns structured matches, and the interface explains why each result fits.",
+    "problem": "The search problem was not that renters lacked filters. It was that filters forced them to translate messy intent into separate controls, then left them unsure whether the system had understood the tradeoffs that mattered.",
+    "solution": "I designed the flow around visible interpretation: typed intent becomes editable chips, results explain their ranking, and the Python backend keeps the parsing and scoring logic inspectable.",
     "content": [
       {
         "type": "case_intro",
-        "kicker": "Fast Evidence Sequence",
-        "title": "See the work before reading the story.",
-        "value": "Wireframe, demo, backend, and commercial estimate are shown first so a hiring reviewer can understand the product system in minutes."
+        "kicker": "Hiring Reader Guide",
+        "title": "Start with the evidence, then read the reasoning.",
+        "value": "A hiring reviewer should not have to trust a polished case-study voice. The page shows the wireframe, demo, backend, and estimate first, then explains the UX decisions behind them in five short sections."
       },
       {
         "type": "wide_iframe",
         "kicker": "01 Wireframe",
-        "title": "Black-and-white research wireframe",
-        "description": "Used to test whether users understood parsed intent before visual styling distracted the session.",
+        "title": "The wireframe tests the riskiest question: do users trust the system interpretation?",
+        "description": "Look for the core behaviour before styling: the original query stays visible, parsed intent becomes editable, and the result reasons show whether the system remembered the user request.",
         "src": "https://glj-jt.github.io/property-nlp-search-demo/demo/research-wireframe.html",
         "cta": "Open wireframe"
       },
       {
         "type": "wide_iframe",
         "kicker": "02 Demo",
-        "title": "Live iPhone prototype",
-        "description": "Natural-language query, editable chips, filters, result cards, and hosted backend responses in one mobile flow.",
+        "title": "The demo turns the diagnosis into a usable renter flow.",
+        "description": "The important move is not the search box. It is the chain after it: query, chips, filters, ranked cards, reasons, and recovery when the request needs correction.",
         "src": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
         "cta": "Open demo",
         "variant": "mobile"
@@ -151,16 +151,16 @@
       {
         "type": "wide_iframe",
         "kicker": "03 Backend",
-        "title": "Backend and data logic board",
-        "description": "Shows the Python parser, ranking logic, JSON listing structure, API fallback, and frontend state path.",
+        "title": "The backend board shows that the UX is not smoke and mirrors.",
+        "description": "This view connects product decisions to implementation: what gets parsed, what counts as a hard filter, what becomes a soft preference, and how reasons return to the interface.",
         "src": "https://glj-jt.github.io/property-nlp-search-demo/demo/dev_whiteboard.html",
         "cta": "Open backend board"
       },
       {
         "type": "estimate_panel",
         "kicker": "04 Estimation",
-        "title": "Why this is commercially worth testing",
-        "value": "This is not a revenue claim. It is a sizing model for why better search confidence could justify a controlled pilot.",
+        "title": "The estimate explains why a search-quality feature is worth testing.",
+        "value": "The model does not claim the prototype creates revenue by itself. It sizes the opportunity if better search confidence improves retention, lead quality, or premium product packaging.",
         "items": [
           {
             "label": "Low case",
@@ -187,46 +187,46 @@
       {
         "type": "article_section",
         "kicker": "01 Problem",
-        "title": "The issue was not search volume. It was interpretation confidence.",
+        "title": "The real failure was the moment after the user typed their intent.",
         "paragraphs": [
-          "Property seekers rarely think in neat filters. A real query sounds more like: studio near UCL under 2500, bills included, lift, quiet, not basement. Standard portals make users translate that sentence into separate controls, then remember what the system may have missed.",
-          "I treated the problem as confidence leakage. If users cannot see which constraints were understood, they create their own workaround through screenshots, notes, agent messages, saved links, and repeated searches."
+          "A renter can describe a useful brief in one sentence: studio near UCL under 2500, bills included, lift, quiet, not basement. A normal portal then asks them to break that sentence apart. Budget becomes one control, location becomes another, and softer needs become memory work.",
+          "That is where attention leaks. The user is not only judging properties. They are also checking whether the product remembered the brief. I treated that as the core UX problem: confidence drops when interpretation is invisible."
         ]
       },
       {
         "type": "article_section",
         "kicker": "02 Diagnosis",
-        "title": "The repeated failure was invisible interpretation.",
+        "title": "The product needed proof of understanding, not a cleverer search input.",
         "paragraphs": [
-          "The core question was not whether natural-language search could parse words. It was whether the interface could prove its interpretation. Users needed to know which requirements were hard filters, which were soft preferences, and which ones needed correction.",
-          "That changed the direction from an AI search box to an explainable intent layer: keep the original query visible, turn parsed meaning into chips, explain ranking, and offer recovery when the request is too strict or ambiguous."
+          "The repeated question underneath the journey was simple: did the system understand what I meant? Users needed to see which requirements were hard filters, which were preferences, and which parts were uncertain enough to correct.",
+          "That changed the solution from AI search as a feature label to an explainable intent layer. The original sentence stays visible. Parsed meaning becomes chips. Ranking reasons explain the match. Recovery paths appear when the request is too strict or ambiguous."
         ]
       },
       {
         "type": "article_section",
         "kicker": "03 Build",
-        "title": "The prototype made UX and backend logic inspectable together.",
+        "title": "The prototype connects interaction design to inspectable search logic.",
         "paragraphs": [
-          "The frontend handles query state, chips, filters, onboarding, result cards, and saved searches. The Python backend parses intent, separates hard filters from soft signals, ranks listings, and returns plain-language reasons. The JSON dataset stores rent, stations, landmarks, amenities, accessibility, and derived tags.",
-          "I kept the stack deliberately readable. For interview review, the important thing is not that the model feels magical. It is that the product logic can be inspected, challenged, and improved."
+          "The frontend handles the renter-facing state: query, chips, filters, onboarding, result cards, and saved searches. The Python backend parses intent, separates hard filters from soft signals, ranks listings, and returns plain-language reasons. The JSON dataset carries rent, stations, landmarks, amenities, accessibility, and tags.",
+          "I kept the stack readable because the hiring question is not whether a black box can sound impressive. It is whether the designer can connect user uncertainty, interface behaviour, data structure, and technical constraints into one product decision."
         ]
       },
       {
         "type": "article_section",
         "kicker": "04 Validation",
-        "title": "Testing showed why visible intent matters.",
+        "title": "The test checked whether visible intent changed behaviour.",
         "paragraphs": [
-          "The wireframe was tested with 10 users on realistic renter tasks: find a studio near a landmark, stay under budget, exclude unwanted listing types, edit one parsed filter, and explain why the top result matched.",
-          "Average task completion moved from 6m20s to 3m45s, query reformulations dropped from 3.1 to 1.4 per task, shortlist success rose from 60% to 85%, and confidence rose from 5.8 to 8.1 out of 10. These are prototype results, not production analytics, but the behavioural pattern was clear."
+          "The wireframe was tested with 10 users on renter tasks: find a studio near a landmark, stay under budget, exclude unwanted listing types, edit one parsed filter, and explain why the top result matched. The goal was to watch confidence, not just completion.",
+          "Average task completion moved from 6m20s to 3m45s, query reformulations dropped from 3.1 to 1.4 per task, shortlist success rose from 60% to 85%, and confidence rose from 5.8 to 8.1 out of 10. These are prototype results, but they point to the same pattern: visible interpretation reduces second-guessing."
         ]
       },
       {
         "type": "article_section",
         "kicker": "05 Next",
-        "title": "The next proof would be production behaviour.",
+        "title": "The next version should prove where this belongs in the business.",
         "paragraphs": [
-          "The project shows a working product system: interaction model, parser, ranking, data, demo, and commercial sizing. The next step would be a controlled pilot on real renter traffic.",
-          "I would measure saved properties, contact clicks, reformulation rate, return sessions, and lead quality. That would show whether explainable NLP belongs in search, saved alerts, onboarding, or premium agent tools."
+          "The project now shows a working system: interaction model, parser, ranking, data, demo, and opportunity sizing. The next step is not more polish. It is a controlled pilot on real renter traffic.",
+          "I would measure saved properties, contact clicks, reformulation rate, return sessions, and lead quality. That would show whether explainable NLP should live in search, saved alerts, onboarding, or premium agent tools."
         ]
       }
     ],
