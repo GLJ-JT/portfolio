@@ -16,6 +16,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
   <style>
+    @property --badge-opacity {
+      syntax: "<number>";
+      inherits: true;
+      initial-value: 0;
+    }
+
+    @property --badge-scale {
+      syntax: "<number>";
+      inherits: true;
+      initial-value: 0.92;
+    }
+
+    @font-face {
+      font-family: "Calive Pixel Local";
+      src: url("assets/fonts/CalivepixelRegularDemo-OG8p8.otf") format("opentype");
+      font-display: swap;
+    }
+
     :root {
       --bg: #f7f6f3;
       --paper: #fbfbfa;
@@ -351,32 +369,73 @@
       transform: translateY(-1px);
     }
 
+    .hero-title-motion {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.14em;
+    }
+
+    .hero-title-lead {
+      display: block;
+    }
+
     .hero-title-motion .hero-word {
-      display: inline;
-      font: inherit;
-      font-style: italic;
-      color: rgba(47, 52, 48, 0.48);
-      cursor: default;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.1em;
+      font-family: "Calive Pixel Local", "Pixelify Sans", var(--serif);
+      font-size: 1.08em;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      cursor: pointer;
       text-decoration: none;
-      background-image: linear-gradient(100deg, rgba(247, 195, 97, 0.18), rgba(247, 195, 97, 0.62) 42%, rgba(247, 195, 97, 0.2));
-      background-repeat: no-repeat;
-      background-position: 0 82%;
-      background-size: 0 0.32em;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      padding: 0 0.03em;
-      transition: background-size 220ms var(--ease), background-image 220ms var(--ease), color 220ms var(--ease);
+      padding: 0;
+      transition: color 220ms var(--ease);
+    }
+
+    .hero-title-motion .hero-word::before {
+      content: "";
+      position: absolute;
+      inset: -0.34em -0.72em -0.28em;
+      z-index: -1;
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      background: linear-gradient(105deg, #51df75, #50baff, #51df75);
+      background-size: 240% 100%;
+      background-position: var(--badge-x, 0%) 50%;
+      opacity: calc(var(--badge-opacity, 0) * 0.82);
+      filter: blur(26px);
+      transform: scaleX(var(--badge-scale, 0.92)) scaleY(1.35) translateY(0.04em);
+      transform-origin: left center;
+      pointer-events: none;
     }
 
     body.theme-night .hero-title-motion .hero-word {
-      color: rgba(237, 235, 227, 0.45);
+      color: var(--ink);
+    }
+
+    .hero-typed-cursor {
+      display: inline-block;
+      width: 0.08em;
+      height: 0.72em;
+      margin-left: 0.08em;
+      background: currentColor;
+      transform: translateY(0.06em);
+      animation: cursorBlink 900ms steps(1) infinite;
+    }
+
+    @keyframes cursorBlink {
+      50% {
+        opacity: 0;
+      }
     }
 
     .hero-title-motion .hero-word:hover,
     .hero-title-motion .hero-word:focus-visible {
-      color: #272d28;
-      background-size: 100% 0.32em;
-      background-image: linear-gradient(100deg, rgba(247, 195, 97, 0.18), rgba(247, 195, 97, 0.62) 42%, rgba(247, 195, 97, 0.2));
+      color: var(--ink);
       outline: none;
     }
 
@@ -385,30 +444,12 @@
       color: var(--ink);
     }
 
-    .hero-title-motion .hero-word:nth-of-type(2) {
-      background-image: linear-gradient(100deg, rgba(112, 176, 156, 0.16), rgba(112, 176, 156, 0.54) 44%, rgba(112, 176, 156, 0.2));
-    }
-
-    .hero-title-motion .hero-word:nth-of-type(3) {
-      background-image: linear-gradient(100deg, rgba(150, 162, 214, 0.16), rgba(150, 162, 214, 0.5) 44%, rgba(150, 162, 214, 0.2));
-    }
-
-    .hero-title-motion .hero-word:nth-of-type(2):hover,
-    .hero-title-motion .hero-word:nth-of-type(2):focus-visible {
-      background-image: linear-gradient(100deg, rgba(112, 176, 156, 0.16), rgba(112, 176, 156, 0.54) 44%, rgba(112, 176, 156, 0.2));
-    }
-
-    .hero-title-motion .hero-word:nth-of-type(3):hover,
-    .hero-title-motion .hero-word:nth-of-type(3):focus-visible {
-      background-image: linear-gradient(100deg, rgba(150, 162, 214, 0.16), rgba(150, 162, 214, 0.5) 44%, rgba(150, 162, 214, 0.2));
-    }
-
     h1,
     h2,
     h3 {
       margin: 0;
       font-family: var(--serif);
-      font-weight: 650;
+      font-weight: 500;
       letter-spacing: 0;
     }
 
@@ -416,6 +457,7 @@
       max-width: 980px;
       font-size: clamp(34px, 4.8vw, 58px);
       line-height: 1.06;
+      font-variation-settings: "opsz" 72;
       text-wrap: balance;
     }
 
@@ -524,6 +566,7 @@
     .section-head h2 {
       font-size: clamp(28px, 3.8vw, 46px);
       line-height: 1.04;
+      font-weight: 500;
     }
 
     .section-head p {
@@ -686,6 +729,7 @@
       margin-bottom: 18px;
       font-size: clamp(28px, 3.8vw, 44px);
       line-height: 1;
+      font-weight: 500;
       text-wrap: balance;
     }
 
@@ -1439,7 +1483,12 @@
           <a href="#education-case">Programme IA</a>
           <a href="#travel-case">Service UX</a>
         </div>
-        <h1 class="hero-animate hero-title-motion">I design product journeys that make <a class="hero-word" href="#search-case" data-route-progress="0.02">decisions clearer</a>, <a class="hero-word" href="#checkout-case" data-route-progress="0.28">checkout faster</a>, and <a class="hero-word" href="#dashboard-case" data-route-progress="0.5">complex tools easier to use</a>.</h1>
+        <h1 class="hero-animate hero-title-motion">
+          <span class="hero-title-lead">I design product journeys that make</span>
+          <a class="hero-word hero-typed-word" href="#search-case" data-route-progress="0.02" aria-label="decisions clearer">
+            <span class="hero-typed-text">decisions clearer</span><span class="hero-typed-cursor" aria-hidden="true"></span>
+          </a>
+        </h1>
         <p class="hero-copy hero-animate">Selected work across AI search, commerce conversion, platform systems, education journeys, and travel service UX.</p>
         <div class="actions hero-animate">
           <a class="button primary" href="#routes">Review selected cases</a>
@@ -1729,6 +1778,7 @@
       <div class="footer-links">
         <a href="interview-home.html">Home</a>
         <a href="interview-projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
         <a href="assets/Joe_Tao_Resume.pdf" download>CV</a>
         <a href="https://www.linkedin.com/in/joetao" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
@@ -1742,6 +1792,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const motionAnimate = (element, target, options = {}) => {
+      const duration = options.duration ?? 0.4;
+      const easing = options.easing ?? [0.16, 1, 0.3, 1];
+      const transition = `color ${duration}s cubic-bezier(${easing.join(",")}), --badge-opacity ${duration}s cubic-bezier(${easing.join(",")}), --badge-scale ${duration}s cubic-bezier(${easing.join(",")}), --badge-x ${duration}s cubic-bezier(${easing.join(",")})`;
+      element.style.transition = transition;
+      requestAnimationFrame(() => {
+        Object.entries(target).forEach(([property, value]) => {
+          if (property.startsWith("--")) {
+            element.style.setProperty(property, value);
+          } else {
+            element.style[property] = value;
+          }
+        });
+      });
+    };
     const themeToggle = document.querySelector(".theme-toggle");
     const themeToggleText = document.querySelector(".theme-toggle-text");
     const syncThemeToggle = () => {
@@ -2043,8 +2108,113 @@
         el.style.transform = "none";
       });
       document.querySelectorAll(".hero-title-motion .hero-word").forEach((el) => {
-        el.style.color = document.body.classList.contains("theme-night") ? "rgba(237, 235, 227, 0.45)" : "rgba(47, 52, 48, 0.48)";
+        el.style.color = "var(--green)";
       });
+    }
+
+    const typedWord = document.querySelector(".hero-typed-word");
+    const typedText = document.querySelector(".hero-typed-text");
+    const typedPhrases = [
+      {
+        text: "decisions clearer",
+        href: "#search-case",
+        progress: "0.02"
+      },
+      {
+        text: "checkout faster",
+        href: "#checkout-case",
+        progress: "0.28"
+      },
+      {
+        text: "complex tools easier to use",
+        href: "#dashboard-case",
+        progress: "0.5"
+      }
+    ];
+
+    if (typedWord && typedText && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      let typedIndex = 0;
+      let charIndex = typedPhrases[0].text.length;
+      let deleting = false;
+      let holding = true;
+
+      const paintTypedWord = (phrase) => {
+        typedWord.href = phrase.href;
+        typedWord.dataset.routeProgress = phrase.progress;
+        typedWord.setAttribute("aria-label", phrase.text);
+      };
+
+      const tickTypedWord = () => {
+        const phrase = typedPhrases[typedIndex];
+        paintTypedWord(phrase);
+
+        if (holding) {
+          holding = false;
+          setTimeout(tickTypedWord, 1500);
+          return;
+        }
+
+        if (deleting) {
+          charIndex -= 1;
+          typedText.textContent = phrase.text.slice(0, Math.max(charIndex, 0));
+          if (charIndex <= 0) {
+            deleting = false;
+            typedIndex = (typedIndex + 1) % typedPhrases.length;
+            paintTypedWord(typedPhrases[typedIndex]);
+            setTimeout(tickTypedWord, 260);
+            return;
+          }
+          setTimeout(tickTypedWord, 32);
+          return;
+        }
+
+        const nextPhrase = typedPhrases[typedIndex];
+        charIndex += 1;
+        typedText.textContent = nextPhrase.text.slice(0, charIndex);
+        if (charIndex >= nextPhrase.text.length) {
+          deleting = true;
+          holding = true;
+          setTimeout(tickTypedWord, 1500);
+          return;
+        }
+        setTimeout(tickTypedWord, 54);
+      };
+
+      paintTypedWord(typedPhrases[0]);
+      setTimeout(tickTypedWord, 1500);
+    }
+
+    if (typedWord && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      typedWord.style.setProperty("--badge-x", "0%");
+
+      const showTypedBadge = () => {
+        motionAnimate(typedWord, {
+          "--badge-opacity": 1,
+          "--badge-scale": 1,
+          "--badge-x": "100%",
+          color: "#1f241f"
+        }, {
+          duration: 0.72,
+          easing: [0.16, 1, 0.3, 1]
+        });
+      };
+
+      const hideTypedBadge = () => {
+        motionAnimate(typedWord, {
+          "--badge-opacity": 0,
+          "--badge-scale": 0.92,
+          "--badge-x": "0%",
+          color: "var(--ink)"
+        }, {
+          duration: 0.68,
+          easing: [0.4, 0, 0.2, 1]
+        });
+      };
+
+      typedWord.addEventListener("mouseenter", showTypedBadge);
+      typedWord.addEventListener("focus", showTypedBadge);
+      typedWord.addEventListener("mouseleave", hideTypedBadge);
+      typedWord.addEventListener("blur", hideTypedBadge);
     }
   </script>
 </body>
