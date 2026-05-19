@@ -192,6 +192,9 @@
     .sidebar {
       position: sticky;
       top: 0;
+      align-self: start;
+      height: 100dvh;
+      overflow-y: auto;
       min-height: 100dvh;
       padding: 26px 16px;
       color: oklch(97% 0.01 248);
@@ -860,13 +863,12 @@
     }
 
     .drawer {
-      position: sticky;
-      top: 112px;
+      position: static;
       display: grid;
       align-content: start;
       gap: 12px;
-      height: calc(100dvh - 136px);
-      overflow: auto;
+      height: auto;
+      overflow: visible;
       min-width: 0;
     }
 
@@ -1250,6 +1252,9 @@
     .sidebar {
       position: sticky;
       top: 0;
+      align-self: start;
+      height: 100dvh;
+      overflow-y: auto;
       z-index: 4;
     }
 
@@ -1266,6 +1271,26 @@
     .toast {
       position: fixed;
       z-index: 30;
+    }
+
+    @media (min-width: 921px) {
+      .app {
+        display: block;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: var(--sidebar);
+        height: 100dvh;
+        min-height: 0;
+      }
+
+      .content {
+        margin-left: var(--sidebar);
+      }
     }
 
     .title-block,
