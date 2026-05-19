@@ -247,7 +247,7 @@ function renderCaseStudyPage(projects) {
             </div>
         </header>
 
-        <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} fade-in">
+        <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} ${isPropertyCase ? 'cs-hero-wrapper-fullbleed' : ''} fade-in">
             ${project.hero_iframe
                 ? `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
                 : `<img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">`
