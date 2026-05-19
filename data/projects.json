@@ -376,6 +376,7 @@
       "live": "worldover-risk-command-wireframe.html"
     },
     "hero_image": "assets/case_study_images_worldover/cover_image.png",
+    "hero_iframe": "worldover-risk-command-wireframe.html",
     "problem": "The product had useful compliance data, but the experience did not make the next decision obvious. A user could see risk, production, alerts, reports, and evidence, but still need time to understand what mattered first.",
     "solution": "I reorganised the case around the thinking before the UI: research, IA, rationale, and a high-fidelity prototype. Then I used the updated demo to show how the workflow became easier to read and act on.",
     "content": [
@@ -450,13 +451,6 @@
           "That makes the case study clearer for non-technical readers. You can now see the product logic first, then see how the interface supports it.",
           "The goal is simple: help a team move from data awareness to risk resolution without needing a specialist to explain every screen."
         ]
-      },
-      {
-        "type": "prototype",
-        "kicker": "Final preview prototype",
-        "title": "Risk Command Centre",
-        "description": "Open the prototype and change the entity selector. The case status, production facts, alerts, reporting blockers, evidence, and readiness update together from the dummy data model.",
-        "src": "worldover-risk-command-wireframe.html"
       },
       {
         "type": "article_section",

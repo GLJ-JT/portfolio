@@ -218,6 +218,8 @@ function renderCaseStudyPage(projects) {
     const project = projects.find(p => p.id === projectId);
     const content = document.getElementById('case-study-content');
     const isPropertyCase = projectId === 'property-nlp';
+    const isWorldoverCase = projectId === 'worldover';
+    const isFullBleedHeroCase = isPropertyCase || isWorldoverCase;
 
     if (!project) {
         content.innerHTML = '<div style="text-align: center; padding: 5rem 0;"><h2>Project not found</h2><a href="index.html">Return home</a></div>';
@@ -247,9 +249,19 @@ function renderCaseStudyPage(projects) {
             </div>
         </header>
 
-        <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} ${isPropertyCase ? 'cs-hero-wrapper-fullbleed' : ''} fade-in">
+        <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} ${isFullBleedHeroCase ? 'cs-hero-wrapper-fullbleed' : ''} ${isWorldoverCase ? 'cs-hero-wrapper-laptop' : ''} fade-in">
             ${project.hero_iframe
-                ? `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
+                ? isWorldoverCase
+                    ? `<div class="cs-laptop-frame" aria-label="${project.title} prototype laptop preview">
+                        <div class="cs-laptop-screen">
+                            <div class="cs-laptop-topbar" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>
+                        </div>
+                        <div class="cs-laptop-base" aria-hidden="true"></div>
+                    </div>`
+                    : `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
                 : `<img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">`
             }
         </div>
