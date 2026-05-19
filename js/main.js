@@ -247,14 +247,12 @@ function renderCaseStudyPage(projects) {
             </div>
         </header>
 
-        ${isPropertyCase ? '' : `
         <div class="cs-hero-wrapper ${project.hero_iframe ? 'cs-hero-wrapper-iframe' : ''} fade-in">
             ${project.hero_iframe
                 ? `<iframe src="${project.hero_iframe}" title="${project.title} live preview" class="cs-hero-iframe" loading="lazy"></iframe>`
                 : `<img src="${project.hero_image}" alt="${project.title} Hero" class="cs-hero-img">`
             }
         </div>
-        `}
 
         <section class="cs-properties-grid ${isPropertyCase ? 'cs-properties-grid-compact' : ''} fade-in">
             <div class="cs-property-row">
@@ -301,6 +299,28 @@ function renderCaseStudyPage(projects) {
                     <span>${item.kicker || 'Case sequence'}</span>
                     <h3>${item.title}</h3>
                     <p>${item.value}</p>
+                </section>
+                `;
+            } else if (item.type === 'preview_links') {
+                html += `
+                <section class="cs-preview-links fade-in">
+                    <div class="cs-preview-links-head">
+                        <span>${item.kicker || 'Preview access'}</span>
+                        <h3>${item.title}</h3>
+                        ${item.value ? `<p>${item.value}</p>` : ''}
+                    </div>
+                    <div class="cs-preview-links-grid">
+                        ${(item.items || []).map(link => `
+                            <a href="${link.href}" target="_blank" rel="noopener noreferrer" class="cs-preview-link"${link.image ? ` style="background-image: url('${link.image}');"` : ''}>
+                                <span>${link.label}</span>
+                                ${link.note ? `<small>${link.note}</small>` : ''}
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        `).join('')}
+                    </div>
                 </section>
                 `;
             } else if (item.type === 'wide_iframe') {
