@@ -759,27 +759,15 @@
       }
     }
 
-    .route:nth-child(2) {
+    .route.media-left {
       grid-template-columns: minmax(320px, 0.78fr) minmax(0, 0.98fr);
     }
 
-    .route:nth-child(2) .route-copy {
+    .route.media-left .route-copy {
       order: 2;
     }
 
-    .route:nth-child(2) .route-media {
-      order: 1;
-    }
-
-    .route.image-left {
-      grid-template-columns: minmax(320px, 0.78fr) minmax(0, 0.98fr);
-    }
-
-    .route.image-left .route-copy {
-      order: 2;
-    }
-
-    .route.image-left .route-media {
+    .route.media-left .route-media {
       order: 1;
     }
 
@@ -925,19 +913,19 @@
       background: rgba(0, 0, 0, 0.18);
     }
 
-    .route:nth-child(2) .route-question {
+    .route.is-commerce .route-question {
       color: var(--green);
     }
 
-    .route:nth-child(3) .route-question {
+    .route.is-platform .route-question {
       color: var(--blue);
     }
 
-    .route:nth-child(4) .route-question {
+    .route.is-education .route-question {
       color: var(--green);
     }
 
-    .route:nth-child(5) .route-question {
+    .route.is-travel .route-question {
       color: var(--accent);
     }
 
@@ -1374,8 +1362,7 @@
       .hero-grid,
       .section-head,
       .route,
-      .route:nth-child(2),
-      .route.image-left,
+      .route.media-left,
       .closing-panel,
       .footer {
         grid-template-columns: 1fr;
@@ -1477,12 +1464,11 @@
         margin: 18px 0 22px;
       }
 
-      .route:nth-child(2) .route-copy {
+      .route.media-left .route-copy {
         order: 0;
       }
 
-      .route:nth-child(2) .route-media,
-      .route.image-left .route-media {
+      .route.media-left .route-media {
         order: -1;
       }
 
@@ -1590,15 +1576,15 @@
     <div class="hero-grid">
       <div>
         <div class="hero-motion" aria-label="Jump to case study type">
-          <a href="#search-case">AI Search</a>
-          <a href="#checkout-case">Checkout</a>
-          <a href="#dashboard-case">Dashboards</a>
-          <a href="#education-case">Programme IA</a>
-          <a href="#travel-case">Service UX</a>
+          <a href="#search-case" data-route-progress="0.28">AI Search</a>
+          <a href="#checkout-case" data-route-progress="0.02">Checkout</a>
+          <a href="#dashboard-case" data-route-progress="0.5">Dashboards</a>
+          <a href="#education-case" data-route-progress="0.72">Programme IA</a>
+          <a href="#travel-case" data-route-progress="0.92">Service UX</a>
         </div>
         <h1 class="hero-animate hero-title-motion">
           <span class="hero-title-lead">I design product journeys that make</span>
-          <a class="hero-word hero-typed-word" href="#search-case" data-route-progress="0.02" aria-label="decisions clearer">
+          <a class="hero-word hero-typed-word" href="#search-case" data-route-progress="0.28" aria-label="decisions clearer">
             <span class="hero-typed-text">decisions clearer</span><span class="hero-typed-cursor" aria-hidden="true"></span>
           </a>
         </h1>
@@ -1655,6 +1641,26 @@
       </div>
 
       <div class="routes">
+        <article class="route media-left is-commerce" id="checkout-case">
+          <div class="route-copy">
+            <span class="product-tag">Dēpology</span>
+            <p class="route-question">Checkout friction made visible</p>
+            <h3>Mobile Commerce Conversion System</h3>
+            <p>Behaviour data shaped reusable patterns for product choice, navigation, cart, and checkout.</p>
+            <div class="chips" aria-label="Depology evidence">
+              <span class="chip">+100% checkout conversion</span>
+              <span class="chip">Lower cart abandonment</span>
+              <span class="chip">Reusable commerce patterns</span>
+            </div>
+            <div class="route-cta">
+              <a class="button primary" href="depology-design-system-case-study.html">Open checkout case</a>
+            </div>
+          </div>
+          <div class="route-media">
+            <img src="assets/case_study_images_depology_system/dp1.png" alt="Depology design system preview" loading="eager" decoding="async">
+          </div>
+        </article>
+
         <article class="route" id="search-case">
           <div class="route-copy">
             <span class="product-tag">Property-tech</span>
@@ -1676,27 +1682,7 @@
           </div>
         </article>
 
-        <article class="route" id="checkout-case">
-          <div class="route-copy">
-            <span class="product-tag">Dēpology</span>
-            <p class="route-question">Checkout friction made visible</p>
-            <h3>Mobile Commerce Conversion System</h3>
-            <p>Behaviour data shaped reusable patterns for product choice, navigation, cart, and checkout.</p>
-            <div class="chips" aria-label="Depology evidence">
-              <span class="chip">+100% checkout conversion</span>
-              <span class="chip">Lower cart abandonment</span>
-              <span class="chip">Reusable commerce patterns</span>
-            </div>
-            <div class="route-cta">
-              <a class="button primary" href="depology-design-system-case-study.html">Open checkout case</a>
-            </div>
-          </div>
-          <div class="route-media">
-            <img src="assets/case_study_images_depology_system/dp1.png" alt="Depology design system preview" loading="eager" decoding="async">
-          </div>
-        </article>
-
-        <article class="route" id="dashboard-case">
+        <article class="route is-platform" id="dashboard-case">
           <div class="route-copy">
             <span class="product-tag">Worldover</span>
             <p class="route-question">Dense data made actionable</p>
@@ -1716,7 +1702,7 @@
           </div>
         </article>
 
-        <article class="route image-left" id="education-case">
+        <article class="route media-left is-education" id="education-case">
           <div class="route-copy">
             <span class="product-tag">Worldschooling</span>
             <p class="route-question">A large platform vision made launchable</p>
@@ -1736,7 +1722,7 @@
           </div>
         </article>
 
-        <article class="route" id="travel-case">
+        <article class="route is-travel" id="travel-case">
           <div class="route-copy">
             <span class="product-tag">Travel to Qin</span>
             <p class="route-question">A trust gap turned into a service journey</p>
@@ -2251,12 +2237,12 @@
       {
         text: "decisions clearer",
         href: "#search-case",
-        progress: "0.02"
+        progress: "0.28"
       },
       {
         text: "checkout faster",
         href: "#checkout-case",
-        progress: "0.28"
+        progress: "0.02"
       },
       {
         text: "complex tools easier to use",
