@@ -11,16 +11,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         const projectsData = await projectsRes.json();
 
         const isCaseStudy = window.location.pathname.includes('case-study.html');
+        const hasDynamicHero = Boolean(document.getElementById('hero-title'));
+        const hasProjectsGrid = Boolean(document.getElementById('projects-grid'));
+        const hasExperienceList = Boolean(document.getElementById('experience-list'));
+        const hasEducationList = Boolean(document.getElementById('education-list'));
+        const hasSkillsList = Boolean(document.getElementById('skills-list'));
 
         if (isCaseStudy) {
             renderCaseStudyPage(projectsData);
             renderFooterLinks(resumeData.personal.contact);
         } else {
-            renderHero(resumeData.personal);
-            renderExperience(resumeData.experience);
-            renderProjectsList(projectsData);
-            renderEducation(resumeData.education);
-            renderSkills(resumeData.skills);
+            if (hasDynamicHero) renderHero(resumeData.personal);
+            if (hasExperienceList) renderExperience(resumeData.experience);
+            if (hasProjectsGrid) renderProjectsList(projectsData);
+            if (hasEducationList) renderEducation(resumeData.education);
+            if (hasSkillsList) renderSkills(resumeData.skills);
             renderFooterLinks(resumeData.personal.contact);
         }
 
@@ -35,7 +40,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function renderHero(personal) {
-    document.getElementById('hero-title').textContent = personal.name;
+    const title = document.getElementById('hero-title');
+    if (!title) return;
+
+    title.textContent = personal.name;
     document.getElementById('hero-subtitle').textContent = personal.title;
     document.getElementById('hero-location').textContent = personal.location;
     document.getElementById('hero-summary').innerHTML = personal.summary.replace(/\n\n/g, '<br><br>');
@@ -49,6 +57,7 @@ function renderHero(personal) {
 
 function renderExperience(experience) {
     const list = document.getElementById('experience-list');
+    if (!list) return;
     let html = '';
     
     experience.forEach((exp, index) => {
@@ -96,6 +105,7 @@ function renderExperience(experience) {
 
 function renderProjectsList(projects) {
     const grid = document.getElementById('projects-grid');
+    if (!grid) return;
     let html = '';
 
     const featuredProject = projects.find(project => project.id === 'property-nlp') || projects.find(project => project.id === 'depology');
@@ -217,6 +227,7 @@ function renderCaseStudyPage(projects) {
     const projectId = urlParams.get('id');
     const project = projects.find(p => p.id === projectId);
     const content = document.getElementById('case-study-content');
+    if (!content) return;
     const isPropertyCase = projectId === 'property-nlp';
     const isWorldoverCase = projectId === 'worldover';
     const isFullBleedHeroCase = isPropertyCase || isWorldoverCase;
@@ -534,6 +545,7 @@ function renderCaseStudyPage(projects) {
 
 function renderEducation(education) {
     const list = document.getElementById('education-list');
+    if (!list) return;
     let html = '';
     
     education.forEach(edu => {
@@ -555,6 +567,7 @@ function renderEducation(education) {
 
 function renderSkills(skillsObj) {
     const list = document.getElementById('skills-list');
+    if (!list) return;
     let html = '';
     
     Object.entries(skillsObj).forEach(([category, skillsString]) => {
@@ -576,6 +589,7 @@ function renderSkills(skillsObj) {
 
 function renderFooterLinks(contact) {
     const container = document.getElementById('footer-links');
+    if (!container) return;
     if (contact.linkedin) {
         container.innerHTML += `<a href="https://${contact.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`;
     }
