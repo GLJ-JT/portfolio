@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joe Tao Portfolio Hero Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #101011;
+      --panel: #f6f3ed;
+      --line: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.68);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .preview-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    .preview-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .preview-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .preview-title span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .preview-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .preview-control {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 0 12px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .preview-control[aria-pressed="true"],
+    .preview-control:hover,
+    .preview-control:focus-visible {
+      background: var(--text);
+      color: var(--bg);
+      outline: none;
+    }
+
+    .preview-stage {
+      display: grid;
+      place-items: start center;
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .preview-frame {
+      width: 100%;
+      height: calc(100vh - 78px);
+      min-height: 720px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      transition: width 160ms ease;
+    }
+
+    .preview-frame[data-size="tablet"] {
+      width: min(100%, 1024px);
+    }
+
+    .preview-frame[data-size="mobile"] {
+      width: min(100%, 390px);
+    }
+
+    @media (max-width: 720px) {
+      .preview-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .preview-controls {
+        justify-content: flex-start;
+      }
+
+      .preview-stage {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="preview-shell">
+    <header class="preview-toolbar">
+      <h1 class="preview-title">Hero Preview<span>Production homepage, focused at the top.</span></h1>
+      <div class="preview-controls" aria-label="Viewport size">
+        <button class="preview-control" type="button" data-size="desktop" aria-pressed="true">Desktop</button>
+        <button class="preview-control" type="button" data-size="tablet" aria-pressed="false">Tablet</button>
+        <button class="preview-control" type="button" data-size="mobile" aria-pressed="false">Mobile</button>
+      </div>
+    </header>
+    <section class="preview-stage" aria-label="Hero preview frame">
+      <iframe class="preview-frame" data-preview-frame data-size="desktop" src="index.html" title="Homepage hero preview"></iframe>
+    </section>
+  </main>
+  <script>
+    const frame = document.querySelector("[data-preview-frame]");
+    const controls = Array.from(document.querySelectorAll("[data-size]"));
+
+    controls.forEach((control) => {
+      control.addEventListener("click", () => {
+        const size = control.dataset.size;
+        frame.dataset.size = size;
+        controls.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === control));
+        });
+      });
+    });
+  </script>
+</body>
+</html>

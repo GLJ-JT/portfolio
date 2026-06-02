@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explainable Property Search Case Study | Joe Tao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/site-nav.css">
+  <script src="shared/site-nav.js" defer></script>
+  <style>
+    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.72; }
+    main { width: min(100%, 980px); margin: 0 auto; padding: 48px 20px 80px; }
+    article { max-width: 760px; margin: 0 auto; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3 { font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.1; letter-spacing: 0; }
+    h1 { margin: 18px 0 22px; font-size: clamp(42px, 7vw, 76px); font-weight: 500; letter-spacing: -0.01em; }
+    h2 { margin: 58px 0 16px; padding-top: 22px; border-top: 1px solid var(--line); font-size: clamp(25px, 3vw, 34px); font-weight: 500; letter-spacing: -0.005em; }
+    h3 { margin: 34px 0 12px; font-size: 22px; font-weight: 500; }
+    p { margin: 0 0 18px; }
+    article > p:first-child, article > p:nth-child(2) { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    ul { margin: 12px 0 28px; padding-left: 22px; }
+    li { margin-bottom: 10px; }
+    figure { width: min(100vw - 40px, 980px); margin: 42px 50% 52px; transform: translateX(-50%); }
+    img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); object-fit: contain; }
+    .phone-shot { width: min(100%, 430px); margin-left: auto; margin-right: auto; transform: none; }
+    figcaption { max-width: 760px; margin: 10px auto 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .artifact-link { display: inline-flex; align-items: center; width: fit-content; min-height: 44px; margin: 14px auto 0; padding: 0 0 3px; border-bottom: 2px solid currentColor; color: var(--text); font-size: 15px; font-weight: 800; line-height: 1.2; text-decoration: none; }
+    .artifact-link::after { content: "↗"; margin-left: 10px; font-size: 0.9em; line-height: 1; transition: transform 180ms ease; }
+    .artifact-link:hover::after, .artifact-link:focus-visible::after { transform: translate(3px, -3px); }
+    .artifact-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 8px; border-radius: 4px; }
+    figure .artifact-link { display: flex; max-width: max-content; }
+    strong { font-weight: 700; }
+    @media (max-width: 640px) { body { font-size: 17px; } main { padding: 30px 16px 56px; } h2 { margin-top: 42px; } figure, .phone-shot { width: 100%; margin: 32px 0 40px; transform: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <p><a href="index.html">Back</a></p>
+
+      <p>2026</p>
+
+      <h1>Make AI property search easier to trust</h1>
+      <p>Explainable Property Search is a prototype for renters who describe homes in natural language instead of starting with rigid filters. I designed the product flow and prototype logic across semantic search, editable filters, match reasons, and backend ranking.</p>
+      <p>The goal was to help users move from a vague renting brief to a shortlist they could understand, correct, and trust.</p>
+
+      <figure class="phone-shot">
+        <img src="assets/proptech-iframe-cover.png" alt="Mobile preview of explainable property search">
+        <figcaption>The mobile prototype turns a natural-language renting brief into editable intent and ranked property results.</figcaption>
+      </figure>
+
+      <h2>Problem statement</h2>
+      <p>Because traditional property search starts with fixed filters, renters with mixed or ambiguous briefs struggle to express tradeoffs, which leads to repeated query rewrites and low confidence in the results.</p>
+
+      <h2>1 — Let renters start with natural language</h2>
+      <p>Users often think in messy combinations: near UCL, quiet, good commute, not a basement, flexible on budget if bills are included. A rigid filter-first flow forces them to translate that brief too early.</p>
+      <p>I designed a search flow where the user can begin with a sentence, then see a useful starting point rather than an empty or over-filtered result set.</p>
+      <p>For the product, this reduces early search failure. If renters reach relevant results faster, they are more likely to shortlist, return, and contact agents.</p>
+
+      <figure>
+        <img src="assets/proptech-preview-wireframe.png" alt="Property search wireframe showing natural-language journey">
+        <figcaption>The wireframe defined the core journey before visual polish: natural query, parsed intent, editable filters, and result confidence.</figcaption>
+        <a class="artifact-link" href="https://glj-jt.github.io/property-nlp-search-demo/demo/research-wireframe.html" target="_blank" rel="noopener noreferrer">Wireframe</a>
+      </figure>
+
+      <h2>2 — Give control back through visible interpretation</h2>
+      <p>AI search becomes fragile when it feels like a black box. Users need to know what the system understood and where they can correct it.</p>
+      <p>I made the parsed filters visible and editable. When the sentence changes budget, commute, property type, or must-have requirements, the interface shows those changes as chips the user can inspect and adjust.</p>
+      <p>Visible interpretation keeps the speed of AI search without removing the control that property decisions need.</p>
+
+      <figure>
+        <img src="assets/proptech-preview-demo.png" alt="Property search demo showing editable filters and match reasons">
+        <figcaption>The live demo layer shows editable intent, result cards, and match reasons so users can understand why a home appears.</figcaption>
+        <a class="artifact-link" href="https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html" target="_blank" rel="noopener noreferrer">Live demo</a>
+      </figure>
+
+      <h2>3 — Make the system explain why results changed</h2>
+      <p>The prototype was not only a screen flow. Behind the interface, I mapped parsing, filters, ranking, and match reasons so the product could explain itself when the user edited a requirement.</p>
+      <p>This mattered because property search is high-trust: users need to understand why a home appears before they shortlist it or contact an agent.</p>
+      <p>The backend board gave product, engineering, and stakeholders a shared way to discuss ranking quality, failure cases, and what the system should say when it was unsure.</p>
+
+      <figure>
+        <img src="assets/proptech-preview-backend.png" alt="Backend logic board for property search parsing, filters, ranking, and reasons">
+        <figcaption>The backend board connects parsing, filters, ranking, and explanations into one product logic map.</figcaption>
+        <a class="artifact-link" href="https://glj-jt.github.io/property-nlp-search-demo/demo/dev_whiteboard.html" target="_blank" rel="noopener noreferrer">IA / logic board</a>
+      </figure>
+
+      <h2>Delivery and results</h2>
+      <p>The prototype connected a renter-facing mobile flow with structured data and Python-backed ranking logic. Users could search naturally, edit parsed filters, inspect match reasons, and continue refining without restarting.</p>
+      <p>In prototype testing, task time improved from 6m20s to 3m45s, query rewrites dropped from 3.1 to 1.4, shortlist success rose from 60% to 85%, and confidence increased from 5.8 to 8.1.</p>
+
+      <h2>So what?</h2>
+      <p>The project showed that AI search is most useful when it improves the starting point without hiding the controls. Renters did not need the system to decide for them; they needed it to translate intent into something they could inspect and correct.</p>
+      <p>The next step would be a live pilot measuring saved homes, contact clicks, reformulation rate, return sessions, and lead quality.</p>
+    </article>
+  </main>
+</body>
+</html>

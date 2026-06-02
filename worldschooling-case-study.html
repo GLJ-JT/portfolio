@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worldschooling Case Study | Joe Tao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/site-nav.css">
+  <script src="shared/site-nav.js" defer></script>
+  <style>
+    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.72; }
+    main { width: min(100%, 980px); margin: 0 auto; padding: 48px 20px 80px; }
+    article { max-width: 760px; margin: 0 auto; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3 { font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.1; letter-spacing: 0; }
+    h1 { margin: 18px 0 22px; font-size: clamp(42px, 7vw, 76px); font-weight: 500; letter-spacing: -0.01em; }
+    h2 { margin: 58px 0 16px; padding-top: 22px; border-top: 1px solid var(--line); font-size: clamp(25px, 3vw, 34px); font-weight: 500; letter-spacing: -0.005em; }
+    p { margin: 0 0 18px; }
+    article > p:first-child, article > p:nth-child(2) { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    figure { width: min(100vw - 40px, 980px); margin: 42px 50% 52px; transform: translateX(-50%); }
+    img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); object-fit: contain; }
+    figcaption { max-width: 760px; margin: 10px auto 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    @media (max-width: 640px) { body { font-size: 17px; } main { padding: 30px 16px 56px; } h2 { margin-top: 42px; } figure { width: 100%; margin: 32px 0 40px; transform: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <p><a href="index.html">Back</a></p>
+
+      <p>2025</p>
+
+      <h1>Launch education travel without overbuilding</h1>
+      <p>Worldschooling is an education-travel business helping families compare and book international learning programmes. I worked on the product structure, homepage journey, programme comparison, eligibility flow, deposit logic, and visual system.</p>
+      <p>The goal was to help parents judge fit, understand the next step, and place a deposit without waiting for a full custom booking system.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="Worldschooling hero header redesign">
+        <figcaption>The new landing surface made the programme offer clearer before users entered detailed comparison.</figcaption>
+      </figure>
+
+      <h2>Problem statement</h2>
+      <p>Because the first version was scoped like a full booking platform, the team risked delaying launch before parents had a simple way to compare programmes, judge fit, and understand the deposit step.</p>
+
+      <h2>1 — Reduce the platform vision into a first release</h2>
+      <p>The planned platform had enough pieces to become a long build: campus pages, subject pages, programme pages, search, blog, booking portal, and payment. That scope would have delayed the sales and fundraising surface the team needed first.</p>
+      <p>I reframed the first release around five visible steps: discover programmes, compare options, read details, submit eligibility information, and pay a deposit.</p>
+      <p>The tradeoff was deliberate: less automation at launch, but a credible product surface the team could use sooner.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/landing_page_laptop_mockup.png" alt="Worldschooling landing page laptop mockup">
+        <figcaption>The first release replaced a full booking portal with five visible customer steps.</figcaption>
+      </figure>
+
+      <h2>2 — Help parents compare fit before commitment</h2>
+      <p>Parents do not begin by asking whether the site has a custom booking engine. They ask what the programme is, whether it fits their child, what is included, how safe it feels, and what happens after they submit details.</p>
+      <p>I exposed programme categories earlier in the journey and used filtering, cards, and detail pages to make comparison part of the first-screen logic.</p>
+      <p>Better comparison supports higher-quality enquiries and helps the team explain mid-tier and premium programmes without relying only on calls.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/programme_filtering_interface.png" alt="Worldschooling programme filtering interface">
+        <figcaption>The homepage category selector gives programmes a clear entry point before users are deep in the site.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/tour_package_cards_ui.png" alt="Worldschooling tour package cards UI">
+        <figcaption>Programme cards were structured around parent/student comparison: what the trip is, who it suits, and what commitment comes next.</figcaption>
+      </figure>
+
+      <h2>3 — Use recommendations to support value ladders</h2>
+      <p>Entry-level pages were a natural place to introduce higher-value options, because users were already comparing dates, themes, and outcomes.</p>
+      <p>I added recommendation cards to show the next tier without forcing users into a hard upsell. The page could guide exploration while keeping the original programme path intact.</p>
+      <p>This helped the team connect lower-intent browsing with higher-value programme discovery at the moment comparison already made sense.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/themed_adventures_carousel.png" alt="Worldschooling themed adventures carousel">
+        <figcaption>Recommendation cards introduce the next tier when users are already comparing dates, themes, and value.</figcaption>
+      </figure>
+
+      <h2>4 — Connect the website to the real student experience</h2>
+      <p>The brand system needed to support more than the website. It had to carry through student-facing materials, campaign assets, and future programme pages.</p>
+      <p>I created reusable visual rules for typography, colour, programme cards, and physical touchpoints so the website felt connected to the real education-travel experience.</p>
+      <p>That gave the team a more coherent system for sales, operations, and future content production.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/brand_guidelines_typography_colors.png" alt="Worldschooling brand guidelines typography and colours">
+        <figcaption>The visual system gave the team reusable rules for programme pages, campaign assets, and student-facing materials.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_worldschooling/lanyard_and_id_design.png" alt="Worldschooling lanyard and ID design">
+        <figcaption>Physical brand materials helped the digital platform feel connected to the real student travel experience.</figcaption>
+      </figure>
+
+      <h2>Delivery and results</h2>
+      <p>The first release became a focused journey: homepage, programme filtering, detail pages, eligibility form, and universal deposit link.</p>
+      <p>It was less automated than a custom booking portal, but it launched faster and kept the important parent decisions visible: fit, commitment, eligibility, and deposit confidence.</p>
+
+      <h2>So what?</h2>
+      <p>The project showed that early platforms often need sharper scope more than more features. Parents did not need a fully automated booking engine first; they needed confidence that the programme fit their child and a clear next step they could trust.</p>
+    </article>
+  </main>
+</body>
+</html>

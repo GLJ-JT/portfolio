@@ -1,0 +1,16 @@
+{
+  "name": "design-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "python3 -m http.server 4273",
+    "inspect": "PWDEBUG=1 PLAYWRIGHT_INSPECTOR=1 playwright test tests/portfolio-preview.spec.ts --headed",
+    "inspect:hero": "PWDEBUG=1 PLAYWRIGHT_INSPECTOR=1 PLAYWRIGHT_PREVIEW_PATH=/preview-hero.html playwright test tests/portfolio-preview.spec.ts --headed",
+    "inspect:work": "PWDEBUG=1 PLAYWRIGHT_INSPECTOR=1 PLAYWRIGHT_PREVIEW_PATH=/preview-selected-work.html playwright test tests/portfolio-preview.spec.ts --headed",
+    "test:ui": "playwright test --ui",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

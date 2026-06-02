@@ -116,7 +116,7 @@
     ],
     "category": "Technical UX / Search Systems",
     "links": {
-      "case_study": "case-study.html?id=property-nlp",
+      "case_study": "property-nlp-case-study.html",
       "live": "https://glj-jt.github.io/property-nlp-search-demo/demo/iphone-frame.html",
       "source": "https://github.com/GLJ-JT/property-nlp-search-demo"
     },
@@ -266,7 +266,7 @@
     ],
     "category": "0-to-1 Product Framework & GTM Execution",
     "links": {
-      "case_study": "case-study.html?id=worldschooling",
+      "case_study": "worldschooling-case-study.html",
       "live": "https://worldschooling.co.uk"
     },
     "hero_image": "assets/case_study_images_worldschooling/hero_header_redesign.png",
@@ -477,7 +477,7 @@
     ],
     "category": "Website Development",
     "links": {
-      "case_study": "case-study.html?id=traveltoqin",
+      "case_study": "travel-to-qin-case-study.html",
       "live": "https://traveltoqin.com"
     },
     "hero_image": "assets/case_study_images_traveltoqin/hero_section_responsive.png",
@@ -608,7 +608,7 @@
     ],
     "category": "Branding and Identity",
     "links": {
-      "case_study": "case-study.html?id=tutufuture"
+      "case_study": "tutu-future-case-study.html"
     },
     "hero_image": "assets/case_study_images_tutufuture/logo_design_grid.png",
     "problem": "TUTU FUTURE had outgrown its hiking-led study travel identity. The brand still felt warm, but it was too narrow for academic courses, art workshops, STEM activities, language immersion, and city-based cultural trips.",
