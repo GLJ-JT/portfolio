@@ -1,55 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study - Joe Tao</title>
-    <meta name="description" content="Product design case study by Joe Tao.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="shared/site-nav.css">
-    <script src="shared/site-nav.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StairAid Case Study | Joe Tao</title>
+  <meta name="description" content="StairAid product design case study by Joe Tao.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
+  <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
+  <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf9f5;
+      --text: #252525;
+      --muted: #67645f;
+      --line: #ded9ce;
+      --accent: #245c44;
+      --paper: #ffffff;
+      --nav-ink: var(--text);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #10100e;
+      --text: #f5f0e7;
+      --muted: #b7afa3;
+      --line: #39362f;
+      --accent: #9fd8ba;
+      --paper: #181714;
+      --nav-ink: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    main {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 18px 0 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      margin: 58px 0 16px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: clamp(25px, 3vw, 34px);
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    article > p:first-child,
+    article > p:nth-child(2) {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    figure {
+      width: min(100vw - 40px, 980px);
+      margin: 42px 50% 52px;
+      transform: translateX(-50%);
+    }
+
+    .figure-scroll {
+      max-height: 760px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: var(--paper);
+      object-fit: contain;
+    }
+
+    .figure-scroll img {
+      border: 0;
+    }
+
+    figcaption {
+      max-width: 760px;
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 17px;
+      }
+
+      main {
+        padding: 30px 16px 56px;
+      }
+
+      h2 {
+        margin-top: 42px;
+      }
+
+      figure {
+        width: 100%;
+        margin: 32px 0 40px;
+        transform: none;
+      }
+
+      .figure-scroll {
+        max-height: 520px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">JOE TAO</a>
-            <div class="nav-links">
-                <a href="index.html#experience">Experience</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#education">Education</a>
-            </div>
-        </div>
-    </nav>
+  <main>
+    <article>
+      <p><a href="index.html">Back</a></p>
 
-    <main>
-        <div class="container section" style="padding-bottom: 1rem; padding-top: 3rem;">
-            <a href="index.html#projects" class="back-link">← Back to Projects</a>
-        </div>
+      <p>2023</p>
 
-        <article id="case-study-content" class="container" style="max-width: 800px; padding-bottom: 5rem;">
-            <div style="text-align: center; padding: 5rem 0;">
-                <p>Loading case study...</p>
-            </div>
-        </article>
-    </main>
+      <h1>Help injured users move on stairs without stopping to rebuild the crutch</h1>
+      <p>StairAid is an assistive mobility concept for people with temporary lower-limb injuries. I designed the product direction, mechanical adjustment principle, visual prototype, and testing narrative as a 12-week industrial design project.</p>
+      <p>The goal was to make stair movement feel less fragile by letting the crutch change length quickly when the ground condition changed.</p>
 
-    <footer class="footer">
-        <div class="container footer-content fade-in">
-            <div class="footer-brand">
-                <h3>JOE TAO</h3>
-                <p>Product Designer</p>
-            </div>
-            <div class="footer-links" id="footer-links">
-                <!-- Links loaded via JS -->
-            </div>
-        </div>
-    </footer>
+      <figure>
+        <img src="assets/case_study_images_stairaid/product_showcase_desk.png" alt="StairAid crutch product showcase on a desk">
+        <figcaption>The final concept focused on one core behaviour: fast length adjustment between flat-ground and stair use.</figcaption>
+      </figure>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
+      <h2>Problem statement</h2>
+      <p>Because standard crutches are designed around flat-ground walking, injured users have to pause, compensate, or use the wrong support length on stairs, which makes an already risky movement slower and less stable.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/problem_cause_objective.png" alt="StairAid problem framing, cause, and design objective">
+        <figcaption>The problem narrowed from general crutch comfort to the specific failure point of stair movement.</figcaption>
+      </figure>
+
+      <h2>1 — Reframe the crutch around stair gait</h2>
+      <p>The first useful insight was that stairs change the job of a crutch. On flat ground, matched crutch lengths support a regular rhythm. On stairs, the user needs one support point higher and one lower to hold a safer front-back stance.</p>
+      <p>I treated uneven crutch length as the product's core interaction rather than a secondary adjustment. The design had to support a clear transition between flat mode and stair mode.</p>
+      <p>From a product perspective, this made the brief smaller and stronger. The concept was not trying to make a universal mobility aid; it was solving the moment where standard crutches feel least adapted to the environment.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/gait_specification_stairs.png" alt="StairAid stair gait specification showing uneven crutch lengths">
+        <figcaption>The stair gait relies on uneven crutch lengths so the user can hold a more stable front-back support position.</figcaption>
+      </figure>
+
+      <h2>2 — Make adjustment quick enough to use in real movement</h2>
+      <p>Manual length adjustment created the next problem. Even if uneven lengths improved the stair stance, stopping mid-transition to adjust pins by hand would make the behaviour feel too slow and awkward for everyday use.</p>
+      <p>I designed a one-handed trigger interaction so users could release, change, and lock the crutch length in seconds. The important design decision was confidence: the product needed to feel fast when changing length and secure when supporting weight.</p>
+      <p>From a usability perspective, speed was not only about saving time. It reduced the chance that users would avoid the safer mode because switching modes felt like too much effort.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/length_adjustment_operation.png" alt="StairAid length adjustment operation with trigger control">
+        <figcaption>The trigger adjustment was designed to make stair mode quick enough to use during a normal transition.</figcaption>
+      </figure>
+
+      <h2>3 — Hide mechanical complexity inside a cleaner product form</h2>
+      <p>The mechanism moved through visible external locking ideas before settling into an internal solution. Exposed parts made the principle easier to explain, but they also made the product feel fragile and overcomplicated.</p>
+      <p>I moved the release system inside the tube and used a lever, bike cable, wedge, spring, and locking pin principle to translate a hand trigger into length release. The default state stayed locked; the trigger only released adjustment when needed.</p>
+      <p>From a design perspective, this protected both trust and manufacturability. Users should not have to read the mechanism to believe the crutch is stable.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/technical_solution_locking_system.png" alt="StairAid technical locking system using lever cable wedge and pin">
+        <figcaption>The internal locking mechanism translated trigger movement into secure length adjustment while keeping the outer form cleaner.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/working_principle_internal.png" alt="StairAid internal working principle">
+        <figcaption>The working principle connected trigger input, cable movement, wedge motion, spring reset, and pin locking.</figcaption>
+      </figure>
+
+      <h2>4 — Shape the details around active stair movement</h2>
+      <p>The surrounding product details followed the same stair-use logic. The curved tip gives a more useful contact angle during diagonal support, while the forearm brace supports more active weight shifts than an armpit crutch.</p>
+      <p>I used exploded views and component breakdowns to test whether the product story was understandable beyond the final render. The aim was to show how the mechanism, handle, tube, pin, brace, and tip worked as one mobility system.</p>
+      <p>From a presentation perspective, these drawings made the concept easier to critique: people could inspect the relationship between the ergonomic promise and the mechanical proposal.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/gait_rationale_explanation.png" alt="StairAid gait rationale and ergonomic explanation">
+        <figcaption>The ergonomic rationale linked the product form back to stair support, not only appearance.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/exploded_view_components_orange.png" alt="StairAid exploded view showing major components">
+        <figcaption>Exploded views helped make the internal system legible as a product proposal.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/exploded_view_locking_pin.png" alt="StairAid locking pin exploded view">
+        <figcaption>The locking pin detail was the trust-critical part of the concept: release when asked, lock by default.</figcaption>
+      </figure>
+
+      <h2>Delivery and results</h2>
+      <p>The final concept combined a stair-specific gait strategy with a quick-adjustment crutch mechanism, product renderings, exploded views, and an exhibition presentation. It showed a validated direction rather than a finished medical device.</p>
+      <p>The observed stair trial suggested that uneven crutch length could reduce stair descent time from 8 seconds to 6 seconds, but the more important finding was behavioural: the adjustment had to feel fast enough that users would actually use it.</p>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/logo_and_exploded_view.png" alt="StairAid logo and exploded product view">
+        <figcaption>The final presentation connected brand, product form, and mechanism in one readable system.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_stairaid/team_photo_exhibition.png" alt="StairAid team exhibition photo">
+        <figcaption>The project was presented as a functional product direction with clear next questions around comfort, reliability, and safety.</figcaption>
+      </figure>
+
+      <h2>So what?</h2>
+      <p>StairAid mattered because it treated mobility support as an interaction problem, not only a structural object. The key design question was not whether a crutch can extend; it was whether the user can change support mode at the exact moment the environment changes.</p>
+      <p>If the project continued, I would test longer-term comfort, repeated locking reliability, wet-step behaviour, and whether first-time users understand stair mode without coaching.</p>
+    </article>
+  </main>
 </body>
 </html>
