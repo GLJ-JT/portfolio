@@ -1410,6 +1410,12 @@
       --preview-position: center;
     }
 
+    .case-visual--tripmi {
+      --case-ratio: 16 / 9;
+      --preview-bg: #f3f0e8;
+      --preview-position: center;
+    }
+
     :root[data-theme="dark"] .case-visual--proptech {
       --preview-bg: #202024;
       --preview-filter: grayscale(1) contrast(1.05) brightness(0.82);
@@ -1433,6 +1439,10 @@
 
     :root[data-theme="dark"] .case-visual--tutu {
       --preview-bg: #211b23;
+    }
+
+    :root[data-theme="dark"] .case-visual--tripmi {
+      --preview-bg: #181f1c;
     }
 
     .model-card h3,
@@ -1678,6 +1688,54 @@
 
     .statement-copy p + p {
       margin-top: 24px;
+    }
+
+    .statement-ticker {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .statement-ticker::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, var(--surface) 0, transparent 18%, transparent 82%, var(--surface) 100%);
+      mix-blend-mode: multiply;
+      opacity: 0.16;
+    }
+
+    .statement-ticker__track {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      animation: statementTicker 34s linear infinite;
+      will-change: transform;
+    }
+
+    .statement-ticker:hover .statement-ticker__track {
+      animation-play-state: paused;
+    }
+
+    .statement-ticker img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @keyframes statementTicker {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .statement-ticker__track {
+        animation: none;
+      }
     }
 
     footer {
@@ -2042,6 +2100,7 @@
   <nav class="page-dots" aria-label="Selected work sections">
     <a class="page-dot" href="#project-depology" aria-label="Dēpology" aria-current="true"></a>
     <a class="page-dot" href="#project-proptech" aria-label="Explainable Property Search"></a>
+    <a class="page-dot" href="#project-tripmi" aria-label="TripMi"></a>
     <a class="page-dot" href="#project-travel-to-qin" aria-label="Travel to Qin"></a>
     <a class="page-dot" href="#project-worldschooling" aria-label="Worldschooling"></a>
     <a class="page-dot" href="https://nihaoserica.com/" target="_blank" rel="noopener noreferrer" aria-label="Nihao Serica"></a>
@@ -2170,6 +2229,25 @@
           </div>
           <figure class="case-visual case-visual--proptech case-visual--contain">
             <img src="assets/proptech-preview-wireframe.png" alt="Black and white wireframe preview for Explainable Property Search">
+          </figure>
+        </article>
+
+        <article class="case-preview" id="project-tripmi">
+          <div class="case-copy">
+            <div>
+              <h3>TripMi</h3>
+              <p>I designed a group travel flow that helps friends decide plans together, turn poll results into itinerary items, and split shared expenses with less coordination friction.</p>
+            </div>
+            <ul class="case-meta" aria-label="TripMi project facts">
+              <li><strong>Years</strong><span>2026</span></li>
+              <li><strong>Role</strong><span>Product Designer</span></li>
+              <li><strong>Scope</strong><span>Mobile UX, group decision-making, itinerary logic, expense splitting</span></li>
+              <li><strong>Result</strong><span>Clearer shared decisions, smoother itinerary updates, faster post-trip settlement</span></li>
+            </ul>
+            <a class="case-link" href="tripmi-case-study.html">Request case study access</a>
+          </div>
+          <figure class="case-visual case-visual--tripmi">
+            <img src="assets/tripmi-thumbnail.png" alt="TripMi group travel mobile app thumbnail">
           </figure>
         </article>
 
@@ -2340,8 +2418,21 @@
     <section class="homepage-support" id="about" aria-labelledby="statement-title">
       <h2 class="sr-only" id="statement-title">Personal statement</h2>
       <div class="support-layout statement-layout">
-        <figure class="statement-image">
-          <img src="assets/joe-about-portrait.png" alt="Portrait of Joe Tao">
+        <figure class="statement-image statement-ticker" aria-label="Selected project image ticker">
+          <div class="statement-ticker__track" aria-hidden="true">
+            <img src="assets/case_study_images_depology/desktop_mega_menu_alt.png" alt="">
+            <img src="assets/case_study_images_worldschooling/programme_filtering_interface.png" alt="">
+            <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="">
+            <img src="assets/case_study_images_tutufuture/city_walk_posters.png" alt="">
+            <img src="assets/case_study_images_traveltoqin/destination_cards_ui.png" alt="">
+            <img src="assets/case_study_images_depology/mobile_buybox_optimization.png" alt="">
+            <img src="assets/case_study_images_depology/desktop_mega_menu_alt.png" alt="">
+            <img src="assets/case_study_images_worldschooling/programme_filtering_interface.png" alt="">
+            <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="">
+            <img src="assets/case_study_images_tutufuture/city_walk_posters.png" alt="">
+            <img src="assets/case_study_images_traveltoqin/destination_cards_ui.png" alt="">
+            <img src="assets/case_study_images_depology/mobile_buybox_optimization.png" alt="">
+          </div>
         </figure>
         <div class="statement-copy">
           <p>I design around the moment before a user commits: the hesitation, comparison, doubt, or missing context that decides whether a product earns trust.</p>
@@ -2364,6 +2455,7 @@
     </footer>
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const heroTabs = Array.from(document.querySelectorAll("[data-hero-tab]"));
@@ -2863,7 +2955,7 @@
     };
 
     const setupPageDots = () => {
-      const dots = Array.from(document.querySelectorAll(".page-dot"));
+      const dots = Array.from(document.querySelectorAll('.page-dot[href^="#"]'));
       const sections = dots
         .map((dot) => document.querySelector(dot.getAttribute("href")))
         .filter(Boolean);
