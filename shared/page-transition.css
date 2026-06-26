@@ -1,0 +1,86 @@
+:root {
+  --page-transition-color: #000000;
+}
+
+:root[data-theme="dark"] {
+  --page-transition-color: #ffffff;
+}
+
+html.is-page-transitioning::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--page-transition-color);
+  pointer-events: none;
+}
+
+.load-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+  contain: layout paint style;
+}
+
+.load-wipe.is-entering {
+  z-index: 9999;
+}
+
+.load-wipe.is-done {
+  display: none;
+}
+
+.load-wipe__plane {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background-color 80ms linear;
+}
+
+.load-wipe.is-filled .load-wipe__plane {
+  background: var(--page-transition-color);
+}
+
+.load-wipe.is-leaving .load-wipe__plane {
+  background: transparent;
+}
+
+.load-wipe__pixel {
+  position: absolute;
+  left: var(--wipe-left, 0px);
+  top: var(--wipe-top, 0px);
+  width: var(--wipe-size, 30px);
+  height: var(--wipe-size, 30px);
+  background: var(--page-transition-color);
+  opacity: 0;
+  transform: scale(1);
+  transform-origin: center;
+  transition:
+    opacity 1ms linear var(--wipe-delay, 0ms),
+    transform 1ms linear var(--wipe-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.load-wipe.is-entering .load-wipe__pixel,
+.load-wipe.is-filled .load-wipe__pixel,
+.load-wipe.is-leaving .load-wipe__pixel {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.load-wipe.is-leaving .load-wipe__pixel {
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 1ms linear var(--wipe-exit-delay, 0ms),
+    transform 110ms steps(2, end) var(--wipe-exit-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .load-wipe {
+    display: none;
+  }
+}

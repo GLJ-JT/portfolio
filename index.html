@@ -17,8 +17,11 @@
   <meta name="description" content="Joe Tao is a London-based product designer helping teams turn user uncertainty into clearer journeys, sharper product bets, and reusable systems.">
   <meta property="og:title" content="Joe Tao - Product Designer">
   <meta property="og:description" content="Product design work across commerce, AI search, travel, education, systems, and cross-market services.">
+  <script>document.documentElement.classList.add("is-page-transitioning");</script>
   <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
   <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
   <style>
     @font-face {
       font-family: "Whyte Inktrap Super";
@@ -66,7 +69,6 @@
       --cursor-message-bg: #111111;
       --cursor-message-text: #ffffff;
       --pixel-field: #000000;
-      --load-wipe-color: #000000;
       --preview-grid-line: rgba(0, 0, 0, 0.055);
       --preview-border: rgba(0, 0, 0, 0.08);
       --preview-shadow: rgba(0, 0, 0, 0.08);
@@ -100,7 +102,6 @@
       --cursor-message-bg: #f4f1ea;
       --cursor-message-text: #101011;
       --pixel-field: #f4f1ea;
-      --load-wipe-color: #ffffff;
       --preview-grid-line: rgba(255, 255, 255, 0.055);
       --preview-border: rgba(255, 255, 255, 0.11);
       --preview-shadow: rgba(0, 0, 0, 0.34);
@@ -167,66 +168,6 @@
     .site-shell {
       width: 100%;
       margin: 0 auto;
-    }
-
-    .load-wipe {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      pointer-events: none;
-      overflow: hidden;
-      background: transparent;
-      contain: layout paint style;
-    }
-
-    .load-wipe.is-done {
-      display: none;
-    }
-
-    .load-wipe__plane {
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      transition: background-color 80ms linear;
-    }
-
-    .load-wipe.is-filled .load-wipe__plane {
-      background: var(--load-wipe-color);
-    }
-
-    .load-wipe.is-leaving .load-wipe__plane {
-      background: transparent;
-    }
-
-    .load-wipe__pixel {
-      position: absolute;
-      left: var(--wipe-left, 0px);
-      top: var(--wipe-top, 0px);
-      width: var(--wipe-size, 42px);
-      height: var(--wipe-size, 42px);
-      background: var(--load-wipe-color);
-      opacity: 0;
-      transform: scale(1);
-      transform-origin: center;
-      transition:
-        opacity 1ms linear var(--wipe-delay, 0ms),
-        transform 1ms linear var(--wipe-delay, 0ms);
-      will-change: opacity, transform;
-    }
-
-    .load-wipe.is-entering .load-wipe__pixel,
-    .load-wipe.is-filled .load-wipe__pixel,
-    .load-wipe.is-leaving .load-wipe__pixel {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .load-wipe.is-leaving .load-wipe__pixel {
-      opacity: 0;
-      transform: scale(0);
-      transition:
-        opacity 1ms linear var(--wipe-exit-delay, 0ms),
-        transform 110ms steps(2, end) var(--wipe-exit-delay, 0ms);
     }
 
     .site-header {
@@ -633,6 +574,15 @@
     .hero-fade-line {
       display: block;
       color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .mobile-line-break {
+      display: inline;
+    }
+
+    .believe-line {
+      display: block;
       white-space: nowrap;
     }
 
@@ -1070,6 +1020,10 @@
       height: 0.72em;
     }
 
+    .doing-type-mobile {
+      display: none;
+    }
+
     .hero-actions {
       display: flex;
       justify-content: center;
@@ -1410,10 +1364,164 @@
       --preview-position: center;
     }
 
-    .case-visual--tripmi {
-      --case-ratio: 16 / 9;
-      --preview-bg: #f3f0e8;
-      --preview-position: center;
+    .tripmi-preview {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: center;
+      transform: translate3d(0, var(--case-parallax-y, 0px), 0);
+      will-change: transform;
+    }
+
+    .tripmi-phone {
+      display: flex;
+      min-height: 440px;
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(14, 18, 20, 0.16);
+      border-radius: 28px;
+      background: #fffaf0;
+      color: #141414;
+      box-shadow: 0 20px 54px rgba(16, 17, 20, 0.14);
+    }
+
+    .tripmi-phone:nth-child(2) {
+      transform: translateY(-18px);
+    }
+
+    .tripmi-phone__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(20, 20, 20, 0.52);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .tripmi-pill {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0 10px;
+      background: #111111;
+      color: #fffaf0;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .tripmi-phone h4 {
+      margin: 0;
+      color: #111111;
+      font-size: 20px;
+      line-height: 1.08;
+    }
+
+    .tripmi-phone p {
+      margin: 0;
+      color: rgba(20, 20, 20, 0.64);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .tripmi-options,
+    .tripmi-itinerary,
+    .tripmi-expenses {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .tripmi-option,
+    .tripmi-stop,
+    .tripmi-expense {
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid rgba(14, 18, 20, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .tripmi-option strong,
+    .tripmi-stop strong,
+    .tripmi-expense strong {
+      color: #111111;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .tripmi-meter {
+      width: 100%;
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(20, 20, 20, 0.1);
+    }
+
+    .tripmi-meter span {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--accent);
+    }
+
+    .tripmi-stop {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .tripmi-stop::before {
+      content: attr(data-time);
+      display: inline-flex;
+      min-width: 46px;
+      min-height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #ffe36e;
+      color: #111111;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .tripmi-expense {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+
+    .tripmi-expense span {
+      font-size: 11px;
+      color: rgba(20, 20, 20, 0.62);
+    }
+
+    .tripmi-balance {
+      display: grid;
+      margin-top: auto;
+      gap: 6px;
+      padding: 14px;
+      border-radius: 8px;
+      background: #09a88a;
+      color: #ffffff;
+    }
+
+    .tripmi-balance strong {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .tripmi-balance span {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     :root[data-theme="dark"] .case-visual--proptech {
@@ -1443,6 +1551,139 @@
 
     :root[data-theme="dark"] .case-visual--tripmi {
       --preview-bg: #181f1c;
+    }
+
+    :root[data-theme="dark"] .tripmi-phone {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: #f6efdf;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    .access-dialog {
+      width: min(540px, calc(100% - 32px));
+      max-width: 540px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .access-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(12px);
+    }
+
+    .access-card {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 32px;
+      border: 1px solid var(--preview-border);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+    }
+
+    .access-kicker {
+      margin: 0;
+      color: var(--meta-label);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .access-card h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+
+    .access-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .access-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 900;
+    }
+
+    .access-label {
+      display: grid;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .access-input {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 14px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .access-input:focus,
+    .access-close:focus-visible,
+    .access-submit:focus-visible,
+    .access-email:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .access-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .access-submit,
+    .access-email {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .access-submit {
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .access-email {
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .access-feedback {
+      min-height: 22px;
+      font-size: 14px;
     }
 
     .model-card h3,
@@ -1499,6 +1740,10 @@
       width: 100%;
     }
 
+    .support-mobile {
+      display: none;
+    }
+
     .support-subsection {
       display: grid;
       grid-template-columns: minmax(104px, 0.12fr) minmax(0, 1fr);
@@ -1516,7 +1761,9 @@
       grid-column: 1;
       grid-row: 1;
       justify-self: start;
+      width: fit-content;
       color: var(--meta-label);
+      cursor: default;
       font-family: var(--body);
       font-size: clamp(13px, 1vw, 16px);
       font-weight: 900;
@@ -1524,6 +1771,20 @@
       letter-spacing: 0.08em;
       text-align: left;
       text-transform: uppercase;
+    }
+
+    .support-label::-webkit-details-marker {
+      display: none;
+    }
+
+    .support-label::marker {
+      content: "";
+    }
+
+    .support-static-panel,
+    .support-accordion-panel {
+      grid-column: 2;
+      grid-row: 1;
     }
 
     .experience-rows,
@@ -1690,50 +1951,227 @@
       margin-top: 24px;
     }
 
-    .statement-ticker {
-      position: relative;
-      isolation: isolate;
+    .life-ticker {
+      width: 100%;
+      max-width: 100%;
+      margin: clamp(30px, 4vw, 52px) 0 clamp(24px, 3vw, 36px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .statement-ticker::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, var(--surface) 0, transparent 18%, transparent 82%, var(--surface) 100%);
-      mix-blend-mode: multiply;
-      opacity: 0.16;
+    .life-ticker::-webkit-scrollbar {
+      display: none;
     }
 
-    .statement-ticker__track {
+    .life-ticker__track {
       display: flex;
       width: max-content;
-      height: 100%;
-      animation: statementTicker 34s linear infinite;
+      gap: clamp(12px, 1.3vw, 20px);
+      animation: life-ticker-scroll 34s linear infinite;
       will-change: transform;
     }
 
-    .statement-ticker:hover .statement-ticker__track {
+    .life-ticker:hover .life-ticker__track,
+    .life-ticker:active .life-ticker__track,
+    .life-ticker:focus-within .life-ticker__track {
       animation-play-state: paused;
     }
 
-    .statement-ticker img {
-      flex: 0 0 100%;
+    .life-ticker__item {
+      flex: 0 0 auto;
+      width: clamp(118px, 10vw, 168px);
+      aspect-ratio: 3 / 4;
+      margin: 0;
+      overflow: hidden;
+      border-radius: clamp(18px, 1.4vw, 26px);
+      background: var(--surface);
+    }
+
+    .life-ticker__button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .life-ticker__button:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 4px;
+      border-radius: inherit;
+    }
+
+    .life-ticker__button img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition: transform 240ms ease, filter 240ms ease;
     }
 
-    @keyframes statementTicker {
+    .life-ticker__button:hover img,
+    .life-ticker__button:focus-visible img {
+      filter: saturate(1.06) contrast(1.03);
+      transform: scale(1.035);
+    }
+
+    body.life-lightbox-open {
+      overflow: hidden;
+    }
+
+    body.life-lightbox-open .site-header,
+    body.life-lightbox-open .page-dots {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .life-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: grid;
+      grid-template-columns: minmax(44px, 1fr) minmax(0, min(86vw, 920px)) minmax(44px, 1fr);
+      align-items: center;
+      gap: clamp(12px, 2vw, 28px);
+      padding: clamp(18px, 3vw, 44px);
+      background: color-mix(in srgb, #000000 84%, transparent);
+      backdrop-filter: blur(18px);
+    }
+
+    .life-lightbox[hidden] {
+      display: none;
+    }
+
+    .life-lightbox__figure {
+      grid-column: 2;
+      margin: 0;
+    }
+
+    .life-lightbox__image {
+      width: auto;
+      max-width: 100%;
+      max-height: min(78vh, 860px);
+      margin: 0 auto;
+      border-radius: clamp(16px, 1.4vw, 28px);
+      object-fit: contain;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    .life-lightbox__caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 14px;
+      color: #f4f1ea;
+      font-family: var(--body);
+      font-size: clamp(13px, 1vw, 15px);
+      line-height: 1.3;
+    }
+
+    .life-lightbox__counter {
+      color: rgba(244, 241, 234, 0.62);
+      white-space: nowrap;
+    }
+
+    .life-lightbox__close,
+    .life-lightbox__nav {
+      border: 1px solid rgba(244, 241, 234, 0.22);
+      background: rgba(244, 241, 234, 0.1);
+      color: #f4f1ea;
+      font-family: var(--body);
+      cursor: pointer;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .life-lightbox__close:hover,
+    .life-lightbox__nav:hover,
+    .life-lightbox__close:focus-visible,
+    .life-lightbox__nav:focus-visible {
+      border-color: rgba(244, 241, 234, 0.62);
+      background: rgba(244, 241, 234, 0.2);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .life-lightbox__close {
+      position: absolute;
+      top: clamp(72px, 8vh, 112px);
+      right: clamp(16px, 2.2vw, 30px);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .life-lightbox__nav {
+      justify-self: center;
+      width: clamp(44px, 5vw, 58px);
+      height: clamp(44px, 5vw, 58px);
+      border-radius: 999px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+    }
+
+    .life-lightbox__nav--prev {
+      grid-column: 1;
+    }
+
+    .life-lightbox__nav--next {
+      grid-column: 3;
+    }
+
+    @media (max-width: 720px) {
+      .life-lightbox {
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        padding-top: 104px;
+      }
+
+      .life-lightbox__close {
+        top: 74px;
+      }
+
+      .life-lightbox__figure {
+        grid-column: 1 / -1;
+        align-self: center;
+      }
+
+      .life-lightbox__nav {
+        align-self: start;
+      }
+
+      .life-lightbox__nav--prev {
+        grid-column: 1;
+      }
+
+      .life-lightbox__nav--next {
+        grid-column: 2;
+      }
+    }
+
+    @keyframes life-ticker-scroll {
+      from {
+        transform: translateX(0);
+      }
+
       to {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - clamp(6px, 0.65vw, 10px)));
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .statement-ticker__track {
+      .life-ticker {
+        overflow-x: auto;
+      }
+
+      .life-ticker__track {
         animation: none;
       }
     }
@@ -1768,11 +2206,14 @@
       :root {
         --shell-width: min(100% - 40px, 1280px);
         --snap-safe-top: 112px;
+        --mobile-safe-top: env(safe-area-inset-top, 0px);
+        --mobile-header-top: calc(22px + var(--mobile-safe-top));
+        --mobile-hero-top: calc(var(--mobile-header-top) + 92px);
       }
 
       .site-header {
         grid-template-columns: 1fr auto;
-        padding: 22px 20px 0;
+        padding: var(--mobile-header-top) 20px 0;
         font-size: 14px;
       }
 
@@ -1792,12 +2233,28 @@
         display: none;
       }
 
+      .hero-stage {
+        width: min(100% - 40px, 780px);
+        min-height: 100svh;
+        padding: var(--mobile-hero-top) 0 0;
+        overflow: visible;
+      }
+
+      .hero-grid-field,
+      .hero-skill-shapes,
+      .hero-meta {
+        display: none;
+      }
+
       .hero-tabs {
-        justify-content: flex-start;
+        width: min(100%, 680px);
+        align-self: center;
+        justify-content: center;
         flex-wrap: wrap;
         overflow: visible;
-        gap: 10px 12px;
-        padding: 0 0 10vh;
+        gap: 22px 34px;
+        margin: 0 auto;
+        padding: 0 0 clamp(72px, 10svh, 118px);
         scrollbar-width: none;
       }
 
@@ -1807,33 +2264,123 @@
 
       .hero-tab {
         flex: 0 0 auto;
-        padding: 8px 10px 9px;
+        padding: 8px 12px 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        line-height: 1;
+      }
+
+      .hero-tab-frame {
+        border-width: 2px;
+        border-radius: 5px;
       }
 
       .hero-panel {
-        min-height: 390px;
+        width: 100%;
+        min-height: 0;
+        align-items: flex-start;
       }
 
       .hero-type {
-        font-size: clamp(33px, 5.8vw, 72px);
+        font-size: clamp(38px, 8.4vw, 68px);
+        line-height: 0.98;
+        letter-spacing: 0.01em;
+        overflow-wrap: normal;
+        word-break: normal;
       }
 
       .doing-type {
-        font-size: clamp(22px, 3.9vw, 38px);
+        font-size: clamp(30px, 6.4vw, 50px);
+        line-height: 1.08;
+      }
+
+      .doing-type .hero-fade-line {
+        display: block;
+        max-width: 100%;
+        white-space: normal;
+        margin-left: 0;
+        padding-left: 0;
+        text-indent: 0;
+      }
+
+      .doing-type .hero-nowrap {
+        white-space: normal;
+      }
+
+      .mobile-line-break {
+        display: block;
+      }
+
+      .doing-type-desktop {
+        display: none;
+      }
+
+      .doing-type-mobile {
+        display: block;
+      }
+
+      .doing-type-mobile .hero-fade-line {
+        display: block;
+        white-space: nowrap;
+        margin-left: 0;
+        padding-left: 0;
+        text-indent: 0;
       }
 
       #hero-panel-who .hero-type,
       #hero-panel-believe .hero-type {
-        font-size: clamp(34px, 7vw, 78px);
+        font-size: clamp(40px, 8.8vw, 72px);
       }
 
       #hero-panel-care .hero-type {
-        font-size: clamp(32px, 6.15vw, 68px);
+        font-size: clamp(40px, 8.6vw, 68px);
+        line-height: 1.05;
+      }
+
+      .care-line--return {
+        white-space: nowrap;
       }
 
       .care-cards {
-        width: 278px;
-        height: 106px;
+        display: none;
+      }
+
+      #hero-panel-good .skill-projects {
+        width: 100%;
+        gap: clamp(16px, 3.2vw, 24px);
+        max-width: none;
+      }
+
+      #hero-panel-good .skill-project {
+        width: min(100%, 680px);
+        justify-content: flex-start;
+        gap: clamp(12px, 2.4vw, 24px);
+      }
+
+      #hero-panel-good .skill-label {
+        font-size: clamp(24px, 5.2vw, 40px);
+        line-height: 0.98;
+      }
+
+      #hero-panel-good .skill-project img {
+        width: clamp(34px, 6.4vw, 54px);
+        height: clamp(34px, 6.4vw, 54px);
+        object-position: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+        margin-top: clamp(90px, 16svh, 156px);
+        gap: clamp(18px, 5vw, 46px);
+      }
+
+      .hero-action {
+        min-width: 160px;
+        min-height: 58px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-size: clamp(20px, 4.2vw, 30px);
+        font-weight: 400;
       }
 
       .section-head,
@@ -1858,7 +2405,15 @@
       }
 
       .homepage-support {
-        padding: 56px 0;
+        padding: 24px 0;
+      }
+
+      .support-desktop {
+        display: none;
+      }
+
+      .support-mobile {
+        display: block;
       }
 
       .support-label {
@@ -1907,6 +2462,14 @@
       .case-visual--contain img {
         max-height: none;
       }
+
+      .tripmi-preview {
+        min-height: 380px;
+      }
+
+      .tripmi-phone {
+        min-height: 340px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -1921,112 +2484,282 @@
       }
 
       .hero-stage {
-        min-height: 92vh;
+        width: min(100% - 42px, 480px);
+        min-height: 100svh;
         justify-content: flex-start;
-        padding: 20vh 0 0;
+        padding: var(--mobile-hero-top) 0 0;
       }
 
       .hero-tabs {
+        width: 100%;
         margin-top: 0;
-        padding: 0 0 10vh;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, auto));
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        column-gap: clamp(18px, 6vw, 34px);
+        row-gap: clamp(18px, 4.8vw, 30px);
+        padding: 0 0 clamp(74px, 10svh, 110px);
+      }
+
+      .hero-tab:nth-of-type(1) {
+        grid-column: 1 / 3;
+      }
+
+      .hero-tab:nth-of-type(2) {
+        grid-column: 3 / 5;
+      }
+
+      .hero-tab:nth-of-type(3) {
+        grid-column: 1 / 3;
+      }
+
+      .hero-tab:nth-of-type(4) {
+        grid-column: 3 / 5;
+      }
+
+      .hero-tab:nth-of-type(5) {
+        grid-column: 1 / 5;
+      }
+
+      .hero-tab {
+        padding: 7px 10px 8px;
+        font-size: 16px;
+        text-align: center;
       }
 
       .hero-panel {
-        min-height: 330px;
+        min-height: 0;
+        align-items: flex-start;
       }
 
       .hero-type {
-        font-size: clamp(26px, 9vw, 42px);
+        font-size: clamp(28px, 8.8vw, 42px);
+        line-height: 0.98;
         letter-spacing: 0;
-        overflow-wrap: anywhere;
+        overflow-wrap: normal;
+      }
+
+      #hero-panel-care .hero-type {
+        font-size: clamp(31px, 9.2vw, 46px);
+        line-height: 1.12;
+      }
+
+      #hero-panel-believe .hero-type {
+        font-size: clamp(28px, 8.8vw, 42px);
+        line-height: 1.12;
+      }
+
+      #hero-panel-who .hero-type {
+        font-size: clamp(30px, 9.8vw, 46px);
+        line-height: 0.94;
+      }
+
+      .hero-type .script {
+        font-size: clamp(38px, 11vw, 56px);
+        line-height: 0.88;
+      }
+
+      .identity-line {
+        display: block;
+        gap: 0;
+      }
+
+      .who-intro {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: end;
+        column-gap: clamp(16px, 5vw, 28px);
+      }
+
+      .who-intro > .w-bold {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: clamp(36px, 11.8vw, 56px);
+        line-height: 0.86;
+      }
+
+      .centric-lockup {
+        display: contents;
+      }
+
+      .centric-lockup .script {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin-top: -0.16em;
+        margin-bottom: 0.34em;
+        text-transform: none;
+      }
+
+      .centric-lockup .avatar-stack {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        transform: none;
+      }
+
+      .avatar-stack img {
+        height: clamp(42px, 11vw, 54px);
+      }
+
+      .avatar-stack img + img {
+        margin-left: -14px;
+      }
+
+      .problem-line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 0.08em;
+        row-gap: 0.08em;
+        margin-top: 0.34em;
+        white-space: nowrap;
+      }
+
+      .problem-line > .w-bold:first-child,
+      .problem-suffix {
+        font-size: clamp(38px, 12vw, 58px);
+        line-height: 0.9;
+      }
+
+      .solver-word {
+        flex: 0 0 auto;
+        margin-left: 0;
+        font-size: clamp(38px, 12vw, 58px);
+        line-height: 0.95;
+      }
+
+      .hero-solver-mark {
+        flex: 0 0 auto;
+        width: clamp(34px, 10.5vw, 50px);
+        height: clamp(34px, 10.5vw, 50px);
+        margin-left: clamp(8px, 2.6vw, 14px);
+        align-self: center;
+        vertical-align: middle;
+      }
+
+      .hero-button-mark {
+        --knob-travel: 1.2em;
+        width: 2.64em;
+        height: 0.96em;
+        margin: 0 0.08em;
+        padding: 0.11em;
+        border: 0;
+        background: #000;
+        align-self: baseline;
+        transform: translateY(0.08em);
+        vertical-align: baseline;
+      }
+
+      .hero-button-knob {
+        width: 1.18em;
+        height: 0.74em;
+        border-radius: 0;
+        object-fit: fill;
+      }
+
+      .care-line {
+        display: block;
+      }
+
+      .care-line--love,
+      .care-line--return,
+      .care-line--a-product,
+      .care-line--product {
+        white-space: nowrap;
+      }
+
+      .care-line--and {
+        margin-top: 0;
+      }
+
+      .care-line--a-product .care-line--product {
+        display: inline;
+      }
+
+      #hero-panel-care .face-mark {
+        width: 0.62em;
+        height: 0.62em;
+        vertical-align: -0.02em;
+      }
+
+      #hero-panel-believe .hero-nowrap {
+        white-space: normal;
+      }
+
+      #hero-panel-believe .orange,
+      #hero-panel-believe .blue {
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      #hero-panel-good .skill-projects {
+        gap: clamp(18px, 5vw, 28px);
+      }
+
+      #hero-panel-good .skill-project {
+        gap: clamp(8px, 2vw, 14px);
+        align-items: center;
+      }
+
+      #hero-panel-good .skill-label {
+        font-size: clamp(18px, 5.8vw, 27px);
+        line-height: 1;
+      }
+
+      #hero-panel-good .skill-project img {
+        width: clamp(26px, 8vw, 38px);
+        height: clamp(26px, 8vw, 38px);
       }
 
       .doing-type {
-        font-size: clamp(20px, 6.6vw, 30px);
+        font-size: clamp(18px, 5.8vw, 27px);
+        line-height: 1.12;
+        text-align: left;
       }
 
       .hero-fade-line {
         white-space: normal;
       }
 
-      #hero-panel-who .hero-type,
-      #hero-panel-believe .hero-type {
-        font-size: clamp(30px, 10.8vw, 50px);
+      .doing-type .hero-fade-line {
+        display: block;
+        max-width: 100%;
       }
 
-      #hero-panel-care .hero-type {
-        font-size: clamp(28px, 9vw, 42px);
+      .doing-type .hero-nowrap {
+        white-space: normal;
       }
 
-      .hero-type .script {
-        font-size: 0.82em;
+      .doing-type .hero-line-spacer {
+        height: 20px;
       }
 
-      .identity-line {
-        gap: 12px;
-        align-items: flex-start;
+      .doing-type-mobile .hero-fade-line {
+        display: block;
+        white-space: nowrap;
+        margin-left: 0;
+        padding-left: 0;
+        text-indent: 0;
       }
 
-      .avatar-stack img + img {
-        margin-left: -12px;
+      .hero-actions {
+        margin-top: clamp(76px, 12svh, 124px);
+        gap: clamp(16px, 6vw, 28px);
       }
 
-      .centric-lockup .avatar-stack {
-        right: -0.12em;
-        bottom: calc(100% - 0.08em);
-      }
-
-      .mark {
-        width: 46px;
-      }
-
-      .care-card {
-        width: 92px;
-        font-size: 9px;
-      }
-
-      .care-cards {
-        left: 0;
-        top: calc(100% + 16px);
-        width: min(322px, calc(100vw - 24px));
-        height: 128px;
-      }
-
-      .care-cards:hover .care-card:nth-child(2) {
-        --stack-x: 104%;
-        --stack-y: 0px;
-      }
-
-      .care-cards:hover .care-card:nth-child(3) {
-        --stack-x: 208%;
-        --stack-y: 0px;
+      .hero-action {
+        min-width: min(42vw, 136px);
+        min-height: 42px;
+        padding: 9px 16px;
+        font-size: clamp(14px, 4.2vw, 19px);
       }
 
       .hero-actions {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-      }
-
-      .hero-action {
-        min-height: 38px;
-        padding: 9px 14px;
-        font-size: 13px;
-      }
-
-      .skill-project img {
-        width: 38px;
-        height: 38px;
-      }
-
-      .skill-label {
-        font-size: clamp(22px, 7vw, 34px);
-      }
-
-      .hero-meta {
-        position: static;
-        margin-top: 26px;
-        font-size: 12px;
       }
 
       .work-grid {
@@ -2055,11 +2788,52 @@
       .experience-row,
       .education-row {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 8px;
+      }
+
+      .support-accordion {
+        gap: 10px;
+      }
+
+      .support-subsection + .support-subsection {
+        margin-top: 22px;
+        padding-top: 24px;
+      }
+
+      .support-accordion-panel {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .support-accordion .support-label {
+        display: flex;
+        width: 100%;
+        min-height: 28px;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .support-accordion .support-label::after {
+        content: "+";
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .support-accordion .experience-rows,
+      .support-accordion .education-rows {
+        gap: 18px;
+        padding-top: 2px;
+      }
+
+      .support-accordion[open] .support-label::after {
+        content: "-";
       }
 
       .statement-copy p {
-        font-size: clamp(20px, 6vw, 28px);
+        /* font-size: clamp(20px, 6vw, 28px); */
       }
 
       .case-visual {
@@ -2071,6 +2845,26 @@
 
       .case-visual--contain {
         padding: 18px;
+      }
+
+      .tripmi-preview {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .tripmi-phone,
+      .tripmi-phone:nth-child(2) {
+        min-height: 220px;
+        transform: none;
+      }
+
+      .access-card {
+        padding: 26px 18px 20px;
+      }
+
+      .access-actions {
+        align-items: stretch;
+        flex-direction: column;
       }
 
       @media (orientation: portrait) {
@@ -2086,9 +2880,6 @@
   <div class="custom-cursor" aria-hidden="true">
     <span class="custom-cursor__message"></span>
   </div>
-  <div class="load-wipe" data-load-wipe aria-hidden="true">
-    <div class="load-wipe__plane" data-load-wipe-plane></div>
-  </div>
   <header class="site-header" aria-label="Site navigation">
     <a class="site-header__name" href="#who-i-am">Joe Tao</a>
     <nav class="site-header__nav" aria-label="Primary navigation">
@@ -2100,7 +2891,6 @@
   <nav class="page-dots" aria-label="Selected work sections">
     <a class="page-dot" href="#project-depology" aria-label="Dēpology" aria-current="true"></a>
     <a class="page-dot" href="#project-proptech" aria-label="Explainable Property Search"></a>
-    <a class="page-dot" href="#project-tripmi" aria-label="TripMi"></a>
     <a class="page-dot" href="#project-travel-to-qin" aria-label="Travel to Qin"></a>
     <a class="page-dot" href="#project-worldschooling" aria-label="Worldschooling"></a>
     <a class="page-dot" href="https://nihaoserica.com/" target="_blank" rel="noopener noreferrer" aria-label="Nihao Serica"></a>
@@ -2129,13 +2919,13 @@
         <article class="hero-state is-active" role="tabpanel" id="hero-panel-who" aria-labelledby="hero-tab-who" data-hero-panel="who" data-hero-anchor="who-i-am">
           <h1 class="hero-type" id="hero-title">
             <span class="identity-line">
-              <span><span class="w-bold">I’m a</span> <span class="centric-lockup"><span class="script">people-centric</span><span class="avatar-stack" aria-hidden="true">
+              <span class="who-intro"><span class="w-bold">I’m a</span> <span class="centric-lockup"><span class="script">people-centric</span><span class="avatar-stack" aria-hidden="true">
                   <img src="assets/home-hero/avatar1.png" alt="">
                   <img src="assets/home-hero/avatar2.png" alt="">
                   <img src="assets/home-hero/avatar3.png" alt="">
                 </span></span></span>
             </span>
-            <span class="hero-nowrap"><span class="w-bold">pr</span><button class="hero-button-mark" type="button" aria-label="Switch to light mode" aria-pressed="true"><img class="hero-button-knob" src="assets/home-hero/knob.svg" alt=""></button><span class="w-bold">blem solver</span><svg class="hero-solver-mark" viewBox="0 0 322 328" aria-hidden="true" focusable="false">
+            <span class="hero-nowrap problem-line"><span class="w-bold problem-prefix">pr</span><button class="hero-button-mark" type="button" aria-label="Switch to light mode" aria-pressed="true"><img class="hero-button-knob" src="assets/home-hero/knob.svg" alt=""></button><span class="w-bold problem-suffix">blem</span> <span class="w-bold solver-word">solver</span><svg class="hero-solver-mark" viewBox="0 0 322 328" aria-hidden="true" focusable="false">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M120.973 1.2941L120.955 2.5882L119.973 23.8114L118.992 45.0347L117.916 53.3169L116.841 61.5992L114.442 71.1827L112.044 80.7664L107.795 89.6004L103.546 98.4344L98.652 104.696L93.758 110.957L87.672 115.595L81.585 120.234L73.512 124.223L65.439 128.212L57.185 130.394L48.931 132.576L39.567 134.031L30.203 135.486L15.565 136.223L0.928009 136.96L0.463989 137.738L0 138.515L0.589996 141.57L1.17999 144.626L15.836 145.261L30.491 145.897L38.422 147.052L46.352 148.208L55.913 150.718L65.474 153.229L72.674 156.768L79.873 160.308L85.682 164.428L91.491 168.549L95.141 172.533L98.792 176.515L102.832 182.551L106.871 188.588L110.011 196.396L113.151 204.205L115.569 215.207L117.986 226.209L119.166 243.55L120.346 260.891H123.107H125.868L126.44 256.491L127.012 252.091L128.018 230.61L129.024 209.13L130.488 201.208L131.952 193.286L133.982 185.627L136.012 177.967L139.138 171.547L142.265 165.127L146.179 159.154L150.093 153.18L156.703 147.536L163.313 141.89L170.951 137.776L178.59 133.663L187.528 130.981L196.467 128.299L205.979 126.67L215.491 125.04L230.991 124.378L246.491 123.716L246.789 120.045L247.087 116.375L229.289 115.142L211.491 113.91L202.617 112.285L193.744 110.66L185.617 108.023L177.491 105.386L169.794 101.265L162.097 97.1434L155.59 90.9701L149.083 84.7967L144.637 77.8562L140.192 70.9167L137.665 64.4545L135.137 57.9922L133.489 52.1201L131.84 46.2491L130.379 37.8768L128.917 29.5055L128.301 14.7527L127.685 0H124.338H120.991L120.973 1.2941Z"/>
               <rect x="181" y="205.777" width="26.7713" height="171.907" rx="13.3857" transform="rotate(-45 181 205.777)"/>
               <rect x="9" y="52.7773" width="26.7713" height="71.4351" rx="13.3857" transform="rotate(-45 9 52.7773)"/>
@@ -2146,7 +2936,7 @@
         </article>
 
         <article class="hero-state" role="tabpanel" id="hero-panel-care" aria-labelledby="hero-tab-care" data-hero-panel="care" data-hero-anchor="what-i-care-about" hidden>
-          <h2 class="hero-type" aria-label="Why users love, hate, and come back to a product"><span class="hero-nowrap"><span class="w-bold">Why users</span> <span class="w-super">l</span><svg class="face-mark happy-face" viewBox="0 0 207 244" fill="none" aria-hidden="true"><path class="face-eye-left" d="M0 0H40.5888V79.7462H0V0Z" fill="black"/><path class="face-eye-right" d="M81.1776 0H121.766V79.7462H81.1776V0Z" fill="black"/><path class="face-mouth" d="M41.5401 243.669C63.2357 243.669 84.7188 239.404 104.763 231.119C124.807 222.833 143.02 210.689 158.361 195.379C173.702 180.069 185.871 161.894 194.173 141.891C202.476 121.887 206.749 100.448 206.749 78.7968L165.663 78.7968C165.663 95.0636 162.453 111.171 156.215 126.2C149.977 141.228 140.834 154.884 129.309 166.386C117.783 177.889 104.099 187.013 89.0401 193.238C73.9807 199.463 57.8402 202.667 41.5401 202.667V243.669Z" fill="black"/></svg><span class="w-super">ve</span><span class="w-bold">,</span> <span class="w-super">h</span><svg class="face-mark sad-face" viewBox="0 0 216 250" fill="none" aria-hidden="true"><path class="face-mouth" d="M215.516 84.4515C193.821 84.4515 172.337 88.7161 152.293 97.0017C132.249 105.287 114.037 117.432 98.6956 132.741C83.3546 148.051 71.1853 166.227 62.8828 186.23C54.5803 206.233 50.307 227.672 50.307 249.324L91.3928 249.324C91.3928 233.057 94.6034 216.949 100.841 201.921C107.079 186.892 116.222 173.237 127.748 161.734C139.274 150.232 152.957 141.108 168.016 134.883C183.076 128.658 199.216 125.454 215.516 125.454L215.516 84.4515Z" fill="black"/><path class="face-eye-left" d="M-3.52917e-06 -6.24198e-06L40.5888 1.12623e-06L40.5888 79.7462L-2.20187e-06 79.7462L-3.52917e-06 -6.24198e-06Z" fill="black"/><path class="face-eye-right" d="M81.1776 -2.29515e-06L121.766 5.07306e-06L121.766 79.7462L81.1776 79.7462L81.1776 -2.29515e-06Z" fill="black"/></svg><span class="w-super">te</span><span class="w-bold">,</span></span><br><span class="w-bold">and</span> <span class="w-super">come back to</span> <span class="w-bold">a</span><br><span class="product-card-anchor"><span class="w-bold">product</span><span class="care-cards" aria-label="Product surfaces Joe cares about">
+          <h2 class="hero-type" aria-label="Why users love, hate, and come back to a product"><span class="hero-nowrap care-line care-line--users"><span class="w-bold">Why users</span></span> <span class="hero-nowrap care-line care-line--love"><span class="w-super">l</span><svg class="face-mark happy-face" viewBox="0 0 207 244" fill="none" aria-hidden="true"><path class="face-eye-left" d="M0 0H40.5888V79.7462H0V0Z" fill="black"/><path class="face-eye-right" d="M81.1776 0H121.766V79.7462H81.1776V0Z" fill="black"/><path class="face-mouth" d="M41.5401 243.669C63.2357 243.669 84.7188 239.404 104.763 231.119C124.807 222.833 143.02 210.689 158.361 195.379C173.702 180.069 185.871 161.894 194.173 141.891C202.476 121.887 206.749 100.448 206.749 78.7968L165.663 78.7968C165.663 95.0636 162.453 111.171 156.215 126.2C149.977 141.228 140.834 154.884 129.309 166.386C117.783 177.889 104.099 187.013 89.0401 193.238C73.9807 199.463 57.8402 202.667 41.5401 202.667V243.669Z" fill="black"/></svg><span class="w-super">ve</span><span class="w-bold">,</span> <span class="w-super">h</span><svg class="face-mark sad-face" viewBox="0 0 216 250" fill="none" aria-hidden="true"><path class="face-mouth" d="M215.516 84.4515C193.821 84.4515 172.337 88.7161 152.293 97.0017C132.249 105.287 114.037 117.432 98.6956 132.741C83.3546 148.051 71.1853 166.227 62.8828 186.23C54.5803 206.233 50.307 227.672 50.307 249.324L91.3928 249.324C91.3928 233.057 94.6034 216.949 100.841 201.921C107.079 186.892 116.222 173.237 127.748 161.734C139.274 150.232 152.957 141.108 168.016 134.883C183.076 128.658 199.216 125.454 215.516 125.454L215.516 84.4515Z" fill="black"/><path class="face-eye-left" d="M-3.52917e-06 -6.24198e-06L40.5888 1.12623e-06L40.5888 79.7462L-2.20187e-06 79.7462L-3.52917e-06 -6.24198e-06Z" fill="black"/><path class="face-eye-right" d="M81.1776 -2.29515e-06L121.766 5.07306e-06L121.766 79.7462L81.1776 79.7462L81.1776 -2.29515e-06Z" fill="black"/></svg><span class="w-super">te</span><span class="w-bold">,</span></span><span class="w-bold care-line care-line--and">and</span> <span class="w-super care-line care-line--return">come back to</span> <span class="hero-nowrap care-line care-line--a-product"><span class="w-bold">a</span> <span class="w-bold care-line care-line--product">product</span></span><span class="product-card-anchor"><span class="care-cards" aria-label="Product surfaces Joe cares about">
               <a class="care-card" href="#project-proptech" aria-label="View Proptech case preview">
                 <img src="assets/home-hero/Mobile-App.png" alt="">
                 <span>Mobile App</span>
@@ -2163,7 +2953,7 @@
         </article>
 
         <article class="hero-state" role="tabpanel" id="hero-panel-believe" aria-labelledby="hero-tab-believe" data-hero-panel="believe" data-hero-anchor="what-i-believe-in" hidden>
-          <h2 class="hero-type"><span class="w-bold">A good <span class="hero-nowrap">design builds</span></span><br><span class="w-super orange">certainty</span> <span class="w-bold">&amp;</span> <span class="hero-nowrap"><span class="w-super blue">trust</span><span class="w-bold">.</span></span></h2>
+          <h2 class="hero-type"><span class="w-bold believe-line">A good design</span><span class="w-bold believe-line">builds</span><span class="believe-line"><span class="w-super orange">certainty</span> <span class="w-bold">&amp;</span></span><span class="believe-line"><span class="w-super blue">trust</span><span class="w-bold">.</span></span></h2>
         </article>
 
         <article class="hero-state" role="tabpanel" id="hero-panel-good" aria-labelledby="hero-tab-good" data-hero-panel="good" data-hero-anchor="what-im-good-at" hidden>
@@ -2177,7 +2967,8 @@
         </article>
 
         <article class="hero-state" role="tabpanel" id="hero-panel-doing" aria-labelledby="hero-tab-doing" data-hero-panel="doing" data-hero-anchor="what-im-doing" hidden>
-          <h2 class="hero-type doing-type"><span class="hero-fade-line quiet">Researching, vibe coding,</span><span class="hero-fade-line quiet">Building products that <span class="hero-nowrap">people love,</span></span><span class="hero-fade-line hero-line-spacer" aria-hidden="true"></span><span class="hero-fade-line quiet">seeking a team to go</span><span class="hero-fade-line signal">above and beyond together.</span></h2>
+          <h2 class="hero-type doing-type doing-type-desktop"><span class="hero-fade-line quiet">Researching, vibe coding, Building</span><span class="hero-fade-line quiet">products people love,</span><span class="hero-fade-line hero-line-spacer" aria-hidden="true"></span><span class="hero-fade-line quiet">seeking a team to go above and beyond</span><span class="hero-fade-line signal">together.</span></h2>
+          <h2 class="hero-type doing-type doing-type-mobile"><span class="hero-fade-line quiet">Researching, vibe</span><span class="hero-fade-line quiet">coding,</span><span class="hero-fade-line quiet">Building products</span><span class="hero-fade-line quiet">people love,</span><span class="hero-fade-line hero-line-spacer" aria-hidden="true"></span><span class="hero-fade-line quiet">seeking a team to go</span><span class="hero-fade-line signal">above and beyond</span><span class="hero-fade-line signal">together.</span></h2>
           <div class="hero-actions" aria-label="Profile links">
             <a class="hero-action" href="https://www.linkedin.com/in/joetao/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="hero-action" href="assets/Joe_Tao_Resume.pdf" download>Resume</a>
@@ -2229,25 +3020,6 @@
           </div>
           <figure class="case-visual case-visual--proptech case-visual--contain">
             <img src="assets/proptech-preview-wireframe.png" alt="Black and white wireframe preview for Explainable Property Search">
-          </figure>
-        </article>
-
-        <article class="case-preview" id="project-tripmi">
-          <div class="case-copy">
-            <div>
-              <h3>TripMi</h3>
-              <p>I designed a group travel flow that helps friends decide plans together, turn poll results into itinerary items, and split shared expenses with less coordination friction.</p>
-            </div>
-            <ul class="case-meta" aria-label="TripMi project facts">
-              <li><strong>Years</strong><span>2026</span></li>
-              <li><strong>Role</strong><span>Product Designer</span></li>
-              <li><strong>Scope</strong><span>Mobile UX, group decision-making, itinerary logic, expense splitting</span></li>
-              <li><strong>Result</strong><span>Clearer shared decisions, smoother itinerary updates, faster post-trip settlement</span></li>
-            </ul>
-            <a class="case-link" href="tripmi-case-study.html">Request case study access</a>
-          </div>
-          <figure class="case-visual case-visual--tripmi">
-            <img src="assets/tripmi-thumbnail.png" alt="TripMi group travel mobile app thumbnail">
           </figure>
         </article>
 
@@ -2331,83 +3103,174 @@
 
     <section class="homepage-support" id="experience" aria-labelledby="experience-title">
       <h2 class="sr-only" id="experience-title">Experience and education</h2>
-      <div class="support-layout">
+      <div class="support-layout support-desktop">
         <div class="support-subsection" aria-labelledby="experience-list-title">
           <h3 class="sr-only" id="experience-list-title">Experience</h3>
-          <div class="experience-rows">
-            <article class="experience-row">
-              <div>
-                <h3>TUTU VIEW</h3>
-                <time datetime="2025-06">Product Designer / Jun 2025 to present</time>
-              </div>
-              <p>Owned end-to-end design across three cross-border DTC platforms, taking ambiguous venture goals from discovery, IA, and UX flows through to developer handoff, optimisation, and launch. Built component libraries, token systems, and rapid prototyping SOPs with Figma MCP and Claude Code, reducing delivery cycle by 70%, build time by 40%, and monthly creative overhead by £2000+. Analysed 400+ user sessions, heatmaps, heuristic signals, and behavioural patterns to define IA changes and three conversion opportunities.</p>
-            </article>
-
-            <article class="experience-row">
-              <div>
-                <h3>Dēpology</h3>
-                <time datetime="2024-12">Staff UX Designer / Dec 2024 to Jun 2025</time>
-              </div>
-              <p>Led a research-led full-funnel redesign across product, cart, and checkout journeys using heatmaps, session recordings, and cohort analysis, doubling checkout CVR across two product launches. Built reusable commerce components, documentation, and handoff SOPs for offer hierarchy, buybox states, cart patterns, and checkout behaviours, reducing production time by 30%. Connected landing-page UX, ad promise, and user perception in a Research-UI-Ads testing framework, compressing test cycles from two weeks to four days and contributing to a 50% reduction in cart abandonment.</p>
-            </article>
-
-            <article class="experience-row">
-              <div>
-                <h3>Travel to Qin</h3>
-                <time datetime="2024-04">Junior UX Designer / Apr 2024 to Dec 2024</time>
-              </div>
-              <p>Led traveller research through interviews, focus groups, and field studies, translating findings into a 20-page mobile wireframe with navigation flow, information hierarchy, and scalable design patterns. Designed high-fidelity prototypes, facilitated Shopify and WordPress handoff, and built an internal CMS for content and supplier-side publishing, cutting development cycle by 50% and labour cost by 30% through reusable templates.</p>
-            </article>
-
-            <article class="experience-row">
-              <div>
-                <h3>manila.design</h3>
-                <time datetime="2022-10">Digital Designer / Oct 2022 to Sep 2023</time>
-              </div>
-              <p>Led UX research for a B2C website using interviews and Google Analytics, identifying seven conversion blockers and translating them into personas, journey improvements, and product-to-checkout redesigns that contributed to a 10% drop-off reduction. Built reusable UI patterns across product, content, and checkout journeys, then collaborated with developers on responsive production handoff.</p>
-            </article>
-
-            <article class="experience-row">
-              <div>
-                <h3>Quadtalent</h3>
-                <time datetime="2021-04">UI Designer / Apr 2021 to Sep 2021</time>
-              </div>
-              <p>Took UI ownership mid-project under pressure, self-taught front-end basics in three days, and shipped an enterprise website with minimal engineering revision through multi-layered approvals. Designed B2B enterprise UI, dashboard patterns, and 12 data-visualisation slides for C-suite presentations.</p>
-            </article>
-          </div>
           <p class="support-label" aria-hidden="true">EXPERIENCE</p>
+          <div class="support-static-panel">
+            <div class="experience-rows">
+              <article class="experience-row">
+                <div>
+                  <h3>TUTU VIEW</h3>
+                  <time datetime="2025-06">Product Designer / Jun 2025 to present</time>
+                </div>
+                <p>Owned end-to-end design across three cross-border DTC platforms, taking ambiguous venture goals from discovery, IA, and UX flows through to developer handoff, optimisation, and launch. Built component libraries, token systems, and rapid prototyping SOPs with Figma MCP and Claude Code, reducing delivery cycle by 70%, build time by 40%, and monthly creative overhead by £2000+. Analysed 400+ user sessions, heatmaps, heuristic signals, and behavioural patterns to define IA changes and three conversion opportunities.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Dēpology</h3>
+                  <time datetime="2024-12">Staff UX Designer / Dec 2024 to Jun 2025</time>
+                </div>
+                <p>Led a research-led full-funnel redesign across product, cart, and checkout journeys using heatmaps, session recordings, and cohort analysis, doubling checkout CVR across two product launches. Built reusable commerce components, documentation, and handoff SOPs for offer hierarchy, buybox states, cart patterns, and checkout behaviours, reducing production time by 30%. Connected landing-page UX, ad promise, and user perception in a Research-UI-Ads testing framework, compressing test cycles from two weeks to four days and contributing to a 50% reduction in cart abandonment.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Travel to Qin</h3>
+                  <time datetime="2024-04">Junior UX Designer / Apr 2024 to Dec 2024</time>
+                </div>
+                <p>Led traveller research through interviews, focus groups, and field studies, translating findings into a 20-page mobile wireframe with navigation flow, information hierarchy, and scalable design patterns. Designed high-fidelity prototypes, facilitated Shopify and WordPress handoff, and built an internal CMS for content and supplier-side publishing, cutting development cycle by 50% and labour cost by 30% through reusable templates.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>manila.design</h3>
+                  <time datetime="2022-10">Digital Designer / Oct 2022 to Sep 2023</time>
+                </div>
+                <p>Led UX research for a B2C website using interviews and Google Analytics, identifying seven conversion blockers and translating them into personas, journey improvements, and product-to-checkout redesigns that contributed to a 10% drop-off reduction. Built reusable UI patterns across product, content, and checkout journeys, then collaborated with developers on responsive production handoff.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Quadtalent</h3>
+                  <time datetime="2021-04">UI Designer / Apr 2021 to Sep 2021</time>
+                </div>
+                <p>Took UI ownership mid-project under pressure, self-taught front-end basics in three days, and shipped an enterprise website with minimal engineering revision through multi-layered approvals. Designed B2B enterprise UI, dashboard patterns, and 12 data-visualisation slides for C-suite presentations.</p>
+              </article>
+            </div>
+          </div>
         </div>
 
         <div class="support-subsection" aria-labelledby="education-list-title">
           <h3 class="sr-only" id="education-list-title">Education</h3>
-          <div class="education-rows">
-            <article class="education-row">
-              <div>
-                <h3>University College London</h3>
-                <time datetime="2022">MSc Human-Computer Interaction / 2022 to 2023</time>
-              </div>
-              <p>Distinction. Research published at ACM CHIWORK '25 and invited to pitch findings to Google via UCL Interaction Centre.</p>
-            </article>
-
-            <article class="education-row">
-              <div>
-                <h3>University of Leeds</h3>
-                <time datetime="2019">BSc (Hons) Product Design / 2019 to 2022</time>
-              </div>
-              <p>First Class. Thesis with Distinction selected for New Designers 2023 and published on Dezeen Magazine.</p>
-            </article>
-          </div>
           <p class="support-label" aria-hidden="true">EDUCATION</p>
+          <div class="support-static-panel">
+            <div class="education-rows">
+              <article class="education-row">
+                <div>
+                  <h3>University College London</h3>
+                  <time datetime="2022">MSc Human-Computer Interaction / 2022 to 2023</time>
+                </div>
+                <p>Distinction. Research published at ACM CHIWORK '25 and invited to pitch findings to Google via UCL Interaction Centre.</p>
+              </article>
+
+              <article class="education-row">
+                <div>
+                  <h3>University of Leeds</h3>
+                  <time datetime="2019">BSc (Hons) Product Design / 2019 to 2022</time>
+                </div>
+                <p>First Class. Thesis with Distinction selected for New Designers 2023 and published on Dezeen Magazine.</p>
+              </article>
+            </div>
+
+            <ul class="skill-clusters" aria-label="Skill clusters">
+              <li>#Product UX</li>
+              <li>#Research</li>
+              <li>#Design systems</li>
+              <li>#Conversion</li>
+              <li>#AI workflows</li>
+              <li>#Handoff</li>
+            </ul>
+          </div>
         </div>
 
-        <ul class="skill-clusters" aria-label="Skill clusters">
-          <li>#Product UX</li>
-          <li>#Research</li>
-          <li>#Design systems</li>
-          <li>#Conversion</li>
-          <li>#AI workflows</li>
-          <li>#Handoff</li>
-        </ul>
+        <div class="support-actions" aria-label="Experience links">
+          <a class="support-action" href="assets/Joe_Tao_Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+
+      <div class="support-layout support-mobile">
+        <details class="support-subsection support-accordion" aria-labelledby="mobile-experience-list-title">
+          <summary class="support-label">EXPERIENCE</summary>
+          <div class="support-accordion-panel">
+            <h3 class="sr-only" id="mobile-experience-list-title">Experience</h3>
+            <div class="experience-rows">
+              <article class="experience-row">
+                <div>
+                  <h3>TUTU VIEW</h3>
+                  <time datetime="2025-06">Product Designer / Jun 2025 to present</time>
+                </div>
+                <p>Owned end-to-end design across three cross-border DTC platforms, taking ambiguous venture goals from discovery, IA, and UX flows through to developer handoff, optimisation, and launch. Built component libraries, token systems, and rapid prototyping SOPs with Figma MCP and Claude Code, reducing delivery cycle by 70%, build time by 40%, and monthly creative overhead by £2000+. Analysed 400+ user sessions, heatmaps, heuristic signals, and behavioural patterns to define IA changes and three conversion opportunities.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Dēpology</h3>
+                  <time datetime="2024-12">Staff UX Designer / Dec 2024 to Jun 2025</time>
+                </div>
+                <p>Led a research-led full-funnel redesign across product, cart, and checkout journeys using heatmaps, session recordings, and cohort analysis, doubling checkout CVR across two product launches. Built reusable commerce components, documentation, and handoff SOPs for offer hierarchy, buybox states, cart patterns, and checkout behaviours, reducing production time by 30%. Connected landing-page UX, ad promise, and user perception in a Research-UI-Ads testing framework, compressing test cycles from two weeks to four days and contributing to a 50% reduction in cart abandonment.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Travel to Qin</h3>
+                  <time datetime="2024-04">Junior UX Designer / Apr 2024 to Dec 2024</time>
+                </div>
+                <p>Led traveller research through interviews, focus groups, and field studies, translating findings into a 20-page mobile wireframe with navigation flow, information hierarchy, and scalable design patterns. Designed high-fidelity prototypes, facilitated Shopify and WordPress handoff, and built an internal CMS for content and supplier-side publishing, cutting development cycle by 50% and labour cost by 30% through reusable templates.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>manila.design</h3>
+                  <time datetime="2022-10">Digital Designer / Oct 2022 to Sep 2023</time>
+                </div>
+                <p>Led UX research for a B2C website using interviews and Google Analytics, identifying seven conversion blockers and translating them into personas, journey improvements, and product-to-checkout redesigns that contributed to a 10% drop-off reduction. Built reusable UI patterns across product, content, and checkout journeys, then collaborated with developers on responsive production handoff.</p>
+              </article>
+
+              <article class="experience-row">
+                <div>
+                  <h3>Quadtalent</h3>
+                  <time datetime="2021-04">UI Designer / Apr 2021 to Sep 2021</time>
+                </div>
+                <p>Took UI ownership mid-project under pressure, self-taught front-end basics in three days, and shipped an enterprise website with minimal engineering revision through multi-layered approvals. Designed B2B enterprise UI, dashboard patterns, and 12 data-visualisation slides for C-suite presentations.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="support-subsection support-accordion" aria-labelledby="mobile-education-list-title">
+          <summary class="support-label">EDUCATION</summary>
+          <div class="support-accordion-panel">
+            <h3 class="sr-only" id="mobile-education-list-title">Education</h3>
+            <div class="education-rows">
+              <article class="education-row">
+                <div>
+                  <h3>University College London</h3>
+                  <time datetime="2022">MSc Human-Computer Interaction / 2022 to 2023</time>
+                </div>
+                <p>Distinction. Research published at ACM CHIWORK '25 and invited to pitch findings to Google via UCL Interaction Centre.</p>
+              </article>
+
+              <article class="education-row">
+                <div>
+                  <h3>University of Leeds</h3>
+                  <time datetime="2019">BSc (Hons) Product Design / 2019 to 2022</time>
+                </div>
+                <p>First Class. Thesis with Distinction selected for New Designers 2023 and published on Dezeen Magazine.</p>
+              </article>
+            </div>
+
+            <ul class="skill-clusters" aria-label="Skill clusters">
+              <li>#Product UX</li>
+              <li>#Research</li>
+              <li>#Design systems</li>
+              <li>#Conversion</li>
+              <li>#AI workflows</li>
+              <li>#Handoff</li>
+            </ul>
+          </div>
+        </details>
 
         <div class="support-actions" aria-label="Experience links">
           <a class="support-action" href="assets/Joe_Tao_Resume.pdf" download>Download Resume</a>
@@ -2418,26 +3281,77 @@
     <section class="homepage-support" id="about" aria-labelledby="statement-title">
       <h2 class="sr-only" id="statement-title">Personal statement</h2>
       <div class="support-layout statement-layout">
-        <figure class="statement-image statement-ticker" aria-label="Selected project image ticker">
-          <div class="statement-ticker__track" aria-hidden="true">
-            <img src="assets/case_study_images_depology/desktop_mega_menu_alt.png" alt="">
-            <img src="assets/case_study_images_worldschooling/programme_filtering_interface.png" alt="">
-            <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="">
-            <img src="assets/case_study_images_tutufuture/city_walk_posters.png" alt="">
-            <img src="assets/case_study_images_traveltoqin/destination_cards_ui.png" alt="">
-            <img src="assets/case_study_images_depology/mobile_buybox_optimization.png" alt="">
-            <img src="assets/case_study_images_depology/desktop_mega_menu_alt.png" alt="">
-            <img src="assets/case_study_images_worldschooling/programme_filtering_interface.png" alt="">
-            <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="">
-            <img src="assets/case_study_images_tutufuture/city_walk_posters.png" alt="">
-            <img src="assets/case_study_images_traveltoqin/destination_cards_ui.png" alt="">
-            <img src="assets/case_study_images_depology/mobile_buybox_optimization.png" alt="">
-          </div>
+        <figure class="statement-image">
+          <img src="assets/joe-about-portrait.png" alt="Portrait of Joe Tao">
         </figure>
         <div class="statement-copy">
           <p>I’m Joe, a product designer in London. I spend a lot of time thinking about the tiny pause before someone clicks, books, buys, joins, or gives up.</p>
           <p>That pause is usually where the real design problem lives. I like finding what’s missing there: trust, context, motivation, a clearer path, or just a better way to say the thing.</p>
           <p>My work moves between research, interface design, systems, and fast prototypes. Different projects, same obsession: make products feel easier to understand, easier to trust, and easier to return to.</p>
+          <div class="life-ticker" aria-label="Daily life photos">
+            <div class="life-ticker__track">
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="0" data-life-caption="Prototype detail" aria-label="Open prototype detail photo">
+                  <img src="assets/case_study_images_stairaid/product_showcase_desk.png" alt="StairAID product prototype on a desk">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="1" data-life-caption="Exhibition moment" aria-label="Open exhibition moment photo">
+                  <img src="assets/daily-life/stairaid-exhibition.jpg" alt="Joe at the StairAID exhibition">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="2" data-life-caption="Team showcase" aria-label="Open team showcase photo">
+                  <img src="assets/case_study_images_stairaid/team_photo_exhibition.png" alt="StairAID team photo at an exhibition">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="3" data-life-caption="Industry event" aria-label="Open industry event photo">
+                  <img src="assets/daily-life/michelin-event.jpg" alt="Joe at a Michelin event">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="4" data-life-caption="Community event" aria-label="Open community event photo">
+                  <img src="assets/daily-life/event-group.jpg" alt="Group photo at a design event">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="5" data-life-caption="Google event" aria-label="Open Google event photo">
+                  <img src="assets/daily-life/google-event.jpg" alt="Joe at a Google event">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="0" data-life-caption="Prototype detail" tabindex="-1" aria-label="Open prototype detail photo">
+                  <img src="assets/case_study_images_stairaid/product_showcase_desk.png" alt="StairAID product prototype on a desk">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="1" data-life-caption="Exhibition moment" tabindex="-1" aria-label="Open exhibition moment photo">
+                  <img src="assets/daily-life/stairaid-exhibition.jpg" alt="Joe at the StairAID exhibition">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="2" data-life-caption="Team showcase" tabindex="-1" aria-label="Open team showcase photo">
+                  <img src="assets/case_study_images_stairaid/team_photo_exhibition.png" alt="StairAID team photo at an exhibition">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="3" data-life-caption="Industry event" tabindex="-1" aria-label="Open industry event photo">
+                  <img src="assets/daily-life/michelin-event.jpg" alt="Joe at a Michelin event">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="4" data-life-caption="Community event" tabindex="-1" aria-label="Open community event photo">
+                  <img src="assets/daily-life/event-group.jpg" alt="Group photo at a design event">
+                </button>
+              </figure>
+              <figure class="life-ticker__item">
+                <button class="life-ticker__button" type="button" data-life-lightbox-index="5" data-life-caption="Google event" tabindex="-1" aria-label="Open Google event photo">
+                  <img src="assets/daily-life/google-event.jpg" alt="Joe at a Google event">
+                </button>
+              </figure>
+            </div>
+          </div>
           <div class="support-actions-wrap">
             <div class="support-actions" aria-label="Contact links">
               <button class="support-action" type="button" data-copy-email="joe.tianchen.tao@gmail.com">Email Joe</button>
@@ -2455,7 +3369,21 @@
     </footer>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <div class="life-lightbox" data-life-lightbox role="dialog" aria-modal="true" aria-label="Daily life photo viewer" hidden>
+    <button class="life-lightbox__close" type="button" data-life-lightbox-close aria-label="Close photo viewer">&times;</button>
+    <button class="life-lightbox__nav life-lightbox__nav--prev" type="button" data-life-lightbox-prev aria-label="Previous photo">&larr;</button>
+    <figure class="life-lightbox__figure">
+      <img class="life-lightbox__image" data-life-lightbox-image src="" alt="">
+      <figcaption class="life-lightbox__caption">
+        <span data-life-lightbox-caption></span>
+        <span class="life-lightbox__counter" data-life-lightbox-counter></span>
+      </figcaption>
+    </figure>
+    <button class="life-lightbox__nav life-lightbox__nav--next" type="button" data-life-lightbox-next aria-label="Next photo">&rarr;</button>
+  </div>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const heroTabs = Array.from(document.querySelectorAll("[data-hero-tab]"));
@@ -2503,65 +3431,6 @@
 
     applyTheme(getInitialTheme());
     window.addEventListener("beforeunload", persistCurrentTheme);
-
-    const setupPageLoadWipe = () => {
-      const wipe = document.querySelector("[data-load-wipe]");
-      const plane = document.querySelector("[data-load-wipe-plane]");
-
-      if (!wipe || !plane || prefersReducedMotion) {
-        wipe?.remove();
-        return;
-      }
-
-      const tileSize = window.innerWidth < 700 ? 22 : 30;
-      const columns = Math.ceil(window.innerWidth / tileSize);
-      const rows = Math.ceil(window.innerHeight / tileSize);
-      const maxDiagonal = columns + rows - 2;
-      const seededNoise = (row, column, salt = 0) => {
-        const value = Math.sin((row + 1) * 127.1 + (column + 1) * 311.7 + salt * 74.7) * 43758.5453;
-        return value - Math.floor(value);
-      };
-
-      for (let row = 0; row < rows; row += 1) {
-        for (let column = 0; column < columns; column += 1) {
-          const pixel = document.createElement("span");
-          const diagonalProgress = (row + column) / maxDiagonal;
-          const islandNoise = seededNoise(row, column);
-          const edgeNoise = (seededNoise(row, column, 2) - 0.5) * 260;
-          const clusterNoise = (seededNoise(Math.floor(row / 2), Math.floor(column / 2), 4) - 0.5) * 170;
-          const earlyIsland = islandNoise > 0.88 ? -210 : 0;
-          const lateIsland = islandNoise < 0.12 ? 160 : 0;
-          const roughDelay = edgeNoise + clusterNoise + earlyIsland + lateIsland;
-          const entryDelay = Math.max(0, diagonalProgress * 780 + roughDelay);
-          const exitDelay = Math.max(0, diagonalProgress * 620 + roughDelay * 0.82);
-
-          pixel.className = "load-wipe__pixel";
-          pixel.style.setProperty("--wipe-left", `${column * tileSize}px`);
-          pixel.style.setProperty("--wipe-top", `${row * tileSize}px`);
-          pixel.style.setProperty("--wipe-size", `${tileSize}px`);
-          pixel.style.setProperty("--wipe-delay", `${entryDelay.toFixed(0)}ms`);
-          pixel.style.setProperty("--wipe-exit-delay", `${exitDelay.toFixed(0)}ms`);
-          plane.appendChild(pixel);
-        }
-      }
-
-      window.setTimeout(() => {
-        wipe.classList.add("is-entering");
-      }, 280);
-
-      window.setTimeout(() => {
-        wipe.classList.add("is-filled");
-      }, 1040);
-
-      window.setTimeout(() => {
-        wipe.classList.add("is-leaving");
-      }, 1280);
-
-      window.setTimeout(() => {
-        wipe.classList.add("is-done");
-        wipe.remove();
-      }, 2140);
-    };
 
     const setupCustomCursor = () => {
       const cursor = document.querySelector(".custom-cursor");
@@ -2920,6 +3789,8 @@
       });
     };
 
+
+
     const setupEmailCopy = () => {
       document.querySelectorAll("[data-copy-email]").forEach((button) => {
         const feedback = button.closest(".support-actions-wrap")?.querySelector(".copy-feedback");
@@ -2951,6 +3822,106 @@
             feedback.classList.remove("is-visible");
           }, 2200);
         });
+      });
+    };
+
+    const setupLifeTickerLightbox = () => {
+      const lightbox = document.querySelector("[data-life-lightbox]");
+      const lightboxImage = document.querySelector("[data-life-lightbox-image]");
+      const lightboxCaption = document.querySelector("[data-life-lightbox-caption]");
+      const lightboxCounter = document.querySelector("[data-life-lightbox-counter]");
+      const closeButton = document.querySelector("[data-life-lightbox-close]");
+      const prevButton = document.querySelector("[data-life-lightbox-prev]");
+      const nextButton = document.querySelector("[data-life-lightbox-next]");
+      const triggers = Array.from(document.querySelectorAll("[data-life-lightbox-index]"));
+      const items = Array.from(document.querySelectorAll("[data-life-lightbox-item='true']")).map((button) => {
+        const image = button.querySelector("img");
+
+        return {
+          src: image?.getAttribute("src") || "",
+          alt: image?.getAttribute("alt") || "",
+          caption: button.dataset.lifeCaption || image?.getAttribute("alt") || "Daily life photo"
+        };
+      });
+
+      if (!lightbox || !lightboxImage || !items.length) return;
+
+      let activeIndex = 0;
+      let previousFocus = null;
+
+      const normalizeIndex = (index) => (index + items.length) % items.length;
+
+      const updateLightbox = (index) => {
+        activeIndex = normalizeIndex(index);
+        const item = items[activeIndex];
+
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.alt;
+
+        if (lightboxCaption) {
+          lightboxCaption.textContent = item.caption;
+        }
+
+        if (lightboxCounter) {
+          lightboxCounter.textContent = `${activeIndex + 1} / ${items.length}`;
+        }
+      };
+
+      const openLightbox = (index, trigger) => {
+        previousFocus = trigger || document.activeElement;
+        updateLightbox(index);
+        lightbox.hidden = false;
+        document.body.classList.add("life-lightbox-open");
+        closeButton?.focus();
+      };
+
+      const closeLightbox = () => {
+        lightbox.hidden = true;
+        document.body.classList.remove("life-lightbox-open");
+        lightboxImage.removeAttribute("src");
+        lightboxImage.alt = "";
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+          previousFocus.focus();
+        }
+      };
+
+      const showPrevious = () => updateLightbox(activeIndex - 1);
+      const showNext = () => updateLightbox(activeIndex + 1);
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          openLightbox(Number(trigger.dataset.lifeLightboxIndex || 0), trigger);
+        });
+      });
+
+      closeButton?.addEventListener("click", closeLightbox);
+      prevButton?.addEventListener("click", showPrevious);
+      nextButton?.addEventListener("click", showNext);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (lightbox.hidden) return;
+
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          showPrevious();
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          showNext();
+        }
       });
     };
 
@@ -3059,6 +4030,9 @@
 
     window.addEventListener("hashchange", activateHeroFromHash);
     window.addEventListener("resize", () => updateHeroTabFrame());
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(() => updateHeroTabFrame());
+    }
     activateHeroFromHash();
     updateHeroTabFrame();
     window.requestAnimationFrame(() => updateHeroTabFrame());
@@ -3068,7 +4042,6 @@
     }
     randomizeHeroSkillShapes(initialHeroPanel?.dataset.heroPanel === "who");
     setupHeroGrid();
-    setupPageLoadWipe();
     setupCustomCursor();
     setupFaceCursorTracking();
     setupSkillHoverTyping();
@@ -3076,6 +4049,7 @@
     setupCasePreviewLinks();
     setupPageDots();
     setupEmailCopy();
+    setupLifeTickerLightbox();
   </script>
 </body>
 </html>

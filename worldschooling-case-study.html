@@ -6,11 +6,19 @@
   <title>Worldschooling Case Study | Joe Tao</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
   <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
   <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
   <style>
-    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; }
+    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; --nav-ink: var(--text); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #10100e; --text: #f5f0e7; --muted: #b7afa3; --line: #39362f; --accent: #9fd8ba; --paper: #181714; --nav-ink: var(--text); }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--text); font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.72; }
     main { width: min(100%, 980px); margin: 0 auto; padding: 48px 20px 80px; }
@@ -23,8 +31,65 @@
     article > p:first-child, article > p:nth-child(2) { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     figure { width: min(100vw - 40px, 980px); margin: 42px 50% 52px; transform: translateX(-50%); }
     img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); object-fit: contain; }
+    .full-bleed-capture { width: 100vw; margin: 42px 50% 52px; transform: translateX(-50%); }
+    .long-capture-frame {
+      max-height: min(80vh, 940px);
+      overflow-y: auto;
+      border: 1px solid #4a4a4a;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 28%, rgba(0, 0, 0, 0) 58%, rgba(255, 255, 255, 0.035) 100%),
+        linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+        #080808;
+      background-size: auto, 32px 32px, 32px 32px, auto;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26);
+    }
+    .long-capture-frame img {
+      width: min(760px, calc(100vw - 32px));
+      margin: 24px auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+    }
+    .homepage-annotation-stage {
+      position: relative;
+      width: min(1180px, calc(100vw - 32px));
+      margin: 24px auto;
+    }
+    .homepage-annotation-stage img {
+      width: min(760px, 100%);
+      margin: 0;
+      margin-inline: auto;
+    }
+    .homepage-annotation {
+      position: absolute;
+      z-index: 2;
+      width: clamp(76px, calc((100% - min(760px, 100%)) / 2 - 16px), 190px);
+      color: #fffdf6;
+      font-family: "Caveat Brush", "Comic Sans MS", cursive;
+      font-size: clamp(17px, 2vw, 30px);
+      font-weight: 700;
+      line-height: 0.92;
+      margin: 0;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+      transform: rotate(var(--rotate, -2deg));
+    }
+    .homepage-annotation.side-left { left: 0; text-align: right; }
+    .homepage-annotation.side-right { right: 0; text-align: left; }
     figcaption { max-width: 760px; margin: 10px auto 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
-    @media (max-width: 640px) { body { font-size: 17px; } main { padding: 30px 16px 56px; } h2 { margin-top: 42px; } figure { width: 100%; margin: 32px 0 40px; transform: none; } }
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      main { padding: 30px 16px 56px; }
+      h2 { margin-top: 42px; }
+      figure { width: 100%; margin: 32px 0 40px; transform: none; }
+      .full-bleed-capture { width: 100vw; margin: 32px 50% 40px; transform: translateX(-50%); }
+    }
+    @media (max-width: 820px) {
+      .homepage-annotation { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -54,6 +119,26 @@
       <figure>
         <img src="assets/case_study_images_worldschooling/landing_page_laptop_mockup.png" alt="Worldschooling landing page laptop mockup">
         <figcaption>The first release replaced a full booking portal with five visible customer steps.</figcaption>
+      </figure>
+
+      <h2>Recent upgrade — rebuild the homepage around the new product structure</h2>
+      <p>After the programme model became clearer, I updated the homepage so the new structure was visible from the first journey: search, open applications, programme cards, trust signals, destinations, alumni proof, and impact messaging.</p>
+      <p>This upgrade made the site feel less like a brochure and more like a structured product catalogue parents could browse before speaking to the team.</p>
+
+      <figure class="full-bleed-capture">
+        <div class="long-capture-frame">
+          <div class="homepage-annotation-stage">
+            <img src="assets/case_study_images_worldschooling/homepage-product-structure-upgrade.png" alt="Full Worldschooling homepage upgrade showing the new product structure" loading="lazy" decoding="async">
+            <p class="homepage-annotation side-left" style="top: 7.2%; --rotate: -4deg;">Partners up front. Trust faster.</p>
+            <p class="homepage-annotation side-right" style="top: 13.2%; --rotate: 3deg;">Search moved here. Easy to start.</p>
+            <p class="homepage-annotation side-left" style="top: 20.6%; --rotate: -2deg;">Seasonal offer leads. Fewer cards, clearer choice.</p>
+            <p class="homepage-annotation side-right" style="top: 35.2%; --rotate: 4deg;">One inspiration section. Both product lines together.</p>
+            <p class="homepage-annotation side-left" style="top: 62.5%; --rotate: -3deg;">Countries feel like travel, not a list.</p>
+            <p class="homepage-annotation side-right" style="top: 74.8%; --rotate: 2deg;">Student story gets the whole stage.</p>
+            <p class="homepage-annotation side-left" style="top: 85.6%; --rotate: -2deg;">Cleaner cause section. Softer, stronger close.</p>
+          </div>
+        </div>
+        <figcaption>The recent homepage upgrade translates the new product structure into a full browse-to-enquiry journey.</figcaption>
       </figure>
 
       <h2>2 — Help parents compare fit before commitment</h2>

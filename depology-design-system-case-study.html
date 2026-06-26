@@ -7,8 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
   <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
   <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
   <style>
     :root {
       color-scheme: light;
@@ -18,6 +25,18 @@
       --line: #ded9ce;
       --accent: #245c44;
       --paper: #ffffff;
+      --nav-ink: var(--text);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #10100e;
+      --text: #f5f0e7;
+      --muted: #b7afa3;
+      --line: #39362f;
+      --accent: #9fd8ba;
+      --paper: #181714;
+      --nav-ink: var(--text);
     }
 
     * {
@@ -130,6 +149,65 @@
       border: 0;
     }
 
+    .full-bleed-frame {
+      width: 100vw;
+      margin: 58px 50% 66px;
+      transform: translateX(-50%);
+    }
+
+    .depology-frame-scroll {
+      max-height: min(82vh, 920px);
+      overflow-y: auto;
+      border: 1px solid #4a4a4a;
+      border-left: 0;
+      border-right: 0;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.035) 30%, rgba(0, 0, 0, 0) 58%, rgba(255, 255, 255, 0.03) 100%),
+        linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+        #080808;
+      background-size: auto, 32px 32px, 32px 32px, auto;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26);
+    }
+
+    .depology-frame-stage {
+      position: relative;
+      width: min(1280px, calc(100vw - 32px));
+      margin: 42px auto;
+    }
+
+    .depology-frame-stage img {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .depology-annotation {
+      position: absolute;
+      z-index: 2;
+      width: min(190px, calc((100% - min(980px, 100%)) / 2 - 24px));
+      margin: 0;
+      color: #fffdf6;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(13px, 1.15vw, 16px);
+      font-weight: 650;
+      line-height: 1.18;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.68);
+      transform: rotate(var(--rotate, -2deg));
+    }
+
+    .depology-annotation.side-left {
+      left: 0;
+      text-align: right;
+    }
+
+    .depology-annotation.side-right {
+      right: 0;
+      text-align: left;
+    }
+
     figcaption {
       max-width: 760px;
       margin-top: 10px;
@@ -167,6 +245,18 @@
       .figure-scroll {
         max-height: 520px;
       }
+
+      .full-bleed-frame {
+        width: 100vw;
+        margin: 38px 50% 46px;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 1240px) {
+      .depology-annotation {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -180,6 +270,7 @@
       <h1>Turn skincare browsing into confident checkout</h1>
       <p>Depology is a Korean skincare DTC brand selling science-led products to international customers. I worked on the mobile commerce experience across navigation, product pages, buybox, cart, checkout, and reusable UI patterns.</p>
       <p>The goal was to help high-intent paid-social visitors understand products faster, choose the right offer, and complete checkout with less hesitation.</p>
+      <p><strong>Impact:</strong> The redesigned funnel drove a 2x checkout conversion rate across two rollout cycles, reduced cart abandonment by 50%, cut design-to-build time by 30%, and reduced testing cycles from two weeks to 4 days.</p>
 
       <figure>
         <img src="assets/case_study_images_depology_system/dp1.png" alt="Depology desktop mega menu and category surfaces">
@@ -234,16 +325,27 @@
       <p>I documented responsive behaviour, content order, state rules, implementation priorities, and QA notes for developers. The system had to preserve purchase hierarchy at both 1440px desktop and 375px mobile, not just look consistent in Figma.</p>
       <p>From a business perspective, this reduced the cost of launching and testing new products. The team no longer had to solve the same commerce decisions from scratch each time.</p>
 
-      <figure>
-        <div class="figure-scroll">
-          <img src="assets/case_study_images_depology_system/dp-system.png" alt="Depology commerce pattern inventory showing navigation, buybox, sticky CTA, filter, and product-grid states">
+      <figure class="full-bleed-frame">
+        <div class="depology-frame-scroll">
+          <div class="depology-frame-stage">
+            <img src="assets/case_study_images_depology_system/dp-system.png" alt="Depology commerce pattern inventory showing navigation, buybox, sticky CTA, filter, and product-grid states">
+            <p class="depology-annotation side-left" style="top: 8%; --rotate: -3deg;">Discovery became reusable.</p>
+            <p class="depology-annotation side-right" style="top: 31%; --rotate: 3deg;">The buybox became the main decision tool.</p>
+            <p class="depology-annotation side-left" style="top: 56%; --rotate: -2deg;">Cart states kept shoppers confident.</p>
+            <p class="depology-annotation side-right" style="top: 78%; --rotate: 2deg;">One system for future launches.</p>
+          </div>
         </div>
         <figcaption>Commerce pattern inventory covering navigation, buybox, sticky CTA, filters, product grids, and checkout states.</figcaption>
       </figure>
 
-      <figure>
-        <div class="figure-scroll">
-          <img src="assets/case_study_images_depology_system/breakpoint.png" alt="Depology responsive breakpoint specification for desktop and mobile product page">
+      <figure class="full-bleed-frame">
+        <div class="depology-frame-scroll">
+          <div class="depology-frame-stage">
+            <img src="assets/case_study_images_depology_system/breakpoint.png" alt="Depology responsive breakpoint specification for desktop and mobile product page">
+            <p class="depology-annotation side-left" style="top: 10%; --rotate: -3deg;">Desktop and mobile rules side by side.</p>
+            <p class="depology-annotation side-right" style="top: 42%; --rotate: 2deg;">Same buying logic at every size.</p>
+            <p class="depology-annotation side-left" style="top: 72%; --rotate: -2deg;">Clearer handoff for dev and QA.</p>
+          </div>
         </div>
         <figcaption>Responsive breakpoint specification comparing desktop and mobile product-page behaviour.</figcaption>
       </figure>
