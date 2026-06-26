@@ -1916,6 +1916,7 @@
 
     .statement-copy {
       max-width: min(1120px, 100%);
+      min-width: 0;
     }
 
     .statement-layout {
@@ -1923,6 +1924,7 @@
       grid-template-columns: minmax(220px, 0.28fr) minmax(0, 0.72fr);
       gap: clamp(28px, 4vw, 74px);
       align-items: start;
+      min-width: 0;
     }
 
     .statement-image {
@@ -1955,6 +1957,7 @@
     .life-ticker {
       width: 100%;
       max-width: 100%;
+      min-width: 0;
       margin: clamp(30px, 4vw, 52px) 0 clamp(24px, 3vw, 36px);
       overflow-x: auto;
       overflow-y: hidden;
@@ -2407,6 +2410,20 @@
 
       .homepage-support {
         padding: 24px 0;
+      }
+
+      .statement-layout {
+        justify-items: center;
+        gap: clamp(24px, 5vw, 42px);
+      }
+
+      .statement-image {
+        width: clamp(160px, 42vw, 260px);
+      }
+
+      .statement-copy {
+        justify-self: stretch;
+        width: 100%;
       }
 
       .support-desktop {
@@ -2870,7 +2887,7 @@
 
       @media (orientation: portrait) {
         .statement-image {
-          width: 50%;
+          width: clamp(138px, 46vw, 190px);
           justify-self: center;
         }
       }
