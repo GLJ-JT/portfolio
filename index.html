@@ -1353,6 +1353,14 @@
       --preview-position: center top;
     }
 
+    .case-visual--worldover {
+      --case-ratio: 16 / 9;
+      --case-fit: contain;
+      --case-scale: 1;
+      --preview-bg: #f2f5f1;
+      --preview-position: center;
+    }
+
     .case-visual--nihao {
       --case-ratio: 16 / 9;
       --preview-bg: #f6f1ea;
@@ -1540,6 +1548,10 @@
 
     :root[data-theme="dark"] .case-visual--worldschooling {
       --preview-bg: #172028;
+    }
+
+    :root[data-theme="dark"] .case-visual--worldover {
+      --preview-bg: #172018;
     }
 
     :root[data-theme="dark"] .case-visual--nihao {
@@ -2911,6 +2923,7 @@
     <a class="page-dot" href="#project-proptech" aria-label="Explainable Property Search"></a>
     <a class="page-dot" href="#project-travel-to-qin" aria-label="Travel to Qin"></a>
     <a class="page-dot" href="#project-worldschooling" aria-label="Worldschooling"></a>
+    <a class="page-dot" href="#project-worldover" aria-label="Worldover"></a>
     <a class="page-dot" href="https://nihaoserica.com/" target="_blank" rel="noopener noreferrer" aria-label="Nihao Serica"></a>
     <a class="page-dot" href="#project-tutu-future" aria-label="TUTU Future"></a>
   </nav>
@@ -3076,6 +3089,25 @@
           </div>
           <figure class="case-visual case-visual--worldschooling">
             <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="Worldschooling homepage redesign preview">
+          </figure>
+        </article>
+
+        <article class="case-preview" id="project-worldover">
+          <div class="case-copy">
+            <div>
+              <h3>Worldover Risk Command</h3>
+              <p>I turned scattered compliance signals into a command workflow for risk triage, production tracking, threshold alerts, and reporting readiness.</p>
+            </div>
+            <ul class="case-meta" aria-label="Worldover project facts">
+              <li><strong>Years</strong><span>2026</span></li>
+              <li><strong>Role</strong><span>Product Designer</span></li>
+              <li><strong>Scope</strong><span>SaaS workflow, dashboard IA, high-fidelity prototype</span></li>
+              <li><strong>Result</strong><span>Clearer product story for review, sales, and build planning</span></li>
+            </ul>
+            <a class="case-link" href="worldover-dashboard.html">View dashboard</a>
+          </div>
+          <figure class="case-visual case-visual--worldover case-visual--contain">
+            <img src="assets/case_study_images_worldover/risk-command-overview.png" alt="Worldover Risk Command dashboard preview">
           </figure>
         </article>
 
