@@ -1315,6 +1315,19 @@
       will-change: transform;
     }
 
+    .case-visual > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      color: inherit;
+    }
+
+    .case-visual > a:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 8px;
+    }
+
     .case-visual--contain {
       padding: clamp(18px, 2.6vw, 44px);
     }
@@ -3104,10 +3117,12 @@
               <li><strong>Scope</strong><span>SaaS workflow, dashboard IA, high-fidelity prototype</span></li>
               <li><strong>Result</strong><span>Clearer product story for review, sales, and build planning</span></li>
             </ul>
-            <a class="case-link" href="worldover-dashboard.html">View dashboard</a>
+            <a class="case-link" href="worldover-case-study.html">View case study</a>
           </div>
           <figure class="case-visual case-visual--worldover case-visual--contain">
-            <img src="assets/case_study_images_worldover/risk-command-overview.png" alt="Worldover Risk Command dashboard preview">
+            <a href="worldover-case-study.html" aria-label="Open Worldover case study">
+              <img src="assets/case_study_images_worldover/risk-command-overview.png" alt="Worldover Risk Command dashboard preview">
+            </a>
           </figure>
         </article>
 

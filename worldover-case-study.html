@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worldover Case Study | Joe Tao</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
+  <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
+  <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
+  <style>
+    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; --nav-ink: var(--text); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #10100e; --text: #f5f0e7; --muted: #b7afa3; --line: #39362f; --accent: #9fd8ba; --paper: #181714; --nav-ink: var(--text); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.72; }
+    main { width: min(100%, 980px); margin: 0 auto; padding: 48px 20px 80px; }
+    article { max-width: 760px; margin: 0 auto; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3 { font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.1; letter-spacing: 0; }
+    h1 { margin: 18px 0 22px; font-size: clamp(42px, 7vw, 76px); font-weight: 500; letter-spacing: -0.01em; }
+    h2 { margin: 58px 0 16px; padding-top: 22px; border-top: 1px solid var(--line); font-size: clamp(25px, 3vw, 34px); font-weight: 500; letter-spacing: -0.005em; }
+    p { margin: 0 0 18px; }
+    article > p:first-child, article > p:nth-child(2) { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    figure { width: min(100vw - 40px, 980px); margin: 42px 50% 52px; transform: translateX(-50%); }
+    img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); object-fit: contain; }
+    figcaption { max-width: 760px; margin: 10px auto 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    @media (max-width: 640px) { body { font-size: 17px; } main { padding: 30px 16px 56px; } h2 { margin-top: 42px; } figure { width: 100%; margin: 32px 0 40px; transform: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <p><a href="index.html">Back</a></p>
+
+      <p>2026</p>
+
+      <h1>Turn compliance data into a command workflow</h1>
+      <p>Worldover helps teams track compliance risk across legal entities, factories, production thresholds, evidence, and reporting deadlines.</p>
+      <p>I worked on a one-week product case to define the core workflow and turn it into a high-fidelity prototype.</p>
+      <p>The goal was to make the product easier to understand in review, sales, and investor conversations.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/cover_image.png" alt="Worldover Risk Command product cover">
+        <figcaption>The prototype turned scattered compliance signals into one product story: detect risk, understand cause, and prepare the right evidence.</figcaption>
+      </figure>
+
+      <h2>Problem statement</h2>
+      <p>Compliance data can show many signals at once: production changes, threshold rules, documents, ownership, and report status.</p>
+      <p>But the product still needs to answer one simple question: what needs attention first?</p>
+      <p>If that story is hard to read, the workflow becomes harder to trust and harder to sell.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/product-ia-map.png" alt="Product IA map">
+        <figcaption>The product map separates the workflow into the main jobs users need to complete.</figcaption>
+      </figure>
+
+      <h2>1 — Separate the product into clear jobs</h2>
+      <p>I split the interface into Risk Command, Production Tracking, Threshold Guarding, Reporting, and Compliance History.</p>
+      <p>Each area has a different role. Risk Command shows what needs action. Production Tracking explains where pressure comes from. Threshold Guarding controls alerts. Reporting shows whether the team is ready to export.</p>
+      <p>This made the prototype easier to explain because each tab had a job.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/risk-command-overview.png" alt="Risk Command overview">
+        <figcaption>Risk Command gives the user one operating view for alerts, score, production, and entity status.</figcaption>
+      </figure>
+
+      <h2>2 — Make entity risk readable</h2>
+      <p>The command view shows the active issue, the likely cause, and the entity behind it.</p>
+      <p>When a user selects an entity, the score, risk message, production facts, alerts, and report state change with it.</p>
+      <p>This helped the prototype feel like a working product instead of a static dashboard mockup.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/risk-command-entity-state.png" alt="Risk Command entity state">
+        <figcaption>Entity switching makes the risk state and supporting facts change together.</figcaption>
+      </figure>
+
+      <h2>3 — Give production review its own space</h2>
+      <p>Production data often explains why a compliance issue exists, so I moved it out of the command view and into a dedicated tracking area.</p>
+      <p>The view uses entity filters, factory cards, trend charts, and output summaries to help operators compare factories and spot pressure.</p>
+      <p>The important shift was from showing that a company is at risk to showing why the risk exists.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/production-tracking-trend-view.png" alt="Production trend view">
+        <figcaption>Production Tracking keeps investigation detail away from the main command view.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/production-factory-share-view.png" alt="Factory share view">
+        <figcaption>Factory share views show where production pressure is coming from.</figcaption>
+      </figure>
+
+      <h2>4 — Connect alerts to reporting readiness</h2>
+      <p>Threshold Guarding turns alert setup into part of the workflow. Users can see which factories are close to a limit, who should be notified, and when a warning should trigger.</p>
+      <p>Reporting then closes the loop. Instead of treating export as a final button, the screen shows report history, production summaries, and what still needs attention.</p>
+      <p>The workflow becomes: detect risk, understand cause, notify the right people, and prepare the evidence.</p>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/threshold-guarding-alerts.png" alt="Threshold guarding alerts">
+        <figcaption>Threshold Guarding brings alert setup into the operating workflow.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/case_study_images_worldover/reporting-export-readiness.png" alt="Reporting export readiness">
+        <figcaption>Reporting shows what is ready to export and what still needs work.</figcaption>
+      </figure>
+
+      <h2>Delivery and results</h2>
+      <p>The prototype covered the core screens needed to judge the product direction: command overview, entity states, production tracking, threshold guarding, and reporting readiness.</p>
+      <p>I kept the visual system calm and operational so the interface could support serious decisions without becoming visually noisy.</p>
+      <p>The result was a clearer product narrative for internal review, sales conversations, and future build planning.</p>
+
+      <h2>So what?</h2>
+      <p>Compliance products build trust through explanation.</p>
+      <p>The interface has to show what changed, why it matters, who owns it, and whether the team is ready to report.</p>
+    </article>
+  </main>
+</body>
+</html>
