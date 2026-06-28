@@ -375,90 +375,139 @@
       "case_study": "case-study.html?id=worldover",
       "live": "worldover-risk-command-wireframe.html"
     },
-    "hero_image": "assets/case_study_images_worldover/cover_image.png",
+    "hero_image": "assets/case_study_images_worldover/risk-command-overview.png",
     "hero_iframe": "worldover-risk-command-wireframe.html",
-    "problem": "The product had useful compliance data, but the experience did not make the next decision obvious. A user could see risk, production, alerts, reports, and evidence, but still need time to understand what mattered first.",
-    "solution": "I reorganised the case around the thinking before the UI: research, IA, rationale, and a high-fidelity prototype. Then I used the updated demo to show how the workflow became easier to read and act on.",
+    "problem": "Worldover had the ingredients of a serious compliance product, but the interface still made operators assemble the risk story from separate production, threshold, reporting, and evidence views.",
+    "solution": "I reframed the product as a Risk Command workflow: a clear IA, entity-aware risk states, production drill-downs, threshold controls, and reporting readiness screens that make the next operational decision visible.",
     "content": [
       {
         "type": "article_section",
-        "kicker": "Initial thinking",
-        "title": "I started by asking what decision the product needed to support.",
+        "kicker": "Context",
+        "title": "I turned compliance data into an operator workflow.",
         "paragraphs": [
-          "Worldover works in a serious compliance space. A threshold breach can affect production planning, legal entity scope, registration limits, plant owners, evidence, and reporting deadlines.",
-          "The first question was not, how do I make the dashboard look better? It was, what does a user need to understand before they can take the next safe action?",
-          "For a founder or investor, this matters because the product is not only selling data visibility. It is selling confidence: can a team spot a risk early, understand the cause, assign the work, and move toward reporting readiness?"
+          "Worldover helps teams manage compliance risk across legal entities, factories, production thresholds, plant ownership, evidence, and reporting deadlines.",
+          "I worked on a one-week product case to clarify the workflow and produce a high-fidelity prototype. The aim was not to decorate a dashboard. It was to show how the product could help founders, operators, and compliance teams understand what needs attention first.",
+          "The business value was product clarity. A buyer or investor needs to see more than tables: they need to understand how Worldover detects pressure, explains cause, and moves a team toward reporting readiness."
         ]
       },
       {
         "type": "article_section",
-        "kicker": "Research and IA",
-        "title": "I separated the work into clear modes instead of one crowded screen.",
+        "kicker": "Problem",
+        "title": "Useful data was not yet a clear decision path.",
         "paragraphs": [
-          "I treated the dashboard as several jobs happening inside one product. Risk triage is one job. Production review is another. Alert setup, report readiness, and evidence audit also need different kinds of attention.",
-          "That led to the IA decision: keep Risk Command, Production, Alerts, Reporting, and Evidence as separate tabs. This makes the product easier to scan because each tab answers a different business question.",
-          "Risk Command answers: what needs action now? Production answers: which factory or entity is creating the pressure? Alerts answers: who should know? Reporting answers: what is blocking submission? Evidence answers: can the team trust the data trail?"
-        ]
-      },
-      {
-        "type": "article_section",
-        "kicker": "Rationale",
-        "title": "I made the interface explain the situation before asking the user to act.",
-        "paragraphs": [
-          "In compliance software, a polished screen is not enough. The user needs to know why something is risky, what is missing, and what action moves the case forward.",
-          "So I designed the flow around a simple sequence: detect the signal, understand the cause, decide the mitigation, assign the owner, and check whether reporting is ready.",
-          "This keeps the product useful for non-technical leaders too. A founder can look at the screen and understand the business state without reading every table."
+          "Because compliance work spans production data, threshold rules, documents, and ownership, users could see many signals without knowing which one should drive the next action.",
+          "That creates a commercial problem as well as a usability problem. If the product cannot explain the risk story quickly, it becomes harder to sell the workflow to non-technical leaders."
         ]
       },
       {
         "type": "image",
-        "src": "assets/case_study_images_worldover/cover_image.png",
-        "caption": "The high-fidelity direction keeps the compliance product calm and operational: enough structure for serious work, but clear enough for non-technical stakeholders to understand the state quickly."
+        "src": "assets/case_study_images_worldover/product-ia-map.png",
+        "caption": "I mapped the product around the jobs operators need to complete: dashboard triage, production tracking, threshold guarding, reporting, and compliance history."
+      },
+      {
+        "type": "article_section",
+        "kicker": "1 — IA",
+        "title": "I separated operational modes instead of forcing one overloaded dashboard.",
+        "paragraphs": [
+          "I split the experience into Risk Command, Production Tracking, Threshold Guarding, Reporting, and Compliance History. Each area answers a different business question.",
+          "Risk Command answers what needs action now. Production Tracking shows which entity or factory is creating pressure. Threshold Guarding manages alert rules. Reporting shows whether the team can export the required material.",
+          "This made the product easier to explain because each tab has a clear job rather than acting as another place to store data."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/risk-command-overview.png",
+        "caption": "Risk Command brings the main alert, compliance score, production summary, and entity table into one scannable operating view."
       },
       {
         "type": "improvements",
-        "kicker": "What I updated",
-        "title": "I turned the screen from a data view into a decision flow.",
+        "kicker": "2 — Command view",
+        "title": "I made entity risk readable before asking the user to investigate.",
         "items": [
           {
-            "title": "I made the main risk easier to read",
-            "value": "The updated flow shows the risk, the reason behind it, and the next action in one place, so the user does not have to build the story from scattered numbers."
+            "title": "Surface the main risk",
+            "value": "The top of the page shows the active issue and the likely driver, so the user does not have to infer the problem from production numbers alone."
           },
           {
-            "title": "I gave each work mode its own space",
-            "value": "I separated triage, production, alerts, reporting, and evidence so each screen has a clear job. This reduces the feeling of a heavy enterprise dashboard."
+            "title": "Show state by entity",
+            "value": "Entity selection changes the score, risk text, production facts, alerts, and report state. The prototype behaves like a product rather than a static presentation."
           },
           {
-            "title": "I made entity switching meaningful",
-            "value": "Changing the selected entity changes the risk state, production facts, alerts, reporting blockers, evidence, and resolution drawer. It behaves like a product, not a static mockup."
+            "title": "Keep leaders oriented",
+            "value": "A founder can understand the business state from the command screen without reading every table or knowing the compliance model in detail."
           },
           {
-            "title": "I connected evidence to action",
-            "value": "The user can see what evidence is missing before the case is ready. That makes the product feel closer to an operating system for compliance work."
+            "title": "Tie risk to next action",
+            "value": "The workflow moves from signal to cause to owner to reporting readiness, making the product feel closer to an operating system for compliance work."
           },
           {
-            "title": "I made the prototype easier to judge",
-            "value": "The high-fidelity prototype now shows layout, hierarchy, interaction states, and realistic dummy data, so the concept can be reviewed without needing a long verbal explanation."
+            "title": "Support review conversations",
+            "value": "Realistic dummy data makes the prototype easier to critique with product, sales, or investor audiences because the logic is visible on screen."
           }
         ]
       },
       {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/risk-command-entity-state.png",
+        "caption": "Entity switching changes the risk state and supporting production facts, which helps reviewers judge the product logic rather than only the visual style."
+      },
+      {
         "type": "article_section",
-        "kicker": "Update explained",
-        "title": "The update is about making the product easier to sell and easier to use.",
+        "kicker": "3 — Production",
+        "title": "I gave production review its own space because it is a different job.",
         "paragraphs": [
-          "The original direction showed a strong compliance dashboard. I kept the serious product intent, but I rewrote the experience around business decisions instead of screen density.",
-          "That makes the case study clearer for non-technical readers. You can now see the product logic first, then see how the interface supports it.",
-          "The goal is simple: help a team move from data awareness to risk resolution without needing a specialist to explain every screen."
+          "Production data is not just background detail. It is often the cause of the compliance pressure, so I moved it into a dedicated tracking view with entity filters, factory cards, trend charts, and output summaries.",
+          "The design lets an operator compare factories, spot unusual shares, and understand whether the risk comes from volume, ownership, or missing context.",
+          "From a business perspective, this makes the dashboard more defensible. Worldover can show not only that a company is at risk, but why that risk exists."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/production-tracking-trend-view.png",
+        "caption": "Production Tracking separates entity and factory analysis from the main command view, reducing dashboard density while preserving investigation depth."
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/production-factory-share-view.png",
+        "caption": "Factory share views help operators compare where production pressure is coming from before deciding what to audit or escalate."
+      },
+      {
+        "type": "article_section",
+        "kicker": "4 — Readiness",
+        "title": "I connected alerts and reports to the work needed before submission.",
+        "paragraphs": [
+          "Threshold Guarding turns alert configuration into an operational control surface. Users can see which factories are close to a limit, adjust alert recipients, and define when a warning should trigger.",
+          "Reporting then closes the loop. Instead of treating export as an isolated button, the screen shows report history, production summaries, and the actions required before a team can submit with confidence.",
+          "The result is a clearer product story: detect risk, understand cause, notify the right people, and prepare the evidence."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/threshold-guarding-alerts.png",
+        "caption": "Threshold Guarding makes alert setup part of the workflow, not a hidden settings task."
+      },
+      {
+        "type": "image",
+        "src": "assets/case_study_images_worldover/reporting-export-readiness.png",
+        "caption": "Reporting shows what can be exported and what still needs attention before submission."
+      },
+      {
+        "type": "article_section",
+        "kicker": "Delivery and results",
+        "title": "The output was a high-fidelity prototype that explains the product logic.",
+        "paragraphs": [
+          "In the first pass, the prototype covered the core screens needed to judge the workflow: command overview, entity states, production tracking, threshold guarding, and reporting readiness.",
+          "I kept the visual system calm and operational because the domain is serious. The interface needed enough hierarchy for urgent decisions without turning compliance into a visually noisy enterprise dashboard.",
+          "The safest result claim is prototype clarity. The work gives Worldover a stronger product narrative for internal review, sales conversations, and future build planning."
         ]
       },
       {
         "type": "article_section",
-        "kicker": "What this shows",
-        "title": "I can turn complex product logic into a story people can act on.",
+        "kicker": "So what?",
+        "title": "The case shows how I make complex product logic easier to act on.",
         "paragraphs": [
-          "This case shows how I think before I design: understand the business risk, break the workflow into useful parts, make the next decision visible, then prototype the product logic at high fidelity.",
-          "For founders and investors, the value is not decoration. It is product clarity. The interface helps explain what the company does, why the workflow matters, and how the product could become more useful over time."
+          "This project is about judgement before screens: find the real decision, separate the jobs, and make the next action visible.",
+          "For a compliance SaaS product, that matters because trust is built through explanation. The interface needs to show what changed, why it matters, who owns it, and whether the team is ready to report."
         ]
       }
     ]

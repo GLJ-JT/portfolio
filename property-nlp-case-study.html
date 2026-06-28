@@ -8,10 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
   <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
   <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
   <style>
-    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; }
+    :root { color-scheme: light; --bg: #faf9f5; --text: #252525; --muted: #67645f; --line: #ded9ce; --accent: #245c44; --paper: #ffffff; --nav-ink: var(--text); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #10100e; --text: #f5f0e7; --muted: #b7afa3; --line: #39362f; --accent: #9fd8ba; --paper: #181714; --nav-ink: var(--text); }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--text); font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.72; }
     main { width: min(100%, 980px); margin: 0 auto; padding: 48px 20px 80px; }

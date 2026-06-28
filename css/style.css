@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light;
     --bg-color: #F7F6F2;
     --surface-color: #FFFFFF;
     --surface-hover: #F2F1EE;
@@ -20,6 +21,23 @@
     
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-color: #10100e;
+    --surface-color: #181714;
+    --surface-hover: #211f1a;
+    --border-color: rgba(245, 240, 231, 0.13);
+    --text-primary: #F5F0E7;
+    --text-secondary: #B7AFA3;
+    --text-tertiary: #8D8579;
+    --accent-color: #9FD8BA;
+    --bg-highlight: rgba(159, 216, 186, 0.12);
+    --bg-highlight-secondary: #1D1B17;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.28);
+    --shadow-md: 0 16px 34px -24px rgba(0, 0, 0, 0.62), 0 6px 16px -12px rgba(0, 0, 0, 0.5);
+    --nav-ink: var(--text-primary);
 }
 
 * {
