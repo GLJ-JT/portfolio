@@ -182,8 +182,9 @@
       gap: clamp(18px, 2.5vw, 48px);
       align-items: start;
       padding: clamp(24px, 4.1vh, 48px) clamp(24px, 3.2vw, 64px) 0;
-      color: var(--ink);
+      color: #ffffff;
       font-family: var(--body);
+      mix-blend-mode: difference;
       font-size: clamp(15px, 1.12vw, 24px);
       font-weight: 400;
       line-height: 1;
@@ -194,6 +195,7 @@
 
     .site-header a {
       pointer-events: auto;
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -634,6 +636,37 @@
       transition: opacity 260ms ease, filter 520ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+
+    [data-scroll-reveal] {
+      --reveal-distance: 22px;
+      --reveal-duration: 620ms;
+      --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+      opacity: 0;
+      filter: blur(7px);
+      transform: translate3d(0, var(--reveal-distance), 0);
+      transition:
+        opacity var(--reveal-duration) var(--reveal-ease),
+        filter var(--reveal-duration) var(--reveal-ease),
+        transform var(--reveal-duration) var(--reveal-ease);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, filter, transform;
+    }
+
+    [data-scroll-reveal].is-scroll-revealed {
+      opacity: 1;
+      filter: blur(0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-scroll-reveal] {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+      }
+    }
+
     .vector-letter {
       display: inline-block;
       width: 0.62em;
@@ -1071,9 +1104,55 @@
       margin: 0 auto;
     }
 
+    .tech-stack-ticker {
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      margin: 0 0 0 -50vw;
+      overflow: hidden;
+      background: var(--bg);
+      isolation: isolate;
+    }
+
+    .tech-stack-ticker__track {
+      display: flex;
+      width: max-content;
+      background: #101011;
+      animation: tech-stack-ticker-scroll 10s linear infinite;
+      will-change: transform;
+    }
+
+    .tech-stack-ticker img {
+      display: block;
+      width: min(1636px, 170vw);
+      max-width: none;
+      height: auto;
+      flex: 0 0 auto;
+      mix-blend-mode: screen;
+    }
+
+
+    :root[data-theme="dark"] .tech-stack-ticker__track {
+      background: #f0f0f0;
+    }
+
+    :root[data-theme="dark"] .tech-stack-ticker img {
+      mix-blend-mode: exclusion;
+    }
+
+    @keyframes tech-stack-ticker-scroll {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tech-stack-ticker__track {
+        animation: none;
+      }
+    }
+
     section.content-section {
       padding: 68px 0;
-      border-top: 1px solid var(--line);
     }
 
     .section-head {
@@ -2942,8 +3021,8 @@
   <nav class="page-dots" aria-label="Selected work sections">
     <a class="page-dot" href="#project-depology" aria-label="Dēpology" aria-current="true"></a>
     <a class="page-dot" href="#project-proptech" aria-label="Explainable Property Search"></a>
-    <a class="page-dot" href="#project-travel-to-qin" aria-label="Travel to Qin"></a>
     <a class="page-dot" href="#project-worldschooling" aria-label="Worldschooling"></a>
+    <a class="page-dot" href="#project-travel-to-qin" aria-label="Travel to Qin"></a>
     <a class="page-dot" href="#project-worldover" aria-label="Worldover"></a>
     <a class="page-dot" href="https://nihaoserica.com/" target="_blank" rel="noopener noreferrer" aria-label="Nihao Serica"></a>
     <a class="page-dot" href="#project-tutu-future" aria-label="TUTU Future"></a>
@@ -3033,6 +3112,13 @@
   </main>
 
   <main class="below-shell">
+    <div class="tech-stack-ticker" aria-label="My tech stack">
+      <div class="tech-stack-ticker__track">
+        <img src="assets/home-stack/tech-stack.png" alt="My tech stack">
+        <img src="assets/home-stack/tech-stack.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+
     <section class="content-section" id="work" aria-labelledby="work-title">
       <h2 id="work-title" class="sr-only">Selected work</h2>
 
@@ -3075,25 +3161,6 @@
           </figure>
         </article>
 
-        <article class="case-preview" id="project-travel-to-qin">
-          <div class="case-copy">
-            <div>
-              <h3>Travel to Qin</h3>
-              <p>I rebuilt a travel sales page around trust before enquiry, using destination context, itinerary proof, service clarity, and CMS-ready content blocks.</p>
-            </div>
-            <ul class="case-meta" aria-label="Travel to Qin project facts">
-              <li><strong>Years</strong><span>2024</span></li>
-              <li><strong>Role</strong><span>Product Designer</span></li>
-              <li><strong>Scope</strong><span>Website UX, brand system, CMS build</span></li>
-              <li><strong>Result</strong><span>Clearer international-facing sales surface</span></li>
-            </ul>
-            <a class="case-link" href="travel-to-qin-case-study.html">Read case study</a>
-          </div>
-          <figure class="case-visual case-visual--travel">
-            <img src="assets/case_study_images_traveltoqin/hero_section_responsive.png" alt="Travel to Qin responsive website preview">
-          </figure>
-        </article>
-
         <article class="case-preview" id="project-worldschooling">
           <div class="case-copy">
             <div>
@@ -3110,6 +3177,25 @@
           </div>
           <figure class="case-visual case-visual--worldschooling">
             <img src="assets/case_study_images_worldschooling/hero_header_redesign.png" alt="Worldschooling homepage redesign preview">
+          </figure>
+        </article>
+
+        <article class="case-preview" id="project-travel-to-qin">
+          <div class="case-copy">
+            <div>
+              <h3>Travel to Qin</h3>
+              <p>I rebuilt a travel sales page around trust before enquiry, using destination context, itinerary proof, service clarity, and CMS-ready content blocks.</p>
+            </div>
+            <ul class="case-meta" aria-label="Travel to Qin project facts">
+              <li><strong>Years</strong><span>2024</span></li>
+              <li><strong>Role</strong><span>Product Designer</span></li>
+              <li><strong>Scope</strong><span>Website UX, brand system, CMS build</span></li>
+              <li><strong>Result</strong><span>Clearer international-facing sales surface</span></li>
+            </ul>
+            <a class="case-link" href="travel-to-qin-case-study.html">Read case study</a>
+          </div>
+          <figure class="case-visual case-visual--travel">
+            <img src="assets/case_study_images_traveltoqin/hero_section_responsive.png" alt="Travel to Qin responsive website preview">
           </figure>
         </article>
 
@@ -3475,6 +3561,12 @@
     };
 
     const getInitialTheme = () => getSavedTheme() || "dark";
+    const invertTheme = (theme) => theme === "dark" ? "light" : "dark";
+    let preferredTheme = getInitialTheme();
+    let isPastLastProjectThemeZone = false;
+    let themeScrollFrame = 0;
+
+    const getEffectiveTheme = () => isPastLastProjectThemeZone && preferredTheme === "dark" ? "light" : preferredTheme;
 
     const updateThemeButtons = (theme) => {
       const isDark = theme === "dark";
@@ -3498,11 +3590,11 @@
 
     const persistCurrentTheme = () => {
       try {
-        localStorage.setItem(themeStorageKey, document.documentElement.dataset.theme || "dark");
+        localStorage.setItem(themeStorageKey, preferredTheme || "dark");
       } catch (error) {}
     };
 
-    applyTheme(getInitialTheme());
+    applyTheme(preferredTheme);
     window.addEventListener("beforeunload", persistCurrentTheme);
 
     const setupCustomCursor = () => {
@@ -3811,6 +3903,93 @@
       });
     };
 
+
+    const setupScrollReveal = () => {
+      const targets = [];
+      const tierDelays = {
+        1: "0ms",
+        2: "90ms",
+        3: "180ms"
+      };
+
+      const mark = (element, tier = 1) => {
+        if (!element || element.dataset.scrollReveal === "true") return;
+
+        const tierKey = String(tier);
+        element.dataset.scrollReveal = "true";
+        element.dataset.revealTier = tierKey;
+        element.style.setProperty("--reveal-delay", tierDelays[tierKey] || tierDelays[1]);
+        targets.push(element);
+      };
+
+      const markAll = (elements, tier) => {
+        Array.from(elements).forEach((element) => mark(element, tier));
+      };
+
+      mark(document.querySelector(".hero-tabs"), 1);
+      mark(document.querySelector(".hero-meta"), 3);
+      mark(document.querySelector(".tech-stack-ticker"), 2);
+
+      document.querySelectorAll(".case-preview").forEach((card) => {
+        mark(card.querySelector(".case-copy > div"), 1);
+        mark(card.querySelector(".case-visual"), 2);
+        mark(card.querySelector(".case-meta"), 3);
+        mark(card.querySelector(".case-link"), 3);
+      });
+
+      markAll(document.querySelectorAll(".support-desktop .support-label, .support-mobile .support-label"), 1);
+      markAll(document.querySelectorAll(".support-static-panel, .support-accordion-panel"), 2);
+      markAll(document.querySelectorAll(".support-layout > .support-actions"), 3);
+
+      document.querySelectorAll(".experience-row, .education-row").forEach((row) => {
+        mark(row.querySelector("div"), 1);
+        mark(row.querySelector("p"), 2);
+      });
+
+      document.querySelectorAll(".skill-clusters").forEach((cluster) => {
+        Array.from(cluster.querySelectorAll("li")).forEach((chip, index) => {
+          mark(chip, index < 2 ? 1 : index < 4 ? 2 : 3);
+        });
+      });
+
+      const about = document.querySelector("#about");
+      if (about) {
+        const statementParagraphs = Array.from(about.querySelectorAll(".statement-copy > p"));
+        mark(about.querySelector(".statement-image"), 1);
+        mark(statementParagraphs[0], 1);
+        statementParagraphs.slice(1).forEach((paragraph) => mark(paragraph, 2));
+        mark(about.querySelector(".life-ticker"), 2);
+        mark(about.querySelector(".support-actions-wrap"), 3);
+      }
+
+      if (!targets.length) return;
+
+      const reveal = (element, observer) => {
+        element.classList.add("is-scroll-revealed");
+        observer?.unobserve(element);
+      };
+
+      window.requestAnimationFrame(() => {
+        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+          targets.forEach((target) => reveal(target));
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              reveal(entry.target, observer);
+            }
+          });
+        }, {
+          threshold: 0.16,
+          rootMargin: "0px 0px -12% 0px"
+        });
+
+        targets.forEach((target) => observer.observe(target));
+      });
+    };
+
     const setupCaseImageParallax = () => {
       const visuals = Array.from(document.querySelectorAll(".case-visual"));
       if (!visuals.length || prefersReducedMotion) return;
@@ -3998,6 +4177,33 @@
       });
     };
 
+
+    const setupProjectThemeInversion = () => {
+      const lastProject = document.querySelector("#project-tutu-future");
+      if (!lastProject) return;
+
+      const updateThemeZone = () => {
+        themeScrollFrame = 0;
+        const projectEnd = lastProject.offsetTop + lastProject.offsetHeight;
+        const nextIsPast = window.scrollY >= projectEnd - 80;
+
+        if (nextIsPast === isPastLastProjectThemeZone) return;
+
+        isPastLastProjectThemeZone = nextIsPast;
+        applyTheme(getEffectiveTheme());
+      };
+
+      const requestThemeZoneUpdate = () => {
+        if (!themeScrollFrame) {
+          themeScrollFrame = window.requestAnimationFrame(updateThemeZone);
+        }
+      };
+
+      updateThemeZone();
+      window.addEventListener("scroll", requestThemeZoneUpdate, { passive: true });
+      window.addEventListener("resize", requestThemeZoneUpdate);
+    };
+
     const setupPageDots = () => {
       const dots = Array.from(document.querySelectorAll('.page-dot[href^="#"]'));
       const sections = dots
@@ -4027,8 +4233,8 @@
 
     document.querySelectorAll(".hero-button-mark").forEach((button) => {
       button.addEventListener("click", () => {
-        const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-        applyTheme(nextTheme, true);
+        preferredTheme = invertTheme(preferredTheme);
+        applyTheme(getEffectiveTheme(), true);
       });
     });
 
@@ -4118,6 +4324,8 @@
     setupCustomCursor();
     setupFaceCursorTracking();
     setupSkillHoverTyping();
+    setupScrollReveal();
+    setupProjectThemeInversion();
     setupCaseImageParallax();
     setupCasePreviewLinks();
     setupPageDots();
