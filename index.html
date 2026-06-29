@@ -1368,12 +1368,20 @@
 
     .case-visual--worldover {
       --case-ratio: 16 / 9;
-      --case-fit: contain;
-      --case-scale: 1;
+      --case-fit: cover;
+      --case-scale: 1.02;
       --preview-bg: #f2f5f1;
       --preview-position: center;
     }
 
+    .case-visual--worldover.case-visual--contain {
+      padding: 0;
+    }
+
+    .case-visual--worldover.case-visual--contain img {
+      object-fit: cover;
+      transform: translate3d(0, var(--case-parallax-y, 0px), 0) scale(var(--case-scale, 1.02));
+    }
     .case-visual--nihao {
       --case-ratio: 16 / 9;
       --preview-bg: #f6f1ea;
@@ -3121,7 +3129,7 @@
           </div>
           <figure class="case-visual case-visual--worldover case-visual--contain">
             <a href="worldover-case-study.html" aria-label="Open Worldover case study">
-              <img src="assets/case_study_images_worldover/cover_image.png" alt="Worldover Risk Command dashboard preview">
+              <img src="assets/case_study_images_worldover/cover_image_home.png" alt="Worldover Risk Command dashboard preview">
             </a>
           </figure>
         </article>
