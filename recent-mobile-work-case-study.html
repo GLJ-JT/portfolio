@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recent Mobile Product Work | Joe Tao</title>
+  <meta name="description" content="Selected mobile product work across travel planning, AI-agent coordination, interaction design, and cross-platform product flows.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem("joe-portfolio-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+    document.documentElement.classList.add("is-page-transitioning");
+  </script>
+  <link rel="stylesheet" href="shared/site-nav.css">
+  <link rel="stylesheet" href="shared/page-transition.css">
+  <script src="shared/site-nav.js" defer></script>
+  <script src="shared/page-transition.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf9f5;
+      --text: #252525;
+      --muted: #67645f;
+      --line: #ded9ce;
+      --accent: #245c44;
+      --paper: #ffffff;
+      --frame: #e8e6e0;
+      --frame-deep: #111111;
+      --nav-ink: var(--text);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #10100e;
+      --text: #f5f0e7;
+      --muted: #b7afa3;
+      --line: #39362f;
+      --accent: #9fd8ba;
+      --paper: #181714;
+      --frame: #262624;
+      --frame-deep: #080808;
+      --nav-ink: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html {
+      overflow-x: clip;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: clip;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    body.is-lightbox-open {
+      overflow: hidden;
+    }
+
+    main {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    h1 {
+      margin: 18px 0 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    article > p:first-child,
+    article > p:nth-child(2) {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mobile-evidence {
+      width: 100vw;
+      height: 75vh;
+      margin: 42px 50% 52px;
+      transform: translateX(-50%);
+    }
+
+    .mobile-ticker {
+      --ticker-gap: clamp(28px, 4.5vh, 64px);
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.035)),
+        linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        #090a0a;
+      background-size: auto, 32px 32px, 32px 32px, auto;
+    }
+
+    .mobile-ticker__viewport {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .mobile-ticker__track {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      gap: var(--ticker-gap);
+      animation: mobile-ticker-scroll var(--ticker-duration, 60s) linear infinite;
+      will-change: transform;
+    }
+
+    .mobile-ticker__group {
+      display: flex;
+      flex: none;
+      height: 100%;
+      gap: var(--ticker-gap);
+      padding-block: clamp(22px, 3vh, 36px);
+    }
+
+    .mobile-bundle {
+      display: grid;
+      flex: none;
+      width: max-content;
+      height: 100%;
+      margin: 0;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    .mobile-bundle__labels,
+    .mobile-bundle__hotspots {
+      display: grid;
+      grid-template-columns: 4758fr 245fr 6538fr 245fr 2226fr 245fr 4755fr;
+    }
+
+    .mobile-bundle__labels {
+      width: 100%;
+      color: #ffffff;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .mobile-bundle__labels span:nth-child(1) { grid-column: 1; }
+    .mobile-bundle__labels span:nth-child(2) { grid-column: 3; }
+    .mobile-bundle__labels span:nth-child(3) { grid-column: 5; }
+    .mobile-bundle__labels span:nth-child(4) { grid-column: 7; }
+
+    .mobile-bundle__labels span {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobile-bundle__labels strong {
+      font: inherit;
+    }
+
+    .mobile-bundle__labels small {
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .mobile-bundle__media {
+      position: relative;
+      width: max-content;
+      height: 100%;
+      min-height: 0;
+      aspect-ratio: 19013 / 2528;
+    }
+
+    .mobile-bundle__image {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-width: none;
+      border: 0;
+      object-fit: contain;
+    }
+
+    .mobile-bundle__hotspots {
+      position: absolute;
+      inset: 0;
+    }
+
+    .mobile-bundle__hotspot {
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+
+    .mobile-bundle__hotspot:nth-child(1) { grid-column: 1; }
+    .mobile-bundle__hotspot:nth-child(2) { grid-column: 3; }
+    .mobile-bundle__hotspot:nth-child(3) { grid-column: 5; }
+    .mobile-bundle__hotspot:nth-child(4) { grid-column: 7; }
+
+    .mobile-bundle__hotspot:focus-visible,
+    .lightbox-control:focus-visible,
+    .lightbox-close:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    @keyframes mobile-ticker-scroll {
+      to {
+        transform: translate3d(var(--ticker-shift, -50%), 0, 0);
+      }
+    }
+
+    .lightbox-control,
+    .lightbox-close {
+      position: absolute;
+      z-index: 4;
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 50%;
+      background: rgba(8, 8, 8, 0.78);
+      color: #ffffff;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox-control--previous {
+      left: 18px;
+    }
+
+    .lightbox-control--next {
+      right: 18px;
+    }
+
+    .lightbox-control::before {
+      width: 11px;
+      height: 11px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      content: "";
+    }
+
+    .lightbox-control--previous::before {
+      transform: translateX(2px) rotate(-135deg);
+    }
+
+    .lightbox-control--next::before {
+      transform: translateX(-2px) rotate(45deg);
+    }
+
+    .lightbox {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 3vw, 36px);
+      visibility: hidden;
+      background: rgba(5, 5, 5, 0.72);
+      opacity: 0;
+      backdrop-filter: blur(0);
+      transition: opacity 240ms ease, visibility 240ms ease, backdrop-filter 320ms ease;
+    }
+
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+      backdrop-filter: blur(18px);
+    }
+
+    .lightbox__panel {
+      position: relative;
+      display: grid;
+      width: min(94vw, 1240px);
+      max-height: 94vh;
+      grid-template-rows: minmax(0, 1fr) auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      background: #111111;
+      color: #f7f4ed;
+      box-shadow: 0 34px 100px rgba(0, 0, 0, 0.56);
+      transform: translateY(24px) scale(0.98);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lightbox.is-open .lightbox__panel {
+      transform: translateY(0) scale(1);
+    }
+
+    .lightbox__media {
+      position: relative;
+      display: grid;
+      min-height: 0;
+      place-items: center;
+      overflow: hidden;
+      padding: clamp(18px, 3vw, 34px);
+      background: #080808;
+    }
+
+    .lightbox__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 68vh;
+      object-fit: contain;
+    }
+
+    .lightbox__confidentiality {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(28px, 5vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .lightbox__confidentiality[hidden] {
+      display: none;
+    }
+
+    .lightbox__description {
+      padding: 20px clamp(22px, 4vw, 52px) 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .lightbox__description h2 {
+      margin: 0;
+      font-size: clamp(20px, 2.2vw, 30px);
+      line-height: 1.15;
+    }
+
+    .lightbox__eyebrow {
+      margin: 0 0 8px;
+      color: #b7b2aa;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .lightbox__meta {
+      display: flex;
+      margin: 10px 0 0;
+      flex-wrap: wrap;
+      gap: 6px;
+      color: #b7b2aa;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .lightbox__meta span {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1.2;
+    }
+
+    .lightbox__copy {
+      max-width: 920px;
+      margin: 10px 0 0;
+      color: #ded9d0;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .lightbox-control {
+      top: 42%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-close {
+      top: 14px;
+      right: 14px;
+    }
+
+    .lightbox-close::before,
+    .lightbox-close::after {
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .lightbox-close::before {
+      transform: rotate(45deg);
+    }
+
+    .lightbox-close::after {
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 17px;
+      }
+
+      main {
+        padding: 30px 16px 56px;
+      }
+
+      .mobile-evidence {
+        width: 100vw;
+        margin: 32px 50% 40px;
+      }
+
+      .mobile-bundle {
+        gap: 10px;
+      }
+
+      .lightbox-control {
+        width: 44px;
+        height: 44px;
+      }
+
+      .lightbox-control--previous {
+        left: 8px;
+      }
+
+      .lightbox-control--next {
+        right: 8px;
+      }
+
+      .lightbox {
+        padding: 8px;
+      }
+
+      .lightbox__panel {
+        width: 100%;
+        max-height: 96vh;
+      }
+
+      .lightbox__media {
+        padding: 12px;
+      }
+
+      .lightbox__media img {
+        max-height: 62vh;
+      }
+
+      .lightbox__description {
+        padding: 16px 18px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-ticker__track {
+        animation: none;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <p><a href="index.html#project-mobile-work">Back</a></p>
+
+      <p>2024-2026</p>
+
+      <h1>Designing decisions and journeys for mobile</h1>
+      <p>This selection brings together recent mobile product work across AI-agent coordination, travel planning, booking, and shared decision flows. Sensitive screens remain intentionally redacted.</p>
+      <p>The projects range from active team products to a solo design exercise. My contribution includes product framing, mobile information architecture, interaction flows, wireframes, visual systems, and implementation-aware prototyping.</p>
+
+      <figure class="mobile-evidence">
+        <div class="mobile-ticker" data-mobile-ticker aria-label="Recent mobile product work">
+          <div class="mobile-ticker__viewport">
+            <div class="mobile-ticker__track" data-ticker-track>
+              <div class="mobile-ticker__group" data-ticker-group>
+                <figure class="mobile-bundle" data-mobile-bundle>
+                  <figcaption class="mobile-bundle__labels">
+                    <span><strong>Travel to Qin</strong><small>Blurred due to confidentiality, available upon request</small></span>
+                    <span><strong>TripUp</strong><small>Blurred due to confidentiality, available upon request</small></span>
+                    <span><strong>Sushi Code: mobile decision wireflow</strong></span>
+                    <span><strong>Sushi Code: interface direction</strong></span>
+                  </figcaption>
+                  <div class="mobile-bundle__media">
+                    <img class="mobile-bundle__image" src="assets/case_study_images_mobile_work/mobile-work-bundle.png" alt="Four mobile product design projects shown as one continuous portfolio composition">
+                    <div class="mobile-bundle__hotspots" aria-label="Open individual mobile projects">
+                      <button class="mobile-bundle__hotspot" type="button" data-open-lightbox data-slide-index="0" aria-label="Open International travel platform image"></button>
+                      <button class="mobile-bundle__hotspot" type="button" data-open-lightbox data-slide-index="1" aria-label="Open confidential trip-planning concept image"></button>
+                      <button class="mobile-bundle__hotspot" type="button" data-open-lightbox data-slide-index="2" aria-label="Open Sushi Code mobile decision wireflow image"></button>
+                      <button class="mobile-bundle__hotspot" type="button" data-open-lightbox data-slide-index="3" aria-label="Open Sushi Code interface direction image"></button>
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </article>
+  </main>
+
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
+    <div class="lightbox__panel" data-lightbox-panel>
+      <div class="lightbox__media">
+        <img data-lightbox-image src="" alt="">
+        <p class="lightbox__confidentiality" data-lightbox-confidentiality hidden>Blurred due to confidentiality</p>
+      </div>
+      <div class="lightbox__description">
+        <p class="lightbox__eyebrow" data-lightbox-eyebrow></p>
+        <h2 id="lightbox-title" data-lightbox-title></h2>
+        <p class="lightbox__meta" data-lightbox-meta></p>
+        <p class="lightbox__copy" data-lightbox-description></p>
+      </div>
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close image"></button>
+      <button class="lightbox-control lightbox-control--previous" type="button" data-lightbox-previous aria-label="Previous image"></button>
+      <button class="lightbox-control lightbox-control--next" type="button" data-lightbox-next aria-label="Next image"></button>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const ticker = document.querySelector("[data-mobile-ticker]");
+      const track = ticker.querySelector("[data-ticker-track]");
+      const primaryGroup = ticker.querySelector("[data-ticker-group]");
+      const projects = [
+        {
+          eyebrow: "Mobile travel platform",
+          title: "Travel to Qin",
+          confidential: true,
+          meta: "Early mobile product direction · Team project · Junior UX Designer",
+          description: "I translated traveller research into a 20-page mobile wireframe, navigation model, content hierarchy, and reusable interaction patterns. The product was still in development when I left, and sensitive interface details remain redacted.",
+          src: "assets/case_study_images_mobile_work/ttq-mobile-redacted.png",
+          alt: "Redacted mobile interface exploration for an international travel platform"
+        },
+        {
+          eyebrow: "Confidential design exercise",
+          title: "TripUp",
+          confidential: true,
+          meta: "Screening design exercise · Solo project · Product Designer",
+          description: "I designed trip detail, invitation, polling, shared-expense, and payment flows as one complete mobile decision journey. The source exercise remains confidential, so the interface and annotations are intentionally redacted.",
+          src: "assets/case_study_images_mobile_work/trip-planning-redacted.png",
+          alt: "Redacted mobile wireflow for a confidential trip-planning concept"
+        },
+        {
+          eyebrow: "Mobile product wireflow",
+          title: "Sushi Code: mobile decision wireflow",
+          meta: "Active development · Team project · Product Designer and frontend contributor",
+          description: "I mapped how founders review agent conflicts, inspect evidence, approve or reject work, move through decision lists, and recover from empty states before visual refinement.",
+          src: "assets/case_study_images_mobile_work/sushi-code-wireframe.png",
+          alt: "Sushi Code mobile decision wireflow with summary, detail, list, approval, rejection, and empty states"
+        },
+        {
+          eyebrow: "Mobile AI agent interface",
+          title: "Sushi Code: interface direction",
+          meta: "Active development · Team project · Product Designer and frontend contributor",
+          description: "I developed the mobile interaction model, UI direction, and frontend prototypes for agent activity, blocked decisions, and lock-screen access. Backend architecture, data, and infrastructure are owned by my collaborator.",
+          src: "assets/case_study_images_mobile_work/sushi-code-ui.png",
+          alt: "Sushi Code mobile UI showing decision cards and lock-screen agent activity widgets"
+        }
+      ];
+      const lightbox = document.querySelector("[data-lightbox]");
+      const lightboxPanel = lightbox.querySelector("[data-lightbox-panel]");
+      const lightboxImage = lightbox.querySelector("[data-lightbox-image]");
+      const lightboxConfidentiality = lightbox.querySelector("[data-lightbox-confidentiality]");
+      const lightboxEyebrow = lightbox.querySelector("[data-lightbox-eyebrow]");
+      const lightboxTitle = lightbox.querySelector("[data-lightbox-title]");
+      const lightboxMeta = lightbox.querySelector("[data-lightbox-meta]");
+      const lightboxDescription = lightbox.querySelector("[data-lightbox-description]");
+      const lightboxClose = lightbox.querySelector("[data-lightbox-close]");
+      const lightboxPrevious = lightbox.querySelector("[data-lightbox-previous]");
+      const lightboxNext = lightbox.querySelector("[data-lightbox-next]");
+      let activeIndex = 0;
+      let lastFocused = null;
+
+      const duplicateGroup = primaryGroup.cloneNode(true);
+      duplicateGroup.dataset.tickerDuplicate = "true";
+      track.append(duplicateGroup);
+      const hoverPixelsPerSecond = 85;
+      const defaultPixelsPerSecond = 140;
+
+      const setPlaybackRate = (rate, state) => {
+        ticker.dataset.speed = state;
+        const animation = track.getAnimations()[0];
+        if (animation) animation.playbackRate = rate;
+      };
+
+      const setTickerSpeed = () => {
+        const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+        const distance = primaryGroup.getBoundingClientRect().width + gap;
+        track.style.setProperty("--ticker-shift", `${-distance}px`);
+        track.style.setProperty("--ticker-duration", `${Math.max(distance / hoverPixelsPerSecond, 20)}s`);
+        window.requestAnimationFrame(() => {
+          const hovered = ticker.matches(":hover");
+          setPlaybackRate(hovered ? 1 : defaultPixelsPerSecond / hoverPixelsPerSecond, hovered ? "hover" : "fast");
+        });
+      };
+
+      const renderLightbox = () => {
+        const project = projects[activeIndex];
+        lightboxImage.src = project.src;
+        lightboxImage.alt = project.alt;
+        lightboxConfidentiality.hidden = !project.confidential;
+        lightboxEyebrow.textContent = project.eyebrow;
+        lightboxTitle.textContent = project.title;
+        const metaTags = project.meta.split(" · ").map((tag) => {
+          const pill = document.createElement("span");
+          pill.textContent = tag;
+          return pill;
+        });
+        lightboxMeta.replaceChildren(...metaTags);
+        lightboxDescription.textContent = project.description;
+      };
+
+      const openLightbox = (index, trigger) => {
+        activeIndex = index;
+        renderLightbox();
+        lastFocused = trigger;
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("is-lightbox-open");
+        window.requestAnimationFrame(() => lightboxClose.focus());
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("is-lightbox-open");
+        if (lastFocused) lastFocused.focus();
+      };
+
+      const moveLightbox = (direction) => {
+        activeIndex = (activeIndex + direction + projects.length) % projects.length;
+        renderLightbox();
+      };
+
+      lightboxPrevious.addEventListener("click", () => moveLightbox(-1));
+      lightboxNext.addEventListener("click", () => moveLightbox(1));
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      ticker.querySelectorAll("[data-open-lightbox]").forEach((trigger) => {
+        const index = Number(trigger.dataset.slideIndex);
+        trigger.addEventListener("click", (event) => openLightbox(index, event.currentTarget));
+      });
+
+      ticker.addEventListener("pointerenter", () => setPlaybackRate(1, "hover"));
+      ticker.addEventListener("pointerleave", () => setPlaybackRate(defaultPixelsPerSecond / hoverPixelsPerSecond, "fast"));
+      ticker.addEventListener("wheel", (event) => {
+        if (!ticker.matches(":hover")) return;
+        const animation = track.getAnimations()[0];
+        if (!animation) return;
+        event.preventDefault();
+        const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+        animation.currentTime = (Number(animation.currentTime) || 0) + delta * 6;
+      }, { passive: false });
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      lightboxPanel.addEventListener("click", (event) => event.stopPropagation());
+
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("is-open")) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") moveLightbox(-1);
+        if (event.key === "ArrowRight") moveLightbox(1);
+      });
+
+      window.addEventListener("resize", setTickerSpeed);
+      window.addEventListener("load", setTickerSpeed, { once: true });
+      setTickerSpeed();
+    })();
+  </script>
+</body>
+</html>

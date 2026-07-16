@@ -14,13 +14,13 @@ test('preview shells load focused homepage sections', async ({ page }) => {
 
   await page.goto('/preview-selected-work.html');
   await expect(page.frameLocator('[data-preview-frame]').locator('#work')).toBeVisible();
-  await expect(page.frameLocator('[data-preview-frame]').locator('.case-preview')).toHaveCount(7);
+  await expect(page.frameLocator('[data-preview-frame]').locator('.case-preview')).toHaveCount(8);
 });
 
 test('hero care cards link to matching case previews', async ({ page }) => {
   await page.goto('/index.html#what-i-care-about');
 
-  await expect(page.locator('.care-card').nth(0)).toHaveAttribute('href', '#project-proptech');
+  await expect(page.locator('.care-card').nth(0)).toHaveAttribute('href', '#project-mobile-work');
   await expect(page.locator('.care-card').nth(1)).toHaveAttribute('href', 'https://nihaoserica.com/');
   await expect(page.locator('.care-card').nth(2)).toHaveAttribute('href', '#project-depology');
 });
@@ -33,10 +33,52 @@ test('hero nav tabs and care cards remain clickable', async ({ page }) => {
   await page.locator('#hero-tab-care').evaluate((tab) => tab.click());
   await expect(page.locator('#hero-panel-care')).toBeVisible();
 
-  await expect(page.locator('.care-card[href="#project-proptech"]')).toBeVisible();
-  await page.locator('.care-card[href="#project-proptech"]').click();
-  await expect(page).toHaveURL(/#project-proptech$/);
-  await expect(page.locator('#project-proptech')).toBeInViewport();
+  await expect(page.locator('.care-card[href="#project-mobile-work"]')).toBeVisible();
+  await page.locator('.care-card[href="#project-mobile-work"]').click();
+  await expect(page).toHaveURL(/#project-mobile-work$/);
+  await expect(page.locator('#project-mobile-work')).toBeInViewport();
+});
+
+test('recent mobile work ticker opens and navigates its lightbox', async ({ page }) => {
+  await page.goto('/recent-mobile-work-case-study.html');
+  await expect(page.getByRole('heading', { name: 'Designing decisions and journeys for mobile' })).toBeVisible();
+  const ticker = page.locator('[data-mobile-ticker]');
+  await expect(ticker.locator('[data-ticker-group]')).toHaveCount(2);
+  await expect(ticker.locator('[data-mobile-bundle]')).toHaveCount(2);
+  await expect(ticker.locator('.mobile-bundle__labels span')).toHaveCount(8);
+  await expect(ticker.getByText('Blurred due to confidentiality, available upon request')).toHaveCount(4);
+  await expect(ticker.locator('[data-open-lightbox]')).toHaveCount(8);
+  await expect(ticker.locator('[data-ticker-group]:not([data-ticker-duplicate]) .mobile-bundle__image')).toHaveAttribute('src', 'assets/case_study_images_mobile_work/mobile-work-bundle.png');
+  await expect(ticker.locator('[data-ticker-previous], [data-ticker-next]')).toHaveCount(0);
+  await expect(ticker).toHaveAttribute('data-speed', 'fast');
+  await ticker.hover();
+  await expect(ticker).toHaveAttribute('data-speed', 'hover');
+  await page.mouse.move(0, 0);
+  await expect(ticker).toHaveAttribute('data-speed', 'fast');
+  const startTransform = await ticker.locator('[data-ticker-track]').evaluate((track) => getComputedStyle(track).transform);
+  await page.waitForTimeout(500);
+  const movedTransform = await ticker.locator('[data-ticker-track]').evaluate((track) => getComputedStyle(track).transform);
+  expect(movedTransform).not.toBe(startTransform);
+  await ticker.locator('[data-ticker-group]:not([data-ticker-duplicate]) [data-open-lightbox][data-slide-index="1"]').click();
+  const lightbox = page.locator('[data-lightbox]');
+  await expect(lightbox).toHaveAttribute('aria-hidden', 'false');
+  await expect(lightbox.getByText('Confidential design exercise')).toBeVisible();
+  await expect(lightbox.getByRole('heading', { name: 'TripUp' })).toBeVisible();
+  await expect(lightbox.getByText('Blurred due to confidentiality', { exact: true })).toBeVisible();
+  await lightbox.locator('[data-lightbox-next]').click();
+  await expect(lightbox.getByRole('heading', { name: 'Sushi Code: mobile decision wireflow' })).toBeVisible();
+  await expect(lightbox.getByText('Blurred due to confidentiality', { exact: true })).toBeHidden();
+  await lightbox.locator('[data-lightbox-close]').click();
+  await expect(lightbox).toHaveAttribute('aria-hidden', 'true');
+});
+
+test('recent mobile work homepage card uses the exported thumbnail', async ({ page }) => {
+  await page.goto('/index.html#project-mobile-work');
+  const thumbnail = page.locator('#project-mobile-work img[alt*="Recent mobile product work"]');
+  await expect(thumbnail).toBeVisible();
+  await expect(thumbnail).toHaveAttribute('src', 'assets/case_study_images_mobile_work/mobile-work-thumbnail.png');
+  const outlines = await page.locator('.case-visual img').evaluateAll((images) => images.map((image) => getComputedStyle(image).outlineStyle));
+  expect(outlines.every((style) => style === 'none')).toBeTruthy();
 });
 
 
