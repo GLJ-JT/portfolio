@@ -25,6 +25,35 @@ test('hero care cards link to matching case previews', async ({ page }) => {
   await expect(page.locator('.care-card').nth(2)).toHaveAttribute('href', '#project-depology');
 });
 
+test('daily life lightbox supports direct anchor links', async ({ page }) => {
+  await page.goto('/index.html#life-industry-event');
+
+  const lightbox = page.locator('[data-life-lightbox]');
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox.locator('[data-life-lightbox-caption]')).toHaveText('Industry event');
+  await expect(lightbox.locator('[data-life-lightbox-counter]')).toHaveText('4 / 6');
+  await expect(lightbox.locator('[data-life-lightbox-image]')).toHaveAttribute('src', 'assets/daily-life/michelin-event.webp');
+
+  await lightbox.locator('[data-life-lightbox-next]').click();
+  await expect(page).toHaveURL(/#life-community-event$/);
+  await lightbox.locator('[data-life-lightbox-close]').click();
+  await expect(page).not.toHaveURL(/#life-/);
+  await expect(lightbox).toBeHidden();
+});
+
+test('homepage experience accordions are collapsed by default', async ({ page }) => {
+  await page.goto('/index.html#experience');
+
+  const accordions = page.locator('.support-desktop .support-accordion');
+  await expect(accordions).toHaveCount(2);
+  await expect(accordions.nth(0)).not.toHaveAttribute('open', '');
+  await expect(accordions.nth(1)).not.toHaveAttribute('open', '');
+
+  await accordions.nth(0).locator('summary').click();
+  await expect(accordions.nth(0)).toHaveAttribute('open', '');
+  await expect(accordions.nth(0).getByRole('heading', { name: 'TUTU VIEW' })).toBeVisible();
+});
+
 test('hero nav tabs and care cards remain clickable', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/index.html');

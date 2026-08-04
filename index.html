@@ -1890,6 +1890,27 @@
       text-transform: uppercase;
     }
 
+    .support-accordion .support-label {
+      display: flex;
+      width: 100%;
+      min-height: 28px;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .support-accordion .support-label::after {
+      content: "+";
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .support-accordion[open] .support-label::after {
+      content: "-";
+    }
+
     .support-label::-webkit-details-marker {
       display: none;
     }
@@ -3287,25 +3308,25 @@
     <section class="homepage-support" id="experience" aria-labelledby="experience-title">
       <h2 class="sr-only" id="experience-title">Experience and education</h2>
       <div class="support-layout support-desktop">
-        <div class="support-subsection" aria-labelledby="experience-list-title">
-          <h3 class="sr-only" id="experience-list-title">Experience</h3>
-          <p class="support-label" aria-hidden="true">EXPERIENCE</p>
+        <details class="support-subsection support-accordion" aria-labelledby="experience-list-title">
+          <summary class="support-label">EXPERIENCE</summary>
           <div class="support-static-panel">
+            <h3 class="sr-only" id="experience-list-title">Experience</h3>
             <div class="experience-rows">
               <article class="experience-row">
                 <div>
                   <h3>TUTU VIEW</h3>
-                  <time datetime="2025-06">Product Designer / Jun 2025 to present</time>
+                  <time datetime="2025-06">Product &amp; Experience Designer / Jun 2025 to present</time>
                 </div>
-                <p>Owned end-to-end design across three cross-border DTC platforms, taking ambiguous venture goals from discovery, IA, and UX flows through to developer handoff, optimisation, and launch. Built component libraries, token systems, and rapid prototyping SOPs with Figma MCP and Claude Code, reducing delivery cycle by 70%, build time by 40%, and monthly creative overhead by £2000+. Analysed 400+ user sessions, heatmaps, heuristic signals, and behavioural patterns to define IA changes and three conversion opportunities.</p>
+                <p>Own end-to-end product design across three cross-border platforms, from research and IA through design systems, launch, and optimisation. Built human-reviewed AI workflows that cut delivery cycles by 70%, build time by 40%, and monthly creative overhead by £2,000+, while analysis of 400+ user sessions shaped three roadmap priorities. Alongside product work, directed digital touchpoints and live technical production for events at Gibson Hotel Dublin, Royal Thames Yacht Club, and Hotel Cafe Royal.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>Dēpology</h3>
-                  <time datetime="2024-12">Midweight Product Designer / Dec 2024 to Jun 2025</time>
+                  <time datetime="2024-12">Product Designer, Growth &amp; Customer Experience / Dec 2024 to Jun 2025</time>
                 </div>
-                <p>Led a research-led full-funnel redesign across product, cart, and checkout journeys using heatmaps, session recordings, and cohort analysis, doubling checkout CVR across two product launches. Built reusable commerce components, documentation, and handoff SOPs for offer hierarchy, buybox states, cart patterns, and checkout behaviours, reducing production time by 30%. Connected landing-page UX, ad promise, and user perception in a Research-UI-Ads testing framework, compressing test cycles from two weeks to four days and contributing to a 50% reduction in cart abandonment.</p>
+                <p>Led a research-driven DTC funnel redesign that doubled checkout conversion across two launches. Built reusable components and handoff standards that cut production time by 30%, then connected campaign promise with user behaviour to reduce test cycles from 14 to four days and contribute to 50% lower cart abandonment.</p>
               </article>
 
               <article class="experience-row">
@@ -3313,32 +3334,32 @@
                   <h3>Travel to Qin</h3>
                   <time datetime="2024-04">Junior UX Designer / Apr 2024 to Dec 2024</time>
                 </div>
-                <p>Led traveller research through interviews, focus groups, and field studies, translating findings into a 20-page mobile wireframe with navigation flow, information hierarchy, and scalable design patterns. Designed high-fidelity prototypes, facilitated Shopify and WordPress handoff, and built an internal CMS for content and supplier-side publishing, cutting development cycle by 50% and labour cost by 50% through reusable templates.</p>
+                <p>Turned interviews, focus groups, and field studies into a 20-page mobile wireframe and information architecture. Designed scalable prototypes and publishing patterns across Shopify and WordPress, including an internal CMS that cut development time by 50% and labour cost by 30%.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>manila.design</h3>
-                  <time datetime="2022-10">Digital Designer / Oct 2022 to Sep 2023</time>
+                  <time datetime="2022-10">Digital Experience Designer (Part time) / Oct 2022 to Sep 2023</time>
                 </div>
-                <p>Led UX research for a B2C website using interviews and Google Analytics, identifying seven conversion blockers and translating them into personas, journey improvements, and product-to-checkout redesigns that contributed to a 10% drop-off reduction. Built reusable UI patterns across product, content, and checkout journeys, then collaborated with developers on responsive production handoff.</p>
+                <p>Used interviews and Google Analytics to identify seven conversion blockers, then redesigned priority journeys to reduce drop-off by 10%. Built responsive UI patterns and production-ready handoffs across product, content, and checkout.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>Quadtalent</h3>
-                  <time datetime="2021-04">UI Designer / Apr 2021 to Sep 2021</time>
+                  <time datetime="2021-04">Interface Designer (B2B Technology) / Apr 2021 to Sep 2021</time>
                 </div>
-                <p>Took UI ownership mid-project under pressure, self-taught front-end basics in three days, and shipped an enterprise website with minimal engineering revision through multi-layered approvals. Designed B2B enterprise UI, dashboard patterns, and 12 Python-based data-visualisation components for C-suite presentations.</p>
+                <p>Took sole UI ownership mid-project and shipped an enterprise website with minimal revision after learning front-end fundamentals in three days. Designed a B2B dashboard and 12 data visualisations that made complex information clearer for C-suite decisions.</p>
               </article>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="support-subsection" aria-labelledby="education-list-title">
-          <h3 class="sr-only" id="education-list-title">Education</h3>
-          <p class="support-label" aria-hidden="true">EDUCATION</p>
+        <details class="support-subsection support-accordion" aria-labelledby="education-list-title">
+          <summary class="support-label">EDUCATION</summary>
           <div class="support-static-panel">
+            <h3 class="sr-only" id="education-list-title">Education</h3>
             <div class="education-rows">
               <article class="education-row">
                 <div>
@@ -3366,7 +3387,7 @@
               <li>#Handoff</li>
             </ul>
           </div>
-        </div>
+        </details>
 
         <div class="support-actions" aria-label="Experience links">
           <a class="support-action" href="assets/Joe_Tao_Resume.pdf" download>Download Resume</a>
@@ -3382,17 +3403,17 @@
               <article class="experience-row">
                 <div>
                   <h3>TUTU VIEW</h3>
-                  <time datetime="2025-06">Product Designer / Jun 2025 to present</time>
+                  <time datetime="2025-06">Product &amp; Experience Designer / Jun 2025 to present</time>
                 </div>
-                <p>Owned end-to-end design across three cross-border DTC platforms, taking ambiguous venture goals from discovery, IA, and UX flows through to developer handoff, optimisation, and launch. Built component libraries, token systems, and rapid prototyping SOPs with Figma MCP and Claude Code, reducing delivery cycle by 70%, build time by 40%, and monthly creative overhead by £2000+. Analysed 400+ user sessions, heatmaps, heuristic signals, and behavioural patterns to define IA changes and three conversion opportunities.</p>
+                <p>Own end-to-end product design across three cross-border platforms, from research and IA through design systems, launch, and optimisation. Built human-reviewed AI workflows that cut delivery cycles by 70%, build time by 40%, and monthly creative overhead by £2,000+, while analysis of 400+ user sessions shaped three roadmap priorities. Alongside product work, directed digital touchpoints and live technical production for events at Gibson Hotel Dublin, Royal Thames Yacht Club, and Hotel Cafe Royal.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>Dēpology</h3>
-                  <time datetime="2024-12">Midweight Product Designer / Dec 2024 to Jun 2025</time>
+                  <time datetime="2024-12">Product Designer, Growth &amp; Customer Experience / Dec 2024 to Jun 2025</time>
                 </div>
-                <p>Led a research-led full-funnel redesign across product, cart, and checkout journeys using heatmaps, session recordings, and cohort analysis, doubling checkout CVR across two product launches. Built reusable commerce components, documentation, and handoff SOPs for offer hierarchy, buybox states, cart patterns, and checkout behaviours, reducing production time by 30%. Connected landing-page UX, ad promise, and user perception in a Research-UI-Ads testing framework, compressing test cycles from two weeks to four days and contributing to a 50% reduction in cart abandonment.</p>
+                <p>Led a research-driven DTC funnel redesign that doubled checkout conversion across two launches. Built reusable components and handoff standards that cut production time by 30%, then connected campaign promise with user behaviour to reduce test cycles from 14 to four days and contribute to 50% lower cart abandonment.</p>
               </article>
 
               <article class="experience-row">
@@ -3400,23 +3421,23 @@
                   <h3>Travel to Qin</h3>
                   <time datetime="2024-04">Junior UX Designer / Apr 2024 to Dec 2024</time>
                 </div>
-                <p>Led traveller research through interviews, focus groups, and field studies, translating findings into a 20-page mobile wireframe with navigation flow, information hierarchy, and scalable design patterns. Designed high-fidelity prototypes, facilitated Shopify and WordPress handoff, and built an internal CMS for content and supplier-side publishing, cutting development cycle by 50% and labour cost by 50% through reusable templates.</p>
+                <p>Turned interviews, focus groups, and field studies into a 20-page mobile wireframe and information architecture. Designed scalable prototypes and publishing patterns across Shopify and WordPress, including an internal CMS that cut development time by 50% and labour cost by 30%.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>manila.design</h3>
-                  <time datetime="2022-10">Digital Designer / Oct 2022 to Sep 2023</time>
+                  <time datetime="2022-10">Digital Experience Designer (Part time) / Oct 2022 to Sep 2023</time>
                 </div>
-                <p>Led UX research for a B2C website using interviews and Google Analytics, identifying seven conversion blockers and translating them into personas, journey improvements, and product-to-checkout redesigns that contributed to a 10% drop-off reduction. Built reusable UI patterns across product, content, and checkout journeys, then collaborated with developers on responsive production handoff.</p>
+                <p>Used interviews and Google Analytics to identify seven conversion blockers, then redesigned priority journeys to reduce drop-off by 10%. Built responsive UI patterns and production-ready handoffs across product, content, and checkout.</p>
               </article>
 
               <article class="experience-row">
                 <div>
                   <h3>Quadtalent</h3>
-                  <time datetime="2021-04">UI Designer / Apr 2021 to Sep 2021</time>
+                  <time datetime="2021-04">Interface Designer (B2B Technology) / Apr 2021 to Sep 2021</time>
                 </div>
-                <p>Took UI ownership mid-project under pressure, self-taught front-end basics in three days, and shipped an enterprise website with minimal engineering revision through multi-layered approvals. Designed B2B enterprise UI, dashboard patterns, and 12 Python-based data-visualisation components for C-suite presentations.</p>
+                <p>Took sole UI ownership mid-project and shipped an enterprise website with minimal revision after learning front-end fundamentals in three days. Designed a B2B dashboard and 12 data visualisations that made complex information clearer for C-suite decisions.</p>
               </article>
             </div>
           </div>
@@ -3474,32 +3495,32 @@
           <div class="life-ticker" aria-label="Daily life photos">
             <div class="life-ticker__track">
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="0" data-life-caption="Prototype detail" aria-label="Open prototype detail photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="0" data-life-lightbox-slug="prototype-detail" data-life-caption="Prototype detail" aria-label="Open prototype detail photo">
                   <img src="assets/case_study_images_stairaid/product_showcase_desk.webp" alt="StairAID product prototype on a desk" loading="lazy" decoding="async">
                 </button>
               </figure>
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="1" data-life-caption="Exhibition moment" aria-label="Open exhibition moment photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="1" data-life-lightbox-slug="exhibition-moment" data-life-caption="Exhibition moment" aria-label="Open exhibition moment photo">
                   <img src="assets/daily-life/stairaid-exhibition.webp" alt="Joe at the StairAID exhibition" loading="lazy" decoding="async">
                 </button>
               </figure>
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="2" data-life-caption="Team showcase" aria-label="Open team showcase photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="2" data-life-lightbox-slug="team-showcase" data-life-caption="Team showcase" aria-label="Open team showcase photo">
                   <img src="assets/case_study_images_stairaid/team_photo_exhibition.webp" alt="StairAID team photo at an exhibition" loading="lazy" decoding="async">
                 </button>
               </figure>
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="3" data-life-caption="Industry event" aria-label="Open industry event photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="3" data-life-lightbox-slug="industry-event" data-life-caption="Industry event" aria-label="Open industry event photo">
                   <img src="assets/daily-life/michelin-event.webp" alt="Joe at a Michelin event" loading="lazy" decoding="async">
                 </button>
               </figure>
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="4" data-life-caption="Community event" aria-label="Open community event photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="4" data-life-lightbox-slug="community-event" data-life-caption="Community event" aria-label="Open community event photo">
                   <img src="assets/daily-life/event-group.webp" alt="Group photo at a design event" loading="lazy" decoding="async">
                 </button>
               </figure>
               <figure class="life-ticker__item">
-                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="5" data-life-caption="Google event" aria-label="Open Google event photo">
+                <button class="life-ticker__button" type="button" data-life-lightbox-item="true" data-life-lightbox-index="5" data-life-lightbox-slug="google-event" data-life-caption="Google event" aria-label="Open Google event photo">
                   <img src="assets/daily-life/google-event.webp" alt="Joe at a Google event" loading="lazy" decoding="async">
                 </button>
               </figure>
@@ -4116,6 +4137,7 @@
         return {
           src: image?.getAttribute("src") || "",
           alt: image?.getAttribute("alt") || "",
+          slug: button.dataset.lifeLightboxSlug || String(button.dataset.lifeLightboxIndex),
           caption: button.dataset.lifeCaption || image?.getAttribute("alt") || "Daily life photo"
         };
       });
@@ -4124,6 +4146,9 @@
 
       let activeIndex = 0;
       let previousFocus = null;
+      let hashBeforeOpen = "";
+
+      const hashPrefix = "#life-";
 
       const normalizeIndex = (index) => (index + items.length) % items.length;
 
@@ -4143,27 +4168,60 @@
         }
       };
 
-      const openLightbox = (index, trigger) => {
+      const updateLightboxHash = (index, method = "replaceState") => {
+        const item = items[normalizeIndex(index)];
+        history[method](null, "", `${window.location.pathname}${window.location.search}${hashPrefix}${item.slug}`);
+      };
+
+      const openLightbox = (index, trigger, shouldUpdateHash = true) => {
+        if (lightbox.hidden) {
+          hashBeforeOpen = window.location.hash.startsWith(hashPrefix) ? "" : window.location.hash;
+        }
         previousFocus = trigger || document.activeElement;
         updateLightbox(index);
         lightbox.hidden = false;
         document.body.classList.add("life-lightbox-open");
         closeButton?.focus();
+
+        if (shouldUpdateHash) {
+          updateLightboxHash(activeIndex, "pushState");
+        }
       };
 
-      const closeLightbox = () => {
+      const closeLightbox = (shouldUpdateHash = true) => {
         lightbox.hidden = true;
         document.body.classList.remove("life-lightbox-open");
         lightboxImage.removeAttribute("src");
         lightboxImage.alt = "";
+
+        if (shouldUpdateHash && window.location.hash.startsWith(hashPrefix)) {
+          history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hashBeforeOpen}`);
+        }
 
         if (previousFocus && typeof previousFocus.focus === "function") {
           previousFocus.focus();
         }
       };
 
-      const showPrevious = () => updateLightbox(activeIndex - 1);
-      const showNext = () => updateLightbox(activeIndex + 1);
+      const showItem = (index) => {
+        updateLightbox(index);
+        updateLightboxHash(activeIndex);
+      };
+      const showPrevious = () => showItem(activeIndex - 1);
+      const showNext = () => showItem(activeIndex + 1);
+
+      const syncLightboxFromHash = () => {
+        const slug = window.location.hash.startsWith(hashPrefix)
+          ? window.location.hash.slice(hashPrefix.length)
+          : "";
+        const index = items.findIndex((item) => item.slug === slug);
+
+        if (index >= 0) {
+          openLightbox(index, null, false);
+        } else if (!lightbox.hidden) {
+          closeLightbox(false);
+        }
+      };
 
       triggers.forEach((trigger) => {
         trigger.addEventListener("click", () => {
@@ -4199,6 +4257,9 @@
           showNext();
         }
       });
+
+      window.addEventListener("hashchange", syncLightboxFromHash);
+      syncLightboxFromHash();
     };
 
 
